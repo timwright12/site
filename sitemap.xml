@@ -2,67 +2,67 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://example.com/posts/firstpost/</loc>
+    <loc>https://example.com/site/posts/firstpost/</loc>
     <lastmod>2018-05-01</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/posts/secondpost/</loc>
+    <loc>https://example.com/site/posts/secondpost/</loc>
     <lastmod>2018-07-04</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/posts/thirdpost/</loc>
+    <loc>https://example.com/site/posts/thirdpost/</loc>
     <lastmod>2018-08-24</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/posts/fourthpost/</loc>
+    <loc>https://example.com/site/posts/fourthpost/</loc>
     <lastmod>2018-09-30</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/about/</loc>
+    <loc>https://example.com/site/about/</loc>
     <lastmod>2022-02-11</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/posts/</loc>
+    <loc>https://example.com/site/posts/</loc>
     <lastmod>2022-02-11</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/</loc>
+    <loc>https://example.com/site/</loc>
     <lastmod>2022-02-11</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/page-list/</loc>
+    <loc>https://example.com/site/page-list/</loc>
     <lastmod>2022-02-11</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/tags/</loc>
+    <loc>https://example.com/site/tags/</loc>
     <lastmod>2022-02-11</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/tags/another-tag/</loc>
+    <loc>https://example.com/site/tags/another-tag/</loc>
     <lastmod>2022-02-11</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/tags/second-tag/</loc>
+    <loc>https://example.com/site/tags/second-tag/</loc>
     <lastmod>2022-02-11</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/tags/number-2/</loc>
+    <loc>https://example.com/site/tags/number-2/</loc>
     <lastmod>2022-02-11</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/tags/posts-with-two-tags/</loc>
+    <loc>https://example.com/site/tags/posts-with-two-tags/</loc>
     <lastmod>2022-02-11</lastmod>
   </url>
 </urlset>
