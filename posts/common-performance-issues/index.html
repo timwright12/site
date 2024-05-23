@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Common Performance Issues and How to Solve them</title>
+    <meta name="description" content="I am writing about my experiences as a naval navel-gazer.">
+    <link rel="stylesheet" href="/site/css/index.css">
+    <link rel="alternate" href="/site/feed/feed.xml" type="application/atom+xml" title="Tim Wright">
+    <link rel="alternate" href="/site/feed/feed.json" type="application/json" title="Tim Wright">
+
+    <script>
+
+		WebFontConfig = {
+			google: {
+				families: ['Open Sans:400,700', 'Judson:400,700']
+			}
+		};
+
+		(function(d) {
+			var wf = d.createElement('script'), s = d.scripts[0];
+			wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
+			wf.async = true;
+			s.parentNode.insertBefore(wf, s);
+		})(document);
+
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-875557-1', 'auto');
+		ga('send', 'pageview');
+
+	</script>
+
+	<noscript>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&Judson:ital,wght@0,400;0,700;1,400&display=swap" />
+	</noscript>
+
+  </head>
+  <body>
+
+  <header role="banner" id="banner">
+
+    <h1 class="logo" itemscope="" itemtype="http://schema.org/Organization">
+      <a href="/" itemprop="url">Tim Wright</a>
+    </h1>
+
+    <nav role="navigation" id="nav">
+      <ul>
+          <li class="nav-item"><a href="/site/blog/">Blog</a></li>
+          <li class="nav-item"><a href="/site/work/">Work</a></li>
+        <li class="nav-item"><a href="mailto:hello@timwright.org?subject=An Interesting Message from timwright.org">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+    <article class="tmpl-post" id="main" role="main">
+      
+<time datetime="2020-10-31">31 Oct 2020</time>
+
+<h1>Common Performance Issues and How to Solve them</h1>
+
+<p>A couple months ago I sat down and ran a performance analysis over 25 editorial-focused sites I’ve recently encountered (omitting URLs) in hopes to get a ten thousand foot overview of how the Web looks with page speed and loading metrics. The Analysis was split in to two parts: WordPress sites and React sites, as to not cross over two distinct tech stacks and keep the controls in my experiment consistent.</p>
+<p>Here are some high level statistical takeaways from the data I uncovered, broken down by project type:</p>
+<h2 id="wordpress" tabindex="-1">WordPress <a class="direct-link" href="#wordpress" aria-hidden="true">#</a></h2>
+<ul>
+<li>Average lighthouse performance score: 52</li>
+<li>Average speedIndex (3G): 10.018s</li>
+<li>Average JS size: 2330kb</li>
+<li>Average CSS size: 434kb</li>
+<li>Average Image transfer size (homepage only): 1524kb</li>
+<li>Average HTML size (homepage only): 181kb</li>
+</ul>
+<h2 id="react" tabindex="-1">React <a class="direct-link" href="#react" aria-hidden="true">#</a></h2>
+<ul>
+<li>Average lighthouse performance score: 25</li>
+<li>Average speedIndex (3G): 15.458s</li>
+<li>Average JS size: 4639kb</li>
+<li>Average CSS size: 286kb (4 of 15 projects using styled components)</li>
+<li>Average Image transfer size (homepage only): 1273kb</li>
+<li>Average HTML size (homepage only): 719kb</li>
+</ul>
+<h2 id="issues" tabindex="-1">Issues <a class="direct-link" href="#issues" aria-hidden="true">#</a></h2>
+<p>With all this data, let’s take a look at the top four issues I saw and how to address them.</p>
+<h3 id="images-are-too-large" tabindex="-1">Images are too Large <a class="direct-link" href="#images-are-too-large" aria-hidden="true">#</a></h3>
+<p>The images that are being uploaded into WordPress are massive. There’s no way to get around that. They will also likely continue to be very large. From a design standpoint we need to keep an eye on the amount of images displaying on a page. From an engineering standpoint we need to make sure the images loading are the correct size for the component and environment (loading smaller images where smaller images should be and vice versa). We can also use the new in-browser lazy loading with a fallback option when it isn’t supported. Some more tips:</p>
+<ul>
+<li>Use the picture element to load proper images at certain breakpoints rather than relying on the default WordPress srcset output.</li>
+<li>Lazy load images that are further down the page.</li>
+<li>Set multiple crops so you can always get the image you need.</li>
+<li>For larger projects, lean on services like Cloudinary to help serve up the proper images and image formats (like webp, when supported).</li>
+</ul>
+<p>Images are kind of a monster, there’s a lot to really unpack there, but if we start with these few tips, we’ll be in a good spot moving forward.</p>
+<h3 id="general-lighthouse-scores-are-too-low" tabindex="-1">General Lighthouse Scores are too Low <a class="direct-link" href="#general-lighthouse-scores-are-too-low" aria-hidden="true">#</a></h3>
+<p>Lighthouse is a great tool for you to use nearing the end of a build (and even post-launch) to use as a performance checklist. At the start of a project you should be aware of all the Lighthouse targets and items so you don’t end up in a corner, but the real power is Google handing you a roadmap and specific things you can do to get a better score.</p>
+<p>The recommendation here: run your site through lighthouse and fix whatever it tells you to fix.</p>
+<h3 id="css-files-are-too-large" tabindex="-1">CSS Files are too Large <a class="direct-link" href="#css-files-are-too-large" aria-hidden="true">#</a></h3>
+<p>On the WordPress sites I reviewed, an average CSS file size of 434kb, is really large. In fact, the two largest I tested came back at 963kb and 1070kb. The former being a full design system and the latter being a site that was built on top of a base CSS file (kind of like theming Bootstrap). A bloated CSS file is usually indicative of a few things:</p>
+<ul>
+<li>A lot of repetition in the output (outputting the same code over and over) – happens on old projects and where many engineers touch the files.</li>
+<li>A lot of long class names, long variable names, long name spacing and heavy selector nesting</li>
+<li>Too much componentization and not relying on the cascade</li>
+</ul>
+<p>Repetition from the code usually comes from isolated work and not being familiar with the global system that’s being used. This can also indicate an over-reliance on mixins in a system. A solution here would be to make sure you familiarize yourself with the entire CSS implementation before executing a task and also try to rely on utility classes where you can.</p>
+<p>The second item has to do with the amount of characters present in the file. Especially referencing design systems that use name spacing, using a long prefix can really bloat a file, so try and keep those to 1-3 characters if possibly. In the design system referenced above (963kb project) I was able to shave off ~10% of the file size by reducing the name space length from seven characters to two characters. The same applies to CSS variable names (they end up in the CSS), prefer something like “sm” vs “small” and “md” vs. “medium”. It might not seem like a big deal, but they do add up and there’s no real reason for them.</p>
+<p>The last item that can really bloat a file is focusing too much on componentization and isolating your work too much. The most powerful component in CSS is the cascade, so don’t forget to use it. If something is defin## ed higher up in the cascade it doesn’t need to be redefined; typography is the biggest offender of this, so keep an eye out and move those styles up the cascade are far as you can!</p>
+<h3 id="using-too-much-blocking-javascript" tabindex="-1">Using too much Blocking JavaScript <a class="direct-link" href="#using-too-much-blocking-javascript" aria-hidden="true">#</a></h3>
+<p>It’s kind of a given that a React site is going to contain a ton of JavaScript, and much of that JavaScript will be blocking. The issue we’re seeing in this area with React is actually that React is bloating the HTML to the point where it’s near four times that of a WordPress or static site. This is something that really requires further investigation since the sites are not really designed differently.</p>
+<p>From the WordPress side, we’re seeing a lot of unused JavaScript being outputted in the main thread. Generally speaking this is project to project, but there are a couple things to note that we can directly fix:</p>
+<ul>
+<li>Keep an eye on plugins that are outputting extra JS in to the DOM, especially jQuery.</li>
+<li>Make sure WordPress isn’t spitting out React on the front-end, especially on templates that aren’t using it.</li>
+<li>Make sure your GTM scripts are under control, this is managed by the client so it can get bloated very quickly and they won’t realize the performance affects.</li>
+<li>Make sure all JavaScript is loading at the bottom of the page so it doesn’t block render.</li>
+<li>MomentJS is huge and you usually don’t need all of it, so if you’re using Moment, only load what you need.</li>
+</ul>
+<h2 id="overall" tabindex="-1">Overall <a class="direct-link" href="#overall" aria-hidden="true">#</a></h2>
+<p>Overall, how are sites looking? Not great to be honest. Builds move fast and sometimes it’s hard to remember the end goal of serving the best possible experience to all users (especially when a deadline is looming and tickets are flying by). Compounding that, most of the performance items we deal with are not, “we can fix it later,” type things, some are, but most are not. A homepage with two hundred images, ten ads, and a handful of third party scripts can only load so fast with engineering alone.</p>
+<p>Decisions are made very early on in a project that trickle down and have long term lasting affects on the speed of a site as well as the end experience we’re offering to users. I do like to tout the importance of a performance budget, it’s a tool we use to level-set at the start of a project to bring everyone on the same page regarding the real-life performance and business goals of a site. Performance is not just an engineering thing, it’s a whole team thing and we need to work together.</p>
+
+
+    </article>
+
+    <!-- Current page: /site/posts/common-performance-issues/ -->
+  </body>
+</html>
