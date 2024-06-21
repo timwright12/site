@@ -1,7 +1,7 @@
 ---
 title: "Detecting for Bandwidth with the Network Information API"
 date: "2012-05-11"
-categories:
+tags:
   - "performance"
 layout: layouts/post.njk
 ---

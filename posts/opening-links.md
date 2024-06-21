@@ -1,7 +1,7 @@
 ---
 title: "Security and Accessiblity When Opening Links in a New Window"
 date: "2017-01-21"
-categories:
+tags:
   - "accessibility"
   - "security"
 layout: layouts/post.njk

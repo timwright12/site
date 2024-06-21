@@ -1,7 +1,7 @@
 ---
 title: "I wrote a book called: Learning JavaScript"
 date: "2012-08-01"
-categories:
+tags:
   - "javascript"
 layout: layouts/post.njk
 ---

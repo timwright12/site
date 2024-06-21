@@ -1,7 +1,7 @@
 ---
 title: "Reseting Browser Defaults (reset.css)"
 date: "2008-02-06"
-categories:
+tags:
   - "engineering"
 ---
 

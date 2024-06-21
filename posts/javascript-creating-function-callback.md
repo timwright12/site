@@ -1,7 +1,7 @@
 ---
 title: "JavaScript: Creating a Function with a Callback"
 date: "2015-02-04"
-categories:
+tags:
   - "engineering"
 layout: layouts/post.njk
 ---
