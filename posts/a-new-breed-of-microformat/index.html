@@ -1,0 +1,39 @@
+<p><img src="images/vfacet-banner.jpg" alt="article banner"></p>
+<p>Because I'm a web dork (nice way to start a post, huh?), I was poking around <a href="http://www.youtube.com/">YouTube</a> last weekend and decided to crack it open in <a href="https://addons.mozilla.org/en-US/firefox/addon/1843">FireBug</a>.</p>
+<p>I was on <a href="http://www.youtube.com/mayermusic">YouTube's MayerMusic channel</a> fiddling around with the video info section and notice that some of the info was wrapped in a quasi familiar class &quot;vfacets&quot;. This <em>appears</em> to be some sort of <a href="http://www.microformats.org">Microformat</a>; but none that I've ever seen.</p>
+<p><img src="images/vfacets-mayermusic.jpg" alt="mayermusic video info wrapped in div.vfacets"></p>
+<p>After seeing that, I decided to do a little digging (digging = 5 mins of Googling), and eventually found a pretty undetailed page about <a href="http://microformats.org/wiki/group-examples">group examples of Microformats</a>.</p>
+<p>Generally, I find that Google's front end development is a disgrace to the Internet (no offense…), but it seems like they're buying into the concept of Microformats. With that in mind I thought I'd talk about how Microformat groups could be used.</p>
+<h4 id="usage" tabindex="-1">Usage <a class="direct-link" href="#usage" aria-hidden="true">#</a></h4>
+<p>Many of us are familiar with the most common <a href="http://microformats.org/code-tools/">types of Microformats</a> (hCalendar, hCard, hReview, and XFN). There are also many that are <a href="http://microformats.org/wiki/Main_Page#Drafts">still in draft form</a> like hResume, geo, and rel-directory. However, it seems that a new type could be emerging for grouping information.</p>
+<p><a href="#linkabove">The link above</a> listed out 4 examples of major sites using Microformat groups: YouTube, Magnolia, Linkedin and Flickr. I really like how Google (youtube) is marking it up though, so I'm going to get in to that.</p>
+<h5 id="youtube-ventry-markup" tabindex="-1">YouTube vEntry markup <a class="direct-link" href="#youtube-ventry-markup" aria-hidden="true">#</a></h5>
+<pre><code>&lt;div class=&quot;v120vEntry&quot;&gt;
+&lt;div class=&quot;vstill&quot;&gt;
+&lt;a href=&quot;/user/spoiledmilk&quot;&gt;&lt;img src=&quot;2.jpg&quot; class=&quot;vimg&quot;&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;div class=&quot;vtitle&quot;&gt;
+&lt;a href=&quot;/profile?user=spoiledmilk&quot;&gt;spoiledmilk&lt;/a&gt;
+&lt;/div&gt;
+&lt;div class=&quot;vfacets&quot;&gt;
+&lt;span class=&quot;grayText&quot;&gt;Joined:&lt;/span&gt; August 02, 2006&lt;br&gt;
+&lt;span class=&quot;grayText&quot;&gt;Videos:&lt;/span&gt; &lt;a href=&quot;/profile_videos?user=spoiledmilk&quot;&gt;21&lt;/a&gt; 
+&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<p>In marking up user information they are using:</p>
+<ul>
+<li><strong>ventry</strong> as a wrapper</li>
+<li><strong>vstill</strong> for the user image link</li>
+<li><strong>vimg</strong> for the image itself</li>
+<li><strong>vtitle</strong> for the user's name</li>
+<li><strong>vfacets</strong> for, what seems to be, general information</li>
+</ul>
+<p>I'm wondering why Google is going with this. In the past I think it's safe to say that they don't really do things like this unless they're planning to use it in something they build. Not to take shots at Google, but they don't really do things for the greater good of the web community (correct me if I'm wrong).</p>
+<h4 id="consistent-user-tagging" tabindex="-1">Consistent user tagging <a class="direct-link" href="#consistent-user-tagging" aria-hidden="true">#</a></h4>
+<p>The basis for using something like a <code>vcard</code> class is to let the browser, user, spambot, or software know that a page contains contact information (and your now beautifully marked up e–mail address). This same principle applies to Google's <code>vEntry</code>.</p>
+<p>Let's consider that Google is building a large social networking platform; I know that the main complaint I have with all these new networking sites is that you have to constantly rebuild your contact list. Marking up a member's information in a consistent way would aid in search and ease the pain of finding those <a href="http://twitter.com/csskarma/followers">Twitter followers</a> (for example) we all love so much. <em>Or even for building some sort of Internet phone book.</em></p>
+<h4 id="what-are-they-scheming" tabindex="-1">What are they scheming? <a class="direct-link" href="#what-are-they-scheming" aria-hidden="true">#</a></h4>
+<p>What's Google planning? What else can be done with this new microformat? Did I completely miss a huge glaring detail here?</p>
+<p>Maybe this isn't even Google code, it could be left over from when they bought out YouTube. I guess we won't know for sure until we can pick apart Google's brain and find out what's going on in there.</p>
+<p>In the mean time, watch out for this new Microformat, I have a feeling they'll be popping up in other Google sites as well.</p>

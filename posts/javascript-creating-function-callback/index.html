@@ -1,0 +1,31 @@
+<p>Something I seem to do a lot of when writing JavaScript is creating <a href="http://javascriptissexy.com/understand-javascript-callback-functions-and-use-them/">callback functions</a>. I like them, they help with execution order, and <a href="http://www.html5rocks.com/en/tutorials/es6/promises/">promises</a> aren't <a href="http://caniuse.com/#feat=promises">supported</a> enough for me to make the jump over to them quite yet without a reliable polyfill (although they're very nice). As in anything you need to careful when using callbacks or you'll find yourself in, &quot;callback hell,&quot; as they say (there's also coming called, &quot;promise hell,&quot; so you're doomed either way if you abuse them).</p>
+<p>Here's a quick template for creating a method with a callback. Nothing fancy, just a helpful little code snippet I hope you enjoy.</p>
+<pre><code>// Always namespacing!
+var App = {
+
+  method : function (value, callback) {
+
+    // just doing something generic so we know the method worked
+    console.log(value);  
+
+    // make sure the callback argument is a function before calling it
+    if (typeof callback === 'function') {
+
+      // call the function
+      callback.call( this );
+
+    } // end if
+  
+  } // end method()
+
+} // end App
+
+// call the method with a callback
+App.method('Hey there', function(){
+  
+  // this is the callback function
+  console.log('callback was executed!');
+
+}); // end method call
+</code></pre>
+<p>Remember, <a href="http://callbackhell.com/">don't abuse the callback</a>.</p>

@@ -1,0 +1,68 @@
+<p><img src="images/validating-aria.jpg" alt="article banner"></p>
+<p>I was reading <a href="http://www.456bereastreet.com/archive/200902/validating_wai-aria_in_html_and_xhtml/">Validating WAI-ARIA in HTML and XHTML</a>. Since Roger has commenting turned off on his site now, I thought I'd write up a quick post with some thoughts on this.</p>
+<p>For those who don't know, <a href="http://www.w3.org/WAI/intro/aria">ARIA</a> is a type of accessibility for Ajax apps (Accessible Rich Internet Applications). And WAI stands for &quot;Web Accessibility Initiative&quot;. You can assign roles to your HTML elements to make it clearer to a screen reader what exactly the purpose of an unordered list is (unordered list is just an example, you can apply roles to many elements).</p>
+<p>The example that keeps creeping up is the <a href="http://www.dynamicdrive.com/dynamicindex1/navigate1.htm">tree menu</a>. Without ARIA, the tree menu is just an unordered list of links, and doesn't speak to the actual function of menu at all:</p>
+<pre><code>&lt;ul id=&quot;treemenu&quot;&gt;
+&lt;li&gt;Home&lt;/li&gt;
+&lt;li&gt;Contact&lt;/li&gt;
+&lt;li&gt;Articles
+	&lt;ul&gt;
+	&lt;li&gt;Validating WAI ARIA&lt;/li&gt;
+	&lt;li&gt;Where I Get My Nws&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Lab&lt;/li&gt;
+&lt;li&gt;Portfolio
+	&lt;ul&gt;
+	&lt;li&gt;CEO&lt;/li&gt;
+	&lt;li&gt;Globalization
+		&lt;ul&gt;
+		&lt;li&gt;Google Maps&lt;/li&gt;
+		&lt;li&gt;Google Charts&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Research&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+<p>This is fine, and perfectly accessible, but we can enhance it with ARIA:</p>
+<pre><code>&lt;ul id=&quot;treemenu&quot; role=&quot;tree&quot;&gt;
+&lt;li role=&quot;treeitem&quot;&gt;Home&lt;/li&gt;
+&lt;li role=&quot;treeitem&quot;&gt;Contact&lt;/li&gt;
+&lt;li role=&quot;treeitem&quot;&gt;Articles
+	&lt;ul role=&quot;group&quot; aria-expanded=&quot;true&quot;/&gt;
+	&lt;li&gt;Validating WAI ARIA&lt;/li&gt;
+	&lt;li&gt;Where I Get My Nws&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li role=&quot;treeitem&quot;&gt;Lab&lt;/li&gt;
+&lt;li role=&quot;treeitem&quot;&gt;Portfolio
+	&lt;ul role=&quot;group&quot;&gt;
+	&lt;li role=&quot;treeitem&quot;&gt;CEO&lt;/li&gt;
+	&lt;li role=&quot;treeitem&quot;&gt;Globalization
+		&lt;ul role=&quot;group&quot;&gt;
+		&lt;li role=&quot;treeitem&quot;&gt;Google Maps&lt;/li&gt;
+		&lt;li role=&quot;treeitem&quot;&gt;Google Charts&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li role=&quot;treeitem&quot;&gt;Research&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+<p>A screenreader (with ARIA support) will know that this is a tree menu, where all the tree items are, and, in this case, that the tree group &quot;Articles&quot; is expanded.</p>
+<p>So that's a quick overview of ARIA, there's a lot more to it, and I encourage everyone to do a little research next time you're building that killer Ajax app; because it's very cool stuff.</p>
+<h4 id="anyway" tabindex="-1">Anyway <a class="direct-link" href="#anyway" aria-hidden="true">#</a></h4>
+<p>In <a href="http://www.456bereastreet.com/archive/200902/validating_wai-aria_in_html_and_xhtml/">Roger's article</a> he talks about how ARIA doesn't validate in our (X)HTML, which is true, you'll fail validation if you use ARIA.</p>
+<p>To remedy this, he offers up a solution of creating custom DTDs. This will technically work fine, but who wants to go through the trouble of writing a custom DTD? I know I don't.</p>
+<p>A few weeks ago I was at <a href="http://www.knowbility.org/calwac/">CalWAC</a> in Long Beach, CA (a web accessibility conference) and sat in on an ARIA workshop by <a href="http://twitter.com/cookiecrook">James Craig</a> from Apple. He talked about the validation problem as well. And it's very easy to get around without using a custom DTD.</p>
+<p>Any current (up to date) screenreader &amp; browser with ARIA support will read through the DOM and all the elements you've manipulated with JavaScript, so we can simply add these ARIA roles with some JavaScript and keep our XHTML validating just fine. And it makes perfect sense since ARIA is meant for rich internet apps that are heavy in JavaScript anyway.</p>
+<p>I'd give this a try before creating a new custom DTD, but <a href="http://en.wikipedia.org/wiki/Reading_Rainbow">don't take my word for it</a>. Try it out for yourself.</p>
+<h4 id="some-more-aria-resources" tabindex="-1">Some more ARIA resources <a class="direct-link" href="#some-more-aria-resources" aria-hidden="true">#</a></h4>
+<ul>
+<li><a href="http://www.w3.org/TR/wai-aria/">W3C ARIA Spec</a></li>
+<li><a href="http://www.alistapart.com/articles/waiaria">A List Apart: Accessible Web 2.0 Applications</a></li>
+<li><a href="http://en.wikipedia.org/wiki/WAI-ARIA">Wikipedia</a></li>
+<li><a href="http://dev.opera.com/articles/view/introduction-to-wai-aria/">Opera's Intro to WAI ARIA</a></li>
+</ul>

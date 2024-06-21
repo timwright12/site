@@ -1,0 +1,54 @@
+<p>For the past couple weeks I've been working on accessibility audits and upgrades to a client website. Most of the updates were pretty straightforward, but I wanted to call out a specific item that allowed me to dive deeper into an aria attribute I really hadn't used before: <a href="http://oaa-accessibility.org/example/42/"><strong>aria-owns</strong></a>.</p>
+<p>The aria-owns attribute is a way to programmatically assign hierarchy to a document when that hierarchy can't be communicated with the HTML structure alone. My initial reaction when I realized I needed something like this was that the HTML should have been connected in the first place, but for whatever reason (design, business, admin UX goals) the navigation menu was set up in two separate areas like this:</p>
+<pre><code>&lt;nav role=&quot;navigation&quot;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&quot;/&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;/about&quot;&gt;About&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+
+&lt;!-- Hierarchically, this is sub navigation --&gt;
+&lt;nav role=&quot;navigation&quot;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&quot;/about/ir&quot;&gt;Investor Relations&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;/about/board&quot;&gt;Board of Directors&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+</code></pre>
+<p>The first section is the parent and the second section is the children of one of the parents (BUT WHICH ONE?!?!). The elements are visually connected, but there's nothing under the hood to tell what's what. That's where aria-owns comes in.</p>
+<p>Reading through the hrefs, you can tell that the second navigation group should be nested in the &quot;about&quot; list item section. This HTML is great for the design goal of having the secondary navigation display statically under the main navigation bar, but causes some issues when we're trying to communicate to assistive technology about which parent section is related to the secondary navigation. When they're set up like this (without the design), they just look like two different navigation elements and lose some context that need to be communicated.</p>
+<h2 id="aria-owns" tabindex="-1">Aria-Owns <a class="direct-link" href="#aria-owns" aria-hidden="true">#</a></h2>
+<p>I'll admit it, I could have rebuilt this entire navigation system to use the proper HTML structure, but holy crap, that would have taken forever. It would have needed a large scale revamp of the WordPress menu implementation, network menu rebuilds, client training, documentation, and a whole lot of recoding on the frontend. It definitely would have blown the budget for this project. So I wanted to try and find a way to programmatically connect the two elements.</p>
+<p>Either that, or I would have to <a href="https://github.com/timwright12/util.move">move the DOM elements around with JavaScript</a> and re-style the frontend (Not a terrible option, but I still wanted something a little less obtrusive).</p>
+<p>I knew about attributes like, <a href="http://csskarma.com/blog/changing-reading-order-page-aria-flowto/">aria-flowto</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-label_attribute">aria-label</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-labelledby_attribute">aria-labelledby</a>, <a href="https://www.w3.org/TR/wai-aria/states_and_properties#aria-controls">aria-controls</a>, and I had heard of <a href="https://www.w3.org/TR/wai-aria/states_and_properties#aria-owns">aria-owns</a> (but never needed to use it). So I was pretty sure there was a combination of attributes I could use to bring these two elements together.</p>
+<p>In reading the W3C documentation (I don't recommend doing that), I saw this within the aria-owns section:</p>
+<blockquote>
+<p>Identifies an element (or elements) in order to define a visual, functional, or contextual parent/child relationship between DOM elements where the DOM hierarchy cannot be used to represent the relationship.</p>
+</blockquote>
+<p>Which is exactly what I wanted. And this paragraph is (more or less) the only information on the Web about aria-owns.</p>
+<p>From there I started to hook up my DOM elements:</p>
+<pre><code>&lt;nav role=&quot;navigation&quot;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&quot;/&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+    &lt;li aria-owns=&quot;nav-sub&quot;&gt;&lt;a href=&quot;/about&quot;&gt;About&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+
+&lt;!-- Hierarchically, this is sub navigation --&gt;
+&lt;nav role=&quot;navigation&quot;&gt;
+  &lt;ul id=&quot;nav-sub&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;/about/ir&quot;&gt;Investor Relations&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;/about/board&quot;&gt;Board of Directors&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+</code></pre>
+<p>The aria-owns attribute takes a comma separated list of ID values you want to hook up. In this case the ID of nav-sub is on what should be the children of the list item for the <em>about</em> section which programmatically installs hierarchy where the HTML fails.</p>
+<h2 id="support" tabindex="-1">Support <a class="direct-link" href="#support" aria-hidden="true">#</a></h2>
+<p>Support in assistive technology isn't great for aria-owns (kind of like it is for <a href="http://www.heydonworks.com/article/aria-controls-is-poop">aria-controls</a>), so the best thing you can always do is structure your HTML with intension and meaningfulness to avoid these issues. However, if you find yourself in this situation, aria-owns is an official W3C accessibility recommendation, so support will come (eventually) and I wouldn't shy away from using it when you need to do something like this.</p>
+<p>Sorry for ending so many sentences with a preposition.</p>
+<h2 id="further-reading" tabindex="-1">Further Reading <a class="direct-link" href="#further-reading" aria-hidden="true">#</a></h2>
+<ul>
+<li><a href="https://tink.uk/using-the-aria-owns-attribute/">Using the aria-owns attribute</a></li>
+<li><a href="https://stackoverflow.com/questions/34003530/what-is-the-difference-between-aria-owns-and-aria-controls">Aria-controls vs. aria-owns</a></li>
+<li><a href="https://msdn.microsoft.com/en-us/library/cc848876(v=vs.85).aspx%22%22">MSDN aria-owns</a></li>
+</ul>

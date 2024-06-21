@@ -1,0 +1,101 @@
+<p>Routing in an application allows for navigation between different views or components, whether that's in a PHP framework, WordPress, React, Angular, Vue, whatever. It's been around for a long time and has become an essential addition to a large portion of our React projects. Whether you're using React Navigation, React Router, Reach Router, Next, the History API, or some other router, you've likely encountered some of the common patterns and this code:</p>
+<pre><code>&lt;Link to='/about'&gt;About&lt;/Link&gt;
+</code></pre>
+<p>A simple code snippet that can immobilize anyone using assistive technology if not properly implemented.</p>
+<h2 id="the-problem" tabindex="-1">The Problem <a class="direct-link" href="#the-problem" aria-hidden="true">#</a></h2>
+<p>For the purpose of this post, I'm going to pick at React, but these concepts can be applied to any JavaScript framework in an SPA environment.</p>
+<p>Routing, at its core is really nothing more than an Ajax call to load a page and a URL update. &quot;Execute this code when the URL matches XYZ.&quot; The problem arises because there's no natural page reload to reset the DOM, focus state, and allow assistive technology (like screen readers) to catch the change - similar things happen with <strong>all</strong> Ajax calls. It's like, if you're standing in a room and a horse appears behind you - you won't notice it unless it makes a noise. This is the concept with Routing. If you don't tell anyone the page changed, there's no way to know unless you're looking right at the horse.</p>
+<p>Luckily, there are some things we can do to ensure routing in a React app doesn't violate accessibility compliance.</p>
+<h2 id="setting-the-document-title" tabindex="-1">Setting the Document Title <a class="direct-link" href="#setting-the-document-title" aria-hidden="true">#</a></h2>
+<p>Since a normal application with routing doesn't leave the main content area, it's important to explicitly update the document title. This is the first thing screen readers look at when a page loads. Mostly, this hasn't been a problem on our projects, but it's still important to note and make sure we're managing this successfully.</p>
+<p>React gives us lifecycle methods we can hook into when a component loads, this would we a point where you can update the document title:</p>
+<pre><code>componentDidMount() {
+  document.title = 'About';
+}
+</code></pre>
+<p>Hooking into <strong>componentDidMount</strong> will ensure your document title is updated once a new page or component loads. You may be doing this in a slightly different way, but the important thing is that the title gets updated on each route change.</p>
+<h2 id="managing-focus" tabindex="-1">Managing Focus <a class="direct-link" href="#managing-focus" aria-hidden="true">#</a></h2>
+<p>Making sure the title is set is a good step in the right direction, but still leaves users stuck in the middle of a document if all the content around them changes without letting them know. For this, we need to manage focus when a route is updated. If focus is not managed properly, when a user clicks a link, the cursor will sit right where it was before (probably on a navigation link) and they will never know the page changed.</p>
+<p>This is where refs come in. A ref is an, &quot;escape hatch,&quot; React has for when you genuinely need to work in the DOM - mostly in situations for accessibility. We can use a ref in React to programmatically move focus around the page for a user. Anyone who has build a modal, tab, or accordion component should be familiar with refs, for all others, <a href="https://reactjs.org/docs/refs-and-the-dom.html">read up on refs in the React documentation</a>.</p>
+<p>Refs are used with Routing so when a new page loads, you can move focus from the link that was clicked to the main area of the new loaded page. The code below will show a basic ref you can set up to catch focus when a route changes.</p>
+<pre><code>componentDidMount() {
+  // Still setting the document title
+  document.title = 'About | Site Name';
+  // Set focus to the content ref
+  this.content.focus();
+}
+
+render() {
+  return (
+    &lt;div&gt;
+      &lt;h1 tabIndex=&quot;-1&quot; ref={( content ) =&gt; { this.content = content; }}&gt;Hello, About page&lt;/h1&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<p>Inside our render method we're returning a heading with a <strong>ref</strong> for the content area where we want focus sent upon the route change. This also has a <strong>tabindex</strong> value of -1 which allows programmatic focus to be set on an element that is not natively focusable.</p>
+<p>We also updated the <strong>componentDidMount</strong> method to use the ref and set focus when the page loads. All-in, what happens here is that, when a user clicks a link that affects the application routing, focus will be moved to the new loaded content letting them continue to use the page instead of trapping them on the navigation link.</p>
+<h2 id="communicating-to-the-user" tabindex="-1">Communicating to the User <a class="direct-link" href="#communicating-to-the-user" aria-hidden="true">#</a></h2>
+<p>So far we've done some great stuff for making our routing more accessible. The title updates and focus moves to the new loaded content. Now all we need to do is let the user know they're on a new page. We can do this with a simple messaging component that can talk to screen readers to let users know what's going on with a page, routes, or anything they can't see. Let's create a simple component that can take props and display a message.</p>
+<pre><code>const Message = ( props ) =&gt; (
+  &lt;div aria-live=&quot;polite&quot; aria-atomic=&quot;true&quot;&gt;
+    {props.text}
+  &lt;/div&gt;
+);
+</code></pre>
+<p>This component uses the <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions">ARIA states live and atomic</a> to push asynchronous information to the user. It can be used in any situation, but for routing, we're going to want to get back into our <strong>componentDidMount</strong> lifecycle method (or use <a href="https://reactjs.org/docs/hooks-intro.html">hooks</a>, it's doesn't matter, just that something fires when a component is loaded).</p>
+<pre><code>componentDidMount() {
+  // Still setting the document title
+  document.title = 'About | Site Name';
+  // Set focus to the content ref
+  this.content.focus();
+  // Set the message content
+  this.setState( { text: 'The about page has loaded'} );
+}
+
+render() {
+  return (
+    &lt;div&gt;
+      &lt;h1 tabIndex=&quot;-1&quot; ref={( content ) =&gt; { this.content = content; }}&gt;Hello, About page&lt;/h1&gt;
+      &lt;Message text={this.state.text} /&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<p>In the code block above you can see the message content being set in <strong>componentDidMount</strong> and also the Message component taking in the prop to display.</p>
+<p>What's happening here now is:</p>
+<ol>
+<li>The page title is updated</li>
+<li>Focus is set to the new loaded content</li>
+<li>The user is told that a new page has loaded</li>
+</ol>
+<p>And there you have, accessible routing in a React app. Not that bad, right? Just a few lines of code and you can help millions of people.</p>
+<h2 id="staying-accessible" tabindex="-1">Staying Accessible <a class="direct-link" href="#staying-accessible" aria-hidden="true">#</a></h2>
+<p>Updating your projects to use accessible routing is great, but we can also take steps to ensure our React work maintains a certain level of accessibility as a build matures. For this, I recommend using the <a href="https://github.com/evcohen/eslint-plugin-jsx-a11y">jsx-a11y eslint plugin</a>, it's super-easy to add to a project that's already using eslint and it will help keep an eye on your JSX. Your .eslintrc file should look something like this:</p>
+<pre><code>{
+  &quot;parser&quot;: &quot;babel-eslint&quot;,
+  &quot;plugins&quot;: [
+    &quot;react&quot;,
+    &quot;jsx-a11y&quot;
+  ],
+  &quot;extends&quot;: [
+    &quot;eslint:recommended&quot;,
+    &quot;plugin:react/recommended&quot;,
+    &quot;plugin:jsx-a11y/recommended&quot;
+  ],
+  &quot;settings&quot;: {
+    &quot;react&quot;: {
+      &quot;version&quot;: &quot;detect&quot;
+    }
+  }
+}
+</code></pre>
+<p>Well that's it! You should be good to go!</p>
+<h2 id="further-reading" tabindex="-1">Further Reading <a class="direct-link" href="#further-reading" aria-hidden="true">#</a></h2>
+<ul>
+<li><a href="https://almerosteyn.com/2017/03/accessible-react-navigation">Accessible React Navigation</a></li>
+<li><a href="http://simplyaccessible.com/article/react-a11y/">Creating Accessible React Apps</a></li>
+<li><a href="https://github.com/evcohen/eslint-plugin-jsx-a11y">JSX-A11y eslint plugin</a></li>
+<li><a href="https://reactjs.org/docs/refs-and-the-dom.html">Refs and the DOM</a></li>
+<li><a href="https://reactjs.org/docs/accessibility.html">React Accessibility</a></li>
+</ul>

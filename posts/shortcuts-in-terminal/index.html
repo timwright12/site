@@ -1,0 +1,21 @@
+<p>Let me just start off my saying <strong>I hate using the command line</strong>.</p>
+<p>That being said, I'm all for making the experience tolerable with a few tweaks. Today I set up some aliases in Terminal so I don't have to remember some of the weirder commands I use often.</p>
+<p>I thought I'd share the process for my fella command line haters / mac users.</p>
+<h3 id="the-process" tabindex="-1">The process <a class="direct-link" href="#the-process" aria-hidden="true">#</a></h3>
+<p>In your home directory, there's a file name .profile. It's hidden from the finder by default so you can get to it a few different ways:</p>
+<ul>
+<li>use a program that displays hidden files (like <a href="http://www.macupdate.com/app/mac/26729/houdini">Houdini</a>)</li>
+<li>Navigate to it through a text editor (I use <a href="http://www.panic.com/coda/">coda</a>)</li>
+<li>Open terminal and type cd ~, then press enter</li>
+</ul>
+<p>Once you find it, open the file, it's probably blank. If you're in terminal you'd type vi .profile, then i to being editing.</p>
+<p>Alias syntax goes like this: &quot;alias [alias name]='[really long normal command]'&quot;</p>
+<p>And you'd put one per line. For example, my .profile file currently looks like this:</p>
+<pre><code>alias ..= 'cd ..'
+alias ll='ls -al'
+alias ls='ls -l'
+alias home='cd ~
+</code></pre>
+<p>So if I want to navigate to my home directory I type &quot;home&quot; rather than &quot;cd ~&quot;. A small addition (and actually the same character count), but as you use these more and more to customize your environment you'll see how much time and frustration you can save.</p>
+<p>Anyway, save that file, restart terminal, and you're good to go. If you're doing all this in terminal first hit [esc] to exit edit mode, then type :wq to save your changes.</p>
+<p>Hope that helps some folks, I know it helps me, and I like posting stuff like this if for nothing else but having a place I can remember to go to find it.</p>

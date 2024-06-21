@@ -1,0 +1,28 @@
+<p>The current hot topic in the world of web development is <a href="http://www.webstandards.org/2008/01/22/microsofts-version-targeting-proposal/">IE8 and its version targeting</a>, <a href="http://alistapart.com/articles/fromswitchestotargets">Eric Meyer's article on A List Apart</a> and <a href="http://alistapart.com/articles/beyondDOCTYPE">Aaron Gustafson's Beyond DOCTYPE</a>. I've commenting all over the place about this, so I thought I'd consolidate all the comments into a blog post, and maybe elaborate a little.</p>
+<p>This is the META tag IE wants you to use:</p>
+<p><em>&lt; meta content=&quot;IE=8&quot; http-equiv=&quot;X-UA-Compatible&quot; /&gt;</em></p>
+<p>It basically tells the browsers that you want to use standards available for IE8 when rendering your page. If you don't use it, the default rendering engine will (as of right now) be IE7. As an added feature, you can also set the tag to:</p>
+<p><em>&lt; meta content=&quot;IE=edge&quot; http-equiv=&quot;X-UA-Compatible&quot; /&gt;</em></p>
+<p>for the latest version of IE standards.</p>
+<p>There's a lot of talk about how this tag will hurt <a href="http://en.wikipedia.org/wiki/Progressive_enhancement">progressive enhancement</a> in relation to CSS and JavaScript. But elements such as <a href="http://en.wikipedia.org/wiki/Microformats">Microformats</a> should be unaffected, as it just deals with current XHTML elements.</p>
+<blockquote>
+<p>It has to be realized that this may well be the only way for IE to advance its standards support in a reasonable time frame, or at all. Version targets let them avoid breaking existing sites, especially intranet sites, while fixing and adding their DOM, CSS, and other implementations. That has to be understood and accepted if the discussion is to be anything more than people talking past each other. Within the world of IE, they must have a way to uphold backwards compatibility with sites developed under older versions of IE.</p>
+</blockquote>
+<p>That was a section, from <a href="http://meyerweb.com/eric/thoughts/2008/01/23/version-two/">Eric Meyer's post yesterday</a></p>
+<p>I think the only thing about this that irritates me is that, right now, we have to do all these special things for IE, add all these little extra pieces of code (whether it be browser detection, CSS hacks, conditional comments, etc). And now here's yet another line of code to put in.</p>
+<p>This is all fine, but I think the key to this not causing an uproar is publicity since the default rendering will be for IE7. If it defaulted to &quot;edge&quot; then it wouldn't matter if no one new about this. If the word doesn't get out enough (it apparently seems to be getting out just fine) then it will just cause more and more hacks to come out of the woodwork.</p>
+<p><strong>For example:</strong> IE stand alone versions are kinda crappy, I run an IE6 stand alone, it's pretty unstable and you have to edit the registry to get conditional comments to work. So, let's say a developer is running IE v10 and for some reason doesn't add in this <em>meta</em> tag and it defaults to an IE7 rendering, but this person doesn't have IE7, they're running IE v10, so their site looks messed up pretty bad. what can they do? They can use hacks and conditional comments to make it look right, as they see it.</p>
+<p>I have a feeling that this sort of thing will happen quite a bit unless Microsoft changes the default to &quot;edge&quot;, maybe builds in a soft error message or makes sure developers are well aware of this tag.</p>
+<p>I’m unclear on why Microsoft feels like they need to re-invent to wheel when they release a browser (using Trident and now a new rendering engine). Why don’t they just use Gecko or Webkit to really create some consistency across browsers. Maybe they have a financial obligation to fight open source with every fiber of their being… I don’t know.</p>
+<p>Since I had some time to mull over all this stuff, the version targeting seems like it actually does have a valuable place. Mainly when developing a site for a client. Since a lot of client sites (that I've done) are just basically for marketing and they don't really care to integrate a lot of extra features it seems logical to lock something like that into a browser version if it's just going to sit around anyways.</p>
+<p>Where I think version targeting would be a bad this is for sites that actually have a web team behind them. In my experiences I've done my most innovative stuff when a site breaks in IE.</p>
+<p>So I think that's my <strong>official stance on the whole matter</strong>. I like it for websites that will essentially go untouched for extended periods of time.</p>
+<p><strong>Related articles:</strong></p>
+<ul>
+<li><a href="http://www.unintentionallyblank.co.uk/2008/01/23/version-targeting-for-ie8-developer-wars-my-thoughts/">Version Targeting For IE8, Developer Wars</a></li>
+<li><a href="http://meyerweb.com/eric/thoughts/2008/01/23/version-two/">Version 2 from Eric Meyer</a></li>
+<li><a href="http://alistapart.com/articles/fromswitchestotargets/">From Switches to Targets: A Standardista's Journey</a></li>
+<li><a href="http://alistapart.com/articles/beyondDOCTYPE">Beyond DOCTYPE: Web Standards, Forward Compatibility, and IE8</a></li>
+<li><a href="http://www.webstandards.org/2008/01/22/microsofts-version-targeting-proposal/">Microsoft’s Version Targeting Proposal</a></li>
+</ul>
+<p>with ease, tim</p>

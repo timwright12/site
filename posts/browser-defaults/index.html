@@ -1,0 +1,18 @@
+<p>Overwriting browser default behaviors creates can create a very poor and confusing experience for users and can dramatically increase development time when we need to rewrite a certain feature (I'm looking at you Mr(s). I-Love-JS-Frameworks). Here are some browser default behaviors you should leave alone:</p>
+<ul>
+<li>Scroll</li>
+<li>Right click</li>
+<li>The URL bar</li>
+<li>The back/forward button</li>
+<li>The spacebar (or certain key combinations)</li>
+<li>Tab index</li>
+</ul>
+<p>Hijacking a request with Ajax is a different story, but when you do something like rewriting how scrolling works just to pin something to the top of the screen on a phone (because iOS freezes the DOM onScroll), it breaks native experience conventions (like tapping the time to scroll to top) that users are used to. Any experience enhancement added by pinning a heading to the top of the screen is quickly cancelled out by the slightly different scrolling acceleration, because you couldn't <em>exactly</em> match Apple (looking at you, Gmail), and the inability to scroll right to top. Try and think if it's worth the many extra hours of work to degrade an experience like that before designing it in. Oh, and just wait until iOS tweaks that scrolling algorithm and you're <strong>way</strong> off!</p>
+<p>We don't <em>design</em> with OS elements and we shouldn't <em>develop</em> with them either.</p>
+<p>Less is more.</p>
+<p>Have some more defaults that should be left alone? Disagree with me? <a href="http://twitter.com/csskarma">Shoot me a tweet</a>, let's discuss it.</p>
+<h2 id="resources" tabindex="-1">Resources <a class="direct-link" href="#resources" aria-hidden="true">#</a></h2>
+<ul>
+<li><a href="http://www.red-team-design.com/making-html-dropdowns-not-suck">Styling Select Menus with feature queries</a></li>
+<li><a href="http://caniuse.com/#search=@support">Support for feature queries</a></li>
+</ul>

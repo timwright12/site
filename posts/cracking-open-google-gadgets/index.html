@@ -1,0 +1,44 @@
+<p>A few weeks ago, I decided to do a little research into <a href="http://www.google.com/ig/directory?synd=open">Google Desktop</a>. Which is basically a Google widget platform competing with <a href="http://widgets.yahoo.com/">Yahoo! widgets</a>. After some exploration and dissecting Google Gadgets, this is what I came out with:</p>
+<ul>
+<li>The core of the application runs on 2 files
+<ul>
+<li>main.js</li>
+<li>main.xml</li>
+</ul>
+</li>
+<li>There are also some image and CSS options readily available, but the guts of it really run on JavaScript and XML</li>
+<li>Overall, it's very straightforward, a little playing around with the sample gadgets will give you a good idea of what you can do (endless possibilites)</li>
+</ul>
+<p>The file structure of some of the sample gadgets leaves a lot of room for improvement. Some seem to be built to handle very large, modular applications, but in most cases, they're a little too modular (in my opinion).</p>
+<p>Some of the more useful samples you can go through are:</p>
+<ul>
+<li>Animations</li>
+<li>ComboBox</li>
+<li>Countdown</li>
+<li>DragDrop</li>
+<li>HelloWorld</li>
+<li>HTMLDetailsView</li>
+<li>QueryAPI</li>
+<li>RSS</li>
+<li>XMLDetailsView</li>
+<li>XMLHttpRequest</li>
+</ul>
+<p>There are others too, but these are the one's I found most useful. So, lookin at those options, a being an RSS freak, I chose to customize the RSS gadget for CSSKarma</p>
+<p><strong>CSSKarma RSS Gadget</strong></p>
+<p><a href="http://www.csskarma.com/gadgets/rss/csskarma_rss.gg">Download CSSKarma RSS Gadget</a></p>
+<p>The first thing to do is to make a copy of the RSS sample given with the Google Gadget samples. I did that (as a CSS person), I opened up the theme folder &quot;default&quot; and looked for &quot;details.css&quot;. I assumed this file would edit all the presentation for the gadget. It doesn't. I only edits the flyout menu (after you click on a link in the RSS gadget). OK, that's fine. So I enter this CSS:</p>
+<pre><code>body {
+  color:#323F4C;
+  background:#fff url(http://www.csskarma.com/images/bg_branding.jpg) no-repeat 0 bottom;
+  font: 0.8em/1.5 Verdana, Arial, Sans-serif;
+}
+</code></pre>
+<p>That will add my CSSKarma logo to the flyout and add some basic CSS. The other files in the theme folder to deal with are &quot;entry_item.xml&quot;, &quot;theme_config.xml&quot; and &quot;title.xml&quot;. After you look at &quot;theme_config.xml&quot; and &quot;title.xml&quot;, you'll see why I think this is a little <em>too</em> modular. I left those two file alone. But I did edit &quot;entry_item.xml&quot;, view <a href="http://www.csskarma.com/gadgets/rss/entry_item.xml">entry_item.xml</a>. I edited some style information in there (one more thing I'm not thrilled about - embedding style info into the XML).</p>
+<p>The next folder to tackle is &quot;editme&quot;. It contains 2 files (config_constants.js and entry_item_impl.js). In &quot;entry_item_impl.js&quot; you can edit the RSS nodes, if you want. I chose not to. In &quot;config_constants.js&quot; you need to edit the URL of the RSS feed you want to use.</p>
+<p>The last thing I wanted to do was to remove the default background image from &quot;main.xml&quot;. When I did this, the background was transparent, by default. So in &quot;main.xml&quot; I added a background attribute of #FFFFFF to top level div (container). I also edited the height and width attributes of the &quot;view&quot; element for when the gadget is undocked from Google Desktop.</p>
+<p>The outcome of this was the <a href="http://www.csskarma.com/gadgets/rss/csskarma_rss.gg">CSSKarma RSS Gadget</a> (You'll probably need Google Desktop installed to use this). A very basic RSS gadget made by making simple modifications to the sample files. Feel free to download, play around with it, and let me know about any errors you find.</p>
+<p><strong>Aptana Jaxter</strong></p>
+<p><a href="http://www.aptana.com/">Aptana Jaxter</a> recently released &quot;The worlds first Ajax server&quot; (I have no date to back up the claim that it was recent). I've seen some web apps using this in integrating the Google API, looks promising but there's very limited server space right now. I'd like to see how these can be integrated into the <a href="http://code.google.com/apis/gears/mobile.html" title="http://code.google.com/apis/gears/mobile.html">Mobile web</a>. I don't have too much information on it right now (and I keep losing the damn link).</p>
+<p>That's all I have for now.</p>
+<p>With ease<br>
+Tim</p>

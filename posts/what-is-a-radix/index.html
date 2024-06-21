@@ -1,0 +1,18 @@
+<p>The JavaScript method <code>[parseInt()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt)</code> takes 2 arguments. The first being a string (or decimal) you want to turn into a rounded integer (like changing 1.2 into 1). The second value is something called a <em>radix</em>, and no one seems to be able to define it in plain english. Looking through the MDN documentation about <code>parseIn()</code>, and a plethora of good write-ups on the same topic it's generally known that when using the <code>parseInt()</code> method it's best (or typical) to use a radix of 10.</p>
+<p>Using a radix argument of 10 will help output a predictable result. Without it, things can get a little funky. Check out the example below.</p>
+<pre><code>parseInt(&quot;0x4&quot;);  // returns 0, prefix 0x sets the default radix to 16
+parseInt(&quot;0x4&quot;, 10); // returns 4
+</code></pre>
+<p>That's great, but no one seems to know what a radix is (at least not in the JavaScript world). We just use it. I decided to investigate.</p>
+<h2 id="the-radix" tabindex="-1">The Radix <a class="direct-link" href="#the-radix" aria-hidden="true">#</a></h2>
+<p>Once I cut through all the crap and, &quot;intellectual fluff&quot; (as my 5th grade teacher called it) it was actually pretty straight forward. In <code>parseInt()</code>, <strong>we use a radix value of 10 because our number system is based on 10 digits (0-9)</strong>. For the value to process normally it's best to let JavaScript know that you want to use the <em>decimal number system</em> (10).</p>
+<p>I know what you're thinking: &quot;What the other kinds of numbering systems are there besides the one based on 10 digits?&quot; I researched more and found some others you may be familiar with:</p>
+<ul>
+<li>Decimal number system (this is the normal 0-9 one)</li>
+<li>Binary system (2 digital, 0 &amp; 1)</li>
+<li>Hexadecimal system (16 digits)</li>
+<li>Base 64 (like Base64 encoding images)</li>
+<li>Byte (256)</li>
+</ul>
+<p>There are some more but these are the ones I recognized, and I feel like it illustrates the point well enough.</p>
+<p>That's what a radix value is and why it should (generally) be set to 10 when using <code>parseInt()</code>. Happy coding.</p>

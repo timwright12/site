@@ -1,0 +1,98 @@
+<p><img src="images/turtle.jpg" alt="Turtle"></p>
+<p>For years (and by &quot;years&quot;, I most likely mean &quot;the years since I started using jQuery... maybe 2&quot;), there's been one aspect of jQuery that's bugged the crap out of me, the animation speed.</p>
+<p><a href="http://www.csskarma.com/lab/animation_speed/">View demo</a></p>
+<p>We've all probably seen the problem that happens in many drop down menus of varying height. We set <code>slideDown(300)</code> (or whatever you set it to) on all the submenus and leave like that. Inevitably, menus grow and shrink based on the content and we get this weird and mildly annoying behavior of really fast moving tall menus vs. shorter menus that move painfully slow just because there's not much content in there.</p>
+<p>This problem stems from where we set the speed of the animation; the value isn't actually a speed, it's how long it takes (in milliseconds, I think) for the animation to finish. So you can see why you get varying behaviors based on the element height.</p>
+<p>It's true, that you can use the built-in speed values like &quot;fast&quot; and &quot;slow&quot;, but if you want more fine-grained control over your animation, you'll have to use a value.</p>
+<h3 id="problem-child-infinity" tabindex="-1">Problem Child <a href="http://us.imdb.com/title/tt0100419/">∞</a> <a class="direct-link" href="#problem-child-infinity" aria-hidden="true">#</a></h3>
+<p>This is what our problem menu looks like all collapsed, just 2 clickable headings (<code>h2</code>) that will slide open to expose content (<code>p</code>)</p>
+<p><img src="images/animation_collapsed.png" alt="animation collapsed"></p>
+<p>Normally our jQuery would look something like this:</p>
+<pre><code>$(function(){
+
+$('h2').toggle(function(){
+    /* get the next element */
+    var next_element = $(this).next();
+
+    /* open it  if it's closed */
+    next_element.slideDown(500);
+},function(){
+    /* get the next element again */
+    var next_element = $(this).next();
+
+    /* close it if it's open */
+    next_element.slideUp(500);
+});
+
+});
+</code></pre>
+<p>Note: just example code, I didn't check to see if it actually works</p>
+<p>This is our menu fully expanded. As you can see, the first item has a lot more content then the second. Using the code above will make menu #1 move noticeably faster than menu #2; which, to me, creates an odd user experience. Because you're like &quot;Why's is moving so slow?&quot;</p>
+<p><img src="images/animation_expanded.png" alt="animation expanded"></p>
+<p>So let's see if we can't fix that.</p>
+<h3 id="ben-healy-(solution)-infinity" tabindex="-1">Ben Healy (Solution) <a href="http://us.imdb.com/name/nm0000615/">∞</a> <a class="direct-link" href="#ben-healy-(solution)-infinity" aria-hidden="true">#</a></h3>
+<p>What we're looking to do here is <strong>get the height</strong> of each collapsed item, do some JS math, and set a speed (animation time) value based on the height.</p>
+<h4 id="jquery-functions-we'll-need" tabindex="-1">jQuery functions we'll need <a class="direct-link" href="#jquery-functions-we'll-need" aria-hidden="true">#</a></h4>
+<ul>
+<li><a href="http://docs.jquery.com/Traversing/next">next()</a></li>
+<li><a href="http://docs.jquery.com/CSS/height">height()</a></li>
+<li><a href="http://docs.jquery.com/Effects/slideUp">slideDown()</a> / <a href="http://docs.jquery.com/Effects/slideDown">slideUp()</a></li>
+</ul>
+<h4 id="the-code" tabindex="-1">The Code <a class="direct-link" href="#the-code" aria-hidden="true">#</a></h4>
+<pre><code>$(function(){
+
+	/* Variables to set */
+	var id = '#heightCheck';
+	var click_element = 'h2';
+	var height_value = '100';
+	var tall_menu_speed = 400;
+	var short_menu_speed = 250;
+	
+	/* System variables, probably don't change */
+	var target = id +' '+ click_element;
+	var menu_content = $(target).next();
+	
+	/* Hide the element after the click_element, whether it's a
+	div, p, ul, whatever you choose to wrap the items in */
+	menu_content.hide();
+	
+	$(target).toggle(function(){
+		/* save the menu items in a variable */
+		var this_menu = $(this).next();
+		
+		/* get the menu height and save it */
+		var menu_height = this_menu.height();
+		
+		/* Calculate the animation speed based on the element height */
+		/* if the height is greater than the height set above use the 
+		tall menu height */
+		if(menu_height &gt; height_value){
+			var speed = tall_menu_speed;
+		
+		/* If it's smaller, use the short menu height */
+		} else if(menu_height &lt; height_value) {
+			var speed = short_menu_speed;
+		}
+		
+		/* slide the menu down */
+		this_menu.slideDown(speed);
+			
+	},function(){
+		/* this is the same but reversed to close the menu */
+		var this_menu = $(this).next();
+		var menu_height = $(this).next().height();
+
+		/* Calculate the animation speed based on the element height */
+		if(menu_height &gt; height_value){
+			var speed = tall_menu_speed;
+		} else if(menu_height &lt; height_value) {
+			var speed = short_menu_speed;
+		}
+		this_menu.slideUp(speed);
+
+	});
+
+});
+</code></pre>
+<p>That should give you a little more control over the menu speed. I'm sure it needs to be tweaked based on the menu you're using, but the general concept is there, and it should work pretty well. I hope it was helpful. Let me know if you have any additions to the code or suggestions to improve it.</p>
+<p><a href="http://www.csskarma.com/lab/animation_speed/">View demo</a></p>

@@ -1,0 +1,22 @@
+<p>This is something I use on all my projects now. It's designed for a search box, but can be used with any sort of input field.</p>
+<p>The great thing about this is that the field value &quot;Search&quot; will only come back onBlur if the field is empty (or doesn't say &quot;Search&quot;). So if you started typing something it won't erase your text, which is something that has always irritated me about search boxes.</p>
+<p>Anyway, I've been sitting on this post for a while, but I really wanted to get it out. So here it is:</p>
+<h2 id="html" tabindex="-1">HTML <a class="direct-link" href="#html" aria-hidden="true">#</a></h2>
+<pre><code>&lt;div id=&quot;search&quot;&gt;
+&lt;form method=&quot;post&quot; action=&quot;&quot;&gt;
+   &lt;label for=&quot;field&quot;&gt;search&lt;/label&gt;
+   &lt;input type=&quot;text&quot; id=&quot;field&quot;/&gt;
+   &lt;button type=&quot;submit&quot;&gt;go&lt;/button&gt;
+&lt;/form&gt;
+&lt;/div&gt;&lt;!--/search--&gt;
+</code></pre>
+<h2 id="jquery" tabindex="-1">jQuery <a class="direct-link" href="#jquery" aria-hidden="true">#</a></h2>
+<pre><code>$(&quot;#search input&quot;).focus( function() {
+if ($(this).val()==&quot;Search&quot;) {$(this).val(&quot;&quot;);}
+});
+	
+$(&quot;#search input&quot;).blur( function() {
+if ($(this).val()==&quot;&quot;) {$(this).val(&quot;Search&quot;);}
+});
+</code></pre>
+<p>The word &quot;Search&quot; in the jQuery is case sensitive, so watch out for that.</p>

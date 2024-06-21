@@ -1,0 +1,33 @@
+<p><img src="images/image-replacement.jpg" alt="article banner"></p>
+<h4 id="problem" tabindex="-1">Problem <a class="direct-link" href="#problem" aria-hidden="true">#</a></h4>
+<p>Image replacement can be easily <a href="http://www.csszengarden.com">abused</a>; but when used properly (like replacing logo text) it's a great resource.</p>
+<p>Image replacement without extra markup usually means setting <code>text-indent:-9999px</code> on your link. And this works great great. But in a lot of browsers it leaves a focus outline that runs way off the page to the left on click.</p>
+<p><img src="images/logo_beans_error.jpg" alt="welovebeans.com logo with a :focus outline the runs off the page"></p>
+<p>We need to keep the outline there for accessibility reasons, so most developers just leave it alone. But there's a way to make, both, designers and accessibility gurus happy.</p>
+<p><a href="http://www.csskarma.com/articles/examples/image-replacement/">view demo</a></p>
+<h5 id="problem-css" tabindex="-1">Problem CSS <a class="direct-link" href="#problem-css" aria-hidden="true">#</a></h5>
+<pre><code>
+#branding h1 a{
+display:block;
+height:70px;
+width:289px;
+background:url(../images/logo.png) no-repeat 0 0;
+text-indent:-9999px;
+}
+</code></pre>
+<h4 id="goal" tabindex="-1">Goal <a class="direct-link" href="#goal" aria-hidden="true">#</a></h4>
+<p><img src="images/logo_beans_clean.jpg" alt="welovebeans.com logo with proper :focus outline"></p>
+<h4 id="solution" tabindex="-1">Solution <a class="direct-link" href="#solution" aria-hidden="true">#</a></h4>
+<p>By adding <code>overflow:hidden</code> to the link we can cut off the extended :focus outline.</p>
+<h5 id="solution-css" tabindex="-1">Solution CSS <a class="direct-link" href="#solution-css" aria-hidden="true">#</a></h5>
+<pre><code>
+#branding h1 a{
+display:block;
+height:70px;
+width:289px;
+background:url(../images/logo.png) no-repeat 0 0;
+text-indent:-9999px;
+overflow:hidden;
+}
+</code></pre>
+<p><a href="http://www.csskarma.com/articles/examples/image-replacement/">view demo</a></p>

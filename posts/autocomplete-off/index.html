@@ -1,0 +1,32 @@
+<p><img src="images/autocomplete.jpg" alt="article banner"></p>
+<p>I was looking through my blog this morning because I could have sworn I already wrote this post. I know I've had this conversation with Phil Nash of <a href="http://www.unintentionallyblank.co.uk/">Unintentionally Blank</a>. But I guess I never wrote it down? Oh well...</p>
+<p>One of my pet peeves when filling out a form is when I click in the payment field and my credit crard / bank account number drops down because it was saved in the browser from last time I made a payment on that site. How is it that developers on these sites overlook that <strong>huge</strong> security issue?</p>
+<p>There's a very simple fix for it, and it's called &quot;autocomplete off&quot;:</p>
+<h5 id="the-xhtml" tabindex="-1">The XHTML <a class="direct-link" href="#the-xhtml" aria-hidden="true">#</a></h5>
+<pre><code>&lt;input id=&quot;pmt&quot; name=&quot;payment&quot; type=&quot;text&quot; autocomplete=&quot;off&quot;/&gt;
+</code></pre>
+<p>The <code>autocomplete=&quot;off&quot;</code> makes sure the text field doesn't expose any saved data. Of course, it would be too easy if this was valid XHTML so it's not. If you're concerned with writing 100% valid XHTML, there are valid ways to do this.</p>
+<h4 id="writing-valid-code" tabindex="-1">Writing valid code <a class="direct-link" href="#writing-valid-code" aria-hidden="true">#</a></h4>
+<p>To make this valid, we need to do it with JavaScript. Since I'm pretty sure most people who read this are jQuery freaks (like me), I'll show the jQuery version of this:</p>
+<h5 id="the-xhtml-1" tabindex="-1">The XHTML <a class="direct-link" href="#the-xhtml-1" aria-hidden="true">#</a></h5>
+<pre><code>&lt;input id=&quot;pmt&quot; name=&quot;payment&quot; type=&quot;text&quot; /&gt;
+</code></pre>
+<h5 id="the-jquery" tabindex="-1">The jQuery <a class="direct-link" href="#the-jquery" aria-hidden="true">#</a></h5>
+<pre><code>$(function() {
+$(&quot;input#pmt&quot;).attr(&quot;autocomplete&quot;,&quot;off&quot;);
+});
+</code></pre>
+<h4 id="the-problem-with-added-security-with-javascript" tabindex="-1">The problem with added security with JavaScript <a class="direct-link" href="#the-problem-with-added-security-with-javascript" aria-hidden="true">#</a></h4>
+<p>I don't really recommend using javaScript for this, only because it's easily disabled. And then you're back at square one with the payment info dropping down in the text field</p>
+<p>Ideally, I'd like to use PHP to do this, but I can't find it anywhere so I'm using <noscript>:</p>
+<h5 id="the-jquery-1" tabindex="-1">The jQuery <a class="direct-link" href="#the-jquery-1" aria-hidden="true">#</a></h5>
+<pre><code>$(function() {
+$(&quot;form#paymentform&quot;).html(&quot;&lt;input id=&quot;pmt&quot; name=&quot;payment&quot; type=&quot;text&quot; autocomplete=&quot;off&quot;/&gt;);
+});
+</code></pre>
+<h5 id="the-xhtml-(placed-inside-the-form)" tabindex="-1">The XHTML (placed inside the form) <a class="direct-link" href="#the-xhtml-(placed-inside-the-form)" aria-hidden="true">#</a></h5>
+<pre><code>&lt;label for=&quot;pmt&quot;&gt;Credit Card Number&lt;/label&gt;
+&lt;noscript&gt;
+</code></pre>
+<p>That way, if javascript is enabled you'll use the jQuery to write the textfield, and if it's not, you'll just write it out normally, which will be invalid, but more secure.</p>
+<p>Let me know if anyone knows the PHP way to check for JS.</p>

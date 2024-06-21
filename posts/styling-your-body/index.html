@@ -1,0 +1,24 @@
+<p>Diving into the depths of CSS involves much more than just mastering selectors, properties and semantic (X)HTML, it has a lot to do with knowing when you need extra elements (<code>span</code>, <code>div</code>, etc). What do I mean?</p>
+<p>Since CSS layouts have exploded into the mainstream of web design there have been few designer/developer types who can say they haven't seen id=&quot;wrap&quot; or id=&quot;container&quot;; in fact, most of have been using it for years and it's a bit of a standard now. Meanwhile we all seem to forget that there's a lovely element we rarely use... <code>html</code>, the proud parent of <code>body</code>. All parents like to see their children succeed, but <code>html</code> has been depressed for some time now. Why? Because it's child isn't being put in in the 4th quarter, it's being taken out in the 8th inning, not being used to it's fullest potential because of this smug little punk on the block called &quot;container&quot; (or &quot;wrap&quot;, for short).</p>
+<p>No one forgets that <code>body</code> and <code>html</code> are there, they just forget they're a stylable elements, <strong>everything</strong> can be manipulated with CSS, (<a href="http://www.csskarma.com/lab/csstable/">remember?</a>). So rather than doing something like this:</p>
+<pre><code>#container{
+width:60em;
+margin:0 auto;
+}
+</code></pre>
+<p>Try filling out your <code>body</code> like this:</p>
+<pre><code>body{
+text-align:left;
+width:60em;
+margin:0 auto;
+background:#fff;
+}
+</code></pre>
+<p>And then style that proud parent <code>html</code> (at the top of the style sheet)</p>
+<pre><code>html{
+background:#ccc;
+text-align:center;
+}
+</code></pre>
+<p>There you go, you cut just down on an extra div you didn't need. This technique will work in 95% of the web sites out there. The only case it wouldn't fly is if you need to put content spanning the whole top of the browser window (with a center aligned page). With 95% of page load time happening on the front end, every character you can shave off counts. Since there's very little semantic benefit to a having <code>html body div#wrap</code>, it's usually an easy choice to cut out.</p>
+<p>Not only is it an easy choice the drop, but it's a seemless integration. You essentially move all the layout properties up a level (move <code>#wrap</code> to <code>body</code> and <code>body</code> to <code>html</code>). There's usually little to no change for the user and few things to fix.</p>

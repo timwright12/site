@@ -1,0 +1,22 @@
+<p>In form design, there are many things you can do to improve usability, many of which have to do with <code>label</code> placement. I won't go into the depths of it, but Chris from <a href="http://css-tricks.com">CSS-Tricks.com</a> wrote a good article about placement, not too long ago. <a href="http://css-tricks.com/label-placement-on-forms/">Read Chris's article here</a></p>
+<h4 id="why-read-this" tabindex="-1">Why read this? <a class="direct-link" href="#why-read-this" aria-hidden="true">#</a></h4>
+<p>This reason I'm sitting down to write this is to share a bit of usability I've come across on certain sites as I scour the Internet. Letting users know that a form label is clickable and will activate the associated form field.</p>
+<p>This first came to me at the WDN conference in Vancouver last January, while I was listing to a Q&amp;A session after a talk by <a href="http://boxofchocolates.ca/">Derek Featherston</a>, accessibility guru. Somehow the topic of users not realizing that form labels are clickable came up. And it got me thinking.</p>
+<h4 id="background-on-labels" tabindex="-1">Background on labels <a class="direct-link" href="#background-on-labels" aria-hidden="true">#</a></h4>
+<p>For anyone who doesn't know; this is the proper syntax for a form field and it's label.</p>
+<pre><code>&lt;label for=&quot;name&quot;&gt;Name&lt;/label&gt; &lt;input type=&quot;text&quot; id=&quot;name&quot;/&gt;
+</code></pre>
+<p>Matching the label attribute &quot;<code>for</code>&quot; to the input attribute &quot;<code>id</code>&quot; will allow a user to click the form label and activate the corresponding input field.</p>
+<p>There's no real problem with doing that, it's great, but the general public has no idea has that this functionality exists. And it can be very useful, especially when dealing with check boxes or radio buttons.</p>
+<h4 id="secretly-educating-the-user" tabindex="-1">Secretly educating the user <a class="direct-link" href="#secretly-educating-the-user" aria-hidden="true">#</a></h4>
+<p>How do we get this feature pushed to the user. You can't send out an e–mail to 50,000,000 users informing them that they can click the text next to a form field.</p>
+<p>Adding in features (or letting people know that they are there), needs to be done in a way users will notice in their every day usage and it has to feel like a natural addition. So, we ask ourselves — what would make a user think something is clickable on a web site?</p>
+<h5 id="the-code" tabindex="-1">The code <a class="direct-link" href="#the-code" aria-hidden="true">#</a></h5>
+<pre><code>label{cursor:pointer;}
+</code></pre>
+<p>And even maybe add something like this in:</p>
+<pre><code>label:hover{color:#777;}
+</code></pre>
+<p>Those code snippets will help bring clickable labels to the public (in compliant browsers, of course), letting them know of this little UI enhancement most web sites have, you could even go as far as to make you labels appear like links (but that might be a bit much).</p>
+<h4 id="conclusion" tabindex="-1">Conclusion <a class="direct-link" href="#conclusion" aria-hidden="true">#</a></h4>
+<p>Labels are already clickable, but Joe the Plumber, Internet user, has no idea, he just hates filling out forms and miss-clicking all the time. The hit areas of these form fields are already bigger than they appear, but now it's time we let our users know it, and make sure it comes naturally to them.</p>

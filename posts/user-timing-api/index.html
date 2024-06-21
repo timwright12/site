@@ -1,0 +1,55 @@
+<p>Performance is the first thing a user experiences on a site. In many ways it doesn't matter how amazing a user flow or IA appear to be, if a site won't load, users leave. This is why keeping a strong <a href="http://csskarma.com/blog/performance-budget/">performance budget</a> and testing metrics are so critically important to creating a great end-to-end experience for users (and generating revenue).</p>
+<p>When looking into ways of testing front-end performance for an application I stumbled upon the <a href="https://developer.mozilla.org/en-US/docs/Web/API/User_Timing_API/Using_the_User_Timing_API">User Timing API</a>, which is part of the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Performance">Performance Interface</a>. At that point, I had never really dug into either of them, so I decided to share my research here.</p>
+<h2 id="user-timing-api" tabindex="-1">User Timing API <a class="direct-link" href="#user-timing-api" aria-hidden="true">#</a></h2>
+<p>The User Timing API allows us to create named, application-specific, timestamps in the <a href="https://www.w3.org/TR/performance-timeline/">performance timeline</a>. The API gives us two kinds of entry types: <strong>marks</strong> and <strong>measures</strong>. Marks are timeline points in the application and measures are midway points between marks. As each mark and measure is executed, they are stored so you can access them at any time while the application is running (this prevents the application from getting sluggish as you add more timestamps).</p>
+<h3 id="marks" tabindex="-1">Marks <a class="direct-link" href="#marks" aria-hidden="true">#</a></h3>
+<p>The most basic timing test you can run involves two marks (a start and an end), and the time it takes to get from the first mark to the second. The code below is an example of how to use two marks and return the timing information:</p>
+<pre><code>// Set the initial mark
+performance.mark(&quot;initialize&quot;);
+
+/* Do things in here */
+
+performance.mark(&quot;complete&quot;);
+            
+measurePerformance();
+
+// Function to output performance metrics
+function measurePerformance() {
+
+  var entries = performance.getEntries();
+  var entryCount = entries.length
+  var i;
+
+  for ( i = 0; i &lt; entryCount; i++ ) {
+
+    console.log( &quot; Name: &quot;       + entries[i].name      + 
+                 &quot; Entry Type: &quot; + entries[i].entryType +
+                 &quot; Start Time: &quot; + entries[i].startTime + 
+                 &quot; Duration: &quot;   + entries[i].duration  + &quot;\n&quot;);
+  } // end loop
+
+} // end measurePerformance()
+</code></pre>
+<p>In the above example we're setting a start mark, an end mark, and executing some arbitrary code in the middle of them, then returning the entry information. This is a nice addition to an application if you're trying to time ajax calls or any method with a high level of processing (a really intensive loop, for example).</p>
+<p>You probably wouldn't expose this sort of data to the user, but it will provide you some good insight into where performance bottlenecks exists in an application.</p>
+<h3 id="measures" tabindex="-1">Measures <a class="direct-link" href="#measures" aria-hidden="true">#</a></h3>
+<p>A measure is a midpoint between two marks. It is created in a similar way, but the method takes three arguments:</p>
+<pre><code>performance.measure( &quot;measureName&quot;, &quot;startMarkName&quot;, &quot;endMarkName&quot; );
+</code></pre>
+<p>The measureName is whatever you want to call it (a string), startMarkName and endMarkName are the marks this measure is being placed between. To retrieve your measures you can use the <em>getEntriesByType()</em> method within the performance object which will return an array of your data:</p>
+<pre><code>performance.getEntriesByType(&quot;measure&quot;);
+</code></pre>
+<p>or get them directly by name:</p>
+<pre><code>performance.getEntriesByName(&quot;measureName&quot;);
+</code></pre>
+<p>The combination of marks and measures and give you great insight in the performance of your application. It can even hook into commonly used events like <a href="https://developer.mozilla.org/en-US/docs/Web/API/PerformanceTiming/domComplete">domComplete</a>. This is a great addition to any engineer's toolset. I'm still in the early stages of testing the limits of this API so I don't have all the answers I'm looking for, but as a speed junky, I'm really looking forward to seeing what it can do to improve the UX of a site.</p>
+<h2 id="support" tabindex="-1">Support <a class="direct-link" href="#support" aria-hidden="true">#</a></h2>
+<p>Support for the User Timing API is surprisingly strong. The <a href="http://caniuse.com/#feat=user-timing">caniuse support table</a> says that we're good with IE10+, but no Safari. With appropriate support/feature testing I think this is 100% fine to use, especially since it's a developer feature and mostly likely would not be exposed to the user. Of course, if you need it, <a href="https://gist.github.com/pmeenan/5902672">there's always a polyfill</a>.</p>
+<h2 id="resources-and-further-reading" tabindex="-1">Resources and Further Reading <a class="direct-link" href="#resources-and-further-reading" aria-hidden="true">#</a></h2>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/User_Timing_API">MDN: User Timing API</a></li>
+<li><a href="https://www.html5rocks.com/en/tutorials/webperformance/usertiming/">Understanding the User Timing API</a></li>
+<li><a href="https://www.w3.org/TR/user-timing/">W3C: User Timing</a></li>
+<li><a href="https://www.sitepoint.com/discovering-user-timing-api/">Discovering the User Timing API</a></li>
+<li><a href="https://github.com/ebidel/appmetrics.js">AppMetrics.js</a></li>
+</ul>

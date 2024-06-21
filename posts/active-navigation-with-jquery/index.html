@@ -1,0 +1,35 @@
+<p>I was building a site last week and came across some jQuery code for active navigation. It's very simple and works real well. I'm using it on some secondary navigation and still using my <a href="http://www.csskarma.com/blog/your-body-and-you/">body class</a> for the main nav.</p>
+<h5 id="active-navigation-with-a-body-class" tabindex="-1">Active navigation with a body class <a class="direct-link" href="#active-navigation-with-a-body-class" aria-hidden="true">#</a></h5>
+<pre><code>body.home #nav ul li.navhome{font-weight:700;}
+</code></pre>
+<p>So I'm still doing that, but then for the internal page navigation, rather than loading the CSS up with long declarations for the numerous sub nav links, I used this jQuery:</p>
+<h5 id="active-vavigation-with-jquery" tabindex="-1">Active vavigation with jQuery <a class="direct-link" href="#active-vavigation-with-jquery" aria-hidden="true">#</a></h5>
+<pre><code>$(&quot;#nav a&quot;).each(function() {
+var hreflink = $(this).attr(&quot;href&quot;);
+if (hreflink.toLowerCase()==location.href.toLowerCase()) {
+	$(this).parent(&quot;li&quot;).addClass(&quot;selected&quot;);
+}
+</code></pre>
+<h4 id="breaking-it-down" tabindex="-1">Breaking it down <a class="direct-link" href="#breaking-it-down" aria-hidden="true">#</a></h4>
+<p>Let's try this line by line for those who want to know what's happening here.</p>
+<p>This targets <em>each</em> link in contained in #nav.</p>
+<pre><code>$(&quot;#nav a&quot;).each(function() {
+</code></pre>
+<p>This line just saves the href attribute of each #nav a to a variable. It makes the code a little cleaner and easier to work with.</p>
+<pre><code>var hreflink = $(this).attr(&quot;href&quot;);
+</code></pre>
+<p>This converts the href of each link in #nav, makes it lowercase (it should be already, but just in case) and checks the current URL of the page and sees if they match. Also making the current page URL lowercase.</p>
+<pre><code>if (hreflink.toLowerCase()==location.href.toLowerCase()) {
+</code></pre>
+<p>If the current URL matches the href for one of the links it looks to the parent element (in this case it's a list item) and adds a class of &quot;selected&quot; to it.</p>
+<pre><code>$(this).parent(&quot;li&quot;).addClass(&quot;selected&quot;);
+</code></pre>
+<p>This is just closing the function, I really don't know why I didn't include it in the above code for the purpose of this post. But no matter.</p>
+<pre><code>}
+</code></pre>
+<h4 id="issues" tabindex="-1">Issues <a class="direct-link" href="#issues" aria-hidden="true">#</a></h4>
+<p>The only problem I ran into with this was that you have to make sure the you use a consistent href for pages.</p>
+<h5 id="for-example" tabindex="-1">For example <a class="direct-link" href="#for-example" aria-hidden="true">#</a></h5>
+<p>If you're sub nav contains a link to <a href="http://www.csskarma.com/contact/">http://www.csskarma.com/contact/</a>, you have to make sure that you don't link to <a href="http://www.csskarma.com/contact/index.php">http://www.csskarma.com/index.php</a>; or the active navigation won't work.</p>
+<p>It's not a huge deal, but definitely something to be aware of, I just had to go through a site and clean up a bunch of links up because I applied this jQuery pretty late in development. You can probably rework the code to strip out the file name and extension or do it with some PHP, if you'd like.</p>
+<p>Actually, if anyone does that, let me know and I'll update this post with the code.</p>

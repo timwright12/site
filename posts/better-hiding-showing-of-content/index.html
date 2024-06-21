@@ -1,0 +1,48 @@
+<p>With <a href="http://en.wikipedia.org/wiki/Progressive_enhancement">progressive enhancement</a> we always try and maintain a separation between structure, style, and behavior. This usually (in really world terms) means keeping CSS out of your JavaScript and both of them out of your HTML. It's a blurry line with behavior and presentation mapping directly to CSS and JavaScript, but I think we can all agree that using inline CSS or JavaScript isn't ideal.</p>
+<p>I'm bringing this up because it happens with <a href="http://jquery.com/">jQuery</a> all the time and no one seems to talk about it. If you use <code>hide()</code>, you'll see an inline style of <code>display:none;</code> on the HTML element. If you use <code>show()</code>, you'll see <code>display:block;</code> get added. The problem compounds when animations get added into the mix (tons of inline CSS). I'm not saying don't use them, but there are better ways and you can clean up after yourself in the DOM. Here's an example for a simple hide/show.</p>
+<h2 id="html" tabindex="-1">HTML <a class="direct-link" href="#html" aria-hidden="true">#</a></h2>
+<pre><code>&lt;a href=&quot;#target1&quot; class=&quot;trigger&quot;&gt;Toggle Content area 1&lt;/a&gt;
+&lt;div id=&quot;target1&quot; class=&quot;content&quot;&gt;the content you want to hide/show&lt;/div&gt;
+</code></pre>
+<h2 id="css" tabindex="-1">CSS <a class="direct-link" href="#css" aria-hidden="true">#</a></h2>
+<pre><code>// with this method I get to choose how I want to hide the content
+.is-hidden {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
+
+// and I can easily make it work w/o JS
+.content:target {
+  position: static;
+}
+</code></pre>
+<h2 id="javascript" tabindex="-1">JavaScript <a class="direct-link" href="#javascript" aria-hidden="true">#</a></h2>
+<pre><code>$('.trigger').on('click', function(e) {
+  e.preventDefault();
+
+  var target = $(this).attr('href'); // returns #target1
+
+  // see if the target area is hidden
+  if( $(target).hasClass('is-hidden') ) {
+
+    // if it's hidden, remove the class, but hide it so we can softly fade it in
+    $(target).removeClass('is-hidden').hide().fadeIn(250, function(){
+
+      // because fadeIn() adds some inline CSS, let's remove it to clean up the DOM
+      $(target).removeAttr('style');
+    });
+  } else {
+
+    // fade out the content
+    $(target)fadeOut(250, function(){
+
+     // once it's faded out, add the class and clean up the DOM
+     $(this).addClass('is-hidden').removeAttr('style');
+    });
+  }
+});
+</code></pre>
+<h2 id="why-bother" tabindex="-1">Why bother? <a class="direct-link" href="#why-bother" aria-hidden="true">#</a></h2>
+<p>I've been using this method for a very long time. I prefer it because it's a cleaner separation between CSS and JavaScript and I'm not forced to use jQuery's hide/show method of <code>display:none</code> (which really isn't good for accessibility).</p>
+<p>Of course, the <code>fadeIn()</code> method could also be moved into a CSS animation at this point to clean this up even further. You probably wouldn't even need jQuery at that point... for another day though!</p>

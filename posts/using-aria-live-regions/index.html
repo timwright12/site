@@ -1,0 +1,51 @@
+<p>Accessibility in Web applications can be pretty confusing. ARIA live regions are a method of communicating asynchronous document changes to <a href="https://en.wikipedia.org/wiki/Assistive_technology#Accessibility_software">assistive technology</a> (AT). A screen reader will read an HTML document in a bunch of different ways (links, headings, regions, form controls, etc.), the problem with all these methods is that none of them are really equip to detect changes in the document that happen after initial load. Especially if the user has already passed that point in the document. This is where live regions are helpful.</p>
+<p>Live regions allow you to flag a section of the document as <em>active</em>, meaning that it has the potential to update without a full page refresh (Ajax). There are four main attributes you can use to alert an AT user to changes in the document: <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-atomic">atomic</a>, <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-live">live</a>, <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-busy">busy</a>, and <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-relevant">relevant</a>. Let's step through them.</p>
+<h2 id="atomic" tabindex="-1">Atomic <a class="direct-link" href="#atomic" aria-hidden="true">#</a></h2>
+<p>The aria-atomic attribute will tell a screen reader whether, when changes happen within the current region, to present the entire region as a single unit or to only announce the nodes that have been changed (added and removed). It has 2 options: <em>true</em> and <em>false.</em></p>
+<p>Setting <em>aria-atomic</em> to <em>true</em> is good when you're replacing a large block of content asynchronously [like loading an entire page in a single page application (SPA)]. Have a look at the code below as an example:</p>
+<pre><code>&lt;button type=&quot;button&quot; aria-controls=&quot;loader&quot;&gt;Load the Content&lt;/button&gt;
+&lt;div aria-atomic=&quot;true&quot; id=&quot;loader&quot;&gt; [all this content will be replaced] &lt;/div&gt;
+</code></pre>
+<p>Setting <em>aria-atomic</em> to <em>false</em> is useful when you're appending or prepending content asynchronously (like adding items to a list). Again, see below for an example:</p>
+<pre><code>&lt;ul aria-atomic=&quot;false&quot;&gt;
+  &lt;li&gt;This is a list item, but there will be more added asynchronously&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+<h2 id="live" tabindex="-1">Live <a class="direct-link" href="#live" aria-hidden="true">#</a></h2>
+<p>The <em>aria-live</em> attribute is an indicator that an element will be updated asynchronously; it also describes the type of updates that will happen and communicates it to assistive technology. The values of this attribute are expressed in degrees of importance (not important to very important). There are three potential options: <em>polite</em>, <em>assertive</em>, and <em>off</em> (the default).</p>
+<p>Setting the <em>aria-live</em> attribute to, &quot;<em>polite</em>,&quot; indicates to a screen reader that background updates will be happening and they should be announced to the user at the next &quot;graceful&quot; opportunity such as at the end of a sentence or when the user stops typing. You'll use this value most of the time when using <em>aria-live</em>. In my own personal user testing, it's the preferred method unless there is a reason in the UI that a user physically can't continue with they're doing (like an error blocking the screen).</p>
+<p>The <em>aria-live</em> value of, &quot;<em>assertive</em>,&quot; is much more... well... assertive. It's actually pretty rude, to be honest. It will interrupt the user in whatever they're doing with the update you have. Because this type of update can be disorienting to the user, the W3C recommends not using this value unless the interruption is imperative (it usually isn't).</p>
+<p>The last option with <em>aria-live</em> is the default state of, &quot;<em>off.</em>&quot; Setting the value to off is the same as not including the attribute at all, it won't alert the user of unless the specific element is currently being focused on. This could be useful if you need to turn <em>aria-live</em> on and off programmatically for some reason, but it's still pretty rare in the wild.</p>
+<p>Below, you'll find some updated HTML with an aria-live attribute:</p>
+<pre><code>&lt;ul aria-live=&quot;polite&quot; aria-atomic=&quot;false&quot;&gt;
+  &lt;li&gt;This is a list item, but there will be more added asynchronously&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+<h2 id="busy" tabindex="-1">Busy <a class="direct-link" href="#busy" aria-hidden="true">#</a></h2>
+<p>The <em>aria-busy</em> attribute is used to indicate if an element (and/or its children) are currently being updated. It has two states: <em>true</em> and <em>false</em>. You would set this attribute to <em>true</em> while content is loading in a target area and <em>false</em> after the request is complete. If you're writing a standard Ajax call you can hook into the status code <a href="https://www.w3.org/Protocols/HTTP/HTRESP.html">200</a> to set this appropriately.</p>
+<p>The code block below will illustrate a snapshot of aria-busy being used:</p>
+<pre><code>&lt;button type=&quot;button&quot; aria-controls=&quot;loader&quot;&gt;Load the Content&lt;/button&gt;
+&lt;div aria-atomic=&quot;true&quot; aria-busy=&quot;true&quot; id=&quot;loader&quot;&gt; loading... &lt;/div&gt;
+</code></pre>
+<h2 id="relevant" tabindex="-1">Relevant <a class="direct-link" href="#relevant" aria-hidden="true">#</a></h2>
+<p><em>Aria-relevant</em> is used in conjunction with the <em>aria-live</em> attribute to describe the types of changes (semantic, not just presentational) that have occurred within a given live region that should be announced to the user. This attribute can contain a space-delimited of the four accepted values: additions, removals, text, all. The default state is: <em>aria-relevant=&quot;additions text&quot;</em>. An example directly from the W3C:</p>
+<blockquote>
+<p>This is used to describe semantically meaningful changes, as opposed to merely presentational ones. For example, nodes that are removed from the top of a log are merely removed for purposes of creating room for other entries, and the removal of them does not have meaning. However, in the case of a buddy list, removal of a buddy name indicates that they are no longer online, and this is a meaningful event.</p>
+</blockquote>
+<p>Using the <em>additions</em> value applies when information is getting (you guessed it) added into a live region. Each time an element is added, it will let the user know based on your politeness setting in <em>aria-live</em>.</p>
+<p>The <em>removals</em> value is the opposite of <em>additions</em> in that it will alert the user when items area removed from the live region, again, based on the politeness setting. This should only be used when the removal has real meaning, like described in the quote above.</p>
+<p>The text value is used when you want changes to content of existing nodes marked as relevant. This triggers when any text is added to a live region, not just nodes.</p>
+<p>Using the <em>all</em> value is the equivalent of combining all the values: <em>additions removals text.</em></p>
+<p>The code block below illustrates the use of <em>aria-relevant</em>:</p>
+<pre><code>&lt;ul aria-relevant=&quot;additions text&quot; aria-live=&quot;polite&quot; aria-atomic=&quot;false&quot;&gt;
+  &lt;li&gt;This is a list item, but there will be more added asynchronously&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+<h2 id="resources-and-further-reading" tabindex="-1">Resources and Further Reading <a class="direct-link" href="#resources-and-further-reading" aria-hidden="true">#</a></h2>
+<ul>
+<li><a href="https://www.w3.org/TR/wai-aria-1.1/#attrs_liveregions">Live Regions</a></li>
+<li><a href="https://www.w3.org/TR/wai-aria-1.1/#aria-atomic">ARIA Atomic</a></li>
+<li><a href="https://www.w3.org/TR/wai-aria-1.1/#aria-live">ARIA Live</a></li>
+<li><a href="https://www.w3.org/TR/wai-aria-1.1/#aria-busy">ARIA Busy</a></li>
+<li><a href="https://www.w3.org/TR/wai-aria-1.1/#aria-relevant">ARIA Relevant</a></li>
+</ul>

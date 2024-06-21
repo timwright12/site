@@ -1,0 +1,38 @@
+<p><img src="images/banner_redirection.png" alt="article banner"></p>
+<p>Lately, I've been having to work with a lot of redirects and I was going through different redirection options with a client. So I thought I would do a quick write up about the <strong>different types of redirection</strong>.</p>
+<p>I also haven't seen a collection of these in one place, so I thought I would put this together.</p>
+<p>There are a few different types that are commonly use when redirecting users:</p>
+<ul>
+<li>.htaccess / apache</li>
+<li>php header</li>
+<li>javascript</li>
+<li>meta refresh</li>
+</ul>
+<p>The top two are the one's you'll be using most often, I don't really recommend the last two. But they <em>are</em> available, so I think they're worth noting. So here they are in the order I would recommend:</p>
+<h3 id=".htaccess-apache-redirects" tabindex="-1">.htaccess / apache redirects <a class="direct-link" href="#.htaccess-apache-redirects" aria-hidden="true">#</a></h3>
+<pre><code>Redirect /old_directory http://example.com/newdirectory
+</code></pre>
+<p>This redirection is most efficient at the apache level, but if you're like me and are on shared hosting, getting into the apache installation probably isn't an option. In that case you can put this in an <a href="http://www.csskarma.com/blog/creating-an-htaccess-template/">.htaccess file</a> in the root directory of your site.</p>
+<p>Using an .htaccess redirection is great for moving entire sites because you can not only redirect a page, but you can redirect entire sites and subdirectories with one line of code.</p>
+<h3 id="php-header-redirects" tabindex="-1">PHP header redirects <a class="direct-link" href="#php-header-redirects" aria-hidden="true">#</a></h3>
+<pre><code>&lt;?php header('Location: http://example.com/newdirectory/'); ?&gt;
+</code></pre>
+<p>PHP header redirects are good for single page redirects and if you're not comfortable working with the .htaccess file. This code goes at the very top of the page you're trying to redirect. If it's not there you may get a &quot;headers already sent&quot; error.</p>
+<p>If you're publishing out static HTML files, you can still use this by adding this code into your .htaccess file:</p>
+<pre><code>AddType application/x-httpd-php .php .html .htm
+</code></pre>
+<p>This will let you <strong>execute PHP in an HTML file</strong>.</p>
+<h3 id="javascript-redirects" tabindex="-1">JavaScript redirects <a class="direct-link" href="#javascript-redirects" aria-hidden="true">#</a></h3>
+<pre><code>&lt;script type=&quot;text/javascript&quot;&gt;
+&lt;!--
+window.location = &quot;http://example.com/newdirectory&quot;
+//--&gt;
+&lt;/script&gt;
+</code></pre>
+<p>JavaScript redirects are generally not used unless you've exhausted the other two options. If you don't have access to the .htaccess file AND you can't run server-side script on your page, this is an OK fallback option, but you have to make sure to provide a link to the forwarding page incase a user is browsing without JavaScript.</p>
+<h3 id="meta-redirects" tabindex="-1">Meta redirects <a class="direct-link" href="#meta-redirects" aria-hidden="true">#</a></h3>
+<pre><code>&lt;meta http-equiv=&quot;refresh&quot; content=&quot;0;URL=http://example.com/newdirectory&quot;&gt;
+</code></pre>
+<p>As your last option, I don't see this in the wild anymore, but it's worth mentioning that it does exist and does technically work (I'm not sure about it's validity in HTML 5). You would place this in the document HEAD with the rest of the meta elements.</p>
+<p>content=0 is a second timer for the redirect, I have this one set to 0 so it will redirect immediately.</p>
+<p><strong>Those are the options I've used in the past; did I miss anything? Maybe an ASP redirect? Let me know!</strong></p>

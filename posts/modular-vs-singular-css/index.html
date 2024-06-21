@@ -1,0 +1,31 @@
+<p>I posted this to the <a href="http://www.csskarma.com/articles/singular_vs_modular_css/" title="http://www.csskarma.com/articles/singular_vs_modular_css/">regular site</a> too, but wanted to open it up for comments</p>
+<h3 id="modular" tabindex="-1">Modular <a class="direct-link" href="#modular" aria-hidden="true">#</a></h3>
+<p>There's a software development principle that has grabbed my attention lately that I wanted to talk about. Most of the developers I interact with are heavy in software &amp; PHP/MySQL, rather than web so naturally they have a hardcore programmer mentality. The principle that I've had drilled into my head has been <em>keep things modular</em>.</p>
+<p>So we take what's been drilled into our heads and apply it as we can; I did it with my CSS (keeping it modular) with using a master style sheet with import rules</p>
+<h5 id="css:-master.css" tabindex="-1">CSS: master.css <a class="direct-link" href="#css:-master.css" aria-hidden="true">#</a></h5>
+<pre><code>@import url(&quot;reset.css&quot;);
+@import url(&quot;global.css&quot;);
+@import url(&quot;layout.css&quot;);
+@import url(&quot;nav.css&quot;);
+</code></pre>
+<p>Something like that.</p>
+<h4 id="up-side" tabindex="-1">Up side <a class="direct-link" href="#up-side" aria-hidden="true">#</a></h4>
+<p>Keeping your CSS modular like that is fantastic for maintenance. You can split it up into as many pieces and you want, and update the live site however you want. I like doing this to release a site upgrade is sections rather than in one large chunk.</p>
+<h4 id="down-side" tabindex="-1">Down side <a class="direct-link" href="#down-side" aria-hidden="true">#</a></h4>
+<p>The down side to using a modular CSS file structure design is that every URL you import to the master.css file is another HTTP request you have to make to the server, and that will have negative effects on site performance. So you have to balance your ease of updating with how well you want your site to perform. The same principle can be applied to JavaScript</p>
+<h3 id="singular" tabindex="-1">Singular <a class="direct-link" href="#singular" aria-hidden="true">#</a></h3>
+<p>Keeping all your CSS (or JS) in one large file is pretty self-explanatory so I'll just get right to it...</p>
+<h4 id="up-side-1" tabindex="-1">Up side <a class="direct-link" href="#up-side-1" aria-hidden="true">#</a></h4>
+<p>This will cut down on your HTTP requests, hence speeding up your page. Also the 1 CSS file is usually a little smaller than the combination of all the imported ones plus the master.css</p>
+<h4 id="down-side-1" tabindex="-1">Down side <a class="direct-link" href="#down-side-1" aria-hidden="true">#</a></h4>
+<p>The down side to this is that it makes it tougher to maintain, but as long as you comment you code you shouldn't have a huge problem</p>
+<p>My personal preference to this issue is to keep things modular while I'm in development and then switching to a singular style sheet right before a launch. I do think it's important to take site performance into consideration. Since 80%-90% of the load time on a page comes from the front end, things like optizing images, compression and semantic XHTML are very important.</p>
+<h3 id="site-optimization-tools" tabindex="-1">Site optimization tools <a class="direct-link" href="#site-optimization-tools" aria-hidden="true">#</a></h3>
+<ul>
+<li><a href="http://jigsaw.w3.org/css-validator/">CSS Validator</a></li>
+<li><a href="http://validator.w3.org/">XHTML Validator</a></li>
+<li><a href="http://www.websiteoptimization.com/services/analyze/index.html">Speed report</a></li>
+<li><a href="http://www.cleancss.com/">Clean CSS</a></li>
+</ul>
+<p>OK, that's all I have for now</p>
+<p>with ease, tim</p>

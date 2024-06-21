@@ -1,0 +1,38 @@
+<ul>
+<li><a href="http://www.csskarma.com/lab/plugin_slidinglabels/">View Demo</a></li>
+<li><a href="http://www.csskarma.com/lab/jquery.plugins/jquery.slidinglabels.js">Plugin</a></li>
+<li><a href="http://www.csskarma.com/lab/jquery.plugins/jquery.slidinglabels.min.js">Minified Plugin</a></li>
+</ul>
+<p><strong>Version: 3.2 – Added a &quot;className&quot; option so you don't have to use &quot;.slider&quot; as the wrapper</strong></p>
+<p>Version 3.1: Changed &quot;children&quot; to &quot;find&quot; so it will work with a UL. Thanks to <a href="http://www.csskarma.com/blog/sliding-labels-plugin/comment-page-1/#comment-85490">Oro</a> for the feedback</p>
+<p>Version 3 of Sliding Labels brought some big changes, the largest being that I finally converted it into a working jQuery plugin.</p>
+<p>Maybe it was the 200 e-mails requesting an official plugin, maybe it was my curiosity. Whatever it was, I heard everyone and I wanted to let you know that I'm listening to all the feature requests and bug reports; and I really do appreciate them.</p>
+<h3 id="additions-to-version-3" tabindex="-1">Additions to version 3 <a class="direct-link" href="#additions-to-version-3" aria-hidden="true">#</a></h3>
+<p><strong>Plugin status</strong>: Obviously creating an official plugin was the biggest change</p>
+<p><strong>Position: relative</strong>: It seemed like a lot of the questions I was getting had to do with adding <code>position:relative</code> to the .slider element in the CSS, so I just moved that into the script.</p>
+<p><strong>Animation speed</strong>: I added an option to easily control the animation speed. It can take strings like &quot;fast&quot; and &quot;slow&quot; or any numeric value.</p>
+<p><strong>Axis option</strong>: I got a lot of requests to add in some functionality to have the label slide up rather than only to the left. I added this in with an &quot;axis&quot; variable which can take either &quot;x&quot; or &quot;y&quot; for sliding direction</p>
+<h3 id="subtractions-to-version-3" tabindex="-1">Subtractions to version 3 <a class="direct-link" href="#subtractions-to-version-3" aria-hidden="true">#</a></h3>
+<p><strong>Label Color</strong>: Originally I had this in the script so it looked nicer inline to the field, but I got to thinking that this really should be defined in the CSS, and it's just color; so I took it out.</p>
+<h3 id="using-the-plugin" tabindex="-1">Using the plugin <a class="direct-link" href="#using-the-plugin" aria-hidden="true">#</a></h3>
+<p>Just like the previous version, you need an element wrapping the <code>&lt;label&gt;</code> and <code>&lt;input&gt;</code> elements. I use a <code>&lt;div&gt;</code> in the demo, but you can use whatever you'd like. The only requirement is that it have the class name &quot;slider&quot;. I can change that if anyone finds it to be annoying, but <strong>let me know and I'll update the script</strong></p>
+<h4 id="html" tabindex="-1">HTML <a class="direct-link" href="#html" aria-hidden="true">#</a></h4>
+<pre><code>
+&lt;div class=&quot;form-slider&quot;&gt;
+&lt;label for=&quot;user&quot;&gt;User name&lt;/label&gt;
+&lt;input type=&quot;text&quot; id=&quot;user&quot; name=&quot;user&quot;&gt;
+&lt;/div&gt;
+</code></pre>
+<h4 id="javascript" tabindex="-1">JavaScript <a class="direct-link" href="#javascript" aria-hidden="true">#</a></h4>
+<pre><code>
+$(function(){ $('#contactform').slidinglabels({ 
+/* these are all optional */ 
+className : 'form-slider', // the class you're wrapping the label &amp; input with -&gt; default = slider 
+topPosition : '5px', // how far down you want each label to start 
+leftPosition : '5px', // how far left you want each label to start 
+axis : 'x', // can take 'x' or 'y' for slide direction 
+speed : 'fast' // can take 'fast', 'slow', or a numeric value 
+}); 
+});
+</code></pre>
+<p>That's all there is to it. Let me know what you think, any extra features you'd like and any bugs. I should be submitting this to <a href="http://jquery.com">jQuery.com</a> in the next few days.</p>

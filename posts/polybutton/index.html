@@ -1,0 +1,112 @@
+<p><strong>Before we start,</strong> I posted the solution over on Github, in my account under <a href="http://github.com/timwright12/polybutton">Polybutton</a>.</p>
+<p>A couple years ago at the Boston version of <a href="http://globalaccessibilityawarenessday.org/gaad.html">Global Accessibility Awareness Day</a> at <a href="http://carroll.org/">Carroll School for the Blind</a> I listened to a visually impaired man tell a story that changed the way I viewed a seemingly small design element, the CTA (call to action).</p>
+<p>We've all seen them, they usually look like buttons and use action-oriented phrases like: <em>Sign Up</em>, <em>Register</em> and <em>View more</em>. To the human eye these are very interpretable as buttons, very few people would disagree with that, they stand out a great deal from the background, might have rounded corners and even a slight (or comically aggressive) gradient. To a machine reading through the semantic meaning behind them they're typically links (therein lies the problem). A sign up or register button may link to a page with a form, where a user can enter his or her information to start using a service. A <em>view more</em> button (depending on it's function) might link to a gallery page where a user can consume more information. The point is, that a link has a very different semantic meaning and function when compared to a button and <strong>when the computer and human are not on the same page, we encounter problematic gaps in communication</strong>.</p>
+<p>Anyway, to continue my story from the Carroll School (can you see where I'm going to take this?)...</p>
+<p><strong>Setting the scene,</strong> a visually impaired man is on the phone with a sighted user discussing a web page they are both currently visiting. One person is using a screen reader, the other is not. For a better story, we'll call the sighted user, &quot;Samantha&quot; and the visually impaired gentleman, &quot;Allen.&quot;</p>
+<p>Samantha is trying to help Allen register for a new service; she scans the page and finds the <em>register</em> button about halfway down on the right and relays that information to Allen.</p>
+<blockquote>
+<p>&quot;Oh, I see it... you need to click on the <em>register</em> button.&quot;</p>
+</blockquote>
+<p>Allen, using a screen reader, instructs the software to find a button with the text of <em>Register</em>, somewhere in the current document. Because the HTML behind the button is actually a link, the software never finds it, creating a bad user experience for Allen. He's frustrated and can't register for the service. Allen gets upset with Samantha, calls her a liar, hangs up the phone and the two long-time best friends never speak again. <strong>Their lives are forever ruined because you designed a link to look like a button.</strong></p>
+<p>OK, maybe I changed the ending a bit, but the point remains! When the designer, developer, user(s), and software are not on the same page we get experience (and accessibility) problems online. This issue has bothered me for a while, so recently (in the past month or so) I tasked myself with trying to fix it.</p>
+<p>Through many <a href="http://www.freshtilledsoil.com/the-dirt-button-accessibility/">conversations</a> with folks <a href="http://freshtilledsoil.com">at work</a> and over Twitter I boiled it down to 2 main problems:</p>
+<ol>
+<li>A gross mis-use of HTML, similar to using tables for layout</li>
+<li>A problem in the communication chain with designers to sighted users, and sighted users to visually impaired users.</li>
+</ol>
+<p>Because we can't force users to communicate our ideas exactly how we want (and we shouldn't), the problem needs to be fixed from a design &amp; development angle and it must conform to how users perceive it. Ultimately it's our fault for miscommunication the purpose of an interface element to the user. It's certainly not Samantha's fault for calling something that looks exactly like a button, a button. And it's not the software's fault for not being able to find an element that doesn't exist.</p>
+<p>Let's see where this little adventure into <strong>accessibility experience design</strong> took me, shall we?</p>
+<h2 id="setting-parameters-for-the-solution" tabindex="-1">Setting Parameters for the solution <a class="direct-link" href="#setting-parameters-for-the-solution" aria-hidden="true">#</a></h2>
+<p>First thing I needed to do was set some goals for myself in finding a solution that can work for designers, developers, sighted users, and visually impaired users. So I came up with these parameters:</p>
+<ul>
+<li>Needs to meet the goals of a classic CTA (work for designers)</li>
+<li>Needs to use valid HTML (no making shit up)</li>
+<li>Needs to easily inherit natural styling without extra work we're not used to (intrgrate into current workflow)</li>
+<li>Needs to translate as a button to a sighted user</li>
+<li>Needs to translate as a button to a visually impaired user</li>
+<li>Needs to be keyboard accessible (natural tab index)</li>
+<li><strong>Needs to work without JavaScript,</strong> or at least can't be made worse than our current solution</li>
+</ul>
+<p>Lots of requirements for such a small project, but if the goal is for people to use it, it needs to slide into the current workflow and the barrier to entry needs to be as low as possible.</p>
+<p>The main testing benchmarks I have for this experiment is: tabbing through the interface, and using <a href="http://www.apple.com/accessibility/osx/voiceover/">Apple's Voice Over</a> as my screen reading software (and also common sense).</p>
+<h2 id="building-and-testing-each-solution" tabindex="-1">Building and testing each solution <a class="direct-link" href="#building-and-testing-each-solution" aria-hidden="true">#</a></h2>
+<p>It was a fairly long road to get to a solution I was happy with, if something didn't meet even one of the requirements I laid out, I'd have to throw it away. I even threw out a couple just because they felt weird. From here, I'd like to take you through each potential solution and how I, eventually arrived at the <strong><a href="http://github.com/timwright12/polybutton">Polybutton</a></strong>.</p>
+<h3 id="solution-1:-use-a-button-and-wrap-it-in-a-form" tabindex="-1">Solution 1: Use a button and wrap it in a form <a class="direct-link" href="#solution-1:-use-a-button-and-wrap-it-in-a-form" aria-hidden="true">#</a></h3>
+<p><em>Solution 1</em> is something I saw in a (very old) piece of enterprise software I was customizing while I was working a <a href="http://bu.edu">BU</a>. At the time, I thought it was terrible. The basics of it where: wrap every CTA (that looked like a button) in a form with the form action set to it's destination like this:</p>
+<pre><code>&lt;form action=&quot;http://www.google.com/&quot;&gt;
+  &lt;button type=&quot;submit&quot;&gt;Register&lt;/button&gt;
+&lt;/form&gt;
+</code></pre>
+<p>It functions as a link, looks like a button, and works without JavaScript. Pretty much checks everything off the list that we need. Where this one fails, is that it's a gross misuse of a form submit. We're not passing any information with the form, so this should really be a link. Ultimately, this is no better than submitting a form with a link (which would be wrong).</p>
+<p>Also, it feels super-weird, so I threw it out... moving on.</p>
+<h3 id="solution-2:-stop-designing-links-to-look-like-buttons" tabindex="-1">Solution 2: Stop designing links to look like buttons <a class="direct-link" href="#solution-2:-stop-designing-links-to-look-like-buttons" aria-hidden="true">#</a></h3>
+<p><em>My next instinct</em> was to have a conversation with a design team and see if we could come up with a middle ground where there's a reasonably designed CTA that doesn't necessarily look like a button. Most problems like this can usually be solved with a short conversation to clear up any misconceptions about where design and implementation affect each other.</p>
+<p>I did this, and it actually went very well, we came up with some alternate design solutions of CTAs. Totally awesome, right? Problems being solved by talking about them? Wild concept. There was a little resistance, but with everyone having a common goal of creating a great user experience, it was easy to brainstorm and bounce ideas back and forth.</p>
+<p>I do, of course, realize that not every developer has the opportunity to have open dialogs with designers and higher-ups about seemingly small issues like this. Whether it's a matter of being way too busy to explain the concepts/problems, organizational issues within a company that don't allow that level of collaboration, or just doing some freelance work where a PSD gets tossed over the fence (this is awful) and you're expected to code it. For this reason, I can't in good conscience end the problem with a solution that's, &quot;<strong>stop doing that</strong>.&quot;</p>
+<p>I've always thought, in dealing with users doing something you see as, &quot;wrong&quot; you can fix it in 2 ways:</p>
+<ul>
+<li>Try and force them to do the thing you want (prevent sharing, being reactive to problems, etc)</li>
+<li>Listen to them and make it easier for them to accomplish their goal (e.g. Twitter implementing @ replies and hashtags).</li>
+</ul>
+<p>Telling people to, &quot;Stop designing like that,&quot; is totally a legitimate thing (IMO), but <strong>there are real benefits in designing CTA to look like a button</strong> (I say &quot;button&quot; and not, &quot;clickable,&quot; because blue underlined text is one of the most clickable things on the Web and it looks nothing like a button). With that in mind, I wanted to find some happy middle ground so the solution is a little easier to integrate into the normal design process.</p>
+<p>I also feel like offering a communication solution isn't quite as scalable as a tangible solution. So onward I went...</p>
+<h3 id="solution-3:-nesting-links-and-buttons" tabindex="-1">Solution 3: Nesting links and buttons <a class="direct-link" href="#solution-3:-nesting-links-and-buttons" aria-hidden="true">#</a></h3>
+<p>In tooling around the Web one day I noticed that someone (my apologies, I can't remember exactly where) had dealt with this problem by wrapping CTA links in a button:</p>
+<pre><code>&lt;button type=&quot;button&quot;&gt;
+  &lt;a href=&quot;http://google.com&quot;&gt;Register&lt;/a&gt;
+&lt;/button&gt;
+</code></pre>
+<p>This solution looked very promising; it surprisingly executes the link, and you can find it with a screen reader via the button element wrapping it. I was curious about how far this could go, so I tried the inverse of a button wrapped in a link:</p>
+<pre><code>&lt;a href=&quot;http://google.com&quot;&gt;
+  &lt;button type=&quot;button&quot;&gt;Register&lt;/button&gt;
+&lt;/a&gt;
+</code></pre>
+<p>As it turns out, this functions pretty much the same way, the link executes just fine, and button is there for the screen reader. Where this solution failed was on tabbing through the interface. As you tab down the page, since both elements are focusable, you can get to them individually. <strong>When you're focused on the button it won't execute the link.</strong> I could have used some JavaScript to execute the link, but that's weird and certainly wouldn't work without JavaScript.</p>
+<p>To solve the tabbing issue, I tried adding a tabindex of -1 to the button element. This makes the link the only thing that can be focused upon.</p>
+<pre><code>&lt;button type=&quot;button&quot; tabindex=&quot;-1&quot;&gt;
+  &lt;a href=&quot;http://google.com&quot;&gt;Register&lt;/a&gt;
+&lt;/button&gt;
+
+&lt;a href=&quot;http://google.com&quot;&gt;
+  &lt;button type=&quot;button&quot; tabindex=&quot;-1&quot;&gt;Register&lt;/button&gt;
+&lt;/a&gt;
+</code></pre>
+<p>This version actually solved the button and the tabbing problems for me, so I starting working with some CSS objects to see if it was easy to style. It certainly wasn't difficult, but there was some weirdness in the nesting because I wanted to use a fairly standard convention of creating a css &quot;.button&quot; class. This all felt a like a little too much unnatural work to me, so I was learning towards dropping it. Just for kicks (and because it was really close to a solution), I ran it through a screen reader only to find that it failed miserably.</p>
+<p>Because the tabindex was set it wouldn't read the buttons, and if I removed the tabindex, it was the same tabbing problem as before. So it failed anyway and I was back at square 1.</p>
+<h3 id="solution-4:-using-an-html-polyfill-to-generate-proper-markup-and-function" tabindex="-1">Solution 4: Using an HTML polyfill, to generate proper markup &amp; function <a class="direct-link" href="#solution-4:-using-an-html-polyfill-to-generate-proper-markup-and-function" aria-hidden="true">#</a></h3>
+<p>A few days ago, as I was drifting off the sleep (literally minutes away from from blissful shuteye), it came to me... an <strong>HTML polyfill</strong>! I was upset because I was really tired and I knew I'd be up until 2am coding and testing this out, but whatever. When you have to code, you have to code... so I coded. I was happy to find out the next day that my late night JavaScript was pretty coherent.</p>
+<p>I'm a fairly active user of Scott Jehl's Picturefill - I like how it works, and most of all the implementation. I've worked with a lot of back end developers throughout the years who don't want to have anything to do with writing CSS or JavaScript. The common point of integration is the HTML. So, when I have the opportunity to write a plugin (of sorts) that uses HTML as the trigger instead of JavaScript, I usually try it. It also felt particularly applicable to this situation.</p>
+<p>With that, I began building out a new markup structure, which I could modify with an the polyfill. This is ultimately where I landed for my best solution.</p>
+<pre><code>&lt;span data-accessible=&quot;button&quot; 
+      data-type=&quot;button&quot;
+      data-value=&quot;Register&quot;
+      data-href=&quot;http://www.google.com&quot;
+      data-class=&quot;button&quot;&gt;
+  &lt;noscript&gt;
+    &lt;a href=&quot;http://www.google.com&quot; class=&quot;button&quot; rel=&quot;button&quot;&gt;Register&lt;/a&gt;
+  &lt;/noscript&gt;
+&lt;/span&gt;
+</code></pre>
+<p>That HTML, plus <a href="https://github.com/timwright12/polybutton/blob/master/assets/js/polybutton.js">including the JavaScript</a> in your document will generate the <strong>polybutton</strong>, to make your CTAs look like buttons, but act like links. Any styling should be nothing different (might need to add a zero border, but that's it).</p>
+<h2 id="breaking-down-the-polybutton-markup" tabindex="-1">Breaking down the Polybutton markup <a class="direct-link" href="#breaking-down-the-polybutton-markup" aria-hidden="true">#</a></h2>
+<p>Let's take a moment to break down the Polybutton elements so we're on the same page with what's happening the the HTML.</p>
+<h3 id="span" tabindex="-1">span <a class="direct-link" href="#span" aria-hidden="true">#</a></h3>
+<p>I chose to use a span because there's no real semantic meaning behind it, and it's default display state of inline wouldn't interrupt the natural flow of the layout while allowing the button styles to come through. A very unobtrusive element overall.</p>
+<h3 id="data-accessible&quot;button&quot;" tabindex="-1">data-accessible=&quot;button&quot; <a class="direct-link" href="#data-accessible&quot;button&quot;" aria-hidden="true">#</a></h3>
+<p>This is the custom data attribute I chose as a trigger for the polyfill. At first I was using data-button=&quot;accessible&quot;, but I changed it to data-accessible=&quot;button&quot; so I could possibly add more elements into the accessibility script for the future.</p>
+<h3 id="data-type&quot;button-reset-submit&quot;" tabindex="-1">data-type=&quot;button / reset / submit&quot; <a class="direct-link" href="#data-type&quot;button-reset-submit&quot;" aria-hidden="true">#</a></h3>
+<p>Data-type sets the type of button that will get generated, even though there isn't much reason to use anything other than &quot;button&quot; in this attribute, I wanted to open it up for any future possibilities.</p>
+<h3 id="data-value&quot;register&quot;" tabindex="-1">data-value=&quot;Register&quot; <a class="direct-link" href="#data-value&quot;register&quot;" aria-hidden="true">#</a></h3>
+<p>The data-value attribute is the text that gets outputted with the final generated button.</p>
+<h3 id="data-href&quot;http:...&quot;" tabindex="-1">data-href=&quot;http://...&quot; <a class="direct-link" href="#data-href&quot;http:...&quot;" aria-hidden="true">#</a></h3>
+<p>Data-href is the URL where the button/link should go when it's ultimately clicked by the end user.</p>
+<h3 id="data-class&quot;button&quot;" tabindex="-1">data-class=&quot;button&quot; <a class="direct-link" href="#data-class&quot;button&quot;" aria-hidden="true">#</a></h3>
+<p>This is the CSS class you want to use on the button, this makes it inherit the normal styles you would use on a button. I close to use a data attribute instead of a straight class just to make sure the normal button CSS didn't get applied to the <code>&lt;span&gt;</code> when the button is generated.</p>
+<h3 id="noscript" tabindex="-1">noscript <a class="direct-link" href="#noscript" aria-hidden="true">#</a></h3>
+<p>The <code>&lt;noscript&gt;</code> element allows this method to function without JavaScript; it's pretty explicit, and just contains a normal link. For the edge case that JavaScript isn't enabled, it will just bring us back to square 1, which is the current solution of styling a link to look like a button. Alternatively, you could style the noscript link to look like a link (communication fallback).</p>
+<h2 id="is-the-problem-solved-can-you-use-the-polybutton" tabindex="-1">Is the problem solved? Can you use the Polybutton? <a class="direct-link" href="#is-the-problem-solved-can-you-use-the-polybutton" aria-hidden="true">#</a></h2>
+<p>Yeah, totally. Well, maybe not, &quot;solved,&quot; but I think it's OK for now and I think this is a great jumping off point for the future of these commonly used design elements.</p>
+<p>Of course, I'll continue tweaking and finding bugs/optimizations but there's no reason you can't use this script right now. I would recommend putting it somewhere above your custom JavaScript, so the buttons will be in the DOM for any possible event bindings you may need.</p>
+<p>Now that you've met the <a href="http://github.com/timwright12/polybutton">polybutton</a>, I hope you check it out on GitHub, and <a href="http://twitter.com/csskarma">chime in with your two cents</a>. I'm super-interested in seeing if folks try out this method and how it evolves.</p>
+<p>If you have anything to add, <a href="http://twitter.com/csskarma">please let me know</a>. I'm tired of writing now, I'm going to stop for the day... and maybe see <a href="http://www.rottentomatoes.com/m/thor_the_dark_world/">Thor 2</a>.</p>
+<p><strong>P.S.</strong> Although a button ARIA role is generated by the JavaScript, I didn't use it by default because you <strong>still need event bindings to the space bar</strong> to make it function correctly. <a href="https://developer.mozilla.org/en-US/docs/Accessibility/ARIA/ARIA_Techniques/Using_the_button_role">Read more about the button role</a>.</p>

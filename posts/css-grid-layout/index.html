@@ -1,0 +1,74 @@
+<p>Web layouts evolve pretty quickly. First we used tables, next, floats and positioning, then inline block made a short appearance, followed by the almighty Flexbox. <a href="https://www.w3.org/TR/css-grid-1/">CSS Grid</a> is the newest incarnation of the W3C trying to solve the problem of creating flexible layouts (whether you believe one exists or not). Either way there's a <a href="https://www.youtube.com/watch?v=By86PcLufOU">new kid on the block</a>, and you should know about it.</p>
+<p>There are already a lot of great articles out there explaining in depth what you can do with Grid Layout (I linked to some of them at the bottom of this post), so I'm not here writing an &quot;Intro to CSS Grid Layout,&quot; kind of thing -- you can get that by <a href="https://www.google.com/search?q=CSS+Grid+Layout&amp;oq=CSS+Grid+Layout">Googling around a bit</a>. I'm going to focus on a few specific things and one grid declaration I came across recently:</p>
+<pre><code>.grid {
+  display: grid;
+  grid-template-columns: repeat( auto-fit, minmax( 200px, 1fr ) );
+  grid-gap: 10px;
+}
+</code></pre>
+<p>This rule has a lot going on in it, and I think if you can understand what's happening, you can have a functional grasp of how to use CSS Grid Layout and at least understand what properties are being applied when you see it in the wild.</p>
+<p>To fully understand the above rule, let's break down each line and talk about what's going on.</p>
+<h2 id="grid-track-(display:-grid-and-grid-template-columns)" tabindex="-1">Grid Track (display: grid &amp; grid-template-columns) <a class="direct-link" href="#grid-track-(display:-grid-and-grid-template-columns)" aria-hidden="true">#</a></h2>
+<p>A term that you'll hear a lot when discussing Grid is, &quot;Grid Track.&quot; A grid track essentially is a generic term for a column or row within a defined grid. This is where grid really differs from something like Flexbox. While Flexbox can deal with columns <strong>OR</strong> rows (one dimension), Grid deals with columns <strong>AND</strong> rows (two dimensions). When you use the CSS property <em>display: grid;</em> you're setting your grid track to be all the direct children.</p>
+<pre><code>&lt;div class=&quot;grid&quot;&gt; &lt;!-- Grid parent --&gt;
+    &lt;div&gt;&lt;/div&gt; &lt;!-- Children/Track --&gt;
+    &lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<p>The <strong><em>grid-template-columns</em></strong> property describes the track size of your columns. This includes stuff like: how many columns you need, how wide they should be, and if you want to name them. If you wanted to have a simple three column layout you might use something like:</p>
+<pre><code>.grid {
+    display: grid;
+    grid-template-columns: 25% 50% 25%; /* 3 columns, 1st: 25%, 2nd: 50%, 3rd: 25% */
+}
+</code></pre>
+<p><a href="https://codepen.io/timwright12/pen/mMbRxE">View grid-template-columns on CodePen</a></p>
+<p>You can also use <strong><em>grid-template-rows</em></strong> to work with the vertical grid track. It takes all the same values, but it applies to the height instead of the width. Although we aren't using it in this example, it's still a very useful tool to know about so you can read <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-rows">more about grid rows over on MDN</a>.</p>
+<h2 id="repeat" tabindex="-1">Repeat <a class="direct-link" href="#repeat" aria-hidden="true">#</a></h2>
+<p>The repeat function allows the rule inside the parenthesis to be applied to all the columns in our grid track. This is great if you want all your columns to follow the same rules, but if you need uneven columns you can also set them explicitly like the previous example or: <em>grid-template-columns: 1fr 66% 1fr;</em>. That code will set a center column to 66% and the remaining two columns with take up the rest of the space equally.</p>
+<p>Using the repeat function would look like:</p>
+<pre><code>.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 33%);
+}
+</code></pre>
+<p><a href="https://codepen.io/timwright12/pen/OjLWEp?editors=1100">View the repeat() function on CodePen</a></p>
+<p>In our original example, we're using the <em><strong>repeat()</strong></em> function to execute the same code more than once ( <strong><em>repeat( auto-fit, minmax( 200px, 1fr ) )</em></strong> ). It contains a lot more than the standard, &quot;here are the columns repeating&quot; syntax we just spoke about, so let's dive into this rule and talk about: <em><strong>auto-fit</strong></em>, <em><strong>minmax</strong></em>, and the <em><strong>fr</strong></em> unit to gain a little more clarity about what's happening here.</p>
+<h2 id="auto-fit" tabindex="-1">Auto-fit <a class="direct-link" href="#auto-fit" aria-hidden="true">#</a></h2>
+<p>The auto-fit keyword is like saying, &quot;fit as many columns as you can in this track based on the applied rules.&quot; This is a nice way to create flexible layouts if you have a variable amount of columns in a row. These columns will also reflow based on screen width, so while you may have 5 columns on a wide screen, you may only have 2 on a narrow screen, depending on the available space. Auto placement of columns is a powerful feature in CSS Grid Layout, but the coolest part is that this is done without any media queries, just some nice clean, smart CSS.</p>
+<p>If you wanted to create a simple layout using auto-fit you might use something like:</p>
+<pre><code>.grid {
+    display: grid;
+    grid-template-columns: repeat( auto-fit, 200px );
+}
+</code></pre>
+<p>The above example would produce a series of 200px wide columns, bumping to the next row when they don't fit properly. <a href="https://codepen.io/snookca/pen/MpMqMQ">View the auto-fit keyword on CodePen</a></p>
+<p><em><strong>Auto-fit</strong></em> also has a similar keyword called &quot;<em><strong>auto-fill</strong></em>.&quot; The two work in similar ways, but since it isn't included in our original code, you can <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Auto-placement_in_CSS_Grid_Layout">read more about auto-fill on MDN</a>.</p>
+<p>The <em><strong>auto-fit</strong></em> and <em><strong>auto-fill</strong></em> keywords are almost always pair with the <em><strong>minnax()</strong></em> function, which is really the magic in creating a flexible column layout, so let's move right on to that one.</p>
+<h2 id="minmax" tabindex="-1">Minmax <a class="direct-link" href="#minmax" aria-hidden="true">#</a></h2>
+<p>The minmax() function defines an upper and lower limit for your grid track size. In our case we're saying. &quot;columns in this track can't be smaller than 200px and they can be as large as 1 fraction unit (the rest of the space).&quot; We'll get into the fraction unit in the next section.</p>
+<p>grid-template-columns: repeat( auto-fit, minmax( 200px, 1fr ) );</p>
+<p>When we combine this with the auto-fit properly you'll see columns fill out a row based on the available space, but also break to the next line when there isn't room. It produces a responsive layout without any media queries (pretty cool, right? RIGHT?!?!).</p>
+<p>This function is really helpful when trying to create responsive tracks. You can <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/minmax">read more about minmax() over at MDN</a>.</p>
+<p><a href="https://codepen.io/timwright12/pen/JyovMP">View this minmax() demo on CodePen</a></p>
+<h2 id="fr-unit" tabindex="-1">FR Unit <a class="direct-link" href="#fr-unit" aria-hidden="true">#</a></h2>
+<p>The <em><strong>fr unit</strong></em> is very common when using CSS Grid Layout. It stands for, &quot;fraction&quot; unit and it is meant to take up the remainder of the space in a column. If you wanted to set a column to 200px, and have another fill up the rest of the page you would do that with a fraction unit like:</p>
+<pre><code>.grid {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+}
+</code></pre>
+<p>In our case we're using it to tell the browser the maximum width for a column, but you can also use it to create fully flexible layouts, just like you would use percentages. The fraction unit also has the advantage of working really well with mix values (px, %, em, etc.) and being build right into the CSS Grid Layout specification.</p>
+<h2 id="gap" tabindex="-1">Gap <a class="direct-link" href="#gap" aria-hidden="true">#</a></h2>
+<p>Grid-gap is probably the most straightforward part of this rule. The gap is the amount of space in between each grid item. In our example it is set to 10px, so when the cell widths are calculated in the browser it will always leave a 10px gap for us. Pretty easy, not much more to say about that.</p>
+<h2 id="resources-and-further-reading" tabindex="-1">Resources and Further Reading <a class="direct-link" href="#resources-and-further-reading" aria-hidden="true">#</a></h2>
+<p>Now that you have a little more knowledge about CSS Grid Layout checkout these for further reading:</p>
+<ul>
+<li><a href="https://www.w3.org/TR/css-grid-1/">CSS Grid Layout Module Level 1</a> from W3C</li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout">CSS Grid Layout documentation</a> from Mozilla Developer Network</li>
+<li><a href="http://www.lottejackson.com/learning/an-intro-to-css-grid">An Introduction to CSS Grid</a> by Charlotte Jackson</li>
+<li><a href="https://css-tricks.com/introduction-fr-css-unit/">An Introduction to the 'fr' Unit</a> by Robin Rendle</li>
+<li><a href="https://www.smashingmagazine.com/2017/06/building-production-ready-css-grid-layout/">Building Production-Ready CSS Grid Layouts Today</a> by Morten Rand-Hendriksen</li>
+<li><a href="http://jonibologna.com/spring-into-css-grid/">Spring into CSS Grid</a> by Joni Trythall</li>
+<li><a href="https://snook.ca/archives/html_and_css/container-grids">Container Grids</a> by Jonathan Snook</li>
+<li><a href="https://gridbyexample.com/video/series-auto-fill-auto-fit/">Introducing auto-fill and auto-fit</a> by Rachel Andrews</li>
+</ul>

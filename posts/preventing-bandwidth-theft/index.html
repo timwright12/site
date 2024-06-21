@@ -1,0 +1,12 @@
+<p><img src="images/bandwidth-theft.jpg" alt="article banner"></p>
+<p>Every once in a while Google Analytics will turn up a peculiar behavior where you can tell someone is linking directly to an image hosted on your Web server. Sometimes it can be for good reasons like giving you credit for a project, or make sure files are synced up (cross-domain projects); but it's usually just out of ignorance or laziness (or myspace).</p>
+<p>Either way, hotlinking images like that steals your bandwidth and can effect the performance of your server. So you want to stop it.</p>
+<p>There are a few ways you can do this; some people output a special image to a bandwidth thief that says something like &quot;Stop stealing my images&quot;. I don't like that mainly because you're intentionally degrading your bandwidth to teach someone a lesson about hotlinking? Bleh.</p>
+<p>I prefer using a 403 error, it works just as well in my opinion, and gets the point accross.</p>
+<h5 id=".htaccess-code" tabindex="-1">.htaccess code <a class="direct-link" href="#.htaccess-code" aria-hidden="true">#</a></h5>
+<pre><code>RewriteEngine On
+RewriteCond %{HTTP_REFERER} !^http://(.+\.)?csskarma\.com/ [NC]
+RewriteCond %{HTTP_REFERER} !^$
+RewriteRule .*\.(jpe?g|gif|bmp|png)$ - [F]
+</code></pre>
+<p><code>  Put that in your .htaccess file (in your root directory). If you don't have an .htaccess file, just create an empty file in the root and name it &quot;.htaccess&quot;. Then put this code in there and you'll be good to go.  Don't forget to change out &quot;csskarma&quot; for your web site. You'll definitely notice if you forget that bit.  #### What's going on  Turn on the rewrite condition:  ``` RewriteEngine On ```  Match any request for csskarma.com (NC means &quot;no case&quot; it will match upper or lower case requests):  ``` RewriteCond %{HTTP_REFERER} !^http://(.+\.)?csskarma\.com/ [NC] ```  Allow empty requests, these are harmless and often 404 errors anyway  ``` RewriteCond %{HTTP_REFERER} !^$ ```  Replace the stolen image with a 403 &quot;forbidden&quot; error  ``` RewriteRule .*\.(jpe?g|gif|bmp|png)$ - [F] ```  </code></p>

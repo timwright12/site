@@ -1,0 +1,70 @@
+<p>In my <a href="http://www.csskarma.com/blog/required-input-fallback/" title="Required input fields with JS fallback">last post</a> about creating a proper fallback when using the new HTML 5 form validation I mentioned using modernizr to detect for support, then creating an if statement to call the jQuery validate plugin.</p>
+<p>One of the commentors mentioned using yepnope for this instead of loading the jQuery validation plugin by default. Since modernizr has yepnope now anyway, I thought it was a good idea. And here we are with some ne code to look at.</p>
+<p><a href="http://www.csskarma.com/lab/_javascript/no_require/">View the demo</a></p>
+<h3 id="dependencies" tabindex="-1">Dependencies <a class="direct-link" href="#dependencies" aria-hidden="true">#</a></h3>
+<ul>
+<li><a href="http://www.jquery.com">jQuery</a></li>
+<li><a href="http://www.modernizr.com/">Modernizr (with yepnope)</a></li>
+<li><a href="http://bassistance.de/jquery-plugins/jquery-plugin-validation/">jQuery Validate plugin</a></li>
+</ul>
+<h3 id="the-html" tabindex="-1">The HTML <a class="direct-link" href="#the-html" aria-hidden="true">#</a></h3>
+<pre><code>&lt;form action=&quot;&quot; method=&quot;post&quot;&gt;
+
+    &lt;ul&gt;
+        &lt;li&gt;
+            &lt;label for=&quot;name&quot;&gt;Name&lt;/label&gt;
+            &lt;input type=&quot;text&quot; name=&quot;name&quot; id=&quot;name&quot; required&gt;
+        &lt;/li&gt;
+        
+        &lt;li&gt;
+            &lt;label for=&quot;email&quot;&gt;Email&lt;/label&gt;
+            &lt;input type=&quot;email&quot; name=&quot;email&quot; id=&quot;email&quot; required&gt;
+        &lt;/li&gt;
+    
+        &lt;li&gt;
+            &lt;button type=&quot;submit&quot;&gt;Submit&lt;/button&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+    
+&lt;/form&gt;
+</code></pre>
+<h3 id="the-js" tabindex="-1">The JS <a class="direct-link" href="#the-js" aria-hidden="true">#</a></h3>
+<pre><code>(function ($) {
+	
+	// set and cache some variables, change var forms to whatever forms you want to validate
+	var forms = $('form'),
+		formsCount = forms.length,
+		items = forms.find('input[required]'),
+		count = items.length;
+
+	// check for &quot;required&quot; input support with modernizr
+	if (Modernizr.input.required) {
+
+		// do something else, maybe customize the output messages?
+
+	} else {
+		
+		// loop though each required input and set the required and type class jQuery validate needs
+		for (var i = 0; i &lt; count; i += 1) {
+			var obj = items[i];
+			$(obj).attr('class', 'required ' + obj.getAttribute('type')).removeAttr('required');
+		};
+		
+		// after the classes are set, load in the plugin with yepnope , you can do this with Modernizr.load as well
+		yepnope([{
+			load: 'js/validate.js',
+			complete: function () {
+			
+				// after the plugin is loaded, call the method on each form listed at the top
+				for (var i = 0; i &lt; formsCount; i += 1) {
+					$(forms[i]).validate();
+				}
+			}
+		}]);
+
+	} // if required supported
+
+}(jQuery));
+</code></pre>
+<p>I'm not really a fan of script loaders, especially when using them to load a core script file, like jQuery, but I think this is actually a pretty good use of yepnope.</p>
+<p>I don't know about you folk(s), but I'll be using this moving forward. Any comments/corrections are obviously welcome.</p>

@@ -1,0 +1,17 @@
+<p><code>&lt;div align=&quot;center&quot;&gt;</code> is <a href="http://webdesign.about.com/od/htmltags/a/bltags_deprctag.htm">deprecated</a>.</p>
+<p>It's been deprecated for a long time, but it keeps creeping up for things like center aligning an image.</p>
+<p>Another popular way to do this is to wrap an extra <code>div</code> around the image and set the text alignment to center. This creates (as you might know, I hate), an added layer of XHTML code that you really don't need.</p>
+<pre><code>.image-wrap{
+text-align:center;
+}
+</code></pre>
+<p>This goes back to one of my pet peeves about using too many <code>divs</code>. Here's what I came up with:</p>
+<h5 id="css" tabindex="-1">CSS <a class="direct-link" href="#css" aria-hidden="true">#</a></h5>
+<pre><code>#content-main img{
+display:block;
+width:auto;
+margin:auto;
+}
+</code></pre>
+<p>That will center your image, and of course you can add a class in if you don't want all your images centered.</p>
+<p>Just a quick tip today, as I'm getting back into the swing of things after vacation. I hope everyone had a good holiday season.</p>

@@ -1,0 +1,32 @@
+<p>I got a little sidetracked.</p>
+<p>This post was suppose to be about <a href="https://developers.google.com/web/updates/2015/01/ES6-Template-Strings?hl=en">Tagged Template Strings</a>, but in my search for a real-life usage example of async loading data and a template (separately), then mashing them together (I couldn't really find one) I kept seeing a weird operator in the function examples. <strong>It was an ellipsis</strong>. I really hadn't see it before, but I could kinda tell what it was doing, so I continued down the path of Tagged Templates. Initially I thought it was pseudo code, but after seeing it a few times, I figured it was something in ES6.</p>
+<p>When I realized that I needed to actually learn what this weird argument was, I stopped and Googled, &quot;JavaScript ellipsis argument.&quot; What came back was the <em><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator">spread operator</a></em>.</p>
+<h2 id="spread-operator" tabindex="-1">Spread Operator <a class="direct-link" href="#spread-operator" aria-hidden="true">#</a></h2>
+<p>The spread operator is a way to pass a lot of data (an array) into a function. An example:</p>
+<pre><code>function wickedAwesome(...data){
+  console.log(data); // Array[1] (the actual object)
+}
+
+var numbers = [1, 2, 3, 4, 5, 6];
+
+wickedAwesome(numbers);
+</code></pre>
+<p>As far as I can tell this is different from passing the array directly because the latter will return the individual array items rather than the array object (try it).</p>
+<p>This sort of function argument also works in reverse:</p>
+<pre><code>function wickedAwesome(x, y, z){
+  console.log(x); // 1
+  console.log(y); // 2
+  console.log(z); // 3
+}
+
+var numbers = [1, 2, 3, 4, 5, 6];
+
+wickedAwesome(...numbers);
+</code></pre>
+<p>You can also inject data into an array (which is kinda cool), mozilla uses this example:</p>
+<pre><code>var parts = ['shoulders', 'knees'];
+var lyrics = ['head', ...parts, 'and', 'toes'];
+
+console.log(lyrics); // header, shoulders, knees, and, toes
+</code></pre>
+<p>Overall, I think the spread operator is pretty cool, support isn't great, but what is in ES6?</p>

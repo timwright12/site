@@ -1,0 +1,56 @@
+<p><a href="http://www.csskarma.com/lab/html5/input.required/">View the demo</a></p>
+<p>One of my favorite features of the HTML 5 forms is the &quot;required&quot; attribute. But unfortunately, support isn't totally there yet. So we need to create fallbacks.</p>
+<p>It works in the modern browsers you'd expect it to (FF4, Safari, Opera, etc) but in older browsers, form validation isn't something you can really ignore (like border-radius) or you'll get flooded with all sorts of nastiness and spam. Sure we should be doing it at the server level anyway, but you still want that client side layer to add a bit of UX charm to your form.</p>
+<p>We can still use the new required attribute effectively by creating a JavaScript fallback for unsupported browsers.</p>
+<p>In this <a href="http://www.csskarma.com/lab/html5/input.required/">demo</a>, I'm using:</p>
+<ul>
+<li><a href="http://jquery.com/">jQuery</a></li>
+<li><a href="http://bassistance.de/jquery-plugins/jquery-plugin-validation/">jQuery Validation</a></li>
+<li><a href="http://www.modernizr.com/">Modernizr</a></li>
+</ul>
+<h3 id="the-html" tabindex="-1">The HTML <a class="direct-link" href="#the-html" aria-hidden="true">#</a></h3>
+<p>The HTML is very basic, just an HTML5 form, with 2 inputs: text (name), and email (email). I'm using 2 form types to show how we add classes to support the <a href="http://bassistance.de/jquery-plugins/jquery-plugin-validation/">jQuery Validation</a>. You can, of course, use whatever validation method you'd like.</p>
+<pre><code>&lt;form action=&quot;&quot; method=&quot;post&quot;&gt;
+&lt;label for=&quot;name&quot;&gt;Name&lt;/label&gt;
+&lt;input type=&quot;text&quot; name=&quot;name&quot; id=&quot;name&quot; required&gt;
+
+&lt;label for=&quot;email&quot;&gt;Email&lt;/label&gt;
+&lt;input type=&quot;email&quot; name=&quot;email&quot; id=&quot;email&quot; required&gt;
+
+&lt;button type=&quot;submit&quot;&gt;Submit&lt;/button&gt;
+&lt;/form&gt;
+</code></pre>
+<h3 id="the-javascript" tabindex="-1">The JavaScript <a class="direct-link" href="#the-javascript" aria-hidden="true">#</a></h3>
+<p>With the JavaScript, we first make the check for &quot;required&quot; support. I'm using <a href="http://www.modernizr.com/">Modernizr</a> for this.</p>
+<p>I left an open block in the if statement in case you want to do something else in there, but you could remove the <code>else</code> and replace the first line with it's inverse <code>if (!Modernizr.input.required) {</code> if you don't plan on using it for anything.</p>
+<p>If &quot;required&quot; isn't supported I'm running through all the form inputs on the page with a &quot;required&quot; attribute, adding a class of &quot;required&quot;, and the type of input (email, text, etc.). Setting the input type helps you use the validation plugin a little better and can also aid in styling for IE6.</p>
+<p><strong>NOTE:</strong> I'm using JavaScript's native getAttribute() method to grab the input type because jQuery's <code>attr('type')</code> returns &quot;text&quot; on the &quot;email&quot; input for some reason.</p>
+<p>After all the appropriate classes are added, we can call the plugin. I'm doing it on each form, but targeting one specific form by it's ID value is more traditional.</p>
+<pre><code>(function ($) {
+
+	// check for &quot;required&quot; input support with modernizr
+	if (Modernizr.input.required) {
+
+		// do something else
+
+	} else {
+
+		// parse through each required input
+		$('form').find('input[required]').each(function () {
+
+			// add a class to each required field with &quot;required&quot; &amp; the input type
+			// using the normal &quot;getAttribute&quot; method because jQuery's attr always returns &quot;text&quot;
+			$(this).attr('class', 'required ' + this.getAttribute('type')).removeAttr('required');
+
+		});
+
+		// call jQuery validate plugin on each form
+		$('form').each(function () {
+			$(this).validate();
+		});
+
+	} // if required supported
+
+}(jQuery));
+</code></pre>
+<p>Older (unsupported) browsers will use the Validation plugin, and modern browsers will use the built-in HTML 5 validation.</p>

@@ -1,0 +1,40 @@
+<p>In dipping my toes into ES6 more and more, I want to make sure I fully understand each feature and it's ES5 fallback before I move forward and adopt it. It's a little over the top, I know, but it's how I am. If my compiler were to break for some reason, I want to make sure I can still parse through and effectively write my code.</p>
+<p>Right now, I'm digging into <code>let</code> vs <code>var</code>. This is where I'll be documenting it.</p>
+<h2 id="let" tabindex="-1">let <a class="direct-link" href="#let" aria-hidden="true">#</a></h2>
+<p>Let introduces a concept to JavaScript called &quot;block scoping.&quot; It's been around in other languages for years, but is just now (sorta, just now - I realize this has actually be around for a while, it's just not supported well enough yet) being introduced into JavaScript. The best way I can describe it is by example:</p>
+<h3 id="using-var" tabindex="-1">Using Var <a class="direct-link" href="#using-var" aria-hidden="true">#</a></h3>
+<pre><code>function a() {
+  
+  var b = 1;
+  if(b) {
+    b = 2;
+    console.log(b); // 2
+  }
+
+  console.log(b); // 2
+
+}
+</code></pre>
+<h3 id="using-let" tabindex="-1">Using Let <a class="direct-link" href="#using-let" aria-hidden="true">#</a></h3>
+<pre><code>function a() {
+  
+  var b = 1;
+  if(b) {
+    let b = 2;
+    console.log(b); // 2
+  }
+
+  console.log(b); // 1, because &quot;2&quot; is block-scoped inside the if statement
+
+}
+</code></pre>
+<p>The difference in the 2 examples is that when we use let, the variable gets stuck (scoped) inside the curly braces {...} (aka, a block).</p>
+<h2 id="why-would-i-use-this" tabindex="-1">Why would I use this? <a class="direct-link" href="#why-would-i-use-this" aria-hidden="true">#</a></h2>
+<p>I'm not sure. Well, that's not true, I know <em>why</em> to use it (block scoping), I just haven't had much of a problem with it in the past so making a switch isn't completely clear. I've seen people completely drop <code>var</code> in favor of <code>let</code> and it looks perfect valid. For me, I think it'll be a case-by-case usage, but I do like it overall.</p>
+<p>To an extent, we already use it with for loops:</p>
+<pre><code>for (var i=0; i&lt;5; i++) {...}
+</code></pre>
+<p>That's a stylistic choice (and optional, I might add). Kyle Simpson goes into detail about stylistic block scoping in <a href="https://davidwalsh.name/for-and-against-let">his write-up about let</a>. It tells us to only use <code>i</code> within the scope of the loop. To use <code>let</code> it's just:</p>
+<pre><code>for (let i=0; i&lt;5; i++) {...}
+</code></pre>
+<p>Not bad and pretty straight forward.</p>

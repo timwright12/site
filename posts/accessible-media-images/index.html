@@ -1,0 +1,41 @@
+<p>Most of the time, when we think of difficult accessibility situations we default to UI interactions like: tabs, accordions, menus opening and closing, modals, focus trapping, and maybe even that nervous, “radical candor” moment when we ask a designer if it’s OK to <a href="https://www.w3.org/WAI/WCAG21/quickref/#contrast-minimum">darken gray text a little</a>. Because image accessibility is seen as being as basic as putting ALT text on an image, it’s often pushed aside as simple. For that reason, I wanted to create a quick write up to expand on some of the basics in creating accessible media; specifically: <a href="https://10up.github.io/Engineering-Best-Practices/markup/#media">images</a>.</p>
+<p>Images can generally be broken down into one of seven catagories, each of which we deal with in slightly different ways:</p>
+<ul>
+<li>Informational images</li>
+<li>Decorative images</li>
+<li>Functional images</li>
+<li>Images of text</li>
+<li>Complex images</li>
+<li>Groups of images</li>
+<li>Image maps</li>
+</ul>
+<p>If you’re unclear about which category your image falls under, the W3C has created an <a href="https://www.w3.org/WAI/tutorials/images/decision-tree/">ALT decision tree</a> to help out. Let’s take a look at each type (as quickly as we can, I promise).</p>
+<h2 id="informational-images" tabindex="-1">Informational Images <a class="direct-link" href="#informational-images" aria-hidden="true">#</a></h2>
+<p>This is the most common type of image you’ll encounter, it’s a standard content image that graphically represents something, usually pictures, photos, illustrations, and the like. Creating ALT text for this should be short and to the point, but really you should use as much as you need to properly convey the content of the image. If you use the ALT decision tree and are still unsure of what type of image you’re dealing with, this is a good fallback.</p>
+<p>When creating ALT text for an informational image, I find it helpful to imagine you’re sitting next to someone who can’t see the image. However you would describe it to them in the context of the content is usually a good starting point for the alternative text.</p>
+<p><a href="https://www.w3.org/WAI/tutorials/images/informative/">Read more about informational images</a>.</p>
+<h2 id="decorative-images" tabindex="-1">Decorative Images <a class="direct-link" href="#decorative-images" aria-hidden="true">#</a></h2>
+<p>Decorative image in HTML are images that really serve no purpose and convey no added information to a page. For these images, it’s best to leave the ALT text empty, not blank/missing, but empty: `alt=””`. This way a screenreader will pass right over it. If the ALT text is removed completely assistive technology will try and read the URL to give context to the image.</p>
+<p><a href="https://www.w3.org/WAI/tutorials/images/decorative/">Read more about decorative images</a>.</p>
+<h2 id="functional-images" tabindex="-1">Functional Images <a class="direct-link" href="#functional-images" aria-hidden="true">#</a></h2>
+<p>Functional images are images that you would interact with, a common version of this is a form submit button: `<input type=”image” alt=”submit” />`. In the case of a functional image like this you would describe the action (submit) rather than whatever button image is being used.</p>
+<p>This also holds true when images are inside links. For instance, a logo that’s linked to a homepage wouldn’t just describe the logo, but it would also let the user know the destination of the link like: `<a href=”/”>&lt;img src=”logo.png alt=”Company Name Home Page”/&gt;</a>`.</p>
+<p>Another instance of a functional image is a link that contains an icon. If an icon is representing that the link opens in a new window, the ALT should reflect that with the alternative text of: “Opens in a new window”.</p>
+<p><a href="https://www.w3.org/WAI/tutorials/images/functional/">Read more about functional images.</a></p>
+<h2 id="images-of-text" tabindex="-1">Images of Text <a class="direct-link" href="#images-of-text" aria-hidden="true">#</a></h2>
+<p>Working with images of text is generally pretty straightforward. It’s best to avoid putting text inside an image for a lot of read, and scalability reasons, but if you find yourself in a situation where it’s needed, the ALT text should contain the same text as the image.</p>
+<p><a href="https://www.w3.org/WAI/tutorials/images/textual/">Read more about images of text.</a></p>
+<h2 id="complex-images" tabindex="-1">Complex Images <a class="direct-link" href="#complex-images" aria-hidden="true">#</a></h2>
+<p>Complex images include charts, graphs, and (for the most part), maps. These are very hard to create accurate ALT text for. In these cases you need to use a two-part ALT text. The first part is a short description of the image (normal ALT) and the second is a longer description that is a text-based representation of the image’s content. This is often represented in a caption, but in some cases it will likely required a much larger output (like a data table for a chart). There is also a `longdesc` attribute in HTML that isn’t much used anymore since` figure and figcaption were released in HTML5.</p>
+<p><a href="https://www.w3.org/WAI/tutorials/images/complex/">Read more about complex images.</a></p>
+<h2 id="groups-of-images" tabindex="-1">Groups of Images <a class="direct-link" href="#groups-of-images" aria-hidden="true">#</a></h2>
+<p>If multiple images are present to convey the same information, the ALT text on one image should represent the entire group. A great example of this is a star rating system, you don’t need ALT on each star image to convey that something has ,”3 out of 5 stars.” You can also use the ARIA role “group” to… well, group… images and set a label for them all.</p>
+<p><a href="https://www.w3.org/WAI/tutorials/images/groups/">Read more about groups of images</a>.</p>
+<h2 id="image-maps" tabindex="-1">Image Maps <a class="direct-link" href="#image-maps" aria-hidden="true">#</a></h2>
+<p>Image maps are not really used much anymore, but are still perfectly valid ways to provide hot-linking within an image (although legacy browser support is a little undesirable). When creating an image map, the parent image should contain ALT text as well as each `area` element present in the map.</p>
+<p><a href="https://www.w3.org/WAI/tutorials/images/imagemap/">Read more about image maps</a>.</p>
+<h2 id="further-reading-about-accessibility-in-images" tabindex="-1">Further Reading about Accessibility in Images <a class="direct-link" href="#further-reading-about-accessibility-in-images" aria-hidden="true">#</a></h2>
+<ul>
+<li><a href="https://accessibility.huit.harvard.edu/provide-accessible-images">Providing Accessible Images</a></li>
+<li><a href="https://www.w3.org/WAI/tutorials/images/">Image Concepts</a></li>
+</ul>

@@ -1,0 +1,69 @@
+<p>Please use <strong>version 3</strong> of sliding labels with updated options and bug fixes at: <a href="http://www.csskarma.com/blog/sliding-labels-plugin/">http://www.csskarma.com/blog/sliding-labels-plugin/</a></p>
+<p>Last week I wrote an article about sliding form labels that got quite a bit of attention. Many of the commenters brought up a couple good points/bug in the Sliding Label code that I wanted to address and provide a patch for:</p>
+<ul>
+<li>The sliding label was barfing out in <strong>Safari</strong> when auto-fill was active</li>
+<li>The default scripting didn't work on <strong>textareas</strong></li>
+</ul>
+<p>I sat down yesterday and wrote a patch/new version of sliding labels which I think addresses these two problems.</p>
+<p><a href="http://www.csskarma.com/lab/plugin_slidinglabels/">View the Demo</a></p>
+<h3 id="the-new-jquery" tabindex="-1">The new jQuery <a class="direct-link" href="#the-new-jquery" aria-hidden="true">#</a></h3>
+<pre><code>$(function(){
+$('form#info .slider label').each(function(){
+	var labelColor = '#999';
+	var restingPosition = '5px';
+
+	// style the label with JS for progressive enhancement
+	$(this).css({
+		'color' : labelColor,
+		 	'position' : 'absolute',
+	 		'top' : '6px',
+			'left' : restingPosition,
+			'display' : 'inline',
+    		        'z-index' : '99'
+	});
+
+	var inputval = $(this).next().val();
+
+	// grab the label width, then add 5 pixels to it
+	var labelwidth = $(this).width();
+	var labelmove = labelwidth + 5 +'px';
+
+	// onload, check if a field is filled out, if so, move the label out of the way
+	if(inputval !== ''){
+		$(this).stop().animate({ 'left':'-'+labelmove }, 1);
+	}    	
+
+	// if the input is empty on focus move the label to the left
+	// if it's empty on blur, move it back
+	$('input, textarea').focus(function(){
+		var label = $(this).prev('label');
+		var width = $(label).width();
+		var adjust = width + 5 + 'px';
+		var value = $(this).val();
+
+		if(value == ''){
+			label.stop().animate({ 'left':'-'+adjust }, 'fast');
+		} else {
+			label.css({ 'left':'-'+adjust });
+		}
+	}).blur(function(){
+		var label = $(this).prev('label');
+		var value = $(this).val();
+
+		if(value == ''){
+			label.stop().animate({ 'left':restingPosition }, 'fast');
+		}	
+
+	});
+}); // End &quot;each&quot; statement
+}); // End loaded jQuery
+</code></pre>
+<h3 id="textarea-html" tabindex="-1">Textarea HTML <a class="direct-link" href="#textarea-html" aria-hidden="true">#</a></h3>
+<p>The HTML for the textarea follows the same convention as the rest of the inputs, in only needing a wrapping element.</p>
+<pre><code>&lt;div id=&quot;comment-wrap&quot;  class=&quot;slider&quot;&gt;
+    &lt;label for=&quot;comment&quot;&gt;Comment&lt;/label&gt;
+    &lt;textarea cols=&quot;53&quot; rows=&quot;10&quot; id=&quot;comment&quot;&gt;&lt;/textarea&gt;
+&lt;/div&gt;&lt;!--/#comment-wrap--&gt;
+</code></pre>
+<p>There are no major changes to the plugin, just a few tweaks. If you find anymore bug, please let me know.</p>
+<p><a href="http://www.csskarma.com/lab/plugin_slidinglabels/">View the Demo</a></p>

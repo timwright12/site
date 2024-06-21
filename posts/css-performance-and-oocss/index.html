@@ -1,0 +1,23 @@
+<p>I'm in the process right now of signing on for my first speaking gig in since I moved to Boston (thanks to <a href="http://twitter.com/joedevon">@joedevon</a>) and it got me thinking about performance in CSS; a topic I really haven't address in years since I started using my <a href="http://csskarma.com/css/csskarma.css">single-line CSS formatting style</a>. <strong>Tip:</strong> use spaces rather than tabbing to maintain the alignment across different software since they all treat the &quot;tab&quot; differently.</p>
+<p>But I digress.</p>
+<h3 id="css-performance" tabindex="-1">CSS Performance <a class="direct-link" href="#css-performance" aria-hidden="true">#</a></h3>
+<p>We've all seen the mass of articles &amp; tutorials about <a href="http://www.youtube.com/watch?v=mHtdZgou0qU">JavaScript performance</a>, how to <a href="http://www.alfajango.com/blog/the-difference-between-jquerys-bind-live-and-delegate/">optimize jQuery</a>, and the <a href="http://jsperf.com/browse">JS Performance test suite</a>. The market is flooded, ok, we get it. JavaScript is a beast of the Web that needs to be constantly tamed. It's getting better, especially with lightning-fast JS engine , <a href="http://code.google.com/p/v8/">V8</a> looming around in Chome and NodeJS.</p>
+<p>CSS performance is constantly overshadowed by JS performance (and rightly so), but that doesn't mean we shouldn't at least take a look at it every now-and-then as a form of checks and balances for our front-end code. After all, something like <a href="http://developer.yahoo.com/performance/rules.html">90% of the load time for a site happens on the front-end</a> and unless you're Google, it's probably not <em>all</em> JavaScript (little bit of a big there, sorry fellas).</p>
+<h3 id="oocss" tabindex="-1">OOCSS <a class="direct-link" href="#oocss" aria-hidden="true">#</a></h3>
+<p>Object Oriented CSS goes a little like this:</p>
+<h4 id="the-css" tabindex="-1">The CSS <a class="direct-link" href="#the-css" aria-hidden="true">#</a></h4>
+<pre><code>.rounded{ border-radius:7px; }
+.box-shadow{ -moz-box-shadow:0 2px 2px #333;box-shadow:0 2px 0 #333; }
+.left{ float:left; }
+</code></pre>
+<h4 id="the-html" tabindex="-1">The HTML <a class="direct-link" href="#the-html" aria-hidden="true">#</a></h4>
+<pre><code>&lt;div class=&quot;rounded box-shadow left&quot;&gt;&lt;/div&gt; &lt;!--/.rounded .box-shadow .left--&gt;
+</code></pre>
+<p>You're basically just separating out the individual properties you'll be using and modifying the HTML to reflect them. It's very similar to a framework model in building and styling a site.</p>
+<p>Whether you like it or not, there it is. There's a lot of debate over this method, pluses and minuses, loves and hates. The most popular argument against it is that you're embedding style information into your HTML and semi-collapses the progressive enhancement model of structure — presentation — behavior.</p>
+<p>It's tough for me to totally buy into OOCSS for that reason. I stick very closely to progressive enhancement while I'm building a site and really only stray from that when I'm styling for a CMS and I need classes like: &quot;left&quot;, &quot;right&quot;, &quot;clear&quot;, etc., which get applied by the user later on.</p>
+<p>So, when styling for use in a CMS, I really do think OOCSS is dead-on. I've yet to fully use it just because I question it's maintainability. But from a strictly performance stand point: <strong>Is OOCSS better?</strong> Yea, it's better. <a href="http://www.shauninman.com/archive/2008/05/05/css_qualified_selectors#comment_3940">It does perform better across the board</a> than almost all of the CSS selectors (especially the advanced ones).</p>
+<h3 id="lastly-on-performance" tabindex="-1">Lastly, on performance <a class="direct-link" href="#lastly-on-performance" aria-hidden="true">#</a></h3>
+<p>We can all go through ySlow and JSLint to see where we may have some front-end memory leaks but getting down to the granularity of the way we're constructing a page (OOCSS vs. non-OOCSS) is tough without running the explicit performance tests.</p>
+<p>As the Web gets more and more advanced and browsers like Chrome pave the way for faster sites, I have no idea what the real answer for CSS performance is, but I do know that <strong>browsers will not help you write better code</strong>. We still need to explore the best practices, be it front-end, back-end or somewhere in the middle.</p>
+<p>I'd like to get into this in more detail, but I have a group of tourists screaming at eachother in French next to me (trying out a new coffee shop), so I defer to the comments if you're at all interesting in the OOCSS debate.</p>

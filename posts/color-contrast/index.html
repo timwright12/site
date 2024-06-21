@@ -1,0 +1,30 @@
+<p>&quot;Let the Dev team deal with it.&quot; Accessibility on the Web is mostly seen as an implementation problem, but some of the most prominent and problematic accessibility issues happen in design. Whether it's <a href="http://www.blonde.net/blog/2015/06/22/accessibility-101-8-tips-better-user-experience">iconography</a>, <a href="https://www.webaccessibility.com/best_practices.php?technology_platform_id=12">typography</a>, <a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html">color contrast</a>, or any of the other accessible design components that we really can't control once we get into development. In this write up, I'm going to talk about the most common one I've seen over the years: <strong>color contrast</strong>. It's something you're going to want to keep an eye on for all clients who are required to adhere to Web content accessibility guidelines, WCAG (but, really it's just a good idea anyway).</p>
+<h3 id="creating-contrast-in-a-design" tabindex="-1">Creating Contrast in a Design <a class="direct-link" href="#creating-contrast-in-a-design" aria-hidden="true">#</a></h3>
+<p>There's a general rule in design that if your design doesn't work in black and white, it won't work in color. This is a statement about creating clear hierarchy and contrast in a mockup. It's thought that you should be able to convert a design to grayscale, and it will still, &quot;work&quot; in the same way it did with color - kind of like <a href="http://searchnetworking.techtarget.com/definition/graceful-degradation">graceful degradation</a> for your eyes. The same information is communicated to the user and everything retains its meaning.</p>
+<p>This is more than a design principle, it's actually an accessibility standard.</p>
+<h4 id="wcag-2.0" tabindex="-1">WCAG 2.0 <a class="direct-link" href="#wcag-2.0" aria-hidden="true">#</a></h4>
+<p>In the WCAG 2.0 guidelines there 3 levels of support: Level A, Level AA, and Level AAA (A is low, AAA is high, just like baseball). With each support level there are requirements around the level of contrast you can use when using two colors together:</p>
+<ul>
+<li><strong>Level A</strong>: 3:1 minimum contrast ratio</li>
+<li><strong>Level AA</strong>: 4.5:1 minimum contrast ratio</li>
+<li><strong>Level AAA</strong>: 7:1 minimum contrast ratio</li>
+</ul>
+<p>These ratios are relevant when you put one color on top of another (like gray text on a white background). The two colors need to be far enough apart to provide sufficient contrast for people with moderately low visual acuity, congenital or acquired color deficiencies, or the loss of contrast sensitivity that typically accompanies aging. The most common of these issues is color blindness, which affects 10% of males (that's more people that use IE on some projects).</p>
+<p>It's not only the color contrast we need to worry about, but also the <strong>font size</strong>, which affects compliance as well. From <a href="http://webaim.org/resources/contrastchecker/">WebAIM</a>:</p>
+<blockquote>
+<p><a href="http://www.w3.org/TR/WCAG20/">WCAG 2.0</a> level AA requires a contrast ratio of 4.5:1 for normal text and 3:1 for large text. Level AAA requires a contrast ratio of 7:1 for normal text and 4.5:1 for large text. Large text is defined as 14 point (typically 18.66px) and bold or larger, or 18 point (typically 24px) or larger.</p>
+</blockquote>
+<p>As you can see, there are combinations of color and size that will correlate to a certain level of accessibility support. And we can modify that within a design.</p>
+<h4 id="testing-your-colors" tabindex="-1">Testing Your Colors <a class="direct-link" href="#testing-your-colors" aria-hidden="true">#</a></h4>
+<p>Great, so what does that mean? Most people can't eyeball a design and tell if two colors have the proper contrast ratio.  Luckily there are a number of contrast testing tools available. My personal favorite is one built by the good folks at <a href="http://webaim.org/resources/contrastchecker/">WebAIM</a>. It has a simple UI and tells you exactly what you need to be compliant.</p>
+<p>What you <em>won't</em> find is much information about Level A contrast support. I'm not sure why, but most resources talk about AA being a good baseline balance between getting accessible ratios and having it not be overly obtrusive to your look and feel. AAA support is pretty aggressive, I'd <em>almost</em> call it high-contrast mode and I don't see it very often.</p>
+<p>Offering up a secondary color palette is a great way to help clients who have a well-establish brand, but don't quite meet accessibility standards.</p>
+<h3 id="resources-and-further-reading" tabindex="-1">Resources and Further Reading <a class="direct-link" href="#resources-and-further-reading" aria-hidden="true">#</a></h3>
+<ul>
+<li><a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html">Understanding SC 1.4.3 and Minimum Contrast</a></li>
+<li><a href="https://www.w3.org/TR/WCAG20/#perceivable">WCAG 2.0 Principle 1: Perceivable</a></li>
+<li><a href="http://webaim.org/resources/contrastchecker/">Web AIM Color Contrast Checker</a></li>
+<li><a href="http://accessibility.psu.edu/color/contrasthtml/">Accessibility at Penn</a></li>
+<li><a href="http://alistapart.com/blog/post/easy-color-contrast-testing">Easy Color Contrast Testing</a></li>
+<li><a href="https://snook.ca/technical/colour_contrast/colour.html#fg=33FF33,bg=333333">Color Contrast Checker by Jonathan Snook</a></li>
+</ul>

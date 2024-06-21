@@ -1,0 +1,50 @@
+<p>Recently I decided to finally sit down and organize some things on my site/server. I created dev server, and did some other things that I had been wanting to do for a while.</p>
+<p>While I was putting together my usual .htaccess file I thought that maybe I could build it a little better and create a file template that I can use in the future when I'm doing something like this again (since, I know this will come up again). So I did a little research about things I knew I wanted to add in like the 404 error page rewrite rule (which many tutorials seem to omit) and denying a directory listing.</p>
+<h5 id="this-is-the-file-template-i-came-up-with:" tabindex="-1"><strong>This is the file template I came up with:</strong> <a class="direct-link" href="#this-is-the-file-template-i-came-up-with:" aria-hidden="true">#</a></h5>
+<p>For those who don't know, you create a file called .htaccess with the below code in it, and stick it in the root directory of your site. It does all sorts of neat stuff. It can also be used to password protecting directories, but that's for another day</p>
+<pre><code>DirectoryIndex index.php index.html index.htm
+
+&lt;IfModule mod_rewrite.c&gt;
+RewriteEngine On
+ErrorDocument 404 /errors/404.php
+ErrorDocument 403 /errors/403.php
+ErrorDocument 500 /errors/500.php
+&lt;/IfModule&gt;
+
+Options -Indexes
+Options +FollowSymlinks
+
+&lt;Files .htaccess&gt;
+deny from all
+&lt;/Files&gt;
+</code></pre>
+<h4 id="breaking-it-down" tabindex="-1">Breaking it down <a class="direct-link" href="#breaking-it-down" aria-hidden="true">#</a></h4>
+<p>This .htaccess file is in 4 basic parts: the directory index, the error documents, directory listing options and denying access to the .htaccess file itself.</p>
+<h5 id="directoryindex" tabindex="-1">DirectoryIndex <a class="direct-link" href="#directoryindex" aria-hidden="true">#</a></h5>
+<pre><code>DirectoryIndex index.php index.html index.htm
+</code></pre>
+<p>DirectoryIndex is the first thing I learned in my .htaccess explorations, it's very simple. It tells the server which pages to display by default and in what order. In my example, if I have index.html in a directory along with index.php, the index.php file will be displayed by default, so you have <a href="http://www.csskarma.com/">www.csskarma.com</a> pointing to index.php and if you want to get to index.html you'd have to type it in like <a href="http://www.csskarma.com/index.html">www.csskarma.com/index.html</a>. Many servers get this right without the DirectoryIndex, but it's like doing <code>body{background-color:#fff;}</code>, I put it in just in case.</p>
+<h5 id="errordocument" tabindex="-1">ErrorDocument <a class="direct-link" href="#errordocument" aria-hidden="true">#</a></h5>
+<pre><code>&lt;IfModule mod_rewrite.c&gt;
+RewriteEngine On
+ErrorDocument 404 /errors/404.php
+ErrorDocument 403 /errors/403.php
+ErrorDocument 500 /errors/500.php
+&lt;/IfModule&gt;
+</code></pre>
+<p>This is the stuff that I dig. It gets the most press out of all the .htaccess elements; so I guess it's the rock star of the .htaccess file. <a href="http://alistapart.com/articles/perfect404/">A List Apart</a> did an article on it in 2004, and it was a big usability issue building a good 404 error page. Now we all have our fancy 404 pages.</p>
+<p>The mod_rewrite module (as to my understanding of it) deals with rewriting the URL. In this cae, it's the thing that lets you have a 404 error without exposing the URL of the actual <a href="http://www.csskarma.com/errors/404.php">error page</a>. 403 Error is a permission denied error and 500 is an internal server error. You can check out <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html">all the error codes</a> if you'd like, but you shouldn't bog down your .htaccess file too much, so I keep it to these 3.</p>
+<h5 id="index-options" tabindex="-1">Index Options <a class="direct-link" href="#index-options" aria-hidden="true">#</a></h5>
+<pre><code>Options -Indexes
+Options +FollowSymlinks
+</code></pre>
+<p><code>Options -Indexes</code> is what you use to deny a directory listing; inversely, you could use <code>Options Indexes</code> (no dash) to allow a directory listing. I use this for things like my images directory.</p>
+<p><code>Options +FollowSymlinks</code> tells the server to follow Symlinks (no kidding huh?). Some apache servers require this for mod_rewrite to work. So if your mod_rewrite is working fine, you may not need this, I include it just in case. In my experience Symlinks are generally abused and overused but it's still good to know how to <a href="http://kb.iu.edu/data/abbe.html">create them from the command line</a>.</p>
+<h5 id=".htaccess-access" tabindex="-1">.htaccess Access <a class="direct-link" href="#.htaccess-access" aria-hidden="true">#</a></h5>
+<pre><code>&lt;Files .htaccess&gt;
+deny from all
+&lt;/Files&gt;
+</code></pre>
+<p>This is very simple and (I think) very necessary. It prevents people from viewing your .htaccess file. There's really not any sensitive information in <em>my</em> .htaccess file, but it's good practice to protect this file in case you do put things in it that you don't want exposed.</p>
+<p>Fin</p>
+<p>So, that's my .htaccess file starter template. I'd be interested to hear what others use in their files and if I missed anything in mine, I'm certainly no Apache expert.</p>
