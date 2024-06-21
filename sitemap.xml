@@ -2,23 +2,8 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://timwright12.github.io/site/posts/the-way-of-the-web/</loc>
-    <lastmod>2007-05-16</lastmod>
-  </url>
-  
-  <url>
     <loc>https://timwright12.github.io/site/posts/javascript-form-checker/</loc>
     <lastmod>2007-10-25</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://timwright12.github.io/site/posts/corner-gas/</loc>
-    <lastmod>2007-11-20</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://timwright12.github.io/site/posts/web-directions-north-2008/</loc>
-    <lastmod>2007-11-28</lastmod>
   </url>
   
   <url>
@@ -42,21 +27,6 @@
   </url>
   
   <url>
-    <loc>https://timwright12.github.io/site/posts/uxbridge-myminicity/</loc>
-    <lastmod>2007-12-19</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://timwright12.github.io/site/posts/ghost-rider-beef-jerky/</loc>
-    <lastmod>2007-12-23</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://timwright12.github.io/site/posts/young-johnny-blaze/</loc>
-    <lastmod>2007-12-26</lastmod>
-  </url>
-  
-  <url>
     <loc>https://timwright12.github.io/site/posts/cake-php-web-dierections-north/</loc>
     <lastmod>2008-01-09</lastmod>
   </url>
@@ -67,16 +37,6 @@
   </url>
   
   <url>
-    <loc>https://timwright12.github.io/site/posts/in-vancouver/</loc>
-    <lastmod>2008-01-30</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://timwright12.github.io/site/posts/web-directions-north-vancouver-day-2/</loc>
-    <lastmod>2008-02-03</lastmod>
-  </url>
-  
-  <url>
     <loc>https://timwright12.github.io/site/posts/css-gradient-text/</loc>
     <lastmod>2008-02-04</lastmod>
   </url>
@@ -84,11 +44,6 @@
   <url>
     <loc>https://timwright12.github.io/site/posts/reseting-browser-defaults-resetcss/</loc>
     <lastmod>2008-02-06</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://timwright12.github.io/site/posts/microsoft-expands-support-for-web-standards/</loc>
-    <lastmod>2008-03-04</lastmod>
   </url>
   
   <url>
@@ -117,23 +72,8 @@
   </url>
   
   <url>
-    <loc>https://timwright12.github.io/site/posts/web-directions-north-slides-and-podcasts-now-online/</loc>
-    <lastmod>2008-04-18</lastmod>
-  </url>
-  
-  <url>
     <loc>https://timwright12.github.io/site/posts/lack-of-news-and-some-hot-topics/</loc>
     <lastmod>2008-05-14</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://timwright12.github.io/site/posts/a-true-css-table/</loc>
-    <lastmod>2008-05-23</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://timwright12.github.io/site/posts/styling-your-body/</loc>
-    <lastmod>2008-06-02</lastmod>
   </url>
   
   <url>
@@ -162,16 +102,6 @@
   </url>
   
   <url>
-    <loc>https://timwright12.github.io/site/posts/this-week-in-links-9-4/</loc>
-    <lastmod>2008-09-04</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://timwright12.github.io/site/posts/this-week-in-links-910/</loc>
-    <lastmod>2008-09-10</lastmod>
-  </url>
-  
-  <url>
     <loc>https://timwright12.github.io/site/posts/creating-an-htaccess-template/</loc>
     <lastmod>2008-09-11</lastmod>
   </url>
@@ -182,23 +112,8 @@
   </url>
   
   <url>
-    <loc>https://timwright12.github.io/site/posts/this-week-in-links-3/</loc>
-    <lastmod>2008-09-17</lastmod>
-  </url>
-  
-  <url>
     <loc>https://timwright12.github.io/site/posts/a-new-breed-of-microformat/</loc>
     <lastmod>2008-09-22</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://timwright12.github.io/site/posts/this-week-in-links-4/</loc>
-    <lastmod>2008-09-24</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://timwright12.github.io/site/posts/this-week-in-links-5/</loc>
-    <lastmod>2008-09-29</lastmod>
   </url>
   
   <url>
@@ -207,38 +122,8 @@
   </url>
   
   <url>
-    <loc>https://timwright12.github.io/site/posts/this-week-in-links-6/</loc>
-    <lastmod>2008-10-06</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://timwright12.github.io/site/posts/active-navigation-with-jquery/</loc>
-    <lastmod>2008-10-08</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://timwright12.github.io/site/posts/this-week-in-links-7/</loc>
-    <lastmod>2008-10-15</lastmod>
-  </url>
-  
-  <url>
     <loc>https://timwright12.github.io/site/posts/clickable-labels/</loc>
     <lastmod>2008-10-20</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://timwright12.github.io/site/posts/this-week-in-links-8/</loc>
-    <lastmod>2008-10-27</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://timwright12.github.io/site/posts/this-week-in-links-9/</loc>
-    <lastmod>2008-11-05</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://timwright12.github.io/site/posts/this-week-in-links-10/</loc>
-    <lastmod>2008-11-11</lastmod>
   </url>
   
   <url>
@@ -252,23 +137,8 @@
   </url>
   
   <url>
-    <loc>https://timwright12.github.io/site/posts/this-week-in-links-11/</loc>
-    <lastmod>2008-12-08</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://timwright12.github.io/site/posts/this-week-in-links-12/</loc>
-    <lastmod>2008-12-16</lastmod>
-  </url>
-  
-  <url>
     <loc>https://timwright12.github.io/site/posts/centering-an-image/</loc>
     <lastmod>2009-01-06</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://timwright12.github.io/site/posts/where-i-get-my-news/</loc>
-    <lastmod>2009-01-16</lastmod>
   </url>
   
   <url>
@@ -279,41 +149,6 @@
   <url>
     <loc>https://timwright12.github.io/site/posts/framing-an-image/</loc>
     <lastmod>2009-02-09</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://timwright12.github.io/site/posts/this-week-in-links-13/</loc>
-    <lastmod>2009-02-18</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://timwright12.github.io/site/posts/gmail-if-statements/</loc>
-    <lastmod>2009-02-26</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://timwright12.github.io/site/posts/sxsw-notes-pt1/</loc>
-    <lastmod>2009-03-16</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://timwright12.github.io/site/posts/sxsw-notes-pt2/</loc>
-    <lastmod>2009-03-19</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://timwright12.github.io/site/posts/sxsw-notes-pt3/</loc>
-    <lastmod>2009-03-20</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://timwright12.github.io/site/posts/sxsw-notes-pt4/</loc>
-    <lastmod>2009-03-23</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://timwright12.github.io/site/posts/sxsw-notes-pt5/</loc>
-    <lastmod>2009-03-31</lastmod>
   </url>
   
   <url>
@@ -342,28 +177,13 @@
   </url>
   
   <url>
-    <loc>https://timwright12.github.io/site/posts/twitter-and-the-downfall-of-social-networking/</loc>
-    <lastmod>2009-05-17</lastmod>
-  </url>
-  
-  <url>
     <loc>https://timwright12.github.io/site/posts/qt1-image-replacement/</loc>
     <lastmod>2009-05-28</lastmod>
   </url>
   
   <url>
-    <loc>https://timwright12.github.io/site/posts/10-tips-to-create-a-more-usable-web/</loc>
-    <lastmod>2009-06-04</lastmod>
-  </url>
-  
-  <url>
     <loc>https://timwright12.github.io/site/posts/qt2-bringing-search-back/</loc>
     <lastmod>2009-06-29</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://timwright12.github.io/site/posts/10-videos-for-the-web-community/</loc>
-    <lastmod>2009-08-07</lastmod>
   </url>
   
   <url>
@@ -437,11 +257,6 @@
   </url>
   
   <url>
-    <loc>https://timwright12.github.io/site/posts/global-scope-jquery/</loc>
-    <lastmod>2011-04-08</lastmod>
-  </url>
-  
-  <url>
     <loc>https://timwright12.github.io/site/posts/css-performance-and-oocss/</loc>
     <lastmod>2011-04-18</lastmod>
   </url>
@@ -454,11 +269,6 @@
   <url>
     <loc>https://timwright12.github.io/site/posts/shortcuts-in-terminal/</loc>
     <lastmod>2011-05-20</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://timwright12.github.io/site/posts/twitterfeed/</loc>
-    <lastmod>2011-05-24</lastmod>
   </url>
   
   <url>
@@ -484,11 +294,6 @@
   <url>
     <loc>https://timwright12.github.io/site/posts/changing-history-with-html-5/</loc>
     <lastmod>2011-08-19</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://timwright12.github.io/site/posts/fowd2011/</loc>
-    <lastmod>2011-10-10</lastmod>
   </url>
   
   <url>
@@ -564,11 +369,6 @@
   <url>
     <loc>https://timwright12.github.io/site/posts/internet-explorer-is-perfect/</loc>
     <lastmod>2014-02-11</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://timwright12.github.io/site/posts/twitter-flight/</loc>
-    <lastmod>2014-02-12</lastmod>
   </url>
   
   <url>
@@ -777,11 +577,6 @@
   </url>
   
   <url>
-    <loc>https://timwright12.github.io/site/posts/firstpost/</loc>
-    <lastmod>2020-09-02</lastmod>
-  </url>
-  
-  <url>
     <loc>https://timwright12.github.io/site/posts/identify-input-purpose-wcag-2-1-level-aa/</loc>
     <lastmod>2020-09-05</lastmod>
   </url>
@@ -832,62 +627,7 @@
   </url>
   
   <url>
-    <loc>https://timwright12.github.io/site/tags/article/</loc>
-    <lastmod>2024-06-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://timwright12.github.io/site/tags/usability/</loc>
-    <lastmod>2024-06-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://timwright12.github.io/site/tags/beginner/</loc>
-    <lastmod>2024-06-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://timwright12.github.io/site/tags/kindalame/</loc>
-    <lastmod>2024-06-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://timwright12.github.io/site/tags/video/</loc>
-    <lastmod>2024-06-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://timwright12.github.io/site/tags/youtube/</loc>
-    <lastmod>2024-06-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://timwright12.github.io/site/tags/google/</loc>
-    <lastmod>2024-06-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://timwright12.github.io/site/tags/mayermusic/</loc>
-    <lastmod>2024-06-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://timwright12.github.io/site/tags/microformats/</loc>
-    <lastmod>2024-06-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://timwright12.github.io/site/tags/css/</loc>
-    <lastmod>2024-06-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://timwright12.github.io/site/tags/tips/</loc>
-    <lastmod>2024-06-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://timwright12.github.io/site/tags/xhtml/</loc>
+    <loc>https://timwright12.github.io/site/tags/accessibility/</loc>
     <lastmod>2024-06-21</lastmod>
   </url>
   
@@ -897,22 +637,7 @@
   </url>
   
   <url>
-    <loc>https://timwright12.github.io/site/tags/javascript/</loc>
-    <lastmod>2024-06-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://timwright12.github.io/site/tags/jquery/</loc>
-    <lastmod>2024-06-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://timwright12.github.io/site/tags/navigation/</loc>
-    <lastmod>2024-06-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://timwright12.github.io/site/tags/ui/</loc>
+    <loc>https://timwright12.github.io/site/tags/article/</loc>
     <lastmod>2024-06-21</lastmod>
   </url>
   
@@ -927,7 +652,22 @@
   </url>
   
   <url>
+    <loc>https://timwright12.github.io/site/tags/ui/</loc>
+    <lastmod>2024-06-21</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://timwright12.github.io/site/tags/css/</loc>
+    <lastmod>2024-06-21</lastmod>
+  </url>
+  
+  <url>
     <loc>https://timwright12.github.io/site/tags/smashing-magazine/</loc>
+    <lastmod>2024-06-21</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://timwright12.github.io/site/tags/javascript/</loc>
     <lastmod>2024-06-21</lastmod>
   </url>
   
@@ -967,7 +707,7 @@
   </url>
   
   <url>
-    <loc>https://timwright12.github.io/site/tags/form/</loc>
+    <loc>https://timwright12.github.io/site/tags/xhtml/</loc>
     <lastmod>2024-06-21</lastmod>
   </url>
   
@@ -987,12 +727,27 @@
   </url>
   
   <url>
+    <loc>https://timwright12.github.io/site/tags/form/</loc>
+    <lastmod>2024-06-21</lastmod>
+  </url>
+  
+  <url>
     <loc>https://timwright12.github.io/site/tags/js/</loc>
     <lastmod>2024-06-21</lastmod>
   </url>
   
   <url>
     <loc>https://timwright12.github.io/site/tags/performance/</loc>
+    <lastmod>2024-06-21</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://timwright12.github.io/site/tags/advanced/</loc>
+    <lastmod>2024-06-21</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://timwright12.github.io/site/tags/jquery/</loc>
     <lastmod>2024-06-21</lastmod>
   </url>
   
@@ -1018,11 +773,6 @@
   
   <url>
     <loc>https://timwright12.github.io/site/tags/xml/</loc>
-    <lastmod>2024-06-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://timwright12.github.io/site/tags/advanced/</loc>
     <lastmod>2024-06-21</lastmod>
   </url>
   
@@ -1092,11 +842,6 @@
   </url>
   
   <url>
-    <loc>https://timwright12.github.io/site/tags/email/</loc>
-    <lastmod>2024-06-21</lastmod>
-  </url>
-  
-  <url>
     <loc>https://timwright12.github.io/site/tags/andy-clarke/</loc>
     <lastmod>2024-06-21</lastmod>
   </url>
@@ -1137,16 +882,6 @@
   </url>
   
   <url>
-    <loc>https://timwright12.github.io/site/tags/moz/</loc>
-    <lastmod>2024-06-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://timwright12.github.io/site/tags/opacity/</loc>
-    <lastmod>2024-06-21</lastmod>
-  </url>
-  
-  <url>
     <loc>https://timwright12.github.io/site/tags/animation/</loc>
     <lastmod>2024-06-21</lastmod>
   </url>
@@ -1162,11 +897,6 @@
   </url>
   
   <url>
-    <loc>https://timwright12.github.io/site/tags/rant/</loc>
-    <lastmod>2024-06-21</lastmod>
-  </url>
-  
-  <url>
     <loc>https://timwright12.github.io/site/tags/employment/</loc>
     <lastmod>2024-06-21</lastmod>
   </url>
@@ -1178,6 +908,31 @@
   
   <url>
     <loc>https://timwright12.github.io/site/tags/usc/</loc>
+    <lastmod>2024-06-21</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://timwright12.github.io/site/tags/moz/</loc>
+    <lastmod>2024-06-21</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://timwright12.github.io/site/tags/opacity/</loc>
+    <lastmod>2024-06-21</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://timwright12.github.io/site/tags/tips/</loc>
+    <lastmod>2024-06-21</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://timwright12.github.io/site/tags/google/</loc>
+    <lastmod>2024-06-21</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://timwright12.github.io/site/tags/rant/</loc>
     <lastmod>2024-06-21</lastmod>
   </url>
   
@@ -1202,12 +957,7 @@
   </url>
   
   <url>
-    <loc>https://timwright12.github.io/site/tags/iphone/</loc>
-    <lastmod>2024-06-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://timwright12.github.io/site/tags/php/</loc>
+    <loc>https://timwright12.github.io/site/tags/beginner/</loc>
     <lastmod>2024-06-21</lastmod>
   </url>
   
@@ -1217,27 +967,32 @@
   </url>
   
   <url>
+    <loc>https://timwright12.github.io/site/tags/usability/</loc>
+    <lastmod>2024-06-21</lastmod>
+  </url>
+  
+  <url>
     <loc>https://timwright12.github.io/site/tags/meta/</loc>
     <lastmod>2024-06-21</lastmod>
   </url>
   
   <url>
-    <loc>https://timwright12.github.io/site/tags/responsive-design/</loc>
+    <loc>https://timwright12.github.io/site/tags/php/</loc>
     <lastmod>2024-06-21</lastmod>
   </url>
   
   <url>
-    <loc>https://timwright12.github.io/site/tags/ipod/</loc>
-    <lastmod>2024-06-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://timwright12.github.io/site/tags/simplepie/</loc>
+    <loc>https://timwright12.github.io/site/tags/iphone/</loc>
     <lastmod>2024-06-21</lastmod>
   </url>
   
   <url>
     <loc>https://timwright12.github.io/site/tags/htpasswd/</loc>
+    <lastmod>2024-06-21</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://timwright12.github.io/site/tags/responsive-design/</loc>
     <lastmod>2024-06-21</lastmod>
   </url>
   
@@ -1262,12 +1017,22 @@
   </url>
   
   <url>
+    <loc>https://timwright12.github.io/site/tags/simplepie/</loc>
+    <lastmod>2024-06-21</lastmod>
+  </url>
+  
+  <url>
     <loc>https://timwright12.github.io/site/tags/terminal/</loc>
     <lastmod>2024-06-21</lastmod>
   </url>
   
   <url>
     <loc>https://timwright12.github.io/site/tags/unix/</loc>
+    <lastmod>2024-06-21</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://timwright12.github.io/site/tags/ipod/</loc>
     <lastmod>2024-06-21</lastmod>
   </url>
   
@@ -1282,187 +1047,7 @@
   </url>
   
   <url>
-    <loc>https://timwright12.github.io/site/tags/typography/</loc>
-    <lastmod>2024-06-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://timwright12.github.io/site/tags/feedback/</loc>
-    <lastmod>2024-06-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://timwright12.github.io/site/tags/social/</loc>
-    <lastmod>2024-06-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://timwright12.github.io/site/tags/project-managment/</loc>
-    <lastmod>2024-06-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://timwright12.github.io/site/tags/notes/</loc>
-    <lastmod>2024-06-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://timwright12.github.io/site/tags/presentation/</loc>
-    <lastmod>2024-06-21</lastmod>
-  </url>
-  
-  <url>
     <loc>https://timwright12.github.io/site/tags/media/</loc>
-    <lastmod>2024-06-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://timwright12.github.io/site/tags/jobs/</loc>
-    <lastmod>2024-06-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://timwright12.github.io/site/tags/sharing/</loc>
-    <lastmod>2024-06-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://timwright12.github.io/site/tags/health/</loc>
-    <lastmod>2024-06-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://timwright12.github.io/site/tags/apache/</loc>
-    <lastmod>2024-06-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://timwright12.github.io/site/tags/desktop/</loc>
-    <lastmod>2024-06-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://timwright12.github.io/site/tags/lunch/</loc>
-    <lastmod>2024-06-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://timwright12.github.io/site/tags/mac/</loc>
-    <lastmod>2024-06-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://timwright12.github.io/site/tags/opera/</loc>
-    <lastmod>2024-06-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://timwright12.github.io/site/tags/training/</loc>
-    <lastmod>2024-06-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://timwright12.github.io/site/tags/zine/</loc>
-    <lastmod>2024-06-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://timwright12.github.io/site/tags/android/</loc>
-    <lastmod>2024-06-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://timwright12.github.io/site/tags/pownce/</loc>
-    <lastmod>2024-06-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://timwright12.github.io/site/tags/startup/</loc>
-    <lastmod>2024-06-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://timwright12.github.io/site/tags/flickr/</loc>
-    <lastmod>2024-06-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://timwright12.github.io/site/tags/json/</loc>
-    <lastmod>2024-06-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://timwright12.github.io/site/tags/public-speaking/</loc>
-    <lastmod>2024-06-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://timwright12.github.io/site/tags/code-highlighting/</loc>
-    <lastmod>2024-06-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://timwright12.github.io/site/tags/wordpress/</loc>
-    <lastmod>2024-06-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://timwright12.github.io/site/tags/maintainability/</loc>
-    <lastmod>2024-06-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://timwright12.github.io/site/tags/twitter/</loc>
-    <lastmod>2024-06-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://timwright12.github.io/site/tags/finances/</loc>
-    <lastmod>2024-06-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://timwright12.github.io/site/tags/font/</loc>
-    <lastmod>2024-06-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://timwright12.github.io/site/tags/seo/</loc>
-    <lastmod>2024-06-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://timwright12.github.io/site/tags/analytics/</loc>
-    <lastmod>2024-06-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://timwright12.github.io/site/tags/billing/</loc>
-    <lastmod>2024-06-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://timwright12.github.io/site/tags/fireworks/</loc>
-    <lastmod>2024-06-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://timwright12.github.io/site/tags/freelancing/</loc>
-    <lastmod>2024-06-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://timwright12.github.io/site/tags/pagination/</loc>
-    <lastmod>2024-06-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://timwright12.github.io/site/tags/a-list-apart/</loc>
-    <lastmod>2024-06-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://timwright12.github.io/site/tags/alexa/</loc>
     <lastmod>2024-06-21</lastmod>
   </url>
   
@@ -1472,32 +1057,22 @@
   </url>
   
   <url>
-    <loc>https://timwright12.github.io/site/tags/lastfm/</loc>
+    <loc>https://timwright12.github.io/site/tags/typography/</loc>
     <lastmod>2024-06-21</lastmod>
   </url>
   
   <url>
-    <loc>https://timwright12.github.io/site/tags/music-2/</loc>
+    <loc>https://timwright12.github.io/site/tags/mayermusic/</loc>
     <lastmod>2024-06-21</lastmod>
   </url>
   
   <url>
-    <loc>https://timwright12.github.io/site/tags/pandora/</loc>
+    <loc>https://timwright12.github.io/site/tags/microformats/</loc>
     <lastmod>2024-06-21</lastmod>
   </url>
   
   <url>
-    <loc>https://timwright12.github.io/site/tags/accessibility/</loc>
-    <lastmod>2024-06-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://timwright12.github.io/site/tags/podcasts/</loc>
-    <lastmod>2024-06-21</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://timwright12.github.io/site/tags/wdn08/</loc>
+    <loc>https://timwright12.github.io/site/tags/youtube/</loc>
     <lastmod>2024-06-21</lastmod>
   </url>
   
