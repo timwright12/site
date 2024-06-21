@@ -1,8 +1,9 @@
 ---
 title: "Accessibile Media: Video"
 date: "2019-12-14"
-categories: 
+tags:
   - "accessibility"
+layout: layouts/post.njk
 ---
 
 Expanding on the **previous post about creating accessible images,** I wanted to jump into how we need to deal with video on the Web while ensuring that we make the content available to all who need to consume it. In some ways, creating accessibility around video is the same as it is for images. When we get right down to it, all we’re trying to do is convey the information to someone, sometimes we just need multiple ways of doing so.

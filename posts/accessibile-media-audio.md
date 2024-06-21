@@ -1,8 +1,9 @@
 ---
 title: "Accessibile Media: Audio"
 date: "2019-12-22"
-categories: 
+tags:
   - "accessibility"
+layout: layouts/post.njk
 ---
 
 Audio is a kind of media we don’t often think about when going over common types of media we encounter on the Web, but it’s critically important to many experiences, particularly podcasts and music.

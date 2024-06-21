@@ -1,13 +1,14 @@
 ---
 title: "A New Breed of Microformat"
 date: "2008-09-22"
-categories: 
+categories:
   - "engineering"
-tags: 
+tags:
   - "google"
   - "mayermusic"
   - "microformats"
   - "youtube"
+layout: layouts/post.njk
 ---
 
 ![article banner](images/vfacet-banner.jpg)
@@ -40,7 +41,7 @@ Many of us are familiar with the most common [types of Microformats](http://micr
 </div>
 <div class="vfacets">
 <span class="grayText">Joined:</span> August 02, 2006<br>
-<span class="grayText">Videos:</span> <a href="/profile_videos?user=spoiledmilk">21</a> 
+<span class="grayText">Videos:</span> <a href="/profile_videos?user=spoiledmilk">21</a>
 </div>
 </div>
 ```

@@ -1,7 +1,7 @@
 ---
 title: "Accessibility in Resizing Text"
 date: "2018-01-15"
-categories: 
+tags:
   - "accessibility"
 ---
 

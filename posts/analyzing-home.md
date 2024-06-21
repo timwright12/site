@@ -1,9 +1,7 @@
 ---
 title: "Analyzing Home"
 date: "2009-04-08"
-categories: 
-  - "engineering"
-tags: 
+tags:
   - "ui"
 ---
 
