@@ -1,3 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upgrading DOM Hierarchy for Accessibility with Aria-owns</title>
+    <meta name="description" content="I am writing about my experiences as a naval navel-gazer.">
+    <link rel="stylesheet" href="/site/css/index.css">
+    <link rel="alternate" href="/site/feed/feed.xml" type="application/atom+xml" title="Tim Wright">
+    <link rel="alternate" href="/site/feed/feed.json" type="application/json" title="Tim Wright">
+
+    <script>
+
+		WebFontConfig = {
+			google: {
+				families: ['Open Sans:400,700', 'Judson:400,700']
+			}
+		};
+
+		(function(d) {
+			var wf = d.createElement('script'), s = d.scripts[0];
+			wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
+			wf.async = true;
+			s.parentNode.insertBefore(wf, s);
+		})(document);
+
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-875557-1', 'auto');
+		ga('send', 'pageview');
+
+	</script>
+
+	<noscript>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&Judson:ital,wght@0,400;0,700;1,400&display=swap" />
+	</noscript>
+
+  </head>
+  <body>
+
+  <header role="banner" id="banner">
+
+    <h1 class="logo" itemscope="" itemtype="http://schema.org/Organization">
+      <a href="/" itemprop="url">Tim Wright</a>
+    </h1>
+
+    <nav role="navigation" id="nav">
+      <ul>
+          <li class="nav-item"><a href="/site/blog/">Blog</a></li>
+          <li class="nav-item"><a href="/site/work/">Work</a></li>
+        <li class="nav-item"><a href="mailto:hello@timwright.org?subject=An Interesting Message from timwright.org">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+    <article class="tmpl-post" id="main" role="main">
+      
+<time datetime="2017-10-15">15 Oct 2017</time>
+
+<h1>Upgrading DOM Hierarchy for Accessibility with Aria-owns</h1>
+
 <p>For the past couple weeks I've been working on accessibility audits and upgrades to a client website. Most of the updates were pretty straightforward, but I wanted to call out a specific item that allowed me to dive deeper into an aria attribute I really hadn't used before: <a href="http://oaa-accessibility.org/example/42/"><strong>aria-owns</strong></a>.</p>
 <p>The aria-owns attribute is a way to programmatically assign hierarchy to a document when that hierarchy can't be communicated with the HTML structure alone. My initial reaction when I realized I needed something like this was that the HTML should have been connected in the first place, but for whatever reason (design, business, admin UX goals) the navigation menu was set up in two separate areas like this:</p>
 <pre><code>&lt;nav role=&quot;navigation&quot;&gt;
@@ -20,7 +84,7 @@
 <h2 id="aria-owns" tabindex="-1">Aria-Owns <a class="direct-link" href="#aria-owns" aria-hidden="true">#</a></h2>
 <p>I'll admit it, I could have rebuilt this entire navigation system to use the proper HTML structure, but holy crap, that would have taken forever. It would have needed a large scale revamp of the WordPress menu implementation, network menu rebuilds, client training, documentation, and a whole lot of recoding on the frontend. It definitely would have blown the budget for this project. So I wanted to try and find a way to programmatically connect the two elements.</p>
 <p>Either that, or I would have to <a href="https://github.com/timwright12/util.move">move the DOM elements around with JavaScript</a> and re-style the frontend (Not a terrible option, but I still wanted something a little less obtrusive).</p>
-<p>I knew about attributes like, <a href="http://csskarma.com/blog/changing-reading-order-page-aria-flowto/">aria-flowto</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-label_attribute">aria-label</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-labelledby_attribute">aria-labelledby</a>, <a href="https://www.w3.org/TR/wai-aria/states_and_properties#aria-controls">aria-controls</a>, and I had heard of <a href="https://www.w3.org/TR/wai-aria/states_and_properties#aria-owns">aria-owns</a> (but never needed to use it). So I was pretty sure there was a combination of attributes I could use to bring these two elements together.</p>
+<p>I knew about attributes like, <a href="blog/changing-reading-order-page-aria-flowto/">aria-flowto</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-label_attribute">aria-label</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-labelledby_attribute">aria-labelledby</a>, <a href="https://www.w3.org/TR/wai-aria/states_and_properties#aria-controls">aria-controls</a>, and I had heard of <a href="https://www.w3.org/TR/wai-aria/states_and_properties#aria-owns">aria-owns</a> (but never needed to use it). So I was pretty sure there was a combination of attributes I could use to bring these two elements together.</p>
 <p>In reading the W3C documentation (I don't recommend doing that), I saw this within the aria-owns section:</p>
 <blockquote>
 <p>Identifies an element (or elements) in order to define a visual, functional, or contextual parent/child relationship between DOM elements where the DOM hierarchy cannot be used to represent the relationship.</p>
@@ -52,3 +116,10 @@
 <li><a href="https://stackoverflow.com/questions/34003530/what-is-the-difference-between-aria-owns-and-aria-controls">Aria-controls vs. aria-owns</a></li>
 <li><a href="https://msdn.microsoft.com/en-us/library/cc848876(v=vs.85).aspx%22%22">MSDN aria-owns</a></li>
 </ul>
+
+
+    </article>
+
+    <!-- Current page: /site/posts/aria-owns/ -->
+  </body>
+</html>

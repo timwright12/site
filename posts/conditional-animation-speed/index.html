@@ -1,6 +1,68 @@
-<p><img src="images/turtle.jpg" alt="Turtle"></p>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conditional Animation Speed in jQuery</title>
+    <meta name="description" content="I am writing about my experiences as a naval navel-gazer.">
+    <link rel="stylesheet" href="/site/css/index.css">
+    <link rel="alternate" href="/site/feed/feed.xml" type="application/atom+xml" title="Tim Wright">
+    <link rel="alternate" href="/site/feed/feed.json" type="application/json" title="Tim Wright">
+
+    <script>
+
+		WebFontConfig = {
+			google: {
+				families: ['Open Sans:400,700', 'Judson:400,700']
+			}
+		};
+
+		(function(d) {
+			var wf = d.createElement('script'), s = d.scripts[0];
+			wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
+			wf.async = true;
+			s.parentNode.insertBefore(wf, s);
+		})(document);
+
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-875557-1', 'auto');
+		ga('send', 'pageview');
+
+	</script>
+
+	<noscript>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&Judson:ital,wght@0,400;0,700;1,400&display=swap" />
+	</noscript>
+
+  </head>
+  <body>
+
+  <header role="banner" id="banner">
+
+    <h1 class="logo" itemscope="" itemtype="http://schema.org/Organization">
+      <a href="/" itemprop="url">Tim Wright</a>
+    </h1>
+
+    <nav role="navigation" id="nav">
+      <ul>
+          <li class="nav-item"><a href="/site/blog/">Blog</a></li>
+          <li class="nav-item"><a href="/site/work/">Work</a></li>
+        <li class="nav-item"><a href="mailto:hello@timwright.org?subject=An Interesting Message from timwright.org">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+    <article class="tmpl-post" id="main" role="main">
+      
+<time datetime="2010-01-08">08 Jan 2010</time>
+
+<h1>Conditional Animation Speed in jQuery</h1>
+
 <p>For years (and by &quot;years&quot;, I most likely mean &quot;the years since I started using jQuery... maybe 2&quot;), there's been one aspect of jQuery that's bugged the crap out of me, the animation speed.</p>
-<p><a href="http://www.csskarma.com/lab/animation_speed/">View demo</a></p>
 <p>We've all probably seen the problem that happens in many drop down menus of varying height. We set <code>slideDown(300)</code> (or whatever you set it to) on all the submenus and leave like that. Inevitably, menus grow and shrink based on the content and we get this weird and mildly annoying behavior of really fast moving tall menus vs. shorter menus that move painfully slow just because there's not much content in there.</p>
 <p>This problem stems from where we set the speed of the animation; the value isn't actually a speed, it's how long it takes (in milliseconds, I think) for the animation to finish. So you can see why you get varying behaviors based on the element height.</p>
 <p>It's true, that you can use the built-in speed values like &quot;fast&quot; and &quot;slow&quot;, but if you want more fine-grained control over your animation, you'll have to use a value.</p>
@@ -47,36 +109,36 @@ $('h2').toggle(function(){
 	var height_value = '100';
 	var tall_menu_speed = 400;
 	var short_menu_speed = 250;
-	
+
 	/* System variables, probably don't change */
 	var target = id +' '+ click_element;
 	var menu_content = $(target).next();
-	
+
 	/* Hide the element after the click_element, whether it's a
 	div, p, ul, whatever you choose to wrap the items in */
 	menu_content.hide();
-	
+
 	$(target).toggle(function(){
 		/* save the menu items in a variable */
 		var this_menu = $(this).next();
-		
+
 		/* get the menu height and save it */
 		var menu_height = this_menu.height();
-		
+
 		/* Calculate the animation speed based on the element height */
-		/* if the height is greater than the height set above use the 
+		/* if the height is greater than the height set above use the
 		tall menu height */
 		if(menu_height &gt; height_value){
 			var speed = tall_menu_speed;
-		
+
 		/* If it's smaller, use the short menu height */
 		} else if(menu_height &lt; height_value) {
 			var speed = short_menu_speed;
 		}
-		
+
 		/* slide the menu down */
 		this_menu.slideDown(speed);
-			
+
 	},function(){
 		/* this is the same but reversed to close the menu */
 		var this_menu = $(this).next();
@@ -95,4 +157,11 @@ $('h2').toggle(function(){
 });
 </code></pre>
 <p>That should give you a little more control over the menu speed. I'm sure it needs to be tweaked based on the menu you're using, but the general concept is there, and it should work pretty well. I hope it was helpful. Let me know if you have any additions to the code or suggestions to improve it.</p>
-<p><a href="http://www.csskarma.com/lab/animation_speed/">View demo</a></p>
+<p><a href="/lab/animation_speed/">View demo</a></p>
+
+
+    </article>
+
+    <!-- Current page: /site/posts/conditional-animation-speed/ -->
+  </body>
+</html>

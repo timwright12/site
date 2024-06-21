@@ -1,3 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulating Opacity</title>
+    <meta name="description" content="I am writing about my experiences as a naval navel-gazer.">
+    <link rel="stylesheet" href="/site/css/index.css">
+    <link rel="alternate" href="/site/feed/feed.xml" type="application/atom+xml" title="Tim Wright">
+    <link rel="alternate" href="/site/feed/feed.json" type="application/json" title="Tim Wright">
+
+    <script>
+
+		WebFontConfig = {
+			google: {
+				families: ['Open Sans:400,700', 'Judson:400,700']
+			}
+		};
+
+		(function(d) {
+			var wf = d.createElement('script'), s = d.scripts[0];
+			wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
+			wf.async = true;
+			s.parentNode.insertBefore(wf, s);
+		})(document);
+
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-875557-1', 'auto');
+		ga('send', 'pageview');
+
+	</script>
+
+	<noscript>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&Judson:ital,wght@0,400;0,700;1,400&display=swap" />
+	</noscript>
+
+  </head>
+  <body>
+
+  <header role="banner" id="banner">
+
+    <h1 class="logo" itemscope="" itemtype="http://schema.org/Organization">
+      <a href="/" itemprop="url">Tim Wright</a>
+    </h1>
+
+    <nav role="navigation" id="nav">
+      <ul>
+          <li class="nav-item"><a href="/site/blog/">Blog</a></li>
+          <li class="nav-item"><a href="/site/work/">Work</a></li>
+        <li class="nav-item"><a href="mailto:hello@timwright.org?subject=An Interesting Message from timwright.org">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+    <article class="tmpl-post" id="main" role="main">
+      
+<time datetime="2008-03-05">05 Mar 2008</time>
+
+<h1>Manipulating Opacity</h1>
+
 <p>Any one who has worked with CSS opacity has, most likely run into this problem. Using:</p>
 <pre><code>div{
 filter:alpha(opacity=60);
@@ -14,7 +78,6 @@ opacity:1;
 </code></pre>
 <p>That, in theory should work, but it doesn't. So then you try to up the opacity to 140 &amp; 1.4 to try and account for the extra transparency... but that doesn't work either. So you settle on using a small opacity level to read the text or use a background image.</p>
 <p>Thanks to a challenge issued by a friend at <a href="http://www.sportingnews.com">Sporting News</a> we now have a technique, without using any extra markup, to have your opacity without dimming the &quot;containing&quot; text. Why is containing in quotes? Well, you'll see.</p>
-<p>First off, here's the <a href="http://www.csskarma.com/articles/examples/opacity/">live example</a></p>
 <p>CSS</p>
 <pre><code>body{
 background:#5A6163 url(bg_floral.gif) no-repeat 0 0;
@@ -44,7 +107,14 @@ color:#fff;
 text-decoration:none;
 }
 </code></pre>
-<p>Wordpress really sucks at displaying HTML code, so you can just <a href="http://www.csskarma.com/articles/examples/opacity/">view source on the live example</a>.</p>
+<p>Wordpress really stinks at displaying HTML code, so you can just <a href="/examples/opacity/">view source on the live example</a>.</p>
 <p>It's very simple HTML, just a skip to content link, div called &quot;branding&quot; and an H1 link inside of branding. I also added some other stuff to jazz it up a bit.</p>
 <p>Tested in FF2, IE7, IE6, Safari 3 with no errors.</p>
 <p><em>Clean code will transcend browsers</em></p>
+
+
+    </article>
+
+    <!-- Current page: /site/posts/manipulating-opacity/ -->
+  </body>
+</html>

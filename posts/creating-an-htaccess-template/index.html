@@ -1,3 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creating an .htaccess template</title>
+    <meta name="description" content="I am writing about my experiences as a naval navel-gazer.">
+    <link rel="stylesheet" href="/site/css/index.css">
+    <link rel="alternate" href="/site/feed/feed.xml" type="application/atom+xml" title="Tim Wright">
+    <link rel="alternate" href="/site/feed/feed.json" type="application/json" title="Tim Wright">
+
+    <script>
+
+		WebFontConfig = {
+			google: {
+				families: ['Open Sans:400,700', 'Judson:400,700']
+			}
+		};
+
+		(function(d) {
+			var wf = d.createElement('script'), s = d.scripts[0];
+			wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
+			wf.async = true;
+			s.parentNode.insertBefore(wf, s);
+		})(document);
+
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-875557-1', 'auto');
+		ga('send', 'pageview');
+
+	</script>
+
+	<noscript>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&Judson:ital,wght@0,400;0,700;1,400&display=swap" />
+	</noscript>
+
+  </head>
+  <body>
+
+  <header role="banner" id="banner">
+
+    <h1 class="logo" itemscope="" itemtype="http://schema.org/Organization">
+      <a href="/" itemprop="url">Tim Wright</a>
+    </h1>
+
+    <nav role="navigation" id="nav">
+      <ul>
+          <li class="nav-item"><a href="/site/blog/">Blog</a></li>
+          <li class="nav-item"><a href="/site/work/">Work</a></li>
+        <li class="nav-item"><a href="mailto:hello@timwright.org?subject=An Interesting Message from timwright.org">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+    <article class="tmpl-post" id="main" role="main">
+      
+<time datetime="2008-09-11">11 Sep 2008</time>
+
+<h1>Creating an .htaccess template</h1>
+
 <p>Recently I decided to finally sit down and organize some things on my site/server. I created dev server, and did some other things that I had been wanting to do for a while.</p>
 <p>While I was putting together my usual .htaccess file I thought that maybe I could build it a little better and create a file template that I can use in the future when I'm doing something like this again (since, I know this will come up again). So I did a little research about things I knew I wanted to add in like the 404 error page rewrite rule (which many tutorials seem to omit) and denying a directory listing.</p>
 <h5 id="this-is-the-file-template-i-came-up-with:" tabindex="-1"><strong>This is the file template I came up with:</strong> <a class="direct-link" href="#this-is-the-file-template-i-came-up-with:" aria-hidden="true">#</a></h5>
@@ -23,7 +87,7 @@ deny from all
 <h5 id="directoryindex" tabindex="-1">DirectoryIndex <a class="direct-link" href="#directoryindex" aria-hidden="true">#</a></h5>
 <pre><code>DirectoryIndex index.php index.html index.htm
 </code></pre>
-<p>DirectoryIndex is the first thing I learned in my .htaccess explorations, it's very simple. It tells the server which pages to display by default and in what order. In my example, if I have index.html in a directory along with index.php, the index.php file will be displayed by default, so you have <a href="http://www.csskarma.com/">www.csskarma.com</a> pointing to index.php and if you want to get to index.html you'd have to type it in like <a href="http://www.csskarma.com/index.html">www.csskarma.com/index.html</a>. Many servers get this right without the DirectoryIndex, but it's like doing <code>body{background-color:#fff;}</code>, I put it in just in case.</p>
+<p>DirectoryIndex is the first thing I learned in my .htaccess explorations, it's very simple. It tells the server which pages to display by default and in what order. In my example, if I have index.html in a directory along with index.php, the index.php file will be displayed by default, so you have <a href="">home</a> pointing to index.php and if you want to get to index.html you'd have to type it in like <a href="/">home</a>. Many servers get this right without the DirectoryIndex, but it's like doing <code>body{background-color:#fff;}</code>, I put it in just in case.</p>
 <h5 id="errordocument" tabindex="-1">ErrorDocument <a class="direct-link" href="#errordocument" aria-hidden="true">#</a></h5>
 <pre><code>&lt;IfModule mod_rewrite.c&gt;
 RewriteEngine On
@@ -33,7 +97,7 @@ ErrorDocument 500 /errors/500.php
 &lt;/IfModule&gt;
 </code></pre>
 <p>This is the stuff that I dig. It gets the most press out of all the .htaccess elements; so I guess it's the rock star of the .htaccess file. <a href="http://alistapart.com/articles/perfect404/">A List Apart</a> did an article on it in 2004, and it was a big usability issue building a good 404 error page. Now we all have our fancy 404 pages.</p>
-<p>The mod_rewrite module (as to my understanding of it) deals with rewriting the URL. In this cae, it's the thing that lets you have a 404 error without exposing the URL of the actual <a href="http://www.csskarma.com/errors/404.php">error page</a>. 403 Error is a permission denied error and 500 is an internal server error. You can check out <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html">all the error codes</a> if you'd like, but you shouldn't bog down your .htaccess file too much, so I keep it to these 3.</p>
+<p>The mod_rewrite module (as to my understanding of it) deals with rewriting the URL. In this cae, it's the thing that lets you have a 404 error without exposing the URL of the actual error page. 403 Error is a permission denied error and 500 is an internal server error. You can check out <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html">all the error codes</a> if you'd like, but you shouldn't bog down your .htaccess file too much, so I keep it to these 3.</p>
 <h5 id="index-options" tabindex="-1">Index Options <a class="direct-link" href="#index-options" aria-hidden="true">#</a></h5>
 <pre><code>Options -Indexes
 Options +FollowSymlinks
@@ -48,3 +112,10 @@ deny from all
 <p>This is very simple and (I think) very necessary. It prevents people from viewing your .htaccess file. There's really not any sensitive information in <em>my</em> .htaccess file, but it's good practice to protect this file in case you do put things in it that you don't want exposed.</p>
 <p>Fin</p>
 <p>So, that's my .htaccess file starter template. I'd be interested to hear what others use in their files and if I missed anything in mine, I'm certainly no Apache expert.</p>
+
+
+    </article>
+
+    <!-- Current page: /site/posts/creating-an-htaccess-template/ -->
+  </body>
+</html>

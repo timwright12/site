@@ -1,62 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Very Movies &amp; JavaScript Animation without jQuery</title>
+    <meta name="description" content="I am writing about my experiences as a naval navel-gazer.">
+    <link rel="stylesheet" href="/site/css/index.css">
+    <link rel="alternate" href="/site/feed/feed.xml" type="application/atom+xml" title="Tim Wright">
+    <link rel="alternate" href="/site/feed/feed.json" type="application/json" title="Tim Wright">
+
+    <script>
+
+		WebFontConfig = {
+			google: {
+				families: ['Open Sans:400,700', 'Judson:400,700']
+			}
+		};
+
+		(function(d) {
+			var wf = d.createElement('script'), s = d.scripts[0];
+			wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
+			wf.async = true;
+			s.parentNode.insertBefore(wf, s);
+		})(document);
+
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-875557-1', 'auto');
+		ga('send', 'pageview');
+
+	</script>
+
+	<noscript>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&Judson:ital,wght@0,400;0,700;1,400&display=swap" />
+	</noscript>
+
+  </head>
+  <body>
+
+  <header role="banner" id="banner">
+
+    <h1 class="logo" itemscope="" itemtype="http://schema.org/Organization">
+      <a href="/" itemprop="url">Tim Wright</a>
+    </h1>
+
+    <nav role="navigation" id="nav">
+      <ul>
+          <li class="nav-item"><a href="/site/blog/">Blog</a></li>
+          <li class="nav-item"><a href="/site/work/">Work</a></li>
+        <li class="nav-item"><a href="mailto:hello@timwright.org?subject=An Interesting Message from timwright.org">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+    <article class="tmpl-post" id="main" role="main">
+      
+<time datetime="2014-03-28">28 Mar 2014</time>
+
+<h1>Very Movies &amp; JavaScript Animation without jQuery</h1>
+
 <p>I've been working on a side project lately called <a href="http://verymovies.com">Very Movies</a>. It's a way to share Netflix movies with people (via e-mail right now). For years I've had the problem of being out at a bar, having someone tell me about a great movie they watched on Netflix only for us to drink the night away and completely forget what the movie was.</p>
 <p>I waiting a while to see if Netflix would add this feature (seems obvious, right?), but they never did, so I built it. I called it <em>Very Movies</em> because the domain was available and you can totally use it. It's a neat little app, I actually use it all the time.</p>
 <p>Anyway... one of my goals for building the app was to not use jQuery. Until last week it wasn't a problem, but I found myself needing to do a controlled animation of a variable height container (the main navigation menu) ; for the amount of control I wanted it wasn't really doable with a CSS transition or animation. Determined not to use jQuery just for one small function, I built my own animate method. I modified it from a Stack overflow post I came across (I've since lost it, but will update this post if I find it). Here's the code, if you want it.</p>
 <h2 id="building-the-method" tabindex="-1">Building the method <a class="direct-link" href="#building-the-method" aria-hidden="true">#</a></h2>
 <p>The method itself is pretty straight forward, I used an object as the argument (similar to the way jQuery handles things). I run a loop over the options and use a very fast setInerval to execute the style changes. I also wanted a callback function to get a little more control over the UI.</p>
-<pre><code>var Movies = {
-
-  animate : function( options, time, callback ) {
-
-    // set the defaults, there are none
-    var defaults = {
-      'elem' : null,
-      'style' : null,
-      'unit' : null,
-      'from' : null,
-      'to' : null
-    };
-
-    // cache some variables
-    var start = new Date().getTime(),
-        animationCallbackDelay,
-        timer, step;
-
-    // map all default settings to user defined options
-    for (var i = 0; i &lt; defaults.length; i = i + 1) {
-      if( typeof options[i] === &quot;undefined&quot; ) {
-        options[i] = defaults[i];
-      }
-    }
-
-    if( !options.elem ) return;
-
-    // start the animation interval, make it wicked fast
-    timer = setInterval(function() {
-
-      step = Math.min(1,(new Date().getTime() - start) / time);
-
-      options.elem.style[options.style] = (options.from + step * (options.to - options.from)) + options.unit;
-
-      if( step === 1) clearInterval(timer);
-
-    }, 25);
-
-    options.elem.style[options.style] = options.from + options.unit;
-
-    // add in a callback
-    if (typeof callback === 'function') {
-
-      // make sure it doesn't execute until the animation has finished
-      animationCallbackDelay = window.setTimeout(function() {
-        callback.call(this)
-      }, time);
-
-    }
-
-  } // end animate
-
-}; // end Movies
-</code></pre>
+<pre class="language-javascript"><code class="language-javascript"><span class="token keyword">var</span> Movies <span class="token operator">=</span> <span class="token punctuation">{</span><br><br>  <span class="token function-variable function">animate</span> <span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span> <span class="token parameter">options<span class="token punctuation">,</span> time<span class="token punctuation">,</span> callback</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span><br><br>    <span class="token comment">// set the defaults, there are none</span><br>    <span class="token keyword">var</span> defaults <span class="token operator">=</span> <span class="token punctuation">{</span><br>      <span class="token string-property property">'elem'</span> <span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span><br>      <span class="token string-property property">'style'</span> <span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span><br>      <span class="token string-property property">'unit'</span> <span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span><br>      <span class="token string-property property">'from'</span> <span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span><br>      <span class="token string-property property">'to'</span> <span class="token operator">:</span> <span class="token keyword">null</span><br>    <span class="token punctuation">}</span><span class="token punctuation">;</span><br><br>    <span class="token comment">// cache some variables</span><br>    <span class="token keyword">var</span> start <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span><br>        animationCallbackDelay<span class="token punctuation">,</span><br>        timer<span class="token punctuation">,</span> step<span class="token punctuation">;</span><br><br>    <span class="token comment">// map all default settings to user defined options</span><br>    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> defaults<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i <span class="token operator">=</span> i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>      <span class="token keyword">if</span><span class="token punctuation">(</span> <span class="token keyword">typeof</span> options<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">===</span> <span class="token string">"undefined"</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span><br>        options<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> defaults<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span><br>      <span class="token punctuation">}</span><br>    <span class="token punctuation">}</span><br><br>    <span class="token keyword">if</span><span class="token punctuation">(</span> <span class="token operator">!</span>options<span class="token punctuation">.</span>elem <span class="token punctuation">)</span> <span class="token keyword">return</span><span class="token punctuation">;</span><br><br>    <span class="token comment">// start the animation interval, make it wicked fast</span><br>    timer <span class="token operator">=</span> <span class="token function">setInterval</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br><br>      step <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">min</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> start<span class="token punctuation">)</span> <span class="token operator">/</span> time<span class="token punctuation">)</span><span class="token punctuation">;</span><br><br>      options<span class="token punctuation">.</span>elem<span class="token punctuation">.</span>style<span class="token punctuation">[</span>options<span class="token punctuation">.</span>style<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">(</span>options<span class="token punctuation">.</span>from <span class="token operator">+</span> step <span class="token operator">*</span> <span class="token punctuation">(</span>options<span class="token punctuation">.</span>to <span class="token operator">-</span> options<span class="token punctuation">.</span>from<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">+</span> options<span class="token punctuation">.</span>unit<span class="token punctuation">;</span><br><br>      <span class="token keyword">if</span><span class="token punctuation">(</span> step <span class="token operator">===</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token function">clearInterval</span><span class="token punctuation">(</span>timer<span class="token punctuation">)</span><span class="token punctuation">;</span><br><br>    <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">25</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><br>    options<span class="token punctuation">.</span>elem<span class="token punctuation">.</span>style<span class="token punctuation">[</span>options<span class="token punctuation">.</span>style<span class="token punctuation">]</span> <span class="token operator">=</span> options<span class="token punctuation">.</span>from <span class="token operator">+</span> options<span class="token punctuation">.</span>unit<span class="token punctuation">;</span><br><br>    <span class="token comment">// add in a callback</span><br>    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> callback <span class="token operator">===</span> <span class="token string">'function'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br><br>      <span class="token comment">// make sure it doesn't execute until the animation has finished</span><br>      animationCallbackDelay <span class="token operator">=</span> window<span class="token punctuation">.</span><span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>        <span class="token function">callback</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><br>      <span class="token punctuation">}</span><span class="token punctuation">,</span> time<span class="token punctuation">)</span><span class="token punctuation">;</span><br><br>    <span class="token punctuation">}</span><br><br>  <span class="token punctuation">}</span> <span class="token comment">// end animate</span><br><br><span class="token punctuation">}</span><span class="token punctuation">;</span> <span class="token comment">// end Movies</span></code></pre>
 <h2 id="calling-the-method" tabindex="-1">Calling the method <a class="direct-link" href="#calling-the-method" aria-hidden="true">#</a></h2>
 <p>I only made it utilize 1 style at a time because that's all I needed and I'm not trying to rebuild jQuery, I'm trying not to use it. In this example there's an element with at id of menu and I'm animating the height from 0px to 200px.</p>
 <p>In the callback function I'm adding a class to the body and to the menu element so my CSS can tell the menu is open.</p>
@@ -65,7 +76,7 @@ var menu = document.getElementById('menu');
 
 // call the method
 Movies.animate({
-  'elem': menu, 
+  'elem': menu,
   'style': 'height',
   'unit': 'px',
   'from': 0,
@@ -78,3 +89,10 @@ Movies.animate({
 
 });
 </code></pre>
+
+
+    </article>
+
+    <!-- Current page: /site/posts/very-movies-javascript-animation-without-jquery/ -->
+  </body>
+</html>

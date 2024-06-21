@@ -1,3 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessibility in Web Applications with ARIA Live Regions</title>
+    <meta name="description" content="I am writing about my experiences as a naval navel-gazer.">
+    <link rel="stylesheet" href="/site/css/index.css">
+    <link rel="alternate" href="/site/feed/feed.xml" type="application/atom+xml" title="Tim Wright">
+    <link rel="alternate" href="/site/feed/feed.json" type="application/json" title="Tim Wright">
+
+    <script>
+
+		WebFontConfig = {
+			google: {
+				families: ['Open Sans:400,700', 'Judson:400,700']
+			}
+		};
+
+		(function(d) {
+			var wf = d.createElement('script'), s = d.scripts[0];
+			wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
+			wf.async = true;
+			s.parentNode.insertBefore(wf, s);
+		})(document);
+
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-875557-1', 'auto');
+		ga('send', 'pageview');
+
+	</script>
+
+	<noscript>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&Judson:ital,wght@0,400;0,700;1,400&display=swap" />
+	</noscript>
+
+  </head>
+  <body>
+
+  <header role="banner" id="banner">
+
+    <h1 class="logo" itemscope="" itemtype="http://schema.org/Organization">
+      <a href="/" itemprop="url">Tim Wright</a>
+    </h1>
+
+    <nav role="navigation" id="nav">
+      <ul>
+          <li class="nav-item"><a href="/site/blog/">Blog</a></li>
+          <li class="nav-item"><a href="/site/work/">Work</a></li>
+        <li class="nav-item"><a href="mailto:hello@timwright.org?subject=An Interesting Message from timwright.org">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+    <article class="tmpl-post" id="main" role="main">
+      
+<time datetime="2017-02-18">18 Feb 2017</time>
+
+<h1>Accessibility in Web Applications with ARIA Live Regions</h1>
+
 <p>Accessibility in Web applications can be pretty confusing. ARIA live regions are a method of communicating asynchronous document changes to <a href="https://en.wikipedia.org/wiki/Assistive_technology#Accessibility_software">assistive technology</a> (AT). A screen reader will read an HTML document in a bunch of different ways (links, headings, regions, form controls, etc.), the problem with all these methods is that none of them are really equip to detect changes in the document that happen after initial load. Especially if the user has already passed that point in the document. This is where live regions are helpful.</p>
 <p>Live regions allow you to flag a section of the document as <em>active</em>, meaning that it has the potential to update without a full page refresh (Ajax). There are four main attributes you can use to alert an AT user to changes in the document: <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-atomic">atomic</a>, <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-live">live</a>, <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-busy">busy</a>, and <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-relevant">relevant</a>. Let's step through them.</p>
 <h2 id="atomic" tabindex="-1">Atomic <a class="direct-link" href="#atomic" aria-hidden="true">#</a></h2>
@@ -49,3 +113,10 @@
 <li><a href="https://www.w3.org/TR/wai-aria-1.1/#aria-busy">ARIA Busy</a></li>
 <li><a href="https://www.w3.org/TR/wai-aria-1.1/#aria-relevant">ARIA Relevant</a></li>
 </ul>
+
+
+    </article>
+
+    <!-- Current page: /site/posts/using-aria-live-regions/ -->
+  </body>
+</html>

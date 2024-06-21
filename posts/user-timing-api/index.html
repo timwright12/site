@@ -1,4 +1,68 @@
-<p>Performance is the first thing a user experiences on a site. In many ways it doesn't matter how amazing a user flow or IA appear to be, if a site won't load, users leave. This is why keeping a strong <a href="http://csskarma.com/blog/performance-budget/">performance budget</a> and testing metrics are so critically important to creating a great end-to-end experience for users (and generating revenue).</p>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Performance Testing with the User Timing API</title>
+    <meta name="description" content="I am writing about my experiences as a naval navel-gazer.">
+    <link rel="stylesheet" href="/site/css/index.css">
+    <link rel="alternate" href="/site/feed/feed.xml" type="application/atom+xml" title="Tim Wright">
+    <link rel="alternate" href="/site/feed/feed.json" type="application/json" title="Tim Wright">
+
+    <script>
+
+		WebFontConfig = {
+			google: {
+				families: ['Open Sans:400,700', 'Judson:400,700']
+			}
+		};
+
+		(function(d) {
+			var wf = d.createElement('script'), s = d.scripts[0];
+			wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
+			wf.async = true;
+			s.parentNode.insertBefore(wf, s);
+		})(document);
+
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-875557-1', 'auto');
+		ga('send', 'pageview');
+
+	</script>
+
+	<noscript>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&Judson:ital,wght@0,400;0,700;1,400&display=swap" />
+	</noscript>
+
+  </head>
+  <body>
+
+  <header role="banner" id="banner">
+
+    <h1 class="logo" itemscope="" itemtype="http://schema.org/Organization">
+      <a href="/" itemprop="url">Tim Wright</a>
+    </h1>
+
+    <nav role="navigation" id="nav">
+      <ul>
+          <li class="nav-item"><a href="/site/blog/">Blog</a></li>
+          <li class="nav-item"><a href="/site/work/">Work</a></li>
+        <li class="nav-item"><a href="mailto:hello@timwright.org?subject=An Interesting Message from timwright.org">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+    <article class="tmpl-post" id="main" role="main">
+      
+<time datetime="2017-03-04">04 Mar 2017</time>
+
+<h1>Performance Testing with the User Timing API</h1>
+
+<p>Performance is the first thing a user experiences on a site. In many ways it doesn't matter how amazing a user flow or IA appear to be, if a site won't load, users leave. This is why keeping a strong <a href="/blog/performance-budget/">performance budget</a> and testing metrics are so critically important to creating a great end-to-end experience for users (and generating revenue).</p>
 <p>When looking into ways of testing front-end performance for an application I stumbled upon the <a href="https://developer.mozilla.org/en-US/docs/Web/API/User_Timing_API/Using_the_User_Timing_API">User Timing API</a>, which is part of the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Performance">Performance Interface</a>. At that point, I had never really dug into either of them, so I decided to share my research here.</p>
 <h2 id="user-timing-api" tabindex="-1">User Timing API <a class="direct-link" href="#user-timing-api" aria-hidden="true">#</a></h2>
 <p>The User Timing API allows us to create named, application-specific, timestamps in the <a href="https://www.w3.org/TR/performance-timeline/">performance timeline</a>. The API gives us two kinds of entry types: <strong>marks</strong> and <strong>measures</strong>. Marks are timeline points in the application and measures are midway points between marks. As each mark and measure is executed, they are stored so you can access them at any time while the application is running (this prevents the application from getting sluggish as you add more timestamps).</p>
@@ -10,7 +74,7 @@ performance.mark(&quot;initialize&quot;);
 /* Do things in here */
 
 performance.mark(&quot;complete&quot;);
-            
+
 measurePerformance();
 
 // Function to output performance metrics
@@ -22,9 +86,9 @@ function measurePerformance() {
 
   for ( i = 0; i &lt; entryCount; i++ ) {
 
-    console.log( &quot; Name: &quot;       + entries[i].name      + 
+    console.log( &quot; Name: &quot;       + entries[i].name      +
                  &quot; Entry Type: &quot; + entries[i].entryType +
-                 &quot; Start Time: &quot; + entries[i].startTime + 
+                 &quot; Start Time: &quot; + entries[i].startTime +
                  &quot; Duration: &quot;   + entries[i].duration  + &quot;\n&quot;);
   } // end loop
 
@@ -53,3 +117,10 @@ function measurePerformance() {
 <li><a href="https://www.sitepoint.com/discovering-user-timing-api/">Discovering the User Timing API</a></li>
 <li><a href="https://github.com/ebidel/appmetrics.js">AppMetrics.js</a></li>
 </ul>
+
+
+    </article>
+
+    <!-- Current page: /site/posts/user-timing-api/ -->
+  </body>
+</html>

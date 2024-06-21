@@ -1,4 +1,67 @@
-<p>Please use <strong>the latest version</strong> of sliding labels with updated options and bug fixes at: <a href="http://www.csskarma.com/blog/sliding-labels-plugin/">http://www.csskarma.com/blog/sliding-labels-plugin/</a></p>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Design with Sliding Labels</title>
+    <meta name="description" content="I am writing about my experiences as a naval navel-gazer.">
+    <link rel="stylesheet" href="/site/css/index.css">
+    <link rel="alternate" href="/site/feed/feed.xml" type="application/atom+xml" title="Tim Wright">
+    <link rel="alternate" href="/site/feed/feed.json" type="application/json" title="Tim Wright">
+
+    <script>
+
+		WebFontConfig = {
+			google: {
+				families: ['Open Sans:400,700', 'Judson:400,700']
+			}
+		};
+
+		(function(d) {
+			var wf = d.createElement('script'), s = d.scripts[0];
+			wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
+			wf.async = true;
+			s.parentNode.insertBefore(wf, s);
+		})(document);
+
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-875557-1', 'auto');
+		ga('send', 'pageview');
+
+	</script>
+
+	<noscript>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&Judson:ital,wght@0,400;0,700;1,400&display=swap" />
+	</noscript>
+
+  </head>
+  <body>
+
+  <header role="banner" id="banner">
+
+    <h1 class="logo" itemscope="" itemtype="http://schema.org/Organization">
+      <a href="/" itemprop="url">Tim Wright</a>
+    </h1>
+
+    <nav role="navigation" id="nav">
+      <ul>
+          <li class="nav-item"><a href="/site/blog/">Blog</a></li>
+          <li class="nav-item"><a href="/site/work/">Work</a></li>
+        <li class="nav-item"><a href="mailto:hello@timwright.org?subject=An Interesting Message from timwright.org">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+    <article class="tmpl-post" id="main" role="main">
+      
+<time datetime="2010-01-19">19 Jan 2010</time>
+
+<h1>Form Design with Sliding Labels</h1>
+
 <p>A few weeks ago I was reading an <a href="http://www.lukew.com/ff/entry.asp?968">article</a> on form UI by <a href="http://www.lukew.com/">Luke Wroblewski</a> of <a href="http://www.yahoo.com/">Yahoo!</a>. For those who aren't familiar with Luke, he (<a href="http://rosenfeldmedia.com/books/webforms/">quite literally</a>) wrote the book on good form design.</p>
 <p>In the article, one certain section about placing labels inside of form fields stood out to me:</p>
 <blockquote>
@@ -8,7 +71,6 @@
 <p>For best practice, Luke talks about leaving your labels outside the form field so it's always available to the user. I do think it's a pretty good solution, but <strong>I think we can get a little more creative than that</strong>.</p>
 <h3 id="enter:-sliding-labels" tabindex="-1">Enter: Sliding Labels <a class="direct-link" href="#enter:-sliding-labels" aria-hidden="true">#</a></h3>
 <p>After reading that article it occurred to me that there's no reason we can't have the best of both worlds. I like how inline labels look, and I see Luke's point about them disappearing as you fill out the form. But, we have jQuery, we know about progressive enhancement, and we have creative minds, so let's build something that allows us to keep the label inline, but <strong>slide it off to the left</strong> (or up, whichever you prefer) rather than going away on click.</p>
-<p><a href="http://www.csskarma.com/lab/plugin_slidinglabels/">View demo</a></p>
 <h4 id="the-html" tabindex="-1">The HTML <a class="direct-link" href="#the-html" aria-hidden="true">#</a></h4>
 <pre><code>&lt;form action=&quot;&quot; method=&quot;post&quot; id=&quot;info&quot;&gt; &lt;h2&gt;Contact Information&lt;/h2&gt; &lt;div id=&quot;name-wrap&quot; class=&quot;slider&quot;&gt; &lt;label for=&quot;name&quot;&gt;Name&lt;/label&gt; &lt;input type=&quot;text&quot; id=&quot;name&quot; name=&quot;name&quot;&gt; &lt;/div&gt;&lt;!--/#name-wrap--&gt; &lt;div id=&quot;email-wrap&quot; class=&quot;slider&quot;&gt; &lt;label for=&quot;email&quot;&gt;E&amp;ndash;mail&lt;/label&gt; &lt;input type=&quot;text&quot; id=&quot;email&quot; name=&quot;email&quot;&gt; &lt;/div&gt;&lt;!--/#email-wrap--&gt; &lt;div id=&quot;street-wrap&quot; class=&quot;slider&quot;&gt; &lt;label for=&quot;st&quot;&gt;Street&lt;/label&gt; &lt;input type=&quot;text&quot; id=&quot;st&quot; name=&quot;st&quot;&gt; &lt;/div&gt;&lt;!--/#street-wrap--&gt; &lt;div id=&quot;city-wrap&quot; class=&quot;slider&quot;&gt; &lt;label for=&quot;city&quot;&gt;City &amp;amp; State&lt;/label&gt; &lt;input type=&quot;text&quot; id=&quot;city&quot; name=&quot;city&quot;&gt; &lt;/div&gt;&lt;!--/#city-wrap--&gt; &lt;div id=&quot;zip-wrap&quot; class=&quot;slider&quot;&gt; &lt;label for=&quot;zip&quot;&gt;Zip code&lt;/label&gt; &lt;input type=&quot;text&quot; id=&quot;zip&quot; name=&quot;zip&quot;&gt; &lt;/div&gt;&lt;!--/#zip-wrap--&gt; &lt;input type=&quot;submit&quot; id=&quot;btn&quot; name=&quot;btn&quot; value=&quot;submit&quot;&gt; &lt;/form&gt;
 </code></pre>
@@ -16,7 +78,7 @@
 <p>At this point we have a pretty basic, and ugly form</p>
 <p><img src="images/slidinglabels_nocss.png" alt="slidinglabels no css"></p>
 <h4 id="the-css" tabindex="-1">The CSS <a class="direct-link" href="#the-css" aria-hidden="true">#</a></h4>
-<pre><code>body { font:12px/1.3 Arial, Sans-serif; } form { width:380px;padding:0 90px 20px;margin:auto;background:#f7f7f7;border:1px solid #ddd; } div { clear:both;position:relative;margin:0 0 10px; } label { cursor:pointer;display:block; } input[type=&quot;text&quot;] { width:300px;border:1px solid #999;padding:5px;-moz-border-radius:4px; } input[type=&quot;text&quot;]:focus { border-color:#777; } input[name=&quot;zip&quot;] { width:150px; } /* submit button */ input[type=&quot;submit&quot;] { cursor:pointer;border:1px solid #999;padding:5px;-moz-border-radius:4px;background:#eee; } input[type=&quot;submit&quot;]:hover, input[type=&quot;submit&quot;]:focus { border-color:#333;background:#ddd; } input[type=&quot;submit&quot;]:active{ margin-top:1px; } 
+<pre><code>body { font:12px/1.3 Arial, Sans-serif; } form { width:380px;padding:0 90px 20px;margin:auto;background:#f7f7f7;border:1px solid #ddd; } div { clear:both;position:relative;margin:0 0 10px; } label { cursor:pointer;display:block; } input[type=&quot;text&quot;] { width:300px;border:1px solid #999;padding:5px;-moz-border-radius:4px; } input[type=&quot;text&quot;]:focus { border-color:#777; } input[name=&quot;zip&quot;] { width:150px; } /* submit button */ input[type=&quot;submit&quot;] { cursor:pointer;border:1px solid #999;padding:5px;-moz-border-radius:4px;background:#eee; } input[type=&quot;submit&quot;]:hover, input[type=&quot;submit&quot;]:focus { border-color:#333;background:#ddd; } input[type=&quot;submit&quot;]:active{ margin-top:1px; }
 </code></pre>
 <p>The only 100% necessary CSS in there is the <code>position:relative</code> on the wrapper element (<code>DIV</code>). The rest is basically cosmetic and you can mess with it as you see fit.</p>
 <p>At this point you should have a pretty normal looking form with labels on top of their respective inputs.</p>
@@ -27,6 +89,12 @@
 </code></pre>
 <p>At this point, you should have a fully working sliding label form!</p>
 <p><img src="images/labelslider_final.png" alt="labelslider final"></p>
-<p><a href="http://www.csskarma.com/lab/plugin_slidinglabels/">View demo</a></p>
 <p>Making sure everything is still usable without JavaScript is important (no matter what people say), it's just a basic principle of progressive enhancement. Believe it or not, there are still people browsing without JavaScript (blackberry users - turned off by default). So creating the interaction in layers, as we did, will help it be <strong>past-proof</strong>.</p>
 <p>Try it out and let me know what you think. So far I've used it on a password change form, so definitely let me know if you find a place to use it!</p>
+
+
+    </article>
+
+    <!-- Current page: /site/posts/sliding-labels/ -->
+  </body>
+</html>

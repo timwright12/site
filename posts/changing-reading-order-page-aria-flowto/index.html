@@ -1,3 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Changing the Reading Order of a Page with ARIA Flowto</title>
+    <meta name="description" content="I am writing about my experiences as a naval navel-gazer.">
+    <link rel="stylesheet" href="/site/css/index.css">
+    <link rel="alternate" href="/site/feed/feed.xml" type="application/atom+xml" title="Tim Wright">
+    <link rel="alternate" href="/site/feed/feed.json" type="application/json" title="Tim Wright">
+
+    <script>
+
+		WebFontConfig = {
+			google: {
+				families: ['Open Sans:400,700', 'Judson:400,700']
+			}
+		};
+
+		(function(d) {
+			var wf = d.createElement('script'), s = d.scripts[0];
+			wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
+			wf.async = true;
+			s.parentNode.insertBefore(wf, s);
+		})(document);
+
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-875557-1', 'auto');
+		ga('send', 'pageview');
+
+	</script>
+
+	<noscript>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&Judson:ital,wght@0,400;0,700;1,400&display=swap" />
+	</noscript>
+
+  </head>
+  <body>
+
+  <header role="banner" id="banner">
+
+    <h1 class="logo" itemscope="" itemtype="http://schema.org/Organization">
+      <a href="/" itemprop="url">Tim Wright</a>
+    </h1>
+
+    <nav role="navigation" id="nav">
+      <ul>
+          <li class="nav-item"><a href="/site/blog/">Blog</a></li>
+          <li class="nav-item"><a href="/site/work/">Work</a></li>
+        <li class="nav-item"><a href="mailto:hello@timwright.org?subject=An Interesting Message from timwright.org">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+    <article class="tmpl-post" id="main" role="main">
+      
+<time datetime="2016-11-05">05 Nov 2016</time>
+
+<h1>Changing the Reading Order of a Page with ARIA Flowto</h1>
+
 <p>&quot;Why would I ever want to mess with the reading order of a page?&quot; That was my initial thought when I first came across the <a href="https://www.w3.org/TR/wai-aria-practices-1.1/#relations_flowto"><code>aria-flowto</code></a> attribute. The purpose of this attribute is to redefine the order in which a screen reader accesses a page (when going top to bottom isn't the best way). It is especially helpful when the implied reading order doesn't match the DOM, well... let's be honest, that's really the only time it's helpful, because that's it's purpose.</p>
 <p>If you're like me and you grew up in Web Design/Development with Progressive Enhancement and knowing the importance of hierarchy in your HTML you may ask yourself, &quot;When will I ever intentionally shuffle the DOM order to the point where it's an accessibility problem?&quot;</p>
 <h3 id="use-cases" tabindex="-1">Use Cases <a class="direct-link" href="#use-cases" aria-hidden="true">#</a></h3>
@@ -59,3 +123,10 @@
 <li><a href="http://3needs.org/en/testing/code/aria-flowto.html">Testing aria-flowto</a></li>
 <li><a href="https://developer.yahoo.com/blogs/ydn/aria-flowto-controls-reading-order-page-53436.html">ARIA Flowto Controls The Reading Order Of A Page</a></li>
 </ul>
+
+
+    </article>
+
+    <!-- Current page: /site/posts/changing-reading-order-page-aria-flowto/ -->
+  </body>
+</html>

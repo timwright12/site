@@ -1,3 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Performance Budget</title>
+    <meta name="description" content="I am writing about my experiences as a naval navel-gazer.">
+    <link rel="stylesheet" href="/site/css/index.css">
+    <link rel="alternate" href="/site/feed/feed.xml" type="application/atom+xml" title="Tim Wright">
+    <link rel="alternate" href="/site/feed/feed.json" type="application/json" title="Tim Wright">
+
+    <script>
+
+		WebFontConfig = {
+			google: {
+				families: ['Open Sans:400,700', 'Judson:400,700']
+			}
+		};
+
+		(function(d) {
+			var wf = d.createElement('script'), s = d.scripts[0];
+			wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
+			wf.async = true;
+			s.parentNode.insertBefore(wf, s);
+		})(document);
+
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-875557-1', 'auto');
+		ga('send', 'pageview');
+
+	</script>
+
+	<noscript>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&Judson:ital,wght@0,400;0,700;1,400&display=swap" />
+	</noscript>
+
+  </head>
+  <body>
+
+  <header role="banner" id="banner">
+
+    <h1 class="logo" itemscope="" itemtype="http://schema.org/Organization">
+      <a href="/" itemprop="url">Tim Wright</a>
+    </h1>
+
+    <nav role="navigation" id="nav">
+      <ul>
+          <li class="nav-item"><a href="/site/blog/">Blog</a></li>
+          <li class="nav-item"><a href="/site/work/">Work</a></li>
+        <li class="nav-item"><a href="mailto:hello@timwright.org?subject=An Interesting Message from timwright.org">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+    <article class="tmpl-post" id="main" role="main">
+      
+<time datetime="2016-04-01">01 Apr 2016</time>
+
+<h1>Performance Budget</h1>
+
 <p>Clients often spend hundreds of hours pouring thousands of dollars into the great staples of UX like <a href="http://conversionxl.com/how-to-design-user-flow/">user flows</a>, <a href="http://theuxreview.co.uk/user-journeys-beginners-guide/">user journeys</a>, <a href="http://adaptivepath.org/ideas/the-anatomy-of-an-experience-map/">experience mapping</a>, <a href="http://knowledge.hubspot.com/contacts-user-guide-v2/how-to-create-personas">persona development</a>, <a href="http://www.gv.com/sprint/">design sprints</a>, and <a href="https://www.useronboard.com/">user onboarding</a>. They're all complex, detailed and thoughtful approaches to creating a great experience for your users. I'm, unfortunately, here to let you know that all that money you're spending is better off in other places if you ignore the most experience-connected (and revenue-connected) aspect of designing a complete experience: <strong>performance</strong>.</p>
 <p>Often times, performance (loading time) is the first thing a user will experience when interacting with your product. If it's slow, they'll leave, if it's fast, they'll stay (it's really that simple). <a href="http://twitter.com/seanvwork">Sean Work</a> over at Kissmetrics wrote an article called, &quot;<a href="https://blog.kissmetrics.com/loading-time/">How Loading Time Affects Your Bottom Line</a>.&quot; Some of the more harrowing statistics include (paraphrased from the <a href="https://blog.kissmetrics.com/loading-time/?wide=1">infographic</a>):</p>
 <ul>
@@ -29,3 +93,10 @@
 <h2 id="now-what" tabindex="-1">Now What? <a class="direct-link" href="#now-what" aria-hidden="true">#</a></h2>
 <p>After running the performance budget, the next step is to choose your benchmarks. Sometimes it's obvious, sometimes it isn't. I've settled into choosing the best speed index, and benchmarking off that because it speaks to the actual experience for a user a little better than any of the physical milestones. From there, after your targets are decided and fleshed out, you can shave 20% off the values, and there you have it, your performance budget! ~20% is the point where a page actually <em>feels</em> faster to a user.</p>
 <p>Based on the test metrics used (I use 3g), you can calculate the allowed KB weight of a page, and distribute it across the assets to create the best performance possible!</p>
+
+
+    </article>
+
+    <!-- Current page: /site/posts/performance-budget/ -->
+  </body>
+</html>

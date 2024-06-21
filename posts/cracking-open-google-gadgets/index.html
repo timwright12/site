@@ -1,3 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cracking open Google Gadgets</title>
+    <meta name="description" content="I am writing about my experiences as a naval navel-gazer.">
+    <link rel="stylesheet" href="/site/css/index.css">
+    <link rel="alternate" href="/site/feed/feed.xml" type="application/atom+xml" title="Tim Wright">
+    <link rel="alternate" href="/site/feed/feed.json" type="application/json" title="Tim Wright">
+
+    <script>
+
+		WebFontConfig = {
+			google: {
+				families: ['Open Sans:400,700', 'Judson:400,700']
+			}
+		};
+
+		(function(d) {
+			var wf = d.createElement('script'), s = d.scripts[0];
+			wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
+			wf.async = true;
+			s.parentNode.insertBefore(wf, s);
+		})(document);
+
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-875557-1', 'auto');
+		ga('send', 'pageview');
+
+	</script>
+
+	<noscript>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&Judson:ital,wght@0,400;0,700;1,400&display=swap" />
+	</noscript>
+
+  </head>
+  <body>
+
+  <header role="banner" id="banner">
+
+    <h1 class="logo" itemscope="" itemtype="http://schema.org/Organization">
+      <a href="/" itemprop="url">Tim Wright</a>
+    </h1>
+
+    <nav role="navigation" id="nav">
+      <ul>
+          <li class="nav-item"><a href="/site/blog/">Blog</a></li>
+          <li class="nav-item"><a href="/site/work/">Work</a></li>
+        <li class="nav-item"><a href="mailto:hello@timwright.org?subject=An Interesting Message from timwright.org">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+    <article class="tmpl-post" id="main" role="main">
+      
+<time datetime="2008-04-14">14 Apr 2008</time>
+
+<h1>Cracking open Google Gadgets</h1>
+
 <p>A few weeks ago, I decided to do a little research into <a href="http://www.google.com/ig/directory?synd=open">Google Desktop</a>. Which is basically a Google widget platform competing with <a href="http://widgets.yahoo.com/">Yahoo! widgets</a>. After some exploration and dissecting Google Gadgets, this is what I came out with:</p>
 <ul>
 <li>The core of the application runs on 2 files
@@ -25,20 +89,26 @@
 </ul>
 <p>There are others too, but these are the one's I found most useful. So, lookin at those options, a being an RSS freak, I chose to customize the RSS gadget for CSSKarma</p>
 <p><strong>CSSKarma RSS Gadget</strong></p>
-<p><a href="http://www.csskarma.com/gadgets/rss/csskarma_rss.gg">Download CSSKarma RSS Gadget</a></p>
 <p>The first thing to do is to make a copy of the RSS sample given with the Google Gadget samples. I did that (as a CSS person), I opened up the theme folder &quot;default&quot; and looked for &quot;details.css&quot;. I assumed this file would edit all the presentation for the gadget. It doesn't. I only edits the flyout menu (after you click on a link in the RSS gadget). OK, that's fine. So I enter this CSS:</p>
 <pre><code>body {
   color:#323F4C;
-  background:#fff url(http://www.csskarma.com/images/bg_branding.jpg) no-repeat 0 bottom;
+  background:#fff url(/bg_branding.jpg) no-repeat 0 bottom;
   font: 0.8em/1.5 Verdana, Arial, Sans-serif;
 }
 </code></pre>
-<p>That will add my CSSKarma logo to the flyout and add some basic CSS. The other files in the theme folder to deal with are &quot;entry_item.xml&quot;, &quot;theme_config.xml&quot; and &quot;title.xml&quot;. After you look at &quot;theme_config.xml&quot; and &quot;title.xml&quot;, you'll see why I think this is a little <em>too</em> modular. I left those two file alone. But I did edit &quot;entry_item.xml&quot;, view <a href="http://www.csskarma.com/gadgets/rss/entry_item.xml">entry_item.xml</a>. I edited some style information in there (one more thing I'm not thrilled about - embedding style info into the XML).</p>
+<p>That will add my CSSKarma logo to the flyout and add some basic CSS. The other files in the theme folder to deal with are &quot;entry_item.xml&quot;, &quot;theme_config.xml&quot; and &quot;title.xml&quot;. After you look at &quot;theme_config.xml&quot; and &quot;title.xml&quot;, you'll see why I think this is a little <em>too</em> modular. I left those two file alone. But I did edit &quot;entry_item.xml&quot;, view <a href="http://www.example.com/gadgets/rss/entry_item.xml">entry_item.xml</a>. I edited some style information in there (one more thing I'm not thrilled about - embedding style info into the XML).</p>
 <p>The next folder to tackle is &quot;editme&quot;. It contains 2 files (config_constants.js and entry_item_impl.js). In &quot;entry_item_impl.js&quot; you can edit the RSS nodes, if you want. I chose not to. In &quot;config_constants.js&quot; you need to edit the URL of the RSS feed you want to use.</p>
 <p>The last thing I wanted to do was to remove the default background image from &quot;main.xml&quot;. When I did this, the background was transparent, by default. So in &quot;main.xml&quot; I added a background attribute of #FFFFFF to top level div (container). I also edited the height and width attributes of the &quot;view&quot; element for when the gadget is undocked from Google Desktop.</p>
-<p>The outcome of this was the <a href="http://www.csskarma.com/gadgets/rss/csskarma_rss.gg">CSSKarma RSS Gadget</a> (You'll probably need Google Desktop installed to use this). A very basic RSS gadget made by making simple modifications to the sample files. Feel free to download, play around with it, and let me know about any errors you find.</p>
+<p>The outcome of this was the <a href="/gadgets/rss/csskarma_rss.gg">CSSKarma RSS Gadget</a> (You'll probably need Google Desktop installed to use this). A very basic RSS gadget made by making simple modifications to the sample files. Feel free to download, play around with it, and let me know about any errors you find.</p>
 <p><strong>Aptana Jaxter</strong></p>
 <p><a href="http://www.aptana.com/">Aptana Jaxter</a> recently released &quot;The worlds first Ajax server&quot; (I have no date to back up the claim that it was recent). I've seen some web apps using this in integrating the Google API, looks promising but there's very limited server space right now. I'd like to see how these can be integrated into the <a href="http://code.google.com/apis/gears/mobile.html" title="http://code.google.com/apis/gears/mobile.html">Mobile web</a>. I don't have too much information on it right now (and I keep losing the damn link).</p>
 <p>That's all I have for now.</p>
 <p>With ease<br>
 Tim</p>
+
+
+    </article>
+
+    <!-- Current page: /site/posts/cracking-open-google-gadgets/ -->
+  </body>
+</html>

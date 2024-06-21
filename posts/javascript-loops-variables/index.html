@@ -1,3 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Micro-optimizations: Loops and Variables</title>
+    <meta name="description" content="I am writing about my experiences as a naval navel-gazer.">
+    <link rel="stylesheet" href="/site/css/index.css">
+    <link rel="alternate" href="/site/feed/feed.xml" type="application/atom+xml" title="Tim Wright">
+    <link rel="alternate" href="/site/feed/feed.json" type="application/json" title="Tim Wright">
+
+    <script>
+
+		WebFontConfig = {
+			google: {
+				families: ['Open Sans:400,700', 'Judson:400,700']
+			}
+		};
+
+		(function(d) {
+			var wf = d.createElement('script'), s = d.scripts[0];
+			wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
+			wf.async = true;
+			s.parentNode.insertBefore(wf, s);
+		})(document);
+
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-875557-1', 'auto');
+		ga('send', 'pageview');
+
+	</script>
+
+	<noscript>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&Judson:ital,wght@0,400;0,700;1,400&display=swap" />
+	</noscript>
+
+  </head>
+  <body>
+
+  <header role="banner" id="banner">
+
+    <h1 class="logo" itemscope="" itemtype="http://schema.org/Organization">
+      <a href="/" itemprop="url">Tim Wright</a>
+    </h1>
+
+    <nav role="navigation" id="nav">
+      <ul>
+          <li class="nav-item"><a href="/site/blog/">Blog</a></li>
+          <li class="nav-item"><a href="/site/work/">Work</a></li>
+        <li class="nav-item"><a href="mailto:hello@timwright.org?subject=An Interesting Message from timwright.org">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+    <article class="tmpl-post" id="main" role="main">
+      
+<time datetime="2016-12-03">03 Dec 2016</time>
+
+<h1>JavaScript Micro-optimizations: Loops and Variables</h1>
+
 <p>Creating loops in JavaScript can be one of the more resource intensive things you do on a project, especially if you're touching the DOM. While we can't really change how loops work, there are some micro-optimizations we can install to help them run a little more efficiently. These types of improvements are especially important with <strong>Front-end Development</strong> because these blocks run on the client, not server, so we can't really control the end user environment and it can directly impact the experience.</p>
 <p>Each time you execute a block of code within a loop anything that wasn't previously defined, needs to be defined (Make sense right? How can something exist without being created?), and when you do that over and over again you can create memory leaks and small performance issues. While these issue probably won't be noticed by the user, they will pile up over time and <em>could</em> cause an issue later on. For this reason, they're called &quot;micro-optimizations&quot; (macro-optimizations are the more obvious ones like concatenating files or using minification - they have major performance implications).</p>
 <h2 id="onto-to-code" tabindex="-1">Onto to Code <a class="direct-link" href="#onto-to-code" aria-hidden="true">#</a></h2>
@@ -44,3 +108,10 @@ for( i=0; i &lt; button_counts; i++ ) {
 }
 </code></pre>
 <p>Again, these kinds of optimizations may seem small, but will add up over time and if you're not caching variables already I promise you'll learn to love it if only to stop the <a href="http://jslint.com">JS Lint</a> errors... ahhhh JavaScript!</p>
+
+
+    </article>
+
+    <!-- Current page: /site/posts/javascript-loops-variables/ -->
+  </body>
+</html>

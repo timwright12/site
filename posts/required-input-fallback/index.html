@@ -1,8 +1,72 @@
-<p><a href="http://www.csskarma.com/lab/html5/input.required/">View the demo</a></p>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Required input fields with JS fallback</title>
+    <meta name="description" content="I am writing about my experiences as a naval navel-gazer.">
+    <link rel="stylesheet" href="/site/css/index.css">
+    <link rel="alternate" href="/site/feed/feed.xml" type="application/atom+xml" title="Tim Wright">
+    <link rel="alternate" href="/site/feed/feed.json" type="application/json" title="Tim Wright">
+
+    <script>
+
+		WebFontConfig = {
+			google: {
+				families: ['Open Sans:400,700', 'Judson:400,700']
+			}
+		};
+
+		(function(d) {
+			var wf = d.createElement('script'), s = d.scripts[0];
+			wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
+			wf.async = true;
+			s.parentNode.insertBefore(wf, s);
+		})(document);
+
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-875557-1', 'auto');
+		ga('send', 'pageview');
+
+	</script>
+
+	<noscript>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&Judson:ital,wght@0,400;0,700;1,400&display=swap" />
+	</noscript>
+
+  </head>
+  <body>
+
+  <header role="banner" id="banner">
+
+    <h1 class="logo" itemscope="" itemtype="http://schema.org/Organization">
+      <a href="/" itemprop="url">Tim Wright</a>
+    </h1>
+
+    <nav role="navigation" id="nav">
+      <ul>
+          <li class="nav-item"><a href="/site/blog/">Blog</a></li>
+          <li class="nav-item"><a href="/site/work/">Work</a></li>
+        <li class="nav-item"><a href="mailto:hello@timwright.org?subject=An Interesting Message from timwright.org">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+    <article class="tmpl-post" id="main" role="main">
+      
+<time datetime="2011-06-15">15 Jun 2011</time>
+
+<h1>Required input fields with JS fallback</h1>
+
+<p><a href="lab/html5/input.required/">View the demo</a></p>
 <p>One of my favorite features of the HTML 5 forms is the &quot;required&quot; attribute. But unfortunately, support isn't totally there yet. So we need to create fallbacks.</p>
 <p>It works in the modern browsers you'd expect it to (FF4, Safari, Opera, etc) but in older browsers, form validation isn't something you can really ignore (like border-radius) or you'll get flooded with all sorts of nastiness and spam. Sure we should be doing it at the server level anyway, but you still want that client side layer to add a bit of UX charm to your form.</p>
 <p>We can still use the new required attribute effectively by creating a JavaScript fallback for unsupported browsers.</p>
-<p>In this <a href="http://www.csskarma.com/lab/html5/input.required/">demo</a>, I'm using:</p>
+<p>In this <a href="/lab/html5/input.required/">demo</a>, I'm using:</p>
 <ul>
 <li><a href="http://jquery.com/">jQuery</a></li>
 <li><a href="http://bassistance.de/jquery-plugins/jquery-plugin-validation/">jQuery Validation</a></li>
@@ -54,3 +118,10 @@
 }(jQuery));
 </code></pre>
 <p>Older (unsupported) browsers will use the Validation plugin, and modern browsers will use the built-in HTML 5 validation.</p>
+
+
+    </article>
+
+    <!-- Current page: /site/posts/required-input-fallback/ -->
+  </body>
+</html>

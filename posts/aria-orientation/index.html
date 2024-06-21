@@ -1,3 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARIA Orientation</title>
+    <meta name="description" content="I am writing about my experiences as a naval navel-gazer.">
+    <link rel="stylesheet" href="/site/css/index.css">
+    <link rel="alternate" href="/site/feed/feed.xml" type="application/atom+xml" title="Tim Wright">
+    <link rel="alternate" href="/site/feed/feed.json" type="application/json" title="Tim Wright">
+
+    <script>
+
+		WebFontConfig = {
+			google: {
+				families: ['Open Sans:400,700', 'Judson:400,700']
+			}
+		};
+
+		(function(d) {
+			var wf = d.createElement('script'), s = d.scripts[0];
+			wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
+			wf.async = true;
+			s.parentNode.insertBefore(wf, s);
+		})(document);
+
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-875557-1', 'auto');
+		ga('send', 'pageview');
+
+	</script>
+
+	<noscript>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&Judson:ital,wght@0,400;0,700;1,400&display=swap" />
+	</noscript>
+
+  </head>
+  <body>
+
+  <header role="banner" id="banner">
+
+    <h1 class="logo" itemscope="" itemtype="http://schema.org/Organization">
+      <a href="/" itemprop="url">Tim Wright</a>
+    </h1>
+
+    <nav role="navigation" id="nav">
+      <ul>
+          <li class="nav-item"><a href="/site/blog/">Blog</a></li>
+          <li class="nav-item"><a href="/site/work/">Work</a></li>
+        <li class="nav-item"><a href="mailto:hello@timwright.org?subject=An Interesting Message from timwright.org">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+    <article class="tmpl-post" id="main" role="main">
+      
+<time datetime="2019-07-12">12 Jul 2019</time>
+
+<h1>ARIA Orientation</h1>
+
 <p>I ran into the little-known <a href="https://www.w3.org/TR/wai-aria/#aria-orientation"><code>aria-orientation</code></a> attribute today and wanted to make quick post about it since it really isn’t popularize and can add some nice touches to the accessibility of a site.</p>
 <h2 id="what-is-aria-orientation" tabindex="-1">What is ARIA Orientation? <a class="direct-link" href="#what-is-aria-orientation" aria-hidden="true">#</a></h2>
 <p>The <code>aria-orientation</code> is a way to communicate the orientation of a certain subset of UI components when you’re custom-building things like: scrollbars, select menus, separators, sliders (range sliders), tabs, and toolbars (<a href="https://www.w3.org/TR/wai-aria/#aria-orientation">read about more components you can use ARIA orientation on</a>). All components that can go up-and-down or right-to-left. It shouldn’t be used on any oriented element, but the ones listed in the <a href="https://www.w3.org/TR/wai-aria/#aria-orientation">W3C documentation</a> are all fair game.</p>
@@ -10,3 +74,10 @@
 <li><a href="https://www.w3.org/TR/wai-aria/#aria-orientation">W3C ARIA documentation</a></li>
 <li><a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-orientation_attribute">MDN Documentation on aria-orientation</a></li>
 </ul>
+
+
+    </article>
+
+    <!-- Current page: /site/posts/aria-orientation/ -->
+  </body>
+</html>

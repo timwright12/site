@@ -1,22 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Better Hiding &amp; Showing of Content</title>
+    <meta name="description" content="I am writing about my experiences as a naval navel-gazer.">
+    <link rel="stylesheet" href="/site/css/index.css">
+    <link rel="alternate" href="/site/feed/feed.xml" type="application/atom+xml" title="Tim Wright">
+    <link rel="alternate" href="/site/feed/feed.json" type="application/json" title="Tim Wright">
+
+    <script>
+
+		WebFontConfig = {
+			google: {
+				families: ['Open Sans:400,700', 'Judson:400,700']
+			}
+		};
+
+		(function(d) {
+			var wf = d.createElement('script'), s = d.scripts[0];
+			wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
+			wf.async = true;
+			s.parentNode.insertBefore(wf, s);
+		})(document);
+
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-875557-1', 'auto');
+		ga('send', 'pageview');
+
+	</script>
+
+	<noscript>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&Judson:ital,wght@0,400;0,700;1,400&display=swap" />
+	</noscript>
+
+  </head>
+  <body>
+
+  <header role="banner" id="banner">
+
+    <h1 class="logo" itemscope="" itemtype="http://schema.org/Organization">
+      <a href="/" itemprop="url">Tim Wright</a>
+    </h1>
+
+    <nav role="navigation" id="nav">
+      <ul>
+          <li class="nav-item"><a href="/site/blog/">Blog</a></li>
+          <li class="nav-item"><a href="/site/work/">Work</a></li>
+        <li class="nav-item"><a href="mailto:hello@timwright.org?subject=An Interesting Message from timwright.org">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+    <article class="tmpl-post" id="main" role="main">
+      
+<time datetime="2014-02-13">13 Feb 2014</time>
+
+<h1>Better Hiding &amp; Showing of Content</h1>
+
 <p>With <a href="http://en.wikipedia.org/wiki/Progressive_enhancement">progressive enhancement</a> we always try and maintain a separation between structure, style, and behavior. This usually (in really world terms) means keeping CSS out of your JavaScript and both of them out of your HTML. It's a blurry line with behavior and presentation mapping directly to CSS and JavaScript, but I think we can all agree that using inline CSS or JavaScript isn't ideal.</p>
 <p>I'm bringing this up because it happens with <a href="http://jquery.com/">jQuery</a> all the time and no one seems to talk about it. If you use <code>hide()</code>, you'll see an inline style of <code>display:none;</code> on the HTML element. If you use <code>show()</code>, you'll see <code>display:block;</code> get added. The problem compounds when animations get added into the mix (tons of inline CSS). I'm not saying don't use them, but there are better ways and you can clean up after yourself in the DOM. Here's an example for a simple hide/show.</p>
 <h2 id="html" tabindex="-1">HTML <a class="direct-link" href="#html" aria-hidden="true">#</a></h2>
-<pre><code>&lt;a href=&quot;#target1&quot; class=&quot;trigger&quot;&gt;Toggle Content area 1&lt;/a&gt;
-&lt;div id=&quot;target1&quot; class=&quot;content&quot;&gt;the content you want to hide/show&lt;/div&gt;
-</code></pre>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#target1<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>trigger<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Toggle Content area 1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>target1<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>content<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>the content you want to hide/show<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
 <h2 id="css" tabindex="-1">CSS <a class="direct-link" href="#css" aria-hidden="true">#</a></h2>
-<pre><code>// with this method I get to choose how I want to hide the content
-.is-hidden {
-  position: absolute;
-  top: -9999px;
-  left: -9999px;
-}
-
-// and I can easily make it work w/o JS
-.content:target {
-  position: static;
-}
-</code></pre>
+<pre class="language-css"><code class="language-css"><span class="token selector">// with this method I get to choose how I want to hide the content<br>.is-hidden</span> <span class="token punctuation">{</span><br>  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span><br>  <span class="token property">top</span><span class="token punctuation">:</span> -9999px<span class="token punctuation">;</span><br>  <span class="token property">left</span><span class="token punctuation">:</span> -9999px<span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><br><span class="token selector">// and I can easily make it work w/o JS<br>.content:target</span> <span class="token punctuation">{</span><br>  <span class="token property">position</span><span class="token punctuation">:</span> static<span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
 <h2 id="javascript" tabindex="-1">JavaScript <a class="direct-link" href="#javascript" aria-hidden="true">#</a></h2>
 <pre><code>$('.trigger').on('click', function(e) {
   e.preventDefault();
@@ -46,3 +97,10 @@
 <h2 id="why-bother" tabindex="-1">Why bother? <a class="direct-link" href="#why-bother" aria-hidden="true">#</a></h2>
 <p>I've been using this method for a very long time. I prefer it because it's a cleaner separation between CSS and JavaScript and I'm not forced to use jQuery's hide/show method of <code>display:none</code> (which really isn't good for accessibility).</p>
 <p>Of course, the <code>fadeIn()</code> method could also be moved into a CSS animation at this point to clean this up even further. You probably wouldn't even need jQuery at that point... for another day though!</p>
+
+
+    </article>
+
+    <!-- Current page: /site/posts/better-hiding-showing-of-content/ -->
+  </body>
+</html>

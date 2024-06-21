@@ -1,4 +1,68 @@
-<p>About couple weeks ago I wrote a post called &quot;<a href="http://www.csskarma.com/blog/styling-your-body/">Styling your body</a>&quot; which attempted to break the convention of using a &quot;container&quot; or &quot;wrap&quot; <code>div</code> when building a new site. I showed how to cut out a (usually) unnecessary <code>div</code> element and clean up your code. In this post I hope to show you how to cut down on your <code>HTML</code> even more by integrating a body class.</p>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Body and You</title>
+    <meta name="description" content="I am writing about my experiences as a naval navel-gazer.">
+    <link rel="stylesheet" href="/site/css/index.css">
+    <link rel="alternate" href="/site/feed/feed.xml" type="application/atom+xml" title="Tim Wright">
+    <link rel="alternate" href="/site/feed/feed.json" type="application/json" title="Tim Wright">
+
+    <script>
+
+		WebFontConfig = {
+			google: {
+				families: ['Open Sans:400,700', 'Judson:400,700']
+			}
+		};
+
+		(function(d) {
+			var wf = d.createElement('script'), s = d.scripts[0];
+			wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
+			wf.async = true;
+			s.parentNode.insertBefore(wf, s);
+		})(document);
+
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-875557-1', 'auto');
+		ga('send', 'pageview');
+
+	</script>
+
+	<noscript>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&Judson:ital,wght@0,400;0,700;1,400&display=swap" />
+	</noscript>
+
+  </head>
+  <body>
+
+  <header role="banner" id="banner">
+
+    <h1 class="logo" itemscope="" itemtype="http://schema.org/Organization">
+      <a href="/" itemprop="url">Tim Wright</a>
+    </h1>
+
+    <nav role="navigation" id="nav">
+      <ul>
+          <li class="nav-item"><a href="/site/blog/">Blog</a></li>
+          <li class="nav-item"><a href="/site/work/">Work</a></li>
+        <li class="nav-item"><a href="mailto:hello@timwright.org?subject=An Interesting Message from timwright.org">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+    <article class="tmpl-post" id="main" role="main">
+      
+<time datetime="2008-06-25">25 Jun 2008</time>
+
+<h1>Your Body and You</h1>
+
+<p>About couple weeks ago I wrote a post called &quot;<a href="/blog/styling-your-body/">Styling your body</a>&quot; which attempted to break the convention of using a &quot;container&quot; or &quot;wrap&quot; <code>div</code> when building a new site. I showed how to cut out a (usually) unnecessary <code>div</code> element and clean up your code. In this post I hope to show you how to cut down on your <code>HTML</code> even more by integrating a body class.</p>
 <p>First off, let's look at the value of adding a <code>body</code> ID.</p>
 <h4 id="the-body-id" tabindex="-1">The Body ID <a class="direct-link" href="#the-body-id" aria-hidden="true">#</a></h4>
 <p>The <code>body</code> ID of <em>this</em> site is &quot;www-csskarma-com&quot; (you can view source and check that out if you'd like). I picked up that method from a talk <a href="http://meyerweb.com">Eric Meyer</a> gave at <a href="http://www.aneventapart.com/events/boston07/">An Event Apart - Boston in 2007</a>. He mentioned that to help users create custom style sheets, you can add a body ID to your site, so the user could add something like:</p>
@@ -43,7 +107,7 @@
 <pre><code>&lt;?php
 //defining some global variables, change the SITEURL to your site
 define(SITEID, &quot;www-csskarma-com&quot;)
-define(SITEURL, &quot;http://www.csskarma.com/&quot;);
+define(SITEURL, &quot;http://www.example.com/&quot;);
 define(DOMAIN, $_SERVER['HTTP_HOST']);
 define(CURRENTURL, &quot;http://&quot; . DOMAIN . $_SERVER['REQUEST_URI']);
 
@@ -69,9 +133,16 @@ $dir = myDir();
 </code></pre>
 <p><strong>So, what's happening here?</strong></p>
 <p>We set global variables so we can use them in any function we create – not just this one. You could even make the clean URL a global variable if you wanted; I just chose not to in this example. It's important that you update the <code>SITEURL</code> variable to your web site URL. I also set the SITEID to www-csskarma-com in the <code>body</code> so it will generate both attribute values (and I can re-use the function/variables with minimal editing).</p>
-<p>The function is checking to see if the current URL matches what you set as the home page. If it does, then it will return a value of &quot;home.&quot; If not, it will return whatever directory your in. For example, if the current page is <a href="http://www.csskarma.com/contact">http://www.csskarma.com/contact</a>, it will return &quot;contact.&quot; Your output will look like this:</p>
+<p>The function is checking to see if the current URL matches what you set as the home page. If it does, then it will return a value of &quot;home.&quot; If not, it will return whatever directory your in. For example, if the current page is <a href="http://www.example.com/contact">http://www.example.com/contact</a>, it will return &quot;contact.&quot; Your output will look like this:</p>
 <pre><code>&lt;body id=&quot;www-csskarma-com&quot; class=&quot;contact&quot;&gt;
 </code></pre>
 <h4 id="closing-it-out" tabindex="-1">Closing it out <a class="direct-link" href="#closing-it-out" aria-hidden="true">#</a></h4>
 <p>In a nutshell, I got into this habit by managing a fairly large department web site and it carried over into all the sites I do. I really like keeping my HTML as clean and as slimmed down as possible, so this method works well for me. And besides that... who decided that a class wasn't presentational markup? I'm not condemning it at all, just some food for thought.</p>
 <p>Special thanks to <a href="http://twitter.com/akira_x" title="twitter">Akira_x</a> from <a href="http://www.sportingnews.com" title="Sporting News">TSN</a> for helping me clean up the function.</p>
+
+
+    </article>
+
+    <!-- Current page: /site/posts/your-body-and-you/ -->
+  </body>
+</html>

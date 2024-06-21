@@ -1,3 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Difference Between role=&quot;presentation&quot; and aria-hidden=&quot;true&quot;</title>
+    <meta name="description" content="I am writing about my experiences as a naval navel-gazer.">
+    <link rel="stylesheet" href="/site/css/index.css">
+    <link rel="alternate" href="/site/feed/feed.xml" type="application/atom+xml" title="Tim Wright">
+    <link rel="alternate" href="/site/feed/feed.json" type="application/json" title="Tim Wright">
+
+    <script>
+
+		WebFontConfig = {
+			google: {
+				families: ['Open Sans:400,700', 'Judson:400,700']
+			}
+		};
+
+		(function(d) {
+			var wf = d.createElement('script'), s = d.scripts[0];
+			wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
+			wf.async = true;
+			s.parentNode.insertBefore(wf, s);
+		})(document);
+
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-875557-1', 'auto');
+		ga('send', 'pageview');
+
+	</script>
+
+	<noscript>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&Judson:ital,wght@0,400;0,700;1,400&display=swap" />
+	</noscript>
+
+  </head>
+  <body>
+
+  <header role="banner" id="banner">
+
+    <h1 class="logo" itemscope="" itemtype="http://schema.org/Organization">
+      <a href="/" itemprop="url">Tim Wright</a>
+    </h1>
+
+    <nav role="navigation" id="nav">
+      <ul>
+          <li class="nav-item"><a href="/site/blog/">Blog</a></li>
+          <li class="nav-item"><a href="/site/work/">Work</a></li>
+        <li class="nav-item"><a href="mailto:hello@timwright.org?subject=An Interesting Message from timwright.org">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+    <article class="tmpl-post" id="main" role="main">
+      
+<time datetime="2016-11-19">19 Nov 2016</time>
+
+<h1>The Difference Between role=&quot;presentation&quot; and aria-hidden=&quot;true&quot;</h1>
+
 <p>In dealing with <code>role=&quot;presentation&quot;</code> and <code>aria-hidden=&quot;true&quot;</code> you may find that they both have deceptively similar functions when it relates to how they interact with assistive technology (screen readers). Before we dig into the difference between these two attributes we first need to learn a little bit about how accessibility in a Web browser works and this thing called: <a href="https://www.w3.org/TR/core-aam-1.1/#intro_treetypes">The Accessibility Tree</a></p>
 <h2 id="the-accessibility-tree" tabindex="-1">The Accessibility Tree <a class="direct-link" href="#the-accessibility-tree" aria-hidden="true">#</a></h2>
 <p>The accessibility tree is a mapping of objects within an HTML document that need to be exposed to assistive technology (if you're familiar with the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model">DOM</a>, it's a subset of the DOM). Anything that communicates aspects of the UI or has a property or relationship that needs to be exposed, gets added to the tree. This happens automatically for most elements when you use a strong semantic HTML structure, but you can also add or remove objects programmatically with accessibility hooks like:  <code>role=&quot;presentation&quot;</code> and <code>aria-hidden=&quot;true&quot;</code> (and some CSS properties). In a nutshell, this means… if I have a text input on a page, a screenreader will be able to interact with it, because it has been added into the accessibility tree.</p>
@@ -70,3 +134,10 @@ trigger.addEventListener(&quot;click&quot;, function(e) {
 <li><a href="https://www.w3.org/TR/wai-aria-1.1/#aria-hidden">aria-hidden (state)</a></li>
 <li><a href="http://heydonworks.com/practical_aria_examples/">Practical ARIA examples</a></li>
 </ul>
+
+
+    </article>
+
+    <!-- Current page: /site/posts/difference-rolepresentation-aria-hiddentrue/ -->
+  </body>
+</html>

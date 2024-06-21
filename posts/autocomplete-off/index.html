@@ -1,3 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Security with Autocomplete</title>
+    <meta name="description" content="I am writing about my experiences as a naval navel-gazer.">
+    <link rel="stylesheet" href="/site/css/index.css">
+    <link rel="alternate" href="/site/feed/feed.xml" type="application/atom+xml" title="Tim Wright">
+    <link rel="alternate" href="/site/feed/feed.json" type="application/json" title="Tim Wright">
+
+    <script>
+
+		WebFontConfig = {
+			google: {
+				families: ['Open Sans:400,700', 'Judson:400,700']
+			}
+		};
+
+		(function(d) {
+			var wf = d.createElement('script'), s = d.scripts[0];
+			wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
+			wf.async = true;
+			s.parentNode.insertBefore(wf, s);
+		})(document);
+
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-875557-1', 'auto');
+		ga('send', 'pageview');
+
+	</script>
+
+	<noscript>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&Judson:ital,wght@0,400;0,700;1,400&display=swap" />
+	</noscript>
+
+  </head>
+  <body>
+
+  <header role="banner" id="banner">
+
+    <h1 class="logo" itemscope="" itemtype="http://schema.org/Organization">
+      <a href="/" itemprop="url">Tim Wright</a>
+    </h1>
+
+    <nav role="navigation" id="nav">
+      <ul>
+          <li class="nav-item"><a href="/site/blog/">Blog</a></li>
+          <li class="nav-item"><a href="/site/work/">Work</a></li>
+        <li class="nav-item"><a href="mailto:hello@timwright.org?subject=An Interesting Message from timwright.org">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+    <article class="tmpl-post" id="main" role="main">
+      
+<time datetime="2009-04-10">10 Apr 2009</time>
+
+<h1>Form Security with Autocomplete</h1>
+
 <p><img src="images/autocomplete.jpg" alt="article banner"></p>
 <p>I was looking through my blog this morning because I could have sworn I already wrote this post. I know I've had this conversation with Phil Nash of <a href="http://www.unintentionallyblank.co.uk/">Unintentionally Blank</a>. But I guess I never wrote it down? Oh well...</p>
 <p>One of my pet peeves when filling out a form is when I click in the payment field and my credit crard / bank account number drops down because it was saved in the browser from last time I made a payment on that site. How is it that developers on these sites overlook that <strong>huge</strong> security issue?</p>
@@ -30,3 +94,10 @@ $(&quot;form#paymentform&quot;).html(&quot;&lt;input id=&quot;pmt&quot; name=&qu
 </code></pre>
 <p>That way, if javascript is enabled you'll use the jQuery to write the textfield, and if it's not, you'll just write it out normally, which will be invalid, but more secure.</p>
 <p>Let me know if anyone knows the PHP way to check for JS.</p>
+
+
+    </article>
+
+    <!-- Current page: /site/posts/autocomplete-off/ -->
+  </body>
+</html>
