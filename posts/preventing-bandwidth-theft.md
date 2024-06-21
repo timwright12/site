@@ -1,11 +1,9 @@
 ---
 title: "Using .htaccess to Prevent Bandwidth Theft"
 date: "2009-04-02"
-categories: 
+tags:
   - "security"
-tags: 
-  - "htaccess"
-  - "http"
+layout: layouts/post.njk
 ---
 
 ![article banner](images/bandwidth-theft.jpg)
@@ -22,9 +20,9 @@ I prefer using a 403 error, it works just as well in my opinion, and gets the po
 
 ```
 RewriteEngine On
-RewriteCond %{HTTP_REFERER} !^http://(.+\.)?csskarma\.com/ [NC]
+RewriteCond %{HTTP_REFERER} !^http://(.+\.)?example\.com/ [NC]
 RewriteCond %{HTTP_REFERER} !^$
 RewriteRule .*\.(jpe?g|gif|bmp|png)$ - [F]
 ```
 
-`   Put that in your .htaccess file (in your root directory). If you don't have an .htaccess file, just create an empty file in the root and name it ".htaccess". Then put this code in there and you'll be good to go.  Don't forget to change out "csskarma" for your web site. You'll definitely notice if you forget that bit.  #### What's going on  Turn on the rewrite condition:  ``` RewriteEngine On ```  Match any request for csskarma.com (NC means "no case" it will match upper or lower case requests):  ``` RewriteCond %{HTTP_REFERER} !^http://(.+\.)?csskarma\.com/ [NC] ```  Allow empty requests, these are harmless and often 404 errors anyway  ``` RewriteCond %{HTTP_REFERER} !^$ ```  Replace the stolen image with a 403 "forbidden" error  ``` RewriteRule .*\.(jpe?g|gif|bmp|png)$ - [F] ```   `
+`   Put that in your .htaccess file (in your root directory). If you don't have an .htaccess file, just create an empty file in the root and name it ".htaccess". Then put this code in there and you'll be good to go.  Don't forget to change out "csskarma" for your web site. You'll definitely notice if you forget that bit.  #### What's going on  Turn on the rewrite condition:  ``` RewriteEngine On ```  Match any request for example.com (NC means "no case" it will match upper or lower case requests):  ``` RewriteCond %{HTTP_REFERER} !^http://(.+\.)?csskarma\.com/ [NC] ```  Allow empty requests, these are harmless and often 404 errors anyway  ``` RewriteCond %{HTTP_REFERER} !^$ ```  Replace the stolen image with a 403 "forbidden" error  ``` RewriteRule .*\.(jpe?g|gif|bmp|png)$ - [F] ```   `

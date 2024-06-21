@@ -1,8 +1,9 @@
 ---
 title: "IE8 - Version Targeting"
 date: "2008-01-24"
-categories: 
+tags:
   - "engineering"
+layout: layouts/post.njk
 ---
 
 The current hot topic in the world of web development is [IE8 and its version targeting](http://www.webstandards.org/2008/01/22/microsofts-version-targeting-proposal/), [Eric Meyer's article on A List Apart](http://alistapart.com/articles/fromswitchestotargets) and [Aaron Gustafson's Beyond DOCTYPE](http://alistapart.com/articles/beyondDOCTYPE). I've commenting all over the place about this, so I thought I'd consolidate all the comments into a blog post, and maybe elaborate a little.

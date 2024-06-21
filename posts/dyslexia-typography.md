@@ -1,9 +1,10 @@
 ---
 title: "Dyslexia and Typography"
 date: "2017-02-04"
-categories: 
+tags:
   - "accessibility"
   - "typography"
+layout: layouts/post.njk
 ---
 
 Dyslexia has been labelled as a, "[hidden disability (pdf)](http://dyslexiahelp.umich.edu/sites/default/files/good_fonts_for_dyslexia_study.pdf)" with neurological roots. Not only because you can't tell if someone is dyslexic by looking at them, but often times, they can't tell either. A person with dyslexia, in their natural state (and depending on the severity) cannot tell if they're reading or writing incorrectly. Because of this, and despite the popularization of it through people like [Steve Jobs](http://dyslexiahelp.umich.edu/success-stories/steve-jobs) and [Steven Spielberg](http://www.landmarkoutreach.org/about/newsworthy/steven-spielberg-deals-dyslexia-0), it's very much under the radar and often forgotten about.

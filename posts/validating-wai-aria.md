@@ -1,11 +1,9 @@
 ---
 title: "Validating with WAI-ARIA"
 date: "2009-02-05"
-categories: 
-  - "engineering"
-tags: 
+tags:
   - "accessibility"
-  - "wai-aria"
+layout: layouts/post.njk
 ---
 
 ![article banner](images/validating-aria.jpg)

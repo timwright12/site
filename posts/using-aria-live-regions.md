@@ -1,8 +1,9 @@
 ---
 title: "Accessibility in Web Applications with ARIA Live Regions"
 date: "2017-02-18"
-categories: 
+tags:
   - "accessibility"
+layout: layouts/post.njk
 ---
 
 Accessibility in Web applications can be pretty confusing. ARIA live regions are a method of communicating asynchronous document changes to [assistive technology](https://en.wikipedia.org/wiki/Assistive_technology#Accessibility_software) (AT). A screen reader will read an HTML document in a bunch of different ways (links, headings, regions, form controls, etc.), the problem with all these methods is that none of them are really equip to detect changes in the document that happen after initial load. Especially if the user has already passed that point in the document. This is where live regions are helpful.

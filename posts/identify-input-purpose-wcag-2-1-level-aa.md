@@ -1,9 +1,9 @@
 ---
 title: "Identify Input Purpose – WCAG 2.1, Level AA"
 date: "2020-09-05"
-categories: 
+tags:
   - "accessibility"
-  - "ux"
+layout: layouts/post.njk
 ---
 
 [WCAG 2.1 Guideline 1.3.5](https://www.w3.org/WAI/WCAG21/quickref/#identify-input-purpose) states:

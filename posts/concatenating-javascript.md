@@ -1,12 +1,9 @@
 ---
 title: "Concatenating JavaScript"
 date: "2014-06-15"
-categories: 
+tags:
   - "engineering"
-tags: 
-  - "javascript"
-  - "js"
-  - "performance"
+layout: layouts/post.njk
 ---
 
 I generally try and distance myself from unnecessary project overhead, mostly in the form of extra tools hanging around. For that reason, I really never fell in love with task runners like [Grunt](http://gruntjs.com/) and [Gulp](http://gulpjs.com/), but at the same time I see a lot of value in what they do.

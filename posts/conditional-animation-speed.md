@@ -1,20 +1,13 @@
 ---
 title: "Conditional Animation Speed in jQuery"
 date: "2010-01-08"
-categories: 
+tags:
   - "design"
-tags: 
-  - "advanced"
-  - "javascript"
-  - "jquery"
-  - "ui"
+layout: layouts/post.njk
 ---
 
-![Turtle](images/turtle.jpg)
 
 For years (and by "years", I most likely mean "the years since I started using jQuery... maybe 2"), there's been one aspect of jQuery that's bugged the crap out of me, the animation speed.
-
-[View demo](http://www.csskarma.com/lab/animation_speed/)
 
 We've all probably seen the problem that happens in many drop down menus of varying height. We set `slideDown(300)` (or whatever you set it to) on all the submenus and leave like that. Inevitably, menus grow and shrink based on the content and we get this weird and mildly annoying behavior of really fast moving tall menus vs. shorter menus that move painfully slow just because there's not much content in there.
 
@@ -79,36 +72,36 @@ $(function(){
 	var height_value = '100';
 	var tall_menu_speed = 400;
 	var short_menu_speed = 250;
-	
+
 	/* System variables, probably don't change */
 	var target = id +' '+ click_element;
 	var menu_content = $(target).next();
-	
+
 	/* Hide the element after the click_element, whether it's a
 	div, p, ul, whatever you choose to wrap the items in */
 	menu_content.hide();
-	
+
 	$(target).toggle(function(){
 		/* save the menu items in a variable */
 		var this_menu = $(this).next();
-		
+
 		/* get the menu height and save it */
 		var menu_height = this_menu.height();
-		
+
 		/* Calculate the animation speed based on the element height */
-		/* if the height is greater than the height set above use the 
+		/* if the height is greater than the height set above use the
 		tall menu height */
 		if(menu_height > height_value){
 			var speed = tall_menu_speed;
-		
+
 		/* If it's smaller, use the short menu height */
 		} else if(menu_height < height_value) {
 			var speed = short_menu_speed;
 		}
-		
+
 		/* slide the menu down */
 		this_menu.slideDown(speed);
-			
+
 	},function(){
 		/* this is the same but reversed to close the menu */
 		var this_menu = $(this).next();
@@ -129,4 +122,4 @@ $(function(){
 
 That should give you a little more control over the menu speed. I'm sure it needs to be tweaked based on the menu you're using, but the general concept is there, and it should work pretty well. I hope it was helpful. Let me know if you have any additions to the code or suggestions to improve it.
 
-[View demo](http://www.csskarma.com/lab/animation_speed/)
+[View demo](/lab/animation_speed/)

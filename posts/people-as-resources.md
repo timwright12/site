@@ -1,9 +1,9 @@
 ---
 title: "People as Resources"
 date: "2014-04-20"
-categories: 
+tags:
   - "ux"
-coverImage: "wheat-for-some-reason.jpg"
+layout: layouts/post.njk
 ---
 
 For years I've always cringed in meetings when managers sitting around a table describe members of their teams as faceless, "resources." It's come to a point where it almost feels like a swear. I've never liked it because I feel like it dehumanizes people to break them down to a level where they're a set of generic skills to be allocated to a project.

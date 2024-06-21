@@ -1,12 +1,9 @@
 ---
 title: "The Problem with Media Queries"
 date: "2012-01-31"
-categories: 
+tags:
   - "ux"
-tags: 
-  - "css"
-  - "media"
-  - "mobile"
+layout: layouts/post.njk
 ---
 
 I finally got around to reading the new article on A List Apart this morning , "[A Pixel Identity Crisis](http://www.alistapart.com/articles/a-pixel-identity-crisis/)". It basically talks about how some pixels are defined differently than others (based on the "reference pixel"), so there can be variations in how 2 devices (Galaxy  Tab and Kindle Fire given as examples in the article) with the exact same dimensions can display responsive content differently. A solution was proposed in the form of this absurdly complex media query:

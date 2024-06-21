@@ -1,8 +1,9 @@
 ---
 title: "New Accessibility Guidelines with WCAG 2.1"
 date: "2018-08-26"
-categories: 
-  - "ux"
+tags:
+  - "accessibility"
+layout: layouts/post.njk
 ---
 
 On June 5, 2018 the W3C updated version 2.1 of the Web Accessibility Content Guidelines to “Recommendation” status. What’s that mean? Well, it means we’re ready to start using it. The new guidelines have been in process for about a year and a half now, moving slowing, but surely, into a state where we can start digging our heels in.

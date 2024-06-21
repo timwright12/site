@@ -1,18 +1,14 @@
 ---
 title: "Quick note on mobile web design"
 date: "2008-03-31"
-categories: 
+tags:
   - "engineering"
-tags: 
-  - "css"
-  - "fitts"
-  - "mobile"
-  - "usability"
+layout: layouts/post.njk
 ---
 
 Before, you check: no, I haven't made a handheld style sheet for this site yet, hopefully in the near future.
 
-Anyway, I've been reading up on some user interface principles in the past few months and have been talking up designing for mobile devices. First, I was looking into [Fitts's Law](http://particletree.com/features/visualizing-fittss-law/) (I've seen it spelled a few different ways, so I just chose one and went with it) which wasn't meant to apply directly to the web, but is still very useful in relation to link size, deceleration, and general usability issues. Then reading up on some [Mediatyping on Mezzoblue](http://mezzoblue.com/archives/2008/03/18/mediatyping/). And I started dumping all that stuff into the [research section of CSSKarma](http://www.csskarma.com/research), mainly so I could keep track of it, but also to try and centralize some of the happenings on the web and show some of the better resources I've come across, but that haven't made it to the lab yet.
+Anyway, I've been reading up on some user interface principles in the past few months and have been talking up designing for mobile devices. First, I was looking into [Fitts's Law](http://particletree.com/features/visualizing-fittss-law/) (I've seen it spelled a few different ways, so I just chose one and went with it) which wasn't meant to apply directly to the web, but is still very useful in relation to link size, deceleration, and general usability issues. Then reading up on some [Mediatyping on Mezzoblue](http://mezzoblue.com/archives/2008/03/18/mediatyping/). And I started dumping all that stuff into the research, mainly so I could keep track of it, but also to try and centralize some of the happenings on the web and show some of the better resources I've come across, but that haven't made it to the lab yet.
 
 I've been speaking pretty frequently about mobile design/development and there's one particular aspect of it that seems to escape a designer's mind in almost every conversation: **a finger, while far more accurate than a mouse, is around 10 times larger**. Very often, you get something like this:
 

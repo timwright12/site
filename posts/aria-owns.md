@@ -1,9 +1,9 @@
 ---
 title: "Upgrading DOM Hierarchy for Accessibility with Aria-owns"
 date: "2017-10-15"
-categories: 
+tags:
   - "accessibility"
-  - "ux"
+layout: layouts/post.njk
 ---
 
 For the past couple weeks I've been working on accessibility audits and upgrades to a client website. Most of the updates were pretty straightforward, but I wanted to call out a specific item that allowed me to dive deeper into an aria attribute I really hadn't used before: [**aria-owns**](http://oaa-accessibility.org/example/42/).
@@ -37,7 +37,7 @@ I'll admit it, I could have rebuilt this entire navigation system to use the pro
 
 Either that, or I would have to [move the DOM elements around with JavaScript](https://github.com/timwright12/util.move) and re-style the frontend (Not a terrible option, but I still wanted something a little less obtrusive).
 
-I knew about attributes like, [aria-flowto](http://csskarma.com/blog/changing-reading-order-page-aria-flowto/), [aria-label](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-label_attribute), [aria-labelledby](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-labelledby_attribute), [aria-controls](https://www.w3.org/TR/wai-aria/states_and_properties#aria-controls), and I had heard of [aria-owns](https://www.w3.org/TR/wai-aria/states_and_properties#aria-owns) (but never needed to use it). So I was pretty sure there was a combination of attributes I could use to bring these two elements together.
+I knew about attributes like, [aria-flowto](blog/changing-reading-order-page-aria-flowto/), [aria-label](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-label_attribute), [aria-labelledby](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-labelledby_attribute), [aria-controls](https://www.w3.org/TR/wai-aria/states_and_properties#aria-controls), and I had heard of [aria-owns](https://www.w3.org/TR/wai-aria/states_and_properties#aria-owns) (but never needed to use it). So I was pretty sure there was a combination of attributes I could use to bring these two elements together.
 
 In reading the W3C documentation (I don't recommend doing that), I saw this within the aria-owns section:
 

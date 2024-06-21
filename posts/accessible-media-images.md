@@ -1,8 +1,9 @@
 ---
 title: "Accessible Media: Images"
 date: "2019-12-07"
-categories: 
+tags:
   - "accessibility"
+layout: layouts/post.njk
 ---
 
 Most of the time, when we think of difficult accessibility situations we default to UI interactions like: tabs, accordions, menus opening and closing, modals, focus trapping, and maybe even that nervous, “radical candor” moment when we ask a designer if it’s OK to [darken gray text a little](https://www.w3.org/WAI/WCAG21/quickref/#contrast-minimum). Because image accessibility is seen as being as basic as putting ALT text on an image, it’s often pushed aside as simple. For that reason, I wanted to create a quick write up to expand on some of the basics in creating accessible media; specifically: [images](https://10up.github.io/Engineering-Best-Practices/markup/#media).

@@ -1,11 +1,9 @@
 ---
 title: "Learning ES6: Spread Operator"
 date: "2015-12-23"
-categories: 
+tags:
   - "javascript"
-tags: 
-  - "es6"
-  - "javascript"
+layout: layouts/post.njk
 ---
 
 I got a little sidetracked.

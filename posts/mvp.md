@@ -1,9 +1,9 @@
 ---
 title: "Minimum Viable Piece of Crap (MVP...oc)"
 date: "2014-02-05"
-categories: 
+tag:
   - "ux"
-coverImage: "mvp.jpg"
+layout: layouts/post.njk
 ---
 
 For those who are unfamiliar with the phrase _MVP_, that has been floating around the product design community for the past few years, lemme give ya a quick whats-what.

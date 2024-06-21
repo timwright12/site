@@ -1,11 +1,10 @@
 ---
 title: "Accessible Routing in React"
 date: "2019-03-23"
-categories: 
-  - "accessibility"
-  - "javascript"
-tags: 
+tags:
   - "react"
+  - "accessibility"
+layout: layouts/post.njk
 ---
 
 Routing in an application allows for navigation between different views or components, whether that's in a PHP framework, WordPress, React, Angular, Vue, whatever. It's been around for a long time and has become an essential addition to a large portion of our React projects. Whether you're using React Navigation, React Router, Reach Router, Next, the History API, or some other router, you've likely encountered some of the common patterns and this code:

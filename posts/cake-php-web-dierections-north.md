@@ -1,8 +1,9 @@
 ---
 title: "Cake PHP & Web Dierections North"
 date: "2008-01-09"
-categories: 
+categories:
   - "engineering"
+layout: layouts/post.njk
 ---
 
 **CakePHP** 

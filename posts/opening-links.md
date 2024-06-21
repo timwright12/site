@@ -1,9 +1,10 @@
 ---
 title: "Security and Accessiblity When Opening Links in a New Window"
 date: "2017-01-21"
-categories: 
+categories:
   - "accessibility"
   - "security"
+layout: layouts/post.njk
 ---
 
 A handful of years ago there was a quiet agreement in the Web community that we should stop opening links in new windows (using `target="_blank`") to give users more power over their experience. After all, who are we to say that something should open in a new window? It was a reaction to the UX problem we still encounter all the time today: assuming we know what's best for the user. So we started letting the user decide how and where they want to open links.  If you want a new window, right click and do it yourself, or hold shift and click -- either way the user will pick. As a user, I can't cancel out `target="_blank"` but I can simulate the feature if I want it. There are few things worse on the Web than fighting with a UI that thinks it knows what's best for you.

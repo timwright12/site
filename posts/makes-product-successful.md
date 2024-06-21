@@ -1,8 +1,9 @@
 ---
 title: "What makes a product successful?"
 date: "2014-08-04"
-categories: 
+tags:
   - "design"
+layout: layouts/post.njk
 ---
 
 [Zurb](http://zurb.com) has a new beta product called [Tavern](http://zurb.com/tavern/) that asks a design-related question everyday to the community. It's in closed beta right now, but there's a good question for today and I wanted to publically share my answer here as well.

@@ -1,14 +1,9 @@
 ---
 title: "Redirection Options"
 date: "2010-01-27"
-categories: 
+tags:
   - "engineering"
-tags: 
-  - "beginner"
-  - "htaccess"
-  - "javascript"
-  - "meta"
-  - "php"
+layout: layouts/post.njk
 ---
 
 ![article banner](images/banner_redirection.png)
@@ -32,7 +27,7 @@ The top two are the one's you'll be using most often, I don't really recommend t
 Redirect /old_directory http://example.com/newdirectory
 ```
 
-This redirection is most efficient at the apache level, but if you're like me and are on shared hosting, getting into the apache installation probably isn't an option. In that case you can put this in an [.htaccess file](http://www.csskarma.com/blog/creating-an-htaccess-template/) in the root directory of your site.
+This redirection is most efficient at the apache level, but if you're like me and are on shared hosting, getting into the apache installation probably isn't an option. In that case you can put this in an [.htaccess file](/blog/creating-an-htaccess-template/) in the root directory of your site.
 
 Using an .htaccess redirection is great for moving entire sites because you can not only redirect a page, but you can redirect entire sites and subdirectories with one line of code.
 

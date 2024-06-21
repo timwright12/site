@@ -1,8 +1,9 @@
 ---
 title: "Very Movies & JavaScript Animation without jQuery"
 date: "2014-03-28"
-categories: 
-  - "ux"
+tags:
+  - "javascript"
+layout: layouts/post.njk
 ---
 
 I've been working on a side project lately called [Very Movies](http://verymovies.com). It's a way to share Netflix movies with people (via e-mail right now). For years I've had the problem of being out at a bar, having someone tell me about a great movie they watched on Netflix only for us to drink the night away and completely forget what the movie was.
@@ -15,7 +16,7 @@ Anyway... one of my goals for building the app was to not use jQuery. Until last
 
 The method itself is pretty straight forward, I used an object as the argument (similar to the way jQuery handles things). I run a loop over the options and use a very fast setInerval to execute the style changes. I also wanted a callback function to get a little more control over the UI.
 
-```
+```javascript
 var Movies = {
 
   animate : function( options, time, callback ) {
@@ -83,7 +84,7 @@ var menu = document.getElementById('menu');
 
 // call the method
 Movies.animate({
-  'elem': menu, 
+  'elem': menu,
   'style': 'height',
   'unit': 'px',
   'from': 0,

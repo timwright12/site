@@ -1,12 +1,9 @@
 ---
 title: "JavaScript Form Checker"
 date: "2007-10-25"
-categories: 
+tags:
   - "engineering"
-tags: 
-  - "form"
-  - "remember-the-milk"
-  - "validation"
+layout: layouts/post.njk
 ---
 
 I just came across this link that was sent to me about a month ago, it's very cool so I thought I'd share: [Remember the Milk](http://www.rememberthemilk.com/signup/).You don't have to sign up for anything, I'm posting it, basically, to show the form-checking. Up to now I've been using Dreamweaver’s form validator to check if my forms are complete. It's very easy, but doesn't t really add any \*POP\* to a page.

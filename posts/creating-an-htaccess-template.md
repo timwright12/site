@@ -1,12 +1,9 @@
 ---
 title: "Creating an .htaccess template"
 date: "2008-09-11"
-categories: 
+tags:
   - "engineering"
-tags: 
-  - "errordocument"
-  - "htaccess"
-  - "starter-files"
+layout: layouts/post.njk
 ---
 
 Recently I decided to finally sit down and organize some things on my site/server. I created dev server, and did some other things that I had been wanting to do for a while.
@@ -45,7 +42,7 @@ This .htaccess file is in 4 basic parts: the directory index, the error document
 DirectoryIndex index.php index.html index.htm
 ```
 
-DirectoryIndex is the first thing I learned in my .htaccess explorations, it's very simple. It tells the server which pages to display by default and in what order. In my example, if I have index.html in a directory along with index.php, the index.php file will be displayed by default, so you have [www.csskarma.com](http://www.csskarma.com/) pointing to index.php and if you want to get to index.html you'd have to type it in like [www.csskarma.com/index.html](http://www.csskarma.com/index.html). Many servers get this right without the DirectoryIndex, but it's like doing `body{background-color:#fff;}`, I put it in just in case.
+DirectoryIndex is the first thing I learned in my .htaccess explorations, it's very simple. It tells the server which pages to display by default and in what order. In my example, if I have index.html in a directory along with index.php, the index.php file will be displayed by default, so you have [home]() pointing to index.php and if you want to get to index.html you'd have to type it in like [home](/). Many servers get this right without the DirectoryIndex, but it's like doing `body{background-color:#fff;}`, I put it in just in case.
 
 ##### ErrorDocument
 
@@ -60,7 +57,7 @@ ErrorDocument 500 /errors/500.php
 
 This is the stuff that I dig. It gets the most press out of all the .htaccess elements; so I guess it's the rock star of the .htaccess file. [A List Apart](http://alistapart.com/articles/perfect404/) did an article on it in 2004, and it was a big usability issue building a good 404 error page. Now we all have our fancy 404 pages.
 
-The mod\_rewrite module (as to my understanding of it) deals with rewriting the URL. In this cae, it's the thing that lets you have a 404 error without exposing the URL of the actual [error page](http://www.csskarma.com/errors/404.php). 403 Error is a permission denied error and 500 is an internal server error. You can check out [all the error codes](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html) if you'd like, but you shouldn't bog down your .htaccess file too much, so I keep it to these 3.
+The mod\_rewrite module (as to my understanding of it) deals with rewriting the URL. In this cae, it's the thing that lets you have a 404 error without exposing the URL of the actual error page. 403 Error is a permission denied error and 500 is an internal server error. You can check out [all the error codes](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html) if you'd like, but you shouldn't bog down your .htaccess file too much, so I keep it to these 3.
 
 ##### Index Options
 

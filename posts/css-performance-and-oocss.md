@@ -1,16 +1,12 @@
 ---
 title: "CSS Performance and OOCSS"
 date: "2011-04-18"
-categories: 
-  - "design"
+tags:
   - "engineering"
-tags: 
-  - "css"
-  - "javascript"
-  - "performance"
+layout: layouts/post.njk
 ---
 
-I'm in the process right now of signing on for my first speaking gig in since I moved to Boston (thanks to [@joedevon](http://twitter.com/joedevon)) and it got me thinking about performance in CSS; a topic I really haven't address in years since I started using my [single-line CSS formatting style](http://csskarma.com/css/csskarma.css). **Tip:** use spaces rather than tabbing to maintain the alignment across different software since they all treat the "tab" differently.
+I'm in the process right now of signing on for my first speaking gig in since I moved to Boston (thanks to [@joedevon](http://twitter.com/joedevon)) and it got me thinking about performance in CSS; a topic I really haven't address in years since I started using my single-line CSS formatting style. **Tip:** use spaces rather than tabbing to maintain the alignment across different software since they all treat the "tab" differently.
 
 But I digress.
 

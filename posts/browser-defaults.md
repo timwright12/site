@@ -1,9 +1,9 @@
 ---
 title: "Browser Defaults"
 date: "2013-06-29"
-categories: 
+tags:
   - "ux"
-coverImage: "browsers.jpg"
+layout: layouts/post.njk
 ---
 
 Overwriting browser default behaviors creates can create a very poor and confusing experience for users and can dramatically increase development time when we need to rewrite a certain feature (I'm looking at you Mr(s). I-Love-JS-Frameworks). Here are some browser default behaviors you should leave alone:

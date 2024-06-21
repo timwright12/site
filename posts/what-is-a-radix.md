@@ -1,10 +1,9 @@
 ---
 title: "What is a Radix?"
 date: "2014-02-10"
-categories: 
+tags:
   - "javascript"
-tags: 
-  - "javascript"
+layout: layouts/post.njk
 ---
 
 The JavaScript method `[parseInt()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt)` takes 2 arguments. The first being a string (or decimal) you want to turn into a rounded integer (like changing 1.2 into 1). The second value is something called a _radix_, and no one seems to be able to define it in plain english. Looking through the MDN documentation about `parseIn()`, and a plethora of good write-ups on the same topic it's generally known that when using the `parseInt()` method it's best (or typical) to use a radix of 10.

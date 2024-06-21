@@ -1,13 +1,9 @@
 ---
 title: "Quick iPhone Media Detection"
 date: "2008-06-17"
-categories: 
+tags:
   - "engineering"
-tags: 
-  - "firefox"
-  - "iphone"
-  - "mobile"
-  - "php"
+layout: layouts/post.njk
 ---
 
 I finally got around to reading [David Shea's post on MediaTyping](http://mezzoblue.com/archives/2008/03/18/mediatyping/) today and as I was going through it, I asked myself if all the PHP he was using was really necessary. It sure wasn't for what I wanted to do. I just wanted to detect an iPhone or iPod to test out some interfaces.
@@ -19,14 +15,14 @@ I did some digging around after that and came across a short post on [iPhoneAppr
 When you visit a web page, your user agent changes based on the media you're using. So, right now, if you're using Firefox 2 your user agent string looks something like this:
 
 ```
-Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.14) 
+Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.14)
 Gecko/20080404 Firefox/2.0.0.14
 ```
 
 and if you're on an iPhone it will look something like this:
 
 ```
-Mozilla/5.0 (iPhone; U; CPU like Mac OS X; en) AppleWebKit/420.1 (KHTML, like 
+Mozilla/5.0 (iPhone; U; CPU like Mac OS X; en) AppleWebKit/420.1 (KHTML, like
 Gecko) Version/3.0 Mobile/4A102 Safari/419.3
 ```
 
@@ -54,7 +50,5 @@ if ($ipod == true || $iphone == true){
 #### Trouble I had
 
 In the PHP manual it says to use === when checking the value (which is for an exact match, true=true), but for some reason that didn't work for me so I used == (match, but not exact so true=true & true=1 for boolean values). It's usually just a spacing issue, but I'm not real sure this time. Feel free to tell me I'm wrong.
-
-[view live demo](http://www.csskarma.com/lab/mediatyping/)
 
 I like this, it's pretty easy, light, and useful if you just want an iPhone/iPod interface.

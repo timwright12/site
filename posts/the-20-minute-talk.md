@@ -1,8 +1,9 @@
 ---
 title: "How I Gave a 20 Minute Talk with Only 1 Slide (and no speaker notes)"
 date: "2016-07-27"
-categories: 
+tags:
   - "ux"
+layout: layouts/post.njk
 ---
 
 This morning I was looking through some of my "liked" tweets and came across a photo of myself giving a talk with a slide of my former [Dirt](https://itunes.apple.com/us/podcast/the-dirt/id569204776) co-host, [Mark Grambau](http://www.markgrambau.com/) giving a thumbs up on the TV behind me.

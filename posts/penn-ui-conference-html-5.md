@@ -1,8 +1,9 @@
 ---
 title: "Penn UI Conference & HTML 5"
 date: "2010-04-23"
-categories: 
+tags:
   - "design"
+layout: layouts/post.njk
 ---
 
 ![Penn UI Conference](images/pennuiconf.png)
@@ -16,9 +17,9 @@ Much like I did in the article, I'll be talking about the new elements, APIs, us
 ### Official description
 
 > HTML 5 and the future of the Web will explore the new monster on the block, HTML 5. It will present a broad overview of the new structural elements you'll be dealing with, various APIs built into the language, and what you can expect to encounter as you move forward with HTML 5.
-> 
+>
 > We'll talk about how it is currently being implemented, how it may be implemented in the future, and how HTML 5 can create a more personalized and enriched experience across multiple platforms while saving development time.
-> 
+>
 > We'll also look into ways you can start using HTML 5 right now, what you can do to prepare for the transition and how we can apply some of those methods to academia.
 
 ### People smarter than me

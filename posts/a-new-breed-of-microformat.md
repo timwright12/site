@@ -1,13 +1,8 @@
 ---
 title: "A New Breed of Microformat"
 date: "2008-09-22"
-categories:
-  - "engineering"
 tags:
-  - "google"
-  - "mayermusic"
-  - "microformats"
-  - "youtube"
+  - "engineering"
 layout: layouts/post.njk
 ---
 

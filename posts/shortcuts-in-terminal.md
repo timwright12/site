@@ -1,11 +1,9 @@
 ---
 title: "Setting up shortcuts in Terminal"
 date: "2011-05-20"
-categories: 
+tags:
   - "engineering"
-tags: 
-  - "terminal"
-  - "unix"
+layout: layouts/post.njk
 ---
 
 Let me just start off my saying **I hate using the command line**.

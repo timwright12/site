@@ -1,13 +1,12 @@
 ---
 title: "Performance Testing with the User Timing API"
 date: "2017-03-04"
-categories: 
-  - "engineering"
-tags: 
+tags:
   - "performance"
+layout: layouts/post.njk
 ---
 
-Performance is the first thing a user experiences on a site. In many ways it doesn't matter how amazing a user flow or IA appear to be, if a site won't load, users leave. This is why keeping a strong [performance budget](http://csskarma.com/blog/performance-budget/) and testing metrics are so critically important to creating a great end-to-end experience for users (and generating revenue).
+Performance is the first thing a user experiences on a site. In many ways it doesn't matter how amazing a user flow or IA appear to be, if a site won't load, users leave. This is why keeping a strong [performance budget](/blog/performance-budget/) and testing metrics are so critically important to creating a great end-to-end experience for users (and generating revenue).
 
 When looking into ways of testing front-end performance for an application I stumbled upon the [User Timing API](https://developer.mozilla.org/en-US/docs/Web/API/User_Timing_API/Using_the_User_Timing_API), which is part of the [Performance Interface](https://developer.mozilla.org/en-US/docs/Web/API/Performance). At that point, I had never really dug into either of them, so I decided to share my research here.
 
@@ -26,7 +25,7 @@ performance.mark("initialize");
 /* Do things in here */
 
 performance.mark("complete");
-            
+
 measurePerformance();
 
 // Function to output performance metrics
@@ -38,9 +37,9 @@ function measurePerformance() {
 
   for ( i = 0; i < entryCount; i++ ) {
 
-    console.log( " Name: "       + entries[i].name      + 
+    console.log( " Name: "       + entries[i].name      +
                  " Entry Type: " + entries[i].entryType +
-                 " Start Time: " + entries[i].startTime + 
+                 " Start Time: " + entries[i].startTime +
                  " Duration: "   + entries[i].duration  + "\n");
   } // end loop
 

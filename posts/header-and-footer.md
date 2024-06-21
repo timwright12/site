@@ -1,13 +1,9 @@
 ---
 title: "Header and Footer in the Semantic Web"
 date: "2008-11-21"
-categories: 
+tags:
   - "engineering"
-tags: 
-  - "andy-clarke"
-  - "css"
-  - "semantics"
-  - "xhtml"
+layout: layouts/post.njk
 ---
 
 ![atricle banner](images/branding-and-header.jpg)

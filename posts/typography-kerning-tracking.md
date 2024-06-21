@@ -1,10 +1,9 @@
 ---
 title: "The Difference Between Kerning and Tracking in Typography"
 date: "2017-03-18"
-categories: 
-  - "design"
-tags: 
+tags:
   - "typography"
+layout: layouts/post.njk
 ---
 
 Among the growing list of geekery I latch onto, typography has always been a main focus of my learning. Believing that content is the center of our web and the many hooks it has within CSS, it has always felt like a natural extension to executing my job. From choosing a typeface, setting up a typographic system, all the way to proper asset loading and subsetting to maintain a performant experience - I've always been extremely interested in all aspects of typography.

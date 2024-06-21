@@ -1,13 +1,9 @@
 ---
 title: "Learning ES6: `let` Declarations"
 date: "2015-12-07"
-categories: 
+tags:
   - "javascript"
-tags: 
-  - "es6"
-  - "javascript"
-  - "let"
-  - "var"
+layout: layouts/post.njk
 ---
 
 In dipping my toes into ES6 more and more, I want to make sure I fully understand each feature and it's ES5 fallback before I move forward and adopt it. It's a little over the top, I know, but it's how I am. If my compiler were to break for some reason, I want to make sure I can still parse through and effectively write my code.
@@ -22,7 +18,7 @@ Let introduces a concept to JavaScript called "block scoping." It's been around 
 
 ```
 function a() {
-  
+
   var b = 1;
   if(b) {
     b = 2;
@@ -38,7 +34,7 @@ function a() {
 
 ```
 function a() {
-  
+
   var b = 1;
   if(b) {
     let b = 2;

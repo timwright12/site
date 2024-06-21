@@ -1,16 +1,10 @@
 ---
 title: "Form Design with Sliding Labels"
 date: "2010-01-19"
-categories: 
-  - "design"
-tags: 
-  - "advanced"
-  - "forms"
-  - "jquery"
-  - "ui"
+tags:
+  - "javascript"
+layout: layouts/post.njk
 ---
-
-Please use **the latest version** of sliding labels with updated options and bug fixes at: [http://www.csskarma.com/blog/sliding-labels-plugin/](http://www.csskarma.com/blog/sliding-labels-plugin/)
 
 A few weeks ago I was reading an [article](http://www.lukew.com/ff/entry.asp?968) on form UI by [Luke Wroblewski](http://www.lukew.com/) of [Yahoo!](http://www.yahoo.com/). For those who aren't familiar with Luke, he ([quite literally](http://rosenfeldmedia.com/books/webforms/)) wrote the book on good form design.
 
@@ -25,8 +19,6 @@ For best practice, Luke talks about leaving your labels outside the form field s
 ### Enter: Sliding Labels
 
 After reading that article it occurred to me that there's no reason we can't have the best of both worlds. I like how inline labels look, and I see Luke's point about them disappearing as you fill out the form. But, we have jQuery, we know about progressive enhancement, and we have creative minds, so let's build something that allows us to keep the label inline, but **slide it off to the left** (or up, whichever you prefer) rather than going away on click.
-
-[View demo](http://www.csskarma.com/lab/plugin_slidinglabels/)
 
 #### The HTML
 
@@ -43,7 +35,7 @@ At this point we have a pretty basic, and ugly form
 #### The CSS
 
 ```
-body { font:12px/1.3 Arial, Sans-serif; } form { width:380px;padding:0 90px 20px;margin:auto;background:#f7f7f7;border:1px solid #ddd; } div { clear:both;position:relative;margin:0 0 10px; } label { cursor:pointer;display:block; } input[type="text"] { width:300px;border:1px solid #999;padding:5px;-moz-border-radius:4px; } input[type="text"]:focus { border-color:#777; } input[name="zip"] { width:150px; } /* submit button */ input[type="submit"] { cursor:pointer;border:1px solid #999;padding:5px;-moz-border-radius:4px;background:#eee; } input[type="submit"]:hover, input[type="submit"]:focus { border-color:#333;background:#ddd; } input[type="submit"]:active{ margin-top:1px; } 
+body { font:12px/1.3 Arial, Sans-serif; } form { width:380px;padding:0 90px 20px;margin:auto;background:#f7f7f7;border:1px solid #ddd; } div { clear:both;position:relative;margin:0 0 10px; } label { cursor:pointer;display:block; } input[type="text"] { width:300px;border:1px solid #999;padding:5px;-moz-border-radius:4px; } input[type="text"]:focus { border-color:#777; } input[name="zip"] { width:150px; } /* submit button */ input[type="submit"] { cursor:pointer;border:1px solid #999;padding:5px;-moz-border-radius:4px;background:#eee; } input[type="submit"]:hover, input[type="submit"]:focus { border-color:#333;background:#ddd; } input[type="submit"]:active{ margin-top:1px; }
 ```
 
 The only 100% necessary CSS in there is the `position:relative` on the wrapper element (`DIV`). The rest is basically cosmetic and you can mess with it as you see fit.
@@ -63,8 +55,6 @@ $(function(){ $('form#info .slider label').each(function(){ var labelColor = '#9
 At this point, you should have a fully working sliding label form!
 
 ![labelslider final](images/labelslider_final.png)
-
-[View demo](http://www.csskarma.com/lab/plugin_slidinglabels/)
 
 Making sure everything is still usable without JavaScript is important (no matter what people say), it's just a basic principle of progressive enhancement. Believe it or not, there are still people browsing without JavaScript (blackberry users - turned off by default). So creating the interaction in layers, as we did, will help it be **past-proof**.
 

@@ -1,15 +1,12 @@
 ---
 title: "Your Body and You"
 date: "2008-06-25"
-categories: 
+tags:
   - "engineering"
-tags: 
-  - "css"
-  - "php"
-  - "tips"
+layout: layouts/post.njk
 ---
 
-About couple weeks ago I wrote a post called "[Styling your body](http://www.csskarma.com/blog/styling-your-body/)" which attempted to break the convention of using a "container" or "wrap" `div` when building a new site. I showed how to cut out a (usually) unnecessary `div` element and clean up your code. In this post I hope to show you how to cut down on your `HTML` even more by integrating a body class.
+About couple weeks ago I wrote a post called "[Styling your body](/blog/styling-your-body/)" which attempted to break the convention of using a "container" or "wrap" `div` when building a new site. I showed how to cut out a (usually) unnecessary `div` element and clean up your code. In this post I hope to show you how to cut down on your `HTML` even more by integrating a body class.
 
 First off, let's look at the value of adding a `body` ID.
 
@@ -83,7 +80,7 @@ When managing a large (or any) web site, you don't want to have to go into every
 <?php
 //defining some global variables, change the SITEURL to your site
 define(SITEID, "www-csskarma-com")
-define(SITEURL, "http://www.csskarma.com/");
+define(SITEURL, "http://www.example.com/");
 define(DOMAIN, $_SERVER['HTTP_HOST']);
 define(CURRENTURL, "http://" . DOMAIN . $_SERVER['REQUEST_URI']);
 
@@ -115,7 +112,7 @@ Then in your `body` you'd to this:
 
 We set global variables so we can use them in any function we create – not just this one. You could even make the clean URL a global variable if you wanted; I just chose not to in this example. It's important that you update the `SITEURL` variable to your web site URL. I also set the SITEID to www-csskarma-com in the `body` so it will generate both attribute values (and I can re-use the function/variables with minimal editing).
 
-The function is checking to see if the current URL matches what you set as the home page. If it does, then it will return a value of "home." If not, it will return whatever directory your in. For example, if the current page is http://www.csskarma.com/contact, it will return "contact." Your output will look like this:
+The function is checking to see if the current URL matches what you set as the home page. If it does, then it will return a value of "home." If not, it will return whatever directory your in. For example, if the current page is http://www.example.com/contact, it will return "contact." Your output will look like this:
 
 ```
 <body id="www-csskarma-com" class="contact">

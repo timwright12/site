@@ -1,8 +1,9 @@
 ---
 title: "Usable Accessibility"
 date: "2009-04-14"
-categories: 
+tags:
   - "accessibility"
+layout: layouts/post.njk
 ---
 
 ![article banner](images/usable-accessibility.jpg)

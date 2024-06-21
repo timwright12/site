@@ -1,9 +1,10 @@
 ---
 title: "Inclusive Participatory Workshop: Accessible Iconography Design"
 date: "2016-09-27"
-categories: 
+tags:
   - "accessibility"
   - "design"
+layout: layouts/post.njk
 ---
 
 **I was looking for research on accessibility in iconography and came across this case study. I converted it from PDF to an HTML file so I could read and share it easily. It took forever, so I figure why not share it. Feel free to [download the original PDF](https://www.researchgate.net/publication/282892092_INCLUSIVE_PARTICIPATORY_WORKSHOP_ACCESSIBLE_ICONOGRAPHY_DESIGN).**

@@ -1,8 +1,9 @@
 ---
 title: "Changing the Reading Order of a Page with ARIA Flowto"
 date: "2016-11-05"
-categories: 
+tags:
   - "ux"
+layout: layouts/post.njk
 ---
 
 "Why would I ever want to mess with the reading order of a page?" That was my initial thought when I first came across the [`aria-flowto`](https://www.w3.org/TR/wai-aria-practices-1.1/#relations_flowto) attribute. The purpose of this attribute is to redefine the order in which a screen reader accesses a page (when going top to bottom isn't the best way). It is especially helpful when the implied reading order doesn't match the DOM, well... let's be honest, that's really the only time it's helpful, because that's it's purpose.

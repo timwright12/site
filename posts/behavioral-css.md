@@ -1,13 +1,9 @@
 ---
 title: "What You Need to Know About Behavioral CSS"
 date: "2009-12-21"
-categories: 
-  - "design"
+tags:
   - "engineering"
-tags: 
-  - "article"
-  - "css"
-  - "smashing-magazine"
+layout: layouts/post.njk
 ---
 
 ![](images/smashing-banner1.png "smashing-banner")

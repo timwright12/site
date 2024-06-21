@@ -1,11 +1,9 @@
 ---
 title: "Form Security with Autocomplete"
 date: "2009-04-10"
-categories: 
+tags:
   - "security"
-tags: 
-  - "forms"
-  - "ui"
+layout: layouts/post.njk
 ---
 
 ![article banner](images/autocomplete.jpg)

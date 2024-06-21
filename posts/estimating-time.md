@@ -1,9 +1,9 @@
 ---
 title: "How Estimating Time Works and Why Experience Matters"
 date: "2017-05-08"
-categories: 
+tags:
   - "time"
-  - "workflow"
+layout: layouts/post.njk
 ---
 
 Last weekend I was having a yard sale and I woke up at 6am so I could get some things ready, make breakfast, coffee, read a [comic](http://www.dccomics.com/comics/batman-2016/batman-16), and have a little time to relax before I had to sit outside for 5 hours and haggle with people over $0.50.

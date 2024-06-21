@@ -1,17 +1,14 @@
 ---
 title: "Media Query Transition Animations"
 date: "2011-05-11"
-categories: 
+tags:
   - "design"
-tags: 
-  - "animation"
-  - "css3"
-  - "quick-tip"
+layout: layouts/post.njk
 ---
 
 I've been doing a lot with [Responsive Design](http://www.alistapart.com/articles/responsive-web-design/), Media Queries (yea, they're different), and light transitions with CSS 3 lately and something kind of cool happened. By sheer accident I put a transition inside a media query, resized my window and watch the padding on my `<article>` element animate to it's new value.
 
-It was way cool. check out a quick [demo I threw together](http://www.csskarma.com/lab/media-animations/).
+It was way cool. check out a quick [demo I threw together](/lab/media-animations/).
 
 I inserted 2 breakpoints in the demo. One at 800px and another at 480px, so you should see the design adjust twice.
 

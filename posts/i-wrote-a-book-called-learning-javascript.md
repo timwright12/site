@@ -1,13 +1,10 @@
 ---
 title: "I wrote a book called: Learning JavaScript"
 date: "2012-08-01"
-categories: 
+categories:
   - "javascript"
-tags: 
-  - "javascript"
+layout: layouts/post.njk
 ---
-
-[![](images/180875075-231x300.jpeg "180875075")](http://www.csskarma.com/blog/wp-content/uploads/180875075.jpeg)
 
 Hey all, I realize I don't post all that often any more, but I have a bit of an event coming up that I thought might be noteworthy enough for a blog post.
 

@@ -1,12 +1,9 @@
 ---
 title: "Book Review: The Book of CSS3"
 date: "2011-06-05"
-categories: 
+tags:
   - "design"
-tags: 
-  - "css"
-  - "css3"
-coverImage: "css3-book.jpg"
+layout: layouts/post.njk
 ---
 
 I started reading [Peter Gasston's](http://twitter.com/#!/stopsatgreen/) "The Book of CSS3" about a month ago and finally had time to finish it up this weekend. **Here are my thoughts.**

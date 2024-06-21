@@ -1,11 +1,10 @@
 ---
 title: "JavaScript Micro-optimizations: Loops and Variables"
 date: "2016-12-03"
-categories: 
+tags:
   - "javascript"
   - "performance"
-tags: 
-  - "javascript"
+layout: layouts/post.njk
 ---
 
 Creating loops in JavaScript can be one of the more resource intensive things you do on a project, especially if you're touching the DOM. While we can't really change how loops work, there are some micro-optimizations we can install to help them run a little more efficiently. These types of improvements are especially important with **Front-end Development** because these blocks run on the client, not server, so we can't really control the end user environment and it can directly impact the experience.

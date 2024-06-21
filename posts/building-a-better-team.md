@@ -1,11 +1,10 @@
 ---
 title: "5 Ways to Build a Better Team"
 date: "2008-12-02"
-categories: 
-  - "ux"
-tags: 
+tags:
   - "team-building"
   - "workplace"
+layout: layouts/post.njk
 ---
 
 ![article banner](images/team-building.jpg)

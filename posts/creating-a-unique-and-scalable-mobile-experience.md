@@ -1,12 +1,9 @@
 ---
 title: "Creating a Unique and Scalable Mobile Experience"
 date: "2011-08-16"
-categories: 
+tags:
   - "design"
-tags: 
-  - "conference"
-  - "speaking"
-  - "sxsw"
+layout: layouts/post.njk
 ---
 
 A while ago I submitted a proposal for SXSW 2012 called [Creating a Unique and Scalable Mobile Experience](http://panelpicker.sxsw.com/ideas/view/8782).

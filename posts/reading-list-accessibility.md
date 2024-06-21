@@ -1,8 +1,9 @@
 ---
 title: "Keeping Up with Accessibility"
 date: "2017-01-07"
-categories: 
+tags:
   - "accessibility"
+layout: layouts/post.njk
 ---
 
 A couple years ago for [Global Accessibility Awareness Day](http://globalaccessibilityawarenessday.org/) I sat down with some of the great accessibility minds around an recorded them explaining [why they thought accessibility was important](https://vimeo.com/album/3400106/). I got a chance to chat with some amazing people like [Sarah Horton](https://twitter.com/gradualclearing), [Brad Frost](https://twitter.com/brad_frost), [Larry Goldberg](https://twitter.com/larrygoldberg32), [Whitney Quesenbery,](https://twitter.com/whitneyq) and many more.

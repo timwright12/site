@@ -1,8 +1,9 @@
 ---
 title: "ARIA Orientation"
 date: "2019-07-12"
-categories: 
+tags:
   - "accessibility"
+layout: layouts/post.njk
 ---
 
 I ran into the little-known [`aria-orientation`](https://www.w3.org/TR/wai-aria/#aria-orientation) attribute today and wanted to make quick post about it since it really isn’t popularize and can add some nice touches to the accessibility of a site.

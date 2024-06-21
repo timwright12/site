@@ -1,8 +1,9 @@
 ---
 title: "Carroll Center for the Blind"
 date: "2012-05-10"
-categories: 
+tags:
   - "accessibility"
+layout: layouts/post.njk
 ---
 
 Building Web sites isn't a noble profession. Most of us don't contribute to society in a truly meaningful way. We had a hobby that turned into a career, and we're extremely fortunate to be able to do that. Sure, some of us work on products that do good in the world, I don't want to completely dismiss that.

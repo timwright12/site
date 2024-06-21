@@ -1,23 +1,17 @@
 ---
 title: "Sliding Labels Official Plugin Release [ver. 3.2]"
 date: "2010-06-29"
-categories: 
-  - "engineering"
-tags: 
-  - "form"
-  - "javascipt"
-  - "jquery"
-  - "plugin"
-  - "ui"
+tags:
+  - "javascript"
+layout: layouts/post.njk
 ---
 
-- [View Demo](http://www.csskarma.com/lab/plugin_slidinglabels/)
-- [Plugin](http://www.csskarma.com/lab/jquery.plugins/jquery.slidinglabels.js)
-- [Minified Plugin](http://www.csskarma.com/lab/jquery.plugins/jquery.slidinglabels.min.js)
+- [Plugin](/lab/jquery.plugins/jquery.slidinglabels.js)
+- [Minified Plugin](/lab/jquery.plugins/jquery.slidinglabels.min.js)
 
 **Version: 3.2 – Added a "className" option so you don't have to use ".slider" as the wrapper**
 
-Version 3.1: Changed "children" to "find" so it will work with a UL. Thanks to [Oro](http://www.csskarma.com/blog/sliding-labels-plugin/comment-page-1/#comment-85490) for the feedback
+Version 3.1: Changed "children" to "find" so it will work with a UL. Thanks to [Oro](/blog/sliding-labels-plugin/comment-page-1/#comment-85490) for the feedback
 
 Version 3 of Sliding Labels brought some big changes, the largest being that I finally converted it into a working jQuery plugin.
 
@@ -55,14 +49,14 @@ Just like the previous version, you need an element wrapping the `<label>` and `
 
 ```
 
-$(function(){ $('#contactform').slidinglabels({ 
-/* these are all optional */ 
-className : 'form-slider', // the class you're wrapping the label & input with -> default = slider 
-topPosition : '5px', // how far down you want each label to start 
-leftPosition : '5px', // how far left you want each label to start 
-axis : 'x', // can take 'x' or 'y' for slide direction 
-speed : 'fast' // can take 'fast', 'slow', or a numeric value 
-}); 
+$(function(){ $('#contactform').slidinglabels({
+/* these are all optional */
+className : 'form-slider', // the class you're wrapping the label & input with -> default = slider
+topPosition : '5px', // how far down you want each label to start
+leftPosition : '5px', // how far left you want each label to start
+axis : 'x', // can take 'x' or 'y' for slide direction
+speed : 'fast' // can take 'fast', 'slow', or a numeric value
+});
 });
 ```
 

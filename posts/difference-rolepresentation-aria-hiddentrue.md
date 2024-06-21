@@ -1,8 +1,9 @@
 ---
 title: "The Difference Between role=\"presentation\" and aria-hidden=\"true\""
 date: "2016-11-19"
-categories: 
+tags:
   - "accessibility"
+layout: layouts/post.njk
 ---
 
 In dealing with `role="presentation"` and `aria-hidden="true"` you may find that they both have deceptively similar functions when it relates to how they interact with assistive technology (screen readers). Before we dig into the difference between these two attributes we first need to learn a little bit about how accessibility in a Web browser works and this thing called: [The Accessibility Tree](https://www.w3.org/TR/core-aam-1.1/#intro_treetypes)

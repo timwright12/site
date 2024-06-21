@@ -1,9 +1,9 @@
 ---
 title: "Breaking Down a CSS Grid Layout"
 date: "2017-08-26"
-categories: 
-  - "css"
+tags:
   - "engineering"
+layout: layouts/post.njk
 ---
 
 Web layouts evolve pretty quickly. First we used tables, next, floats and positioning, then inline block made a short appearance, followed by the almighty Flexbox. [CSS Grid](https://www.w3.org/TR/css-grid-1/) is the newest incarnation of the W3C trying to solve the problem of creating flexible layouts (whether you believe one exists or not). Either way there's a [new kid on the block](https://www.youtube.com/watch?v=By86PcLufOU), and you should know about it.

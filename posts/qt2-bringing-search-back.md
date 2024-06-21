@@ -1,11 +1,9 @@
 ---
 title: "Quick Tip #2  - Bringing Back Search with jQuery"
 date: "2009-06-29"
-categories: 
+tags:
   - "engineering"
-tags: 
-  - "javascript"
-  - "jquery"
+layout: layouts/post.njk
 ---
 
 This is something I use on all my projects now. It's designed for a search box, but can be used with any sort of input field.
@@ -32,7 +30,7 @@ Anyway, I've been sitting on this post for a while, but I really wanted to get i
 $("#search input").focus( function() {
 if ($(this).val()=="Search") {$(this).val("");}
 });
-	
+
 $("#search input").blur( function() {
 if ($(this).val()=="") {$(this).val("Search");}
 });

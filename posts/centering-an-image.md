@@ -1,11 +1,9 @@
 ---
 title: "Centering an Image"
 date: "2009-01-06"
-categories: 
+tags:
   - "engineering"
-tags: 
-  - "css"
-  - "xhtml"
+layout: layouts/post.njk
 ---
 
 `<div align="center">` is [deprecated](http://webdesign.about.com/od/htmltags/a/bltags_deprctag.htm).

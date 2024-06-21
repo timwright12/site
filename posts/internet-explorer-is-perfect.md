@@ -1,9 +1,9 @@
 ---
 title: "Internet Explorer is Perfect"
 date: "2014-02-11"
-categories: 
+tags:
   - "ux"
-coverImage: "ff.jpg"
+layout: layouts/post.njk
 ---
 
 The life cycle of Internet Explorer has inspired a large portion of my career. I love it, and I wouldn't change a thing.

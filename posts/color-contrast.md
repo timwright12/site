@@ -1,9 +1,9 @@
 ---
 title: "WCAG 2.0 Accessibility and Color Contrast in a Design"
 date: "2016-12-17"
-categories: 
+tags:
   - "accessibility"
-  - "design"
+layout: layouts/post.njk
 ---
 
 "Let the Dev team deal with it." Accessibility on the Web is mostly seen as an implementation problem, but some of the most prominent and problematic accessibility issues happen in design. Whether it's [iconography](http://www.blonde.net/blog/2015/06/22/accessibility-101-8-tips-better-user-experience), [typography](https://www.webaccessibility.com/best_practices.php?technology_platform_id=12), [color contrast](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html), or any of the other accessible design components that we really can't control once we get into development. In this write up, I'm going to talk about the most common one I've seen over the years: **color contrast**. It's something you're going to want to keep an eye on for all clients who are required to adhere to Web content accessibility guidelines, WCAG (but, really it's just a good idea anyway).

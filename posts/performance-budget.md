@@ -1,11 +1,9 @@
 ---
 title: "Performance Budget"
 date: "2016-04-01"
-categories: 
+tags:
   - "performance"
-tags: 
-  - "performance"
-  - "ux"
+layout: layouts/post.njk
 ---
 
 Clients often spend hundreds of hours pouring thousands of dollars into the great staples of UX like [user flows](http://conversionxl.com/how-to-design-user-flow/), [user journeys](http://theuxreview.co.uk/user-journeys-beginners-guide/), [experience mapping](http://adaptivepath.org/ideas/the-anatomy-of-an-experience-map/), [persona development](http://knowledge.hubspot.com/contacts-user-guide-v2/how-to-create-personas), [design sprints](http://www.gv.com/sprint/), and [user onboarding](https://www.useronboard.com/). They're all complex, detailed and thoughtful approaches to creating a great experience for your users. I'm, unfortunately, here to let you know that all that money you're spending is better off in other places if you ignore the most experience-connected (and revenue-connected) aspect of designing a complete experience: **performance**.

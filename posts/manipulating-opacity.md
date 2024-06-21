@@ -1,12 +1,9 @@
 ---
 title: "Manipulating Opacity"
 date: "2008-03-05"
-categories: 
+tags:
   - "engineering"
-tags: 
-  - "moz"
-  - "opacity"
-  - "tips"
+layout: layouts/post.njk
 ---
 
 Any one who has worked with CSS opacity has, most likely run into this problem. Using:
@@ -32,8 +29,6 @@ opacity:1;
 That, in theory should work, but it doesn't. So then you try to up the opacity to 140 & 1.4 to try and account for the extra transparency... but that doesn't work either. So you settle on using a small opacity level to read the text or use a background image.
 
 Thanks to a challenge issued by a friend at [Sporting News](http://www.sportingnews.com) we now have a technique, without using any extra markup, to have your opacity without dimming the "containing" text. Why is containing in quotes? Well, you'll see.
-
-First off, here's the [live example](http://www.csskarma.com/articles/examples/opacity/)
 
 CSS
 
@@ -67,7 +62,7 @@ text-decoration:none;
 }
 ```
 
-Wordpress really sucks at displaying HTML code, so you can just [view source on the live example](http://www.csskarma.com/articles/examples/opacity/).
+Wordpress really stinks at displaying HTML code, so you can just [view source on the live example](/examples/opacity/).
 
 It's very simple HTML, just a skip to content link, div called "branding" and an H1 link inside of branding. I also added some other stuff to jazz it up a bit.
 

@@ -1,13 +1,12 @@
 ---
 title: "Our Curious Future with QR Codes"
 date: "2010-09-02"
-categories: 
+tags:
   - "engineering"
-tags: 
-  - "qr-codes"
+layout: layouts/post.njk
 ---
 
-Often, when I write something for CSSKarma I try and make it unique rather than picking up the hot topic and throwing my2cents in about it. You may have noticed the lack of HTML 5 posts, even though I [spoke at the Penn UI](http://csskarma.com/presentations/penn) Conference about it. There's actually quite a bit buried in the [Lab](http://www.csskarma.com/lab) that will surface when I launch the new design.
+Often, when I write something for CSSKarma I try and make it unique rather than picking up the hot topic and throwing my2cents in about it. You may have noticed the lack of HTML 5 posts, even though I [spoke at the Penn UI](/presentations/penn) Conference about it. There's actually quite a bit buried in the [Lab](/lab) that will surface when I launch the new design.
 
 Anyway, I've been playing around with QR codes lately. Seeing what sort of information can be stored in them, if they're a viable technology for the masses, and if they're worth investing in. I thought I'd share my findings.
 
@@ -35,7 +34,7 @@ For some reason, these free technologies really struggle but the second Apple ch
 
 ### Are they worth investing in?
 
-They are absolutely, 100% worth investing in. The upside of QR codes far outweighs the downside. The [QR Code Generator](http://www.csskarma.com/lab/qrcodes) I built took all of 2 hours to fully develop and launch. Most of that time was reading through the Google Charts documentation and testing out all the options.
+They are absolutely, 100% worth investing in. The upside of QR codes far outweighs the downside. The [QR Code Generator](/lab/qrcodes) I built took all of 2 hours to fully develop and launch. Most of that time was reading through the Google Charts documentation and testing out all the options.
 
 I don't see any reason we shouldn't explore QR codes more, they have a very promising future and I look forward to see what we can make happen, especially when combined with RDFa, Microformats , and some of the new HTML 5 data embedding.
 

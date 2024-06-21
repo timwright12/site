@@ -1,10 +1,9 @@
 ---
 title: "Framing an Image"
 date: "2009-02-09"
-categories: 
+tags:
   - "engineering"
-tags: 
-  - "css"
+layout: layouts/post.njk
 ---
 
 ![article banner](images/framing-an-image.jpg)
@@ -13,7 +12,7 @@ I'm not sure exactly how well known it is, but you can put a background image on
 
 The goal of this post is to show how you can display a decorative frame around an image with minimal markup (just your img element, and maybe a class).
 
-[View Demo](http://www.csskarma.com/articles/examples/background-image/)
+[View Demo](h/articles/examples/background-image/)
 
 The first thing I like to do when doing any serious CSS for an image is set the `display` to `block`. This allows us to do a little more with it since inline elements do have some limitations on them. So let's do that:
 
@@ -51,6 +50,3 @@ float:left;
 
 And there you have it, a quick and easy way to add some \*pop\* to images on your site.
 
-![show padding](images/dog_polaroid.jpg)
-
-[View Demo](http://www.csskarma.com/articles/examples/background-image/)

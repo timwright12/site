@@ -1,12 +1,9 @@
 ---
 title: "How I Handle Responsive JavaScript"
 date: "2014-02-17"
-categories: 
+tags:
   - "engineering"
-  - "ux"
-tags: 
-  - "javascript"
-  - "responsive-design"
+layout: layouts/post.njk
 ---
 
 I recently read a site (post?) about [learning responsive JavaScript](http://www.responsivejavascript.com/) that involved using the `window.matchMedia` object to detect a screen width. It's an OK method, but there are a couple holes and optimizations I wanted to talk about and also show my preferred method for dealing with the responsive JavaScript problem we have. I'm not going to address the "mobile" context mentioned in the write up because I'll just sound bitchy ranting about how how small screen isn't mobile. Anywho...

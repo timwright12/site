@@ -1,16 +1,10 @@
 ---
 title: "Sliding Labels v2 - Patch"
 date: "2010-02-02"
-categories: 
-  - "design"
-tags: 
-  - "advanced"
-  - "forms"
-  - "jquery"
-  - "ui"
+tags:
+  - "javascript"
+layout: layouts/post.njk
 ---
-
-Please use **version 3** of sliding labels with updated options and bug fixes at: [http://www.csskarma.com/blog/sliding-labels-plugin/](http://www.csskarma.com/blog/sliding-labels-plugin/)
 
 Last week I wrote an article about sliding form labels that got quite a bit of attention. Many of the commenters brought up a couple good points/bug in the Sliding Label code that I wanted to address and provide a patch for:
 
@@ -18,8 +12,6 @@ Last week I wrote an article about sliding form labels that got quite a bit of a
 - The default scripting didn't work on **textareas**
 
 I sat down yesterday and wrote a patch/new version of sliding labels which I think addresses these two problems.
-
-[View the Demo](http://www.csskarma.com/lab/plugin_slidinglabels/)
 
 ### The new jQuery
 
@@ -48,7 +40,7 @@ $('form#info .slider label').each(function(){
 	// onload, check if a field is filled out, if so, move the label out of the way
 	if(inputval !== ''){
 		$(this).stop().animate({ 'left':'-'+labelmove }, 1);
-	}    	
+	}
 
 	// if the input is empty on focus move the label to the left
 	// if it's empty on blur, move it back
@@ -69,7 +61,7 @@ $('form#info .slider label').each(function(){
 
 		if(value == ''){
 			label.stop().animate({ 'left':restingPosition }, 'fast');
-		}	
+		}
 
 	});
 }); // End "each" statement
@@ -88,5 +80,3 @@ The HTML for the textarea follows the same convention as the rest of the inputs,
 ```
 
 There are no major changes to the plugin, just a few tweaks. If you find anymore bug, please let me know.
-
-[View the Demo](http://www.csskarma.com/lab/plugin_slidinglabels/)

@@ -1,21 +1,16 @@
 ---
 title: "HTML 5 Form Validation with Yepnope Fallback"
 date: "2011-08-04"
-categories: 
+tag:
   - "engineering"
-tags: 
-  - "forms"
-  - "html5"
-  - "javascript"
-  - "jquery"
-  - "performance"
+layout: layouts/post.njk
 ---
 
-In my [last post](http://www.csskarma.com/blog/required-input-fallback/ "Required input fields with JS fallback") about creating a proper fallback when using the new HTML 5 form validation I mentioned using modernizr to detect for support, then creating an if statement to call the jQuery validate plugin.
+In my [last post](/blog/required-input-fallback/ "Required input fields with JS fallback") about creating a proper fallback when using the new HTML 5 form validation I mentioned using modernizr to detect for support, then creating an if statement to call the jQuery validate plugin.
 
 One of the commentors mentioned using yepnope for this instead of loading the jQuery validation plugin by default. Since modernizr has yepnope now anyway, I thought it was a good idea. And here we are with some ne code to look at.
 
-[View the demo](http://www.csskarma.com/lab/_javascript/no_require/)
+[View the demo](/lab/_javascript/no_require/)
 
 ### Dependencies
 
@@ -51,7 +46,7 @@ One of the commentors mentioned using yepnope for this instead of loading the jQ
 
 ```
 (function ($) {
-	
+
 	// set and cache some variables, change var forms to whatever forms you want to validate
 	var forms = $('form'),
 		formsCount = forms.length,
@@ -64,18 +59,18 @@ One of the commentors mentioned using yepnope for this instead of loading the jQ
 		// do something else, maybe customize the output messages?
 
 	} else {
-		
+
 		// loop though each required input and set the required and type class jQuery validate needs
 		for (var i = 0; i < count; i += 1) {
 			var obj = items[i];
 			$(obj).attr('class', 'required ' + obj.getAttribute('type')).removeAttr('required');
 		};
-		
+
 		// after the classes are set, load in the plugin with yepnope , you can do this with Modernizr.load as well
 		yepnope([{
 			load: 'js/validate.js',
 			complete: function () {
-			
+
 				// after the plugin is loaded, call the method on each form listed at the top
 				for (var i = 0; i < formsCount; i += 1) {
 					$(forms[i]).validate();

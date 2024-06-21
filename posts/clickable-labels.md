@@ -1,13 +1,9 @@
 ---
 title: "Clickable Labels"
 date: "2008-10-20"
-categories: 
+tags:
   - "engineering"
-tags: 
-  - "css"
-  - "form"
-  - "ui"
-  - "xhtml"
+layout: layouts/post.njk
 ---
 
 In form design, there are many things you can do to improve usability, many of which have to do with `label` placement. I won't go into the depths of it, but Chris from [CSS-Tricks.com](http://css-tricks.com) wrote a good article about placement, not too long ago. [Read Chris's article here](http://css-tricks.com/label-placement-on-forms/)

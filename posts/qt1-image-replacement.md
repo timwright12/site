@@ -1,10 +1,9 @@
 ---
 title: "Quick Tip #1 - Image Replacement"
 date: "2009-05-28"
-categories: 
+tags:
   - "engineering"
-tags: 
-  - "css"
+layout: layouts/post.njk
 ---
 
 ![article banner](images/image-replacement.jpg)
@@ -18,8 +17,6 @@ Image replacement without extra markup usually means setting `text-indent:-9999p
 ![welovebeans.com logo with a :focus outline the runs off the page](images/logo_beans_error.jpg)
 
 We need to keep the outline there for accessibility reasons, so most developers just leave it alone. But there's a way to make, both, designers and accessibility gurus happy.
-
-[view demo](http://www.csskarma.com/articles/examples/image-replacement/)
 
 ##### Problem CSS
 
@@ -55,5 +52,3 @@ text-indent:-9999px;
 overflow:hidden;
 }
 ```
-
-[view demo](http://www.csskarma.com/articles/examples/image-replacement/)

@@ -1,14 +1,12 @@
 ---
 title: "Detecting for Bandwidth with the Network Information API"
 date: "2012-05-11"
-categories: 
-  - "engineering"
-tags: 
-  - "html5"
-  - "javascript"
+categories:
+  - "performance"
+layout: layouts/post.njk
 ---
 
-**First things first: [view the demo](http://www.csskarma.com/lab/_javascript/network-connection/).**
+**First things first: [view the demo](/lab/_javascript/network-connection/).**
 
 One of the principles we build sites by is to never resize an image in HTML but rather size the image appropriately in Photoshop, Fireworks, or whatever you use. We do this so the user doesn't have to waste bandwidth by downloading a larger image than is necessary for the situation. Sounds great right? Totally reasonable.
 
@@ -49,36 +47,36 @@ The JavaScript will check the bandwidth using the network information API, loo
 
 ```
 (function(){
-    
+
     // initialize some variables
     var connection,
         connectionSpeed,
         images = document.querySelectorAll("img[data-large]"),
         imageCount = images.length,
         i;
-    
+
     // create a custom object if navigator.connection isn't available
     connection = navigator.connection || { 'type': '0' };
-    
+
     // if statement checking for WIFI, ETHERNET or UNKNOWN
     if(imageCount > 0 && connection.type === '0' || connection.type === '1' || connection.type === '2') {
-        
+
         // loop through each image with the data-large attribute
         for (i = 0; i < imageCount; i = i + 1) {
-            
+
             var obj = images[i],
                 largeImg = obj.getAttribute('data-large');
-            
+
             // reset the image src to the larger version of the image
             obj.setAttribute('src', largeImg);
-            
+
         }
-        
+
     }
 })();
 ```
 
-In the [demo](http://www.csskarma.com/lab/_javascript/network-connection/) there's also a switch statement outputting a string for the connection type. I'm adding it to the HTML, but you could easily add it as a class to the body so it's globally available and usable with the CSS.
+In the [demo](/lab/_javascript/network-connection/) there's also a switch statement outputting a string for the connection type. I'm adding it to the HTML, but you could easily add it as a class to the body so it's globally available and usable with the CSS.
 
 Cool right?
 

@@ -1,11 +1,10 @@
 ---
 title: "Meet the Polybutton, An Accessibility Polyfill"
 date: "2013-11-10"
-categories: 
+tags:
   - "accessibility"
-  - "engineering"
   - "javascript"
-coverImage: "polybutton.gif"
+layout: layouts/post.njk
 ---
 
 **Before we start,** I posted the solution over on Github, in my account under [Polybutton](http://github.com/timwright12/polybutton).
@@ -131,7 +130,7 @@ I'm a fairly active user of Scott Jehl's Picturefill - I like how it works, and 
 With that, I began building out a new markup structure, which I could modify with an the polyfill. This is ultimately where I landed for my best solution.
 
 ```
-<span data-accessible="button" 
+<span data-accessible="button"
       data-type="button"
       data-value="Register"
       data-href="http://www.google.com"

@@ -1,12 +1,9 @@
 ---
 title: "Quick Tip #3 - Textarea Fonts"
 date: "2009-09-01"
-categories: 
+tags:
   - "engineering"
-tags: 
-  - "beginner"
-  - "forms"
-  - "quick-tip"
+layout: layouts/post.njk
 ---
 
 ![article banner](images/textarea-fonts.jpg)

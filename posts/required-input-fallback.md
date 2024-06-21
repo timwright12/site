@@ -1,16 +1,13 @@
 ---
 title: "Required input fields with JS fallback"
 date: "2011-06-15"
-categories: 
+tags:
   - "design"
   - "engineering"
-tags: 
-  - "forms"
-  - "html5"
-  - "ui"
+layout: layouts/post.njk
 ---
 
-[View the demo](http://www.csskarma.com/lab/html5/input.required/)
+[View the demo](lab/html5/input.required/)
 
 One of my favorite features of the HTML 5 forms is the "required" attribute. But unfortunately, support isn't totally there yet. So we need to create fallbacks.
 
@@ -18,7 +15,7 @@ It works in the modern browsers you'd expect it to (FF4, Safari, Opera, etc) but
 
 We can still use the new required attribute effectively by creating a JavaScript fallback for unsupported browsers.
 
-In this [demo](http://www.csskarma.com/lab/html5/input.required/), I'm using:
+In this [demo](/lab/html5/input.required/), I'm using:
 
 - [jQuery](http://jquery.com/)
 - [jQuery Validation](http://bassistance.de/jquery-plugins/jquery-plugin-validation/)

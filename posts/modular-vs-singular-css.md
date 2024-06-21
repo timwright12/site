@@ -1,11 +1,10 @@
 ---
 title: "Modular vs. Singular CSS"
 date: "2007-11-30"
-categories: 
+tag:
   - "engineering"
+layout: layouts/post.njk
 ---
-
-I posted this to the [regular site](http://www.csskarma.com/articles/singular_vs_modular_css/ "http://www.csskarma.com/articles/singular_vs_modular_css/") too, but wanted to open it up for comments
 
 ### Modular
 

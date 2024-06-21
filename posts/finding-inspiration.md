@@ -1,12 +1,9 @@
 ---
 title: "Finding Inspiration"
 date: "2008-07-09"
-categories: 
+tags:
   - "engineering"
-tags: 
-  - "design"
-  - "inspiration"
-  - "links"
+layout: layouts/post.njk
 ---
 
 From time to time we all hit design funks when inspiration is hard to find and everything we make seems to look like crap (at least I do). Having some solid sources you can fall back on while in a slump can be a great asset.

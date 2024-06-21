@@ -1,7 +1,7 @@
 ---
 title: "Reseting Browser Defaults (reset.css)"
 date: "2008-02-06"
-categories: 
+categories:
   - "engineering"
 ---
 
@@ -31,7 +31,3 @@ caption,th                {text-align:left;}
 table                     {border-collapse:collapse;border-spacing:0;}
 hr                        {border:0;border-top:1px solid #555;margin:0;height:1px;}
 ```
-
-You can also download it at: [http://www.csskarma.com/css/reset.css](http://www.csskarma.com/css/reset.css)
-
-with ease, Tim

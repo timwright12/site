@@ -1,10 +1,9 @@
 ---
 title: "Better Hiding & Showing of Content"
 date: "2014-02-13"
-categories: 
+tags:
   - "engineering"
-tags: 
-  - "javascript"
+layout: layouts/post.njk
 ---
 
 With [progressive enhancement](http://en.wikipedia.org/wiki/Progressive_enhancement) we always try and maintain a separation between structure, style, and behavior. This usually (in really world terms) means keeping CSS out of your JavaScript and both of them out of your HTML. It's a blurry line with behavior and presentation mapping directly to CSS and JavaScript, but I think we can all agree that using inline CSS or JavaScript isn't ideal.
@@ -13,14 +12,14 @@ I'm bringing this up because it happens with [jQuery](http://jquery.com/) all th
 
 ## HTML
 
-```
+```html
 <a href="#target1" class="trigger">Toggle Content area 1</a>
 <div id="target1" class="content">the content you want to hide/show</div>
 ```
 
 ## CSS
 
-```
+```css
 // with this method I get to choose how I want to hide the content
 .is-hidden {
   position: absolute;
