@@ -3,6 +3,16 @@ layout: layouts/base.njk
 templateClass: tmpl-work
 ---
 
-<h1>Work: {{ title }}</h1>
+<div class="contain-wide">
+  <div class="gutter">
+    <h1>{{ title }}</h1>
 
-{{ content | safe }}
+    <figure class="m-0 mb-1 display-block">
+      <img src="{{ imagePath }}" alt="Screenshot of the VA website" class="display-block mb-1 callout">
+      <figcaption class="fz-small">{{ imageCaption }}</figcaption>
+    </figure>
+
+    {{ content | safe }}
+
+  </div><!--/.gutter-->
+</div><!--/.contain-wide-->

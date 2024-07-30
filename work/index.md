@@ -7,6 +7,9 @@ eleventyNavigation:
   order: 3
 ---
 
+{% set worklist = collections.work %}
+{% include "worklist.njk" %}
+
 <div class="contain-wide" id="main">
   <div class="gutter">
 

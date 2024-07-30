@@ -1,0 +1,10 @@
+<ol reversed class="list-clean" style="counter-reset: start-from {{ (worklistCounter or worklist.length) + 1 }}">
+{% for work in worklist | reverse %}
+  <li class="postlist-item{% if post.url == url %} postlist-item-active{% endif %}">
+  <article>
+    <time class="postlist-date" datetime="{{ work.date | htmlDateString }}">{{ work.date | readableDate }}</time>
+    <h1><a href="{{ work.url | url }}" class="postlist-link">{% if work.data.title %}{{ work.data.title }}{% else %}<code>{{ work.url }}</code>{% endif %}</a></h1>
+  </article>
+  </li>
+{% endfor %}
+</ol>
