@@ -1,0 +1,19 @@
+<section class="project">
+  <h1 class="project-heading">Books</h1>
+  <div class="project-group">
+
+  {% for book in booklist %}
+    <div class="project-item project-item-50">
+    <div class="project-gutter">
+    <a href="{% if book.data.passthrough %}{{ book.data.passthrough | url }}{% else %}{{ book.url | url }}{% endif %}">
+      {% if book.data.thumbnail %}
+        <img src="{{ book.data.thumbnail }}" alt="{{ book.data.imgCaption }}">
+      {% endif %}
+      <h2 class="project-title">{{ book.data.title }}</h2>
+    </a>
+    </div><!--/.project-gutter-->
+  </div><!--/.portfolio-item-->
+  {% endfor %}
+
+  </div><!--/.project-group-->
+</section>

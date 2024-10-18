@@ -5,14 +5,16 @@ templateClass: tmpl-work
 
 <div class="contain-wide">
   <div class="gutter">
-    <h1>{{ title }}</h1>
-
-    <figure class="m-0 mb-1 display-block">
-      <img src="{{ imagePath }}" alt="Screenshot of the VA website" class="display-block mb-1 callout">
-      <figcaption class="fz-small">{{ imageCaption }}</figcaption>
-    </figure>
 
     {{ content | safe }}
+
+    {% set worklist = collections.work %}
+    {% set booklist = collections.book %}
+    {% set talklist = collections.talk %}
+
+    {% include "worklist.njk" %}
+    {% include "booklist.njk" %}
+    {% include "talklist.njk" %}
 
   </div><!--/.gutter-->
 </div><!--/.contain-wide-->

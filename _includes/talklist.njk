@@ -1,0 +1,19 @@
+<section class="project">
+  <h1 class="project-heading">Talks</h1>
+  <div class="project-group">
+
+  {% for talk in talklist | reverse %}
+    <div class="project-item project-item-50">
+    <div class="project-gutter">
+    <a href="{% if talk.data.passthrough %}{{ talk.data.passthrough | url }}{% else %}{{ talk.url | url }}{% endif %}">
+      {% if talk.data.thumbnail %}
+        <img src="{{ talk.data.thumbnail }}" alt="{{ talk.data.imgCaption }}">
+      {% endif %}
+      <h2 class="project-title">{{ talk.data.title }}</h2>
+    </a>
+    </div><!--/.project-gutter-->
+  </div><!--/.portfolio-item-->
+  {% endfor %}
+
+  </div><!--/.project-group-->
+</section>

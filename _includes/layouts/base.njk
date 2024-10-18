@@ -57,9 +57,9 @@
     </nav>
   </header>
 
-    <article{% if templateClass %} class="{{ templateClass }}"{% endif %} id="main" role="main">
+    <main{% if templateClass %} class="{{ templateClass }}"{% endif %} id="main">
       {{ content | safe }}
-    </article>
+    </main>
 
     <!-- Current page: {{ page.url | url }} -->
   </body>

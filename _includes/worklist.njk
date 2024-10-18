@@ -1,10 +1,19 @@
-<ol reversed class="list-clean" style="counter-reset: start-from {{ (worklistCounter or worklist.length) + 1 }}">
-{% for work in worklist | reverse %}
-  <li class="postlist-item{% if post.url == url %} postlist-item-active{% endif %}">
-  <article>
-    <time class="postlist-date" datetime="{{ work.date | htmlDateString }}">{{ work.date | readableDate }}</time>
-    <h1><a href="{{ work.url | url }}" class="postlist-link">{% if work.data.title %}{{ work.data.title }}{% else %}<code>{{ work.url }}</code>{% endif %}</a></h1>
-  </article>
-  </li>
-{% endfor %}
-</ol>
+<section class="project">
+  <h1 class="project-heading">Featured Projects</h1>
+  <div class="project-group">
+
+    {% for work in worklist %}
+      <div class="project-item project-item-50">
+      <div class="project-gutter">
+      <a href="{% if work.data.passthrough %}{{ work.data.passthrough | url }}{% else %}{{ work.url | url }}{% endif %}">
+        {% if work.data.thumbnail %}
+          <img src="{{ work.data.thumbnail }}" alt="{{ work.data.imgCaption }}">
+        {% endif %}
+        <h2 class="project-title">{{ work.data.title }}</h2>
+      </a>
+      </div><!--/.project-gutter-->
+    </div><!--/.portfolio-item-->
+    {% endfor %}
+
+  </div><!--/.project-group-->
+</section>
