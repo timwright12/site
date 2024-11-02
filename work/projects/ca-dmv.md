@@ -6,7 +6,7 @@ thumbnail: /img/screen_DMV--half.png
 imageCaption: The CA DMV's fully WCAG 2.1 Level AA compliant website.
 url: https://www.dmv.ca.gov/
 layout: layouts/work.njk
-tags: ["work"]
+tags: ["project"]
 ---
 
 ## Project Details

@@ -1,10 +1,10 @@
 ---
-title: Learning JavaScript
+title: HTML5 Developer's Cookbook
 description:
-thumbnail: /img/book-pearson.png
+thumbnail: /img/book-html5.png
 imageCaption: TBD
 passthrough: https://learningjsbook.com/
 layout: layouts/work.njk
-tags: book
+tags: ["book"]
 ---
-learning JS
+HTML5 Cookbook

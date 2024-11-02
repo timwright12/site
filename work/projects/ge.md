@@ -6,7 +6,7 @@ thumbnail: /img/screen_eds--half.png
 imageCaption: Edison Design System
 passthrough: https://edisondesignsystem.com/
 layout: layouts/work.njk
-tags: ["work"]
+tags: ["project"]
 ---
 
 ## Project Details

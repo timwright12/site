@@ -8,11 +8,11 @@ templateClass: tmpl-work
 
     {{ content | safe }}
 
-    {% set worklist = collections.work %}
+    {% set projectlist = collections.project %}
     {% set booklist = collections.book %}
     {% set talklist = collections.talk %}
 
-    {% include "worklist.njk" %}
+    {% include "projectlist.njk" %}
     {% include "booklist.njk" %}
     {% include "talklist.njk" %}
 

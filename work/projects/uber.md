@@ -6,7 +6,7 @@ thumbnail: /img/screen_uber--half.png
 imageCaption: Uber newsroom's headless React site with a WordPress backend
 url: https://timwright.org/portfolio/ca-dmv/
 layout: layouts/work.njk
-tags: ["work"]
+tags: ["project"]
 ---
 
 ## Project Details
