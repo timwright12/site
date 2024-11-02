@@ -2,8 +2,6 @@
 layout: layouts/landing-page.njk
 title: Talks
 templateClass: tmpl-talks
-eleventyNavigation:
-  hide: true
 ---
 
 Some of my favorite presentations.

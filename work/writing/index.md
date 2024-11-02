@@ -1,9 +1,7 @@
 ---
 layout: layouts/landing-page.njk
 title: Books
-templateClass: tmpl-books
-eleventyNavigation:
-  hide: true
+templateClass: tmpl-booksnpm
 ---
 
 Collection of books and articles I have written.
