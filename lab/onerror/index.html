@@ -1,0 +1,163 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Testing JS onerror Image loading</title>
+		
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<style>
+			
+			body {
+				font-family: sans-serif;
+				line-height: 1.4;
+				margin: auto;
+				max-width: 800px;
+			}
+			
+			.test-section {
+				border-top: 1px solid #ccc;
+				margin: 20px 0;
+				padding: 20px 0;
+				
+			}
+			
+			abbr {
+				border-bottom: 1px dotted #ccc;
+			}
+			
+			.test-section__heading {
+				
+			}
+			
+			.test-section__results {
+				
+			}
+			
+			test-section__results > li {
+				
+			}
+			.attn {
+				color: red;
+				font-weight: 700;
+			}
+			.good {
+				color: green;
+			}
+			
+		</style>
+		
+	</head>
+	<body>
+		
+		<h1>Testing JS <code>onerror</code> image loading</h1>
+		
+		<p><strong>Loading 3 images:</strong></p>
+		
+		<ul>
+			<li><a href="images/headphones.png"><abbr title="Portable Network Graphics">PNG</abbr> Headphones (primary)</a></li>
+			<li><a href="images/headphones.svg"><abbr title="Scalable Vector Graphics">SVG</abbr> Headphones (primary)</a></li>
+			<li><a href="images/music.png"><abbr title="Portable Network Graphics">PNG</abbr> Music note (fallback)</a></li>
+		</ul>
+		
+		<p>Syntax Template</p>
+		<pre><code>&lt;img src="images/main.svg" onerror="this.src='images/fallback.png'; return false" alt="Descriptive Text" /&gt;</code></pre>
+		<div class="test-section">
+			
+			<h2 class="test-section__heading">Case 1: Standard Image - Loading (PNG)</h2>
+			
+			<div class="test-section__body">
+				<img src="images/headphones.png" onerror="this.src='images/music.png'; return false" alt="Headphones" />
+			</div><!--/.test-section__body-->
+
+			<ul class="test-section__results">
+				<li>Chrome (Latest): <abbr title="Portable Network Graphics">PNG</abbr> Headphones Load</li>
+				<li>Safari (Latest): <abbr title="Portable Network Graphics">PNG</abbr> Headphones Load</li>
+				<li>Mobile Safari (Latest): <abbr title="Portable Network Graphics">PNG</abbr> Headphones Load</li>
+				<li>Firefox (Latest): <abbr title="Portable Network Graphics">PNG</abbr> Headphones Load</li>
+				<li>IE 7+: <abbr title="Portable Network Graphics">PNG</abbr> Headphones Load</li>
+			</ul>
+
+		</div><!--/.test-section-->
+		
+		<div class="test-section">
+			
+			<h2 class="test-section__heading">Case 2: Standard Image - 404 (PNG)</h2>
+			
+			<div class="test-section__body">
+				<img src="images/broken.png" onerror="this.src='images/music.png'; return false" alt="Headphones" />
+			</div><!--/.test-section__body-->
+
+			<ul class="test-section__results">
+				<li>Chrome (Latest): <abbr title="Portable Network Graphics">PNG</abbr> music note loads</li>
+				<li>Safari (Latest): <abbr title="Portable Network Graphics">PNG</abbr> music note loads</li>
+				<li>Mobile Safari (Latest): <abbr title="Portable Network Graphics">PNG</abbr> music note loads</li>
+				<li>Firefox (Latest): <abbr title="Portable Network Graphics">PNG</abbr> music note loads</li>
+				<li>IE 7+: <abbr title="Portable Network Graphics">PNG</abbr> music note loads </li>
+			</ul>
+
+		</div><!--/.test-section-->
+		
+		<div class="test-section">
+			
+			<h2 class="test-section__heading">Case 3: Standard Image (SVG)</h2>
+			
+			<div class="test-section__body">
+				<img src="images/headphones.svg" onerror="this.src='images/music.png'; return false" alt="Headphones" />
+			</div><!--/.test-section__body-->
+			
+			<ul class="test-section__results">
+				<li>Chrome (Latest): <abbr title="Scalable Vector Graphics">SVG</abbr> headphones load</li>
+				<li>Safari (Latest): <abbr title="Scalable Vector Graphics">SVG</abbr> headphones load</li>
+				<li>Mobile Safari (Latest): <abbr title="Scalable Vector Graphics">SVG</abbr> headphones load</li>
+				<li>Firefox (Latest): <abbr title="Scalable Vector Graphics">SVG</abbr> headphones load</li>
+				<li>IE 9+: <abbr title="Scalable Vector Graphics">SVG</abbr> headphones load</li>
+				<li class="good">IE 7 and 8: <abbr title="Portable Network Graphics">PNG</abbr> music note loads -- no <abbr title="Scalable Vector Graphics">SVG</abbr> support in these browsers</li>
+			</ul>
+			
+		</div><!--/.test-section-->
+		
+		<div class="test-section">
+			
+			<h2 class="test-section__heading">Case 4: Standard Image (<abbr title="Scalable Vector Graphics">SVG</abbr> -- Corrupt)</h2>
+			
+			<div class="test-section__body">
+				<img src="images/headphones-corrupt.svg" onerror="this.src='images/music.png'; return false" alt="Headphones" />
+			</div><!--/.test-section__body-->
+			
+			<ul class="test-section__results">
+				<li>Chrome (Latest): <abbr title="Portable Network Graphics">PNG</abbr> music notes loads</li>
+				<li>Safari (Latest): <abbr title="Portable Network Graphics">PNG</abbr> music notes loads</li>
+				<li>Mobile Safari (Latest): <abbr title="Portable Network Graphics">PNG</abbr> music notes loads</li>
+				<li>Firefox (Latest): <abbr title="Portable Network Graphics">PNG</abbr> music notes loads</li>
+				<li class="attn">IE 13+: Nothing loads</li>
+				<li class="good">IE 11: <abbr title="Portable Network Graphics">PNG</abbr> music note loads</li>
+				<li class="attn">IE 9 and 10: Broken Image displayed</li>
+				<li class="good">IE 7 and 8: <abbr title="Portable Network Graphics">PNG</abbr> music note loads -- no <abbr title="Scalable Vector Graphics">SVG</abbr> support in these browsers</li>
+			</ul>
+			
+		</div><!--/.test-section-->
+		
+		<div class="test-section">
+			
+			<h2 class="test-section__heading">Case 5: Standard Image (<abbr title="Scalable Vector Graphics">SVG</abbr> -- Empty File)</h2>
+			
+			<div class="test-section__body">
+				<img src="images/headphones-corrupt.svg" onerror="this.src='images/music.png'; return false" alt="Headphones" />
+			</div><!--/.test-section__body-->
+			
+			<ul class="test-section__results">
+				<li>Chrome (Latest): <abbr title="Portable Network Graphics">PNG</abbr> music notes loads</li>
+				<li>Safari (Latest): <abbr title="Portable Network Graphics">PNG</abbr> music notes loads</li>
+				<li>Mobile Safari (Latest): <abbr title="Portable Network Graphics">PNG</abbr> music notes loads</li>
+				<li>Firefox (Latest): <abbr title="Portable Network Graphics">PNG</abbr> music notes loads</li>
+				<li class="attn">IE 11+: Nothing loads</li>
+				<li class="attn">IE 9 and 10: Broken Image displayed</li>
+				<li class="good">IE 7 and 8: <abbr title="Portable Network Graphics">PNG</abbr> music note loads -- no <abbr title="Scalable Vector Graphics">SVG</abbr> support in these browsers</li>
+			</ul>
+			
+		</div><!--/.test-section-->
+		
+	</body>
+</html>

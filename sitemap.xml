@@ -462,6 +462,26 @@
   </url>
   
   <url>
+    <loc>https://timwright12.github.io/site/lab/es6/template-literals/</loc>
+    <lastmod>2024-11-02</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://timwright12.github.io/site/lab/font-loading/</loc>
+    <lastmod>2024-11-02</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://timwright12.github.io/site/lab/onerror/</loc>
+    <lastmod>2024-11-02</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://timwright12.github.io/site/lab/plugin_slidinglabels/</loc>
+    <lastmod>2024-11-02</lastmod>
+  </url>
+  
+  <url>
     <loc>https://timwright12.github.io/site/page-list/</loc>
     <lastmod>2024-11-02</lastmod>
   </url>
@@ -492,11 +512,6 @@
   </url>
   
   <url>
-    <loc>https://timwright12.github.io/site/tags/security/</loc>
-    <lastmod>2024-11-02</lastmod>
-  </url>
-  
-  <url>
     <loc>https://timwright12.github.io/site/tags/team-building/</loc>
     <lastmod>2024-11-02</lastmod>
   </url>
@@ -508,6 +523,11 @@
   
   <url>
     <loc>https://timwright12.github.io/site/tags/ux/</loc>
+    <lastmod>2024-11-02</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://timwright12.github.io/site/tags/security/</loc>
     <lastmod>2024-11-02</lastmod>
   </url>
   
