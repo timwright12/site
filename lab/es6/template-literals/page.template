@@ -1,0 +1,14 @@
+<article>
+  <header>
+    <h1>${data.title}</h1>
+  </header>
+  <section>
+    <p>${data.teaser}</p>
+    <p>${data.body}</p>
+  </section>
+  <footer>
+    <ul>
+      ${data.tags.map(tag => `<li>${tag}</li>`).join('\n      ')}
+    </ul>
+  </footer>
+</article>
