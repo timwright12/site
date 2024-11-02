@@ -874,3 +874,7 @@ body.check-vr {
 .blm a {
 	color: white;
 }
+
+.direct-link {
+    display: none;
+}
