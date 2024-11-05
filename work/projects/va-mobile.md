@@ -3,7 +3,7 @@ title: VA Mobile App & Mobile Platform
 description: The VA Mobile Health and Benefits app is a central digital location for Veteran healthcare
 imagePath: /img/screen_va-mobile--full.png
 thumbnail: /img/screen_va-mobile--half.png
-imageCaption: A screenshots of the VA: Health and Benefits application
+imageCaption: A screenshots of the VA Health and Benefits application
 url: https://mobile.va.gov
 layout: layouts/work.njk
 tags: ["project"]
