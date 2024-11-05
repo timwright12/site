@@ -1,6 +1,6 @@
 ---
 title: United States Department of Veterans Affairs, Web Platform
-description:
+description: The official website of the U.S. Department of Veterans Affairs
 imagePath: /img/screen_va--full.png
 thumbnail: /img/screen_va--half.png
 imageCaption: Va.gov is the frontend for the Veterans-facing Services Platform, for which I was the engineering lead.
@@ -25,7 +25,7 @@ As Engineering and Delivery Lead for the platform it was my responsibility to en
 
 ## Project Specifications
 
-[Visit the VA](](https://va.gov))
+[Visit the VA](https://va.gov)
 
 - **Role**: Delivery, Engineering and Accessibility Lead
 - **Accessibility Compliance**: WCAG 2.1 Level AA
