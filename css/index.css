@@ -763,20 +763,14 @@ img.aligncenter {
     }
 }
 
-article[role=main] .post-categories {
+.post-categories {
     margin: -15px 0 30px;
     padding: 0 0 0 20px;
     list-style: none;
     font-size: 16px;
 }
 
-@media screen and (min-width: 700px ) {
-	article[role=main] .post-categories {
-		padding-left: 100px;
-	}
-}
-
-article[role=main] .post-categories li {
+.post-categories li {
     display: inline-block;
 }
 
@@ -806,10 +800,20 @@ body.check-vr {
 	font-size: 16px;
 }
 
+.fz-large {
+  font-size: 24px;
+}
+
+.fz-xlarge {
+  font-size: 36px;
+}
 .m-0 {
 	margin: 0;
 }
 
+.mt-0 {
+  margin-top: 0;
+}
 .mb-1 {
 	margin-bottom: 8px;
 }
