@@ -1,10 +1,11 @@
 ---
 title: My Jewish Learning
 description:
-thumbnail: /img/screen_mjl--half.png
+imagePath: screen_mjl--full.png
+thumbnail: screen_mjl--half.png
 imageCaption: My Jewish Learning dot com
 passthrough: https://myjewishlearning.com
-layout: layouts/work.njk
+layout: layouts/project.njk
 tags: ["project"]
 ---
 

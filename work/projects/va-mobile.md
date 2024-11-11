@@ -1,23 +1,38 @@
 ---
 title: VA Mobile App & Mobile Platform
 description: The VA Mobile Health and Benefits app is a central digital location for Veteran healthcare
-imagePath: /img/screen_va-mobile--full.png
-thumbnail: /img/screen_va-mobile--half.png
+imagePath: screen_va-mobile--full.png
+thumbnail: screen_va-mobile--half.png
 imageCaption: A screenshots of the VA Health and Benefits application
 url: https://mobile.va.gov
-layout: layouts/work.njk
+layout: layouts/project.njk
 tags: ["project"]
 ---
+
+## Project Specifications
+
+[Download the iOS app](https://apps.apple.com/us/app/va-health-and-benefits/id1559609596) | [Download the Android app](https://play.google.com/store/apps/details?id=gov.va.mobileapp)
+
+- **Role**: Engineering Lead
+- **Accessibility Compliance**: WCAG 2.2 Level AA
+- **Application engineering**: React Native, fastlane, Swift, Kotlin
+- **CI / CD**: Github Actions
+- **Automated Testing**: Detox, Jest
+- **Monitoring**: Datadog, Firebase
+- **API**: Ruby on Rails
 
 ## Project Details
 
 At Ad Hoc I helped develop and maintain the VA Health & Benefits mobile app, which leverages native mobile features to let Veterans quickly and easily check the status of their services and complete simple, transactional tasks across health and benefits. The app has been downloaded more than 2 million times, with ratings of 4.8 in the Apple App Store and 4.6 in the Android Play Store (as of 2024).
 
+- [View the app code](https://github.com/department-of-veterans-affairs/va-mobile-app)
+- [View the design system code](https://github.com/department-of-veterans-affairs/va-mobile-library)
+
 ### Establish goals, objectives, key performance metrics
 
-In 2022, we began leading a strategic process with the VA Health & Benefits mobile app team and stakeholders at the Department of Veteran Affairs to develop program objectives and key results (OKRs) for the mobile app. 
+In 2022, we began leading a strategic process with the VA Health & Benefits mobile app team and stakeholders at the Department of Veteran Affairs to develop program objectives and key results (OKRs) for the mobile app.
 
-Objectives were broken down into key results and bets. Key results included tracking effectiveness, satisfaction, and efficiency. We also measured success with more traditional analytics like increasing monthly users by 20% and having 50% of users return in the first week. We tracked metrics in the flagship monthly reporting dashboard. Bets outlined in the 2023 OKR document center on iterative delivery, including a complete rebuild of the navigation system, Encouraged Update, haptic feedback, WCAG 2.2 compliance updates, Prescription Refill, Veteran Status Card, and documentation. 
+Objectives were broken down into key results and bets. Key results included tracking effectiveness, satisfaction, and efficiency. We also measured success with more traditional analytics like increasing monthly users by 20% and having 50% of users return in the first week. We tracked metrics in the flagship monthly reporting dashboard. Bets outlined in the 2023 OKR document center on iterative delivery, including a complete rebuild of the navigation system, Encouraged Update, haptic feedback, WCAG 2.2 compliance updates, Prescription Refill, Veteran Status Card, and documentation.
 
 ### Pushing new features and incremental improvements
 
@@ -31,7 +46,7 @@ Through this process I also lead the creation of a distributed React Native-base
 
 We used manual and automated methods of collecting customer feedback. Customer feedback comes via app/play store reviews and feedback from the central VA Mobile email address. These manual practices have coalesced into the “Reddit scraper,” a tool that was built to mimic the manual gathering of information from Reddit and App/Play stores, allowing us to bring social-listening feedback together in one place. This data is then fed into a Large Language Model for querying and further analysis.
 
-We kept an eye on Veterans; experience with automated monitoring services including DataDog (monitoring API health), Sentry (tracking API errors), and Firebase (following up on app crashes). These services are connected to reporting systems to ensure that the engineer on call can respond quickly to any incidents. 
+We kept an eye on Veterans; experience with automated monitoring services including DataDog (monitoring API health), Sentry (tracking API errors), and Firebase (following up on app crashes). These services are connected to reporting systems to ensure that the engineer on call can respond quickly to any incidents.
 
 If a monitored incident occurs, the team follows the incident reporting procedure; once the incident is resolved, a postmortem procedure is quickly followed.
 
@@ -53,21 +68,3 @@ The codebase contains nearly 1,000 unit tests at around 85% code coverage that m
 There is a monthly report for the app that brings together all relevant metrics.
 Infrastructure health is monitored with DataDog, Sentry, and Crashlytics. DataDog is an API monitoring tool that reports upstream outages to Slack. Sentry is the automated error tracking tool. We audit existing errors when fixing tech debt or silencing expected errors.
 Crashlytics allows the team to monitor and triage app crashes on a user’s device. It tracks the cause of crashes so we can quickly respond to any trends forming in the app. Crashlytics reports what the user was doing at the time of the crash so our QA team can replicate and evaluate problems. It also sends an email alert to the team in case of any growing stability issues.
-
-## Project Specifications
-
-[Download the iOS app](https://apps.apple.com/us/app/va-health-and-benefits/id1559609596)
-
-[Download the Android app](https://play.google.com/store/apps/details?id=gov.va.mobileapp)
-
-[View the app code](https://github.com/department-of-veterans-affairs/va-mobile-app)
-
-[View the design system code](https://github.com/department-of-veterans-affairs/va-mobile-library)
-
-- **Role**: Engineering Lead
-- **Accessibility Compliance**: WCAG 2.2 Level AA
-- **Application engineering**: React Native, fastlane, Swift, Kotlin
-- **CI / CD**: Github Actions
-- **Automated Testing**: Detox, Jest
-- **Monitoring**: Datadog, Firebase
-- **API**: Ruby on Rails

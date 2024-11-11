@@ -1,11 +1,11 @@
 ---
 title: Uber Newsroom
 description:
-imagePath: /img/screen_uber--full.png
-thumbnail: /img/screen_uber--half.png
+imagePath: screen_uber--full.png
+thumbnail: screen_uber--half.png
 imageCaption: Uber newsroom's headless React site with a WordPress backend
 url: https://timwright.org/portfolio/ca-dmv/
-layout: layouts/work.njk
+layout: layouts/project.njk
 tags: ["project"]
 ---
 

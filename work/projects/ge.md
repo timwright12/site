@@ -1,11 +1,11 @@
 ---
 title: Edison Design System, GE Healthcare
 description:
-imagePath: /img/screen_eds--full.png
-thumbnail: /img/screen_eds--half.png
+imagePath: screen_eds--full.png
+thumbnail: screen_eds--half.png
 imageCaption: Edison Design System
 passthrough: https://edisondesignsystem.com/
-layout: layouts/work.njk
+layout: layouts/project.njk
 tags: ["project"]
 ---
 

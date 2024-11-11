@@ -7,7 +7,7 @@
     <div class="project-gutter">
     <a href="{% if talk.data.passthrough %}{{ talk.data.passthrough | url }}{% else %}{{ talk.url | url }}{% endif %}">
       {% if talk.data.thumbnail %}
-        <img src="{{ talk.data.thumbnail }}" alt="{{ talk.data.imgCaption }}">
+        <img src="../img/{{ talk.data.thumbnail }}" alt="{{ talk.data.imgCaption }}">
       {% endif %}
       <h2 class="project-title">{{ talk.data.title }}</h2>
     </a>

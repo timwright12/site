@@ -1,13 +1,21 @@
 ---
 title: California DMV
 description:
-imagePath: /img/screen_DMV--full.png
-thumbnail: /img/screen_DMV--half.png
+imagePath: screen_DMV--full.png
+thumbnail: screen_DMV--half.png
 imageCaption: The CA DMV's fully WCAG 2.1 Level AA compliant website.
 url: https://www.dmv.ca.gov/
-layout: layouts/work.njk
+layout: layouts/project.njk
 tags: ["project"]
 ---
+
+## Project Specifications
+
+- **Role**: Frontend Engineering Lead and Accessibility Specialist
+- **Accessibility Compliance**: WCAG 2.1 Level AA
+- **Content management**: WordPress with Gutenberg
+- **Application engineering**: React
+- **Automated Testing**: Jest
 
 ## Project Details
 
@@ -19,12 +27,4 @@ In addition to solving the customer service challenges posed from the current we
 
 In addition to strict accessibility compliance the front-end team also rebuilt a full appointment booking system in React.
 
-## Project Specifications
-
 [Visit the CA DMV website](https://www.dmv.ca.gov/)
-
-- **Role**: Frontend Engineering Lead and Accessibility Specialist
-- **Accessibility Compliance**: WCAG 2.1 Level AA
-- **Content management**: WordPress with Gutenberg
-- **Application engineering**: React
-- **Automated Testing**: Jest
