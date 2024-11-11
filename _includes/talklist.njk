@@ -2,18 +2,58 @@
   <h1 class="project-heading">Talks</h1>
   <div class="project-group">
 
-  {% for talk in talklist %}
     <div class="project-item project-item-50">
-    <div class="project-gutter">
-    <a href="{% if talk.data.passthrough %}{{ talk.data.passthrough | url }}{% else %}{{ talk.url | url }}{% endif %}">
-      {% if talk.data.thumbnail %}
-        <img src="../img/{{ talk.data.thumbnail }}" alt="{{ talk.data.imgCaption }}">
-      {% endif %}
-      <h2 class="project-title">{{ talk.data.title }}</h2>
-    </a>
-    </div><!--/.project-gutter-->
-  </div><!--/.portfolio-item-->
-  {% endfor %}
+      <div class="project-gutter">
+        <a href="../slides/e2e-a11y-testing.pdf">
+          <img src="../img/talk-e2e-a11y.png" alt="How, what, and why of contextual applications">
+          <h2 class="project-title">End to End Accessibility Testing</h2>
+        </a>
+      </div><!--/.project-gutter-->
+    </div>
+
+    <!-- VIDEO: https://www.youtube.com/watch?v=1Xz_jBHEfIY -->
+    <div class="project-item project-item-50">
+			<div class="project-gutter">
+				<a href="http://www.slideshare.net/csskarma/building-an-atomic-design-system">
+					<img src="../img/talk-atomic.png" alt="How, what, and why of contextual applications">
+					<h2 class="project-title">Building an Atomic Design System</h2>
+				</a>
+			</div><!--/.project-gutter-->
+		</div>
+
+    <div class="project-item project-item-50">
+      <div class="project-gutter">
+        <a href="http://www.slideshare.net/csskarma/maslow-42900167">
+          <img src="../img/talk-ude.png" alt="How, what, and why of contextual applications" />
+          <h2 class="project-title">Creating Contextual Applications with Maslow &amp; The Device API</h2>
+        </a>
+      </div>
+    </div><!--/.portfolio-item-->
+
+    <div class="project-item project-item-50">
+      <div class="project-gutter">
+        <a href="http://www.slideshare.net/csskarma/bringing-environmental-design-to-the-web">
+          <img src="https://timwright.org/images/talk-env.png" alt="A green title slide with a leaf watermark" />
+          <h2 class="project-title">Bringing Environmental Design to the Web</h2>
+        </a>
+      </div>
+    </div><!--/.portfolio-item-->
 
   </div><!--/.project-group-->
+
+  <ul class="list-projects">
+    <li><a href="../slides/sr-nav-patterns.pdf">Assistive Technology, Experience Design &amp; Life</a></li>
+    <li><a href="http://www.slideshare.net/csskarma/usc-dot-edu-a-responsive-design-case-study">USC dot EDU: A Responsive Design Case Study</a></li>
+    <li><a href="http://www.slideshare.net/csskarma/keys-to-responsive-design">Keys to Responsive Design</a></li>
+    <li><a href="http://www.slideshare.net/csskarma/form-design">Form Design</a></li>
+    <li><a href="http://www.slideshare.net/csskarma/color-typography">Color &amp; Typography</a></li>
+    <li><a href="http://www.slideshare.net/csskarma/design-process-10580631">The Design Process</a></li>
+    <li><a href="http://www.slideshare.net/csskarma/a-look-at-the-efuture-of-html5">Living at the Edge of the Web</a></li>
+    <li><a href="http://www.slideshare.net/csskarma/implementing-a-scalable-mobile-strategy">Implementing a Scalable Mobile Strategy</a></li>
+    <li><a href="http://www.slideshare.net/csskarma/slow-kinda-sucks">Slow Kinda Sucks</a></li>
+    <li><a href="http://www.slideshare.net/csskarma/html-5-the-future-of-the-web-4824020">HTML 5 and the Future of the Web</a></li>
+    <li><a href="http://www.slideshare.net/csskarma/mobile-media-touch">Mobile, Media, &amp; Touch</a></li>
+    <li><a href="http://www.slideshare.net/csskarma/native-device-vs-mobile-web-applications-3553486">Native Device vs. Mobile Web</a></li>
+  </ul>
+
 </section>

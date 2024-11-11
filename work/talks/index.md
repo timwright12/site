@@ -4,7 +4,7 @@ title: Talks
 templateClass: tmpl-talks
 ---
 
-## Some of my favorite presentations.
+## Some of my favorite presentations
 
 - [End to End Accessibility Testing](/docs/10up/e2e-a11y-testing.pdf)
 - [Building and Atomic Design System](http://www.slideshare.net/csskarma/building-an-atomic-design-system)

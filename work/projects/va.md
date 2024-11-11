@@ -7,6 +7,7 @@ imageCaption: Va.gov is the frontend for the Veterans-facing Services Platform, 
 url: https://va.gov
 layout: layouts/project.njk
 tags: ["project"]
+date: "2022-01-02"
 ---
 
 ## Project Details

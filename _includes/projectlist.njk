@@ -2,7 +2,7 @@
   <h1 class="project-heading">Featured Projects</h1>
   <div class="project-group">
 
-  {% for project in projectlist %}
+  {% for project in projectlist | reverse%}
     <div class="project-item project-item-50">
     <div class="project-gutter">
     <a href="{% if project.data.passthrough %}{{ project.data.passthrough | url }}{% else %}{{ project.url | url }}{% endif %}">

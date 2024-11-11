@@ -7,6 +7,7 @@ imageCaption: Edison Design System
 passthrough: https://edisondesignsystem.com/
 layout: layouts/project.njk
 tags: ["project"]
+date: "2020-01-01"
 ---
 
 ## Project Details

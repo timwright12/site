@@ -7,6 +7,7 @@ imageCaption: My Jewish Learning dot com
 passthrough: https://myjewishlearning.com
 layout: layouts/project.njk
 tags: ["project"]
+date: "2018-01-01"
 ---
 
 ## Project Details

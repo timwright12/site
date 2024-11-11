@@ -8,6 +8,7 @@ url: https://baseline.10up.com/
 passthrough: https://baseline.10up.com/
 layout: layouts/project.njk
 tags: ["project"]
+date: "2019-02-01"
 ---
 
 ## Project Specifications

@@ -1,19 +1,24 @@
 <section class="project">
   <h1 class="project-heading">Books</h1>
+
   <div class="project-group">
+      <div class="project-item">
+        <div class="project-gutter">
+        <a href="http://www.amazon.com/Learning-JavaScript-Hands-On-Fundamentals-Modern/dp/0321832744">
+          <img src="../img/book-pearson.png" alt="Learning JavaScript book cover">
+          <h2 class="project-title">Learning JavaScript: A Hands-On Guide to the Fundamentals of Modern JavaScript</h2>
+        </a>
+        </div><!--/.project-gutter-->
+      </div><!--/.portfolio-item is-featured-->
 
-  {% for book in booklist %}
-    <div class="project-item project-item-50">
-    <div class="project-gutter">
-    <a href="{% if book.data.passthrough %}{{ book.data.passthrough | url }}{% else %}{{ book.url | url }}{% endif %}">
-      {% if book.data.thumbnail %}
-        <img src="../img/{{ book.data.thumbnail }}" alt="{{ book.data.imgCaption }}">
-      {% endif %}
-      <h2 class="project-title">{{ book.data.title }}</h2>
-    </a>
-    </div><!--/.project-gutter-->
-  </div><!--/.portfolio-item-->
-  {% endfor %}
+      <div class="project-item">
+        <div class="project-gutter">
+        <a href="https://shop.smashingmagazine.com/responsive-web-design-solutions-for-responsive-images.html">
+          <img src="../img/book-smashing.png" alt="Responsive Images book cover">
+          <h2 class="project-title">Responsive Web Design: Solutions for Responsive Images</h2>
+        </a>
+        </div><!--/.project-gutter-->
+      </div><!--/.portfolio-item-->
+    </div>
 
-  </div><!--/.project-group-->
 </section>
