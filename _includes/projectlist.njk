@@ -5,7 +5,7 @@
   {% for project in projectlist | reverse%}
     <div class="project-item project-item-50">
     <div class="project-gutter">
-    <a href="{% if project.data.passthrough %}{{ project.data.passthrough | url }}{% else %}{{ project.url | url }}{% endif %}">
+    <a href="{% if project.data.passthrough %}{{ project.data.passthrough }}{% else %}{{ project.url }}{% endif %}">
       {% if project.data.thumbnail %}
         <img src="../img/{{ project.data.thumbnail }}" alt="{{ project.data.imgCaption }}">
       {% endif %}
