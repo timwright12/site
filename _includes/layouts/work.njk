@@ -3,20 +3,13 @@ layout: layouts/base.njk
 templateClass: tmpl-work
 ---
 
-<div class="contain-wide">
-  <div class="gutter">
+{{ content | safe }}
 
-    {{ content | safe }}
+{% set projectlist = collections.project %}
+{% set booklist = collections.book %}
+{% set talklist = collections.talk %}
 
-    {% set projectlist = collections.project %}
-    {% set booklist = collections.book %}
-    {% set talklist = collections.talk %}
-
-    {% include "projectlist.njk" %}
-    {% include "booklist.njk" %}
-    {% include "talklist.njk" %}
-    {% include "articlelist.njk" %}
-
-
-  </div><!--/.gutter-->
-</div><!--/.contain-wide-->
+{% include "projectlist.njk" %}
+{% include "booklist.njk" %}
+{% include "talklist.njk" %}
+{% include "articlelist.njk" %}

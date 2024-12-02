@@ -3,13 +3,8 @@ layout: layouts/base.njk
 templateClass: tmpl-post
 ---
 
-<div class="contain-wide">
-  <div class="gutter">
-
 <time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time>
 
 <h1>{{ title }}</h1>
 
 {{ content | safe }}
-
-</div></div>

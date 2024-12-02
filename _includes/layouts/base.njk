@@ -39,26 +39,37 @@
   </head>
   <body>
 
-  <header role="banner" id="banner">
+    <header class="banner p-2" id="banner" role="banner">
+      <div class="contain-wide flex--lg flex--align-center">
+        <div class="col">
 
-    <h1 class="logo" itemscope="" itemtype="http://schema.org/Organization">
-      <a href="/" itemprop="url">Tim Wright</a>
-    </h1>
+        <h1 class="banner__logo m-0" itemscope="" itemtype="http://schema.org/Organization">
+          <a href="/" itemprop="url">Tim Wright</a>
+        </h1>
 
-    <nav role="navigation" id="nav">
-      <ul>
-        {%- for entry in collections.all | eleventyNavigation %}
-          <li class="nav-item{% if entry.url == page.url %} nav-item-active{% endif %}"><a href="{{ entry.url }}">{{ entry.title }}</a></li>
-        {%- endfor %}
-        <li class="nav-item"><a href="mailto:hello@timwright.org?subject=An Interesting Message from timwright.org">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+        <nav class="nav" role="navigation" id="nav">
+          <ul class="m-0 p-0 list--none">
+            {%- for entry in collections.all | eleventyNavigation %}
+              <li class="nav-item{% if entry.url == page.url %} nav-item-active{% endif %}"><a href="{{ entry.url }}" class="nav-link block">{{ entry.title }}</a></li>
+            {%- endfor %}
+            <li class="nav-item"><a href="mailto:hello@timwright.org?subject=An Interesting Message from timwright.org" class="nav-link nav-link--contact block">Contact</a></li>
+          </ul>
+        </nav>
 
-    <main{% if templateClass %} class="{{ templateClass }}"{% endif %} id="main">
-      {{ content | safe }}
-    </main>
+        </div>
+        <div class="col">
+          <img src="img/hero-10up-small.jpg" alt="Me speaking... somewhere?" class="banner__image" />
+        </div>
+      </div><!--./contain-wide-->
+    </header><!--/.banner-->
 
-    <!-- Current page: {{ page.url }} -->
+    <main{% if templateClass %} class="main {{ templateClass }}"{% endif %} id="main" role="main">
+      <div class="contain-wide">
+        <div class="gutter p-2">
+          {{ content | safe }}
+        </div><!--/.gutter-->
+      </div><!--/.contain-wide-->
+    </main><!--/.main-->
+
   </body>
 </html>

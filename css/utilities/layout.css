@@ -1,0 +1,38 @@
+.contain {
+  margin: auto;
+  max-width: 50rem;
+}
+
+.contain-wide {
+  margin: auto;
+  max-width: 56.25rem;
+}
+
+.block {
+  display: block;
+}
+
+.remove {
+  display: none;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex--align-center {
+  align-items: center;
+}
+
+@media screen and (min-width: 700px) {
+
+  .flex--lg {
+    display: flex;
+  }
+
+  .col {
+    flex-basis: 0;
+    flex-grow: 1;
+  }
+
+}

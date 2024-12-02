@@ -1,0 +1,56 @@
+body {
+  background: var(--c-base);
+  color: var(--c-primary);
+  font-family: 'Open Sans', Sans-Serif;
+  font-size: 1rem;
+  line-height: 1.65;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: Judson, Serif;
+  margin: 0 0 1rem;
+}
+
+h1 {
+  font-size: var(--fz-xlarge);
+  line-height: 1.13;
+}
+
+h2 {
+  line-height: 1.1;
+  font-size: var(--fz-large);
+}
+
+h3 {
+  line-height: 1.45;
+  font-size: var(--fz-medium);
+}
+
+h4 {
+  line-height: 1.2;
+  font-size: var(--fz-small);
+}
+
+h5 {
+  font-size: var(--fz-xsmall);
+  font-weight: var(--fw-bold);
+  line-height: 1.25;
+}
+
+p,
+ol,
+ul,
+time,
+figcaption {
+  font-size: var(--fz-xsmall);
+}
+
+img,
+picture {
+  max-width: 100%;
+}

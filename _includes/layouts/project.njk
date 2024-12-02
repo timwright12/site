@@ -3,14 +3,11 @@ layout: layouts/base.njk
 templateClass: tmpl-project
 ---
 
-<div class="contain-wide">
-  <div class="gutter">
-
 <h1>{{ title }}</h1>
 
 {% if imagePath %}
-<figure class="m-0 mb-1 display-block">
-  <img src="../../../img/{{ imagePath }}" alt="Screen shot representing {{ title }}" class="display-block mb-1 callout">
+<figure class="block">
+  <img src="../../../img/{{ imagePath }}" alt="Screen shot representing {{ title }}" class="block">
   {% if imgCaption %}
   <figcaption class="fz-small">{{ imgCaption }}</figcaption>
   {% endif %}
@@ -18,6 +15,3 @@ templateClass: tmpl-project
 {% endif %}
 
 {{ content | safe }}
-
-  </div><!--/.gutter-->
-</div><!--/.content-wide-->

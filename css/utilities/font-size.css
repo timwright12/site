@@ -1,0 +1,27 @@
+.fz--xxlarge {
+  font-size: var(--fz-xxlarge);
+}
+
+.fz--xlarge {
+  font-size: var(--fz-xxlarge);
+}
+
+.fz--large {
+  font-size: var(--fz-xlarge);
+}
+
+.fz--medium {
+  font-size: var(--fz-large);
+}
+
+.fz--small {
+  font-size: var(--fz-medium);
+}
+
+.fz--xsmall {
+  font-size: var(--fz-small);
+}
+
+.fz--xxsmall {
+  font-size: var(--fz-xsmall);
+}

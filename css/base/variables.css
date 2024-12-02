@@ -1,0 +1,34 @@
+:root {
+  --c-base: #fcf7f2;
+  --c-primary: #444;
+  --c-banner-bg: #fae2ca;
+
+  --fz-xxxxlarge: 4rem;
+  --fz-xxxlarge: 4rem;
+  --fz-xxlarge: 3rem;
+  --fz-xlarge: 2.25rem;
+  --fz-large: 1.5rem;
+  --fz-medium: 1.25rem;
+  --fz-small: 1.125rem;
+  --fz-xsmall: 1rem;
+  --fz-xxsmall: 0.875rem;
+  --fz-xxxsmall: 0.8125rem;
+
+  --fw-bold: 700;
+  --fw-normal: 400;
+}
+
+@media screen and (min-width: 700px) {
+  /* :root {
+    --fz-xxxxlarge: 4rem;
+    --fz-xxxlarge: 3rem;
+    --fz-xxlarge: 2.25rem;
+    --fz-xlarge: 1.5rem;
+    --fz-large: 1.25rem;
+    --fz-medium: 1.125rem;
+    --fz-small: 1rem;
+    --fz-xsmall: 0.875rem;
+    --fz-xxsmall: 0.8125rem;
+    --fz-xxxsmall: 0.75rem;
+  } */
+}
