@@ -1,7 +1,7 @@
 {
   "name": "portfolio",
   "version": "1.0.0",
-  "description": "",
+  "description": "portfolio site",
   "scripts": {
     "build": "env NODE_ENV=production npx eleventy --pathprefix 'site'",
     "watch": "eleventy --watch",
