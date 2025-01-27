@@ -1,11 +1,25 @@
 ---
-layout: layouts/base.njk
+layout: layouts/service.njk
 title: Services
 templateClass: tmpl-services
 eleventyNavigation:
   key: Services
   order: 4
 ---
+
+- [Accessibility review](#accessibility-review)
+  - [An accessibility review includes](#an-accessibility-review-includes)
+  - [Accessibility review resources](#accessibility-review-resources)
+- [Accessibility remediation](#accessibility-remediation)
+  - [Accessibility remediation includes](#accessibility-remediation-includes)
+  - [Accessibility remediation resources](#accessibility-remediation-resources)
+- [Editorial Training](#editorial-training)
+  - [Editorial Training Resources](#editorial-training-resources)
+- [Standard Site Build with WCAG Compliance](#standard-site-build-with-wcag-compliance)
+  - [WCAG 2.x, Level AA Compliance](#wcag-2x-level-aa-compliance)
+- [Editorial Inline Assistance](#editorial-inline-assistance)
+  - [Editorial Inline Assistance Resources](#editorial-inline-assistance-resources)
+- [Ongoing Monitoring](#ongoing-monitoring)
 
 ## Accessibility review
 
@@ -33,8 +47,8 @@ Accessibility remediation is a project phase reserved for addressing any accessi
 
 ### Accessibility remediation includes
 
-- All issues transferred into issue tracking software.
-- Remediation of all documented accessibility issues.
+- All issues transferred into issue tracking software (if not already transferred).
+- Remediation of agreed upon documented accessibility issues.
 - A secondary accessibility review to confirm all remediation is complete.
 
 ### Accessibility remediation resources
