@@ -77,35 +77,41 @@ h3 {
 }
 
 h1 {
-    font-size: 4.5em; /* 72px */
+    font-size: 4.5rem;
+      /* 72px */
     line-height: 1.13;
     margin-top: 1.125rem;
     margin-bottom: 2.25rem;
 }
 
 h2 {
-    font-size: 3em; /* 48px */
+    font-size: 3rem;
+      /* 48px */
     line-height: 1.1;
     margin-bottom: 25px;
     margin-top: 56px;
 }
 
 h3 {
-	font-size: 2.25em; /* 36px */
+  font-size: 2.25rem;
+    /* 36px */
     line-height: 1.45;
 }
 
 h4 {
-	font-size: 1.5em; /* 24px */
+  font-size: 1.5rem;
+    /* 24px */
     line-height: 1.2
 }
 
 h5 {
-	font-size: 1.25em; /* 20px */
+  font-size: 1.25rem;
+    /* 20px */
 }
 
 p, ol, ul {
-	font-size: 1.125em; /* 18px */
+  font-size: 1.125rem;
+    /* 18px */
 }
 
 
@@ -119,7 +125,7 @@ strong {
 
 blockquote {
     padding: 40px 20px;
-    font-size: 1.2em;
+    font-size: 1.2rem;
     font-style: italic;
     margin: 40px 0
 }
@@ -128,7 +134,7 @@ p code,
 pre {
     background: var( --c-accent );
     color: var( --c-primary );
-    font-size: .9em;
+    font-size: .9rem;
     font-family: Inconsolata, "Courier New", monospace
 }
 
@@ -138,7 +144,7 @@ p code {
 
 pre {
     display: block;
-    margin: 1.5em 0;
+    margin: 1.5rem 0;
     overflow: auto;
     text-shadow: 0 1px 0 rgba(255, 255, 255, .5);
     line-height: 1.4;
@@ -182,7 +188,7 @@ a:active {
 
 ol,
 ul {
-    margin-left: 3em
+    margin-left: 3rem
 }
 
 .contain {
@@ -519,6 +525,7 @@ nav[role=navigation] {
 }
 
 nav[role=navigation] ul {
+    font-size: 1.5rem;
     margin: 0;
     padding: 0;
     list-style: none
