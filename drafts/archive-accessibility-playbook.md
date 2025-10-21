@@ -9,7 +9,7 @@ draft: true
 
 Copy from: http://web.archive.org/web/20240914141206/https://adhoc.team/playbook-accessibility/
 
-This playbook is for government agencies and other civic organizations looking to mature their practical understanding of accessibility from one of basic compliance to an inclusive, human-centered experience.
+_This_ playbook is for government agencies and other civic organizations looking to mature their practical understanding of accessibility from one of basic compliance to an inclusive, human-centered experience.
 
 Follow our plays to better equip your organization and teams with practices that will lead to more equitable digital services.
 
