@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The role of QA in software delivery</title>
+    <meta name="description" content="I am writing about my experiences as a naval navel-gazer.">
+    <link rel="stylesheet" href="/css/index.css">
+
+    <script>
+
+		WebFontConfig = {
+			google: {
+				families: ['Open Sans:400,700', 'Judson:400,700']
+			}
+		};
+
+		(function(d) {
+			var wf = d.createElement('script'), s = d.scripts[0];
+			wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
+			wf.async = true;
+			s.parentNode.insertBefore(wf, s);
+		})(document);
+
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-875557-1', 'auto');
+		ga('send', 'pageview');
+
+	</script>
+
+	<noscript>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&Judson:ital,wght@0,400;0,700;1,400&display=swap" />
+	</noscript>
+
+  </head>
+  <body>
+
+  <header role="banner" id="banner">
+
+    <h1 class="logo" itemscope="" itemtype="http://schema.org/Organization">
+      <a href="/" itemprop="url">Tim Wright</a>
+    </h1>
+
+    <nav role="navigation" id="nav">
+      <ul>
+          <li class="nav-item"><a href="/blog/">Blog</a></li>
+          <li class="nav-item"><a href="/work/">Work</a></li>
+          <li class="nav-item"><a href="/services/">Services</a></li>
+        <li class="nav-item"><a href="mailto:timwright12@gmail.com?subject=An Interesting Message from timwright.org">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+    <main class="tmpl-post" id="main">
+      
+<div class="contain-wide">
+  <div class="gutter">
+
+<time datetime="2026-02-01">01 Feb 2026</time>
+
+<h1>The role of QA in software delivery</h1>
+
+<p>Quality assurance is often misunderstood. In many organizations, QA is still viewed as a final gate or a safety net that catches problems right before release. In reality, effective QA plays a much more strategic role. Its primary purpose is not to block releases or certify perfection, but to help teams make informed decisions about risk, readiness, and quality.</p>
+<p>At its core, QA exists to increase confidence. Confidence that the software behaves as intended. Confidence that the most important risks have been explored. And confidence that when a decision is made to ship, everyone understands what is known, what is unknown, and what tradeoffs are being accepted.</p>
+<h2 id="qa-is-about-information-not-perfection" tabindex="-1">QA is about information, not perfection <a class="direct-link" href="#qa-is-about-information-not-perfection" aria-hidden="true">#</a></h2>
+<p>No amount of testing can prove software is bug-free. Systems are too complex, environments change, and real-world usage always finds new edge cases. Strong QA teams work with this reality rather than fighting it.</p>
+<p>The goal of testing is to learn enough about the system to support good decisions. That means understanding how the software might fail, which failures matter most, and how likely they are to occur. QA adds value by turning exploration into insight and insight into shared understanding.</p>
+<p>When QA signs off on a change or a release, it does not mean “this is perfect.” It means “we’ve tested this thoughtfully, in proportion to its risk, and here’s what we know.” This shift in perspective allows teams to prioritize which issues need immediate attention and which can be managed post-release, focusing resources where they can have the greatest impact.</p>
+<h2 id="knowing-when-testing-is-&quot;good-enough&quot;" tabindex="-1">Knowing when testing is “good enough” <a class="direct-link" href="#knowing-when-testing-is-&quot;good-enough&quot;" aria-hidden="true">#</a></h2>
+<p>One of the hardest skills in QA is knowing when to stop. More testing is always possible, but more testing is not always useful.</p>
+<p>Preparation for testing is complete when the team has a clear mental model of the system, its dependencies, and its likely failure modes. This involves not only understanding the codebase but also the business logic, user interactions, and external integrations that could affect stability and performance.</p>
+<p>Testing itself is “good enough” when three things are true:</p>
+<ul>
+<li>The product has been examined in proportion to the risk it introduces. High-risk areas receive more scrutiny and diverse testing approaches, ensuring that critical paths and features are robust.</li>
+<li>The team’s testing standards have been met, meaning that predefined criteria for test coverage and depth are fulfilled, ensuring consistency and reliability in the testing process.</li>
+<li>Results, limitations, and quality assessments have been clearly communicated to all stakeholders, ensuring there is a shared understanding of the current quality and any potential risks that might affect the release.</li>
+</ul>
+<p>Stopping is not about running out of time. It is about reaching a point where additional testing would not materially change the decisions being made, allowing teams to maintain momentum and deliver value without unnecessary delays.</p>
+<h2 id="qa-does-not-own-the-release-decision" tabindex="-1">QA does not own the release decision <a class="direct-link" href="#qa-does-not-own-the-release-decision" aria-hidden="true">#</a></h2>
+<p>A common misconception is that QA decides whether software ships. While some teams give QA formal gatekeeping authority, healthy delivery organizations treat release decisions as a shared responsibility.</p>
+<p>QA’s role is to surface risk, describe coverage, and explain findings. This involves creating a comprehensive risk assessment that helps stakeholders understand the implications of shipping the current version, ensuring that everyone is aligned on the overall quality posture.</p>
+<p>Product leaders and stakeholders weigh that information alongside business priorities, timelines, and user needs. When trust is high, QA sign-off often becomes implicit rather than ceremonial, because the team already understands the quality posture of the work. This collaborative approach fosters a culture where every team member feels accountable for quality, reducing silos and improving communication.</p>
+<p>Clear ownership of decisions, paired with transparent QA input, prevents blame and builds trust across disciplines. This dynamic encourages proactive problem-solving and continuous improvement, as teams work together to address issues before they escalate.</p>
+<h2 id="quality-is-a-team-effort" tabindex="-1">Quality is a team effort <a class="direct-link" href="#quality-is-a-team-effort" aria-hidden="true">#</a></h2>
+<p>QA cannot “add quality” at the end of the process. Quality emerges from collaboration throughout the lifecycle.</p>
+<p>Engineers contribute by writing and maintaining unit and integration tests that catch defects close to their source. These tests ensure that individual components function correctly and integrate seamlessly, laying the foundation for a stable system.</p>
+<p>Product partners contribute by defining clear requirements and acceptance criteria. This ensures that engineering and QA are aligned on what constitutes a successful implementation, reducing ambiguity and rework.</p>
+<p>QA focuses on system behavior, edge cases, user workflows, and areas of highest risk. By actively engaging in design discussions and sprint planning, QA can provide valuable insights that preemptively address potential issues, enhancing the team's overall ability to deliver quality software.</p>
+<p>When quality is shared, QA becomes a force multiplier rather than a bottleneck. This collaborative approach empowers teams to deliver high-quality products faster, leveraging each member's unique skills and perspectives.</p>
+<h2 id="testing-works-best-when-it's-integrated" tabindex="-1">Testing works best when it’s integrated <a class="direct-link" href="#testing-works-best-when-it's-integrated" aria-hidden="true">#</a></h2>
+<p>Modern QA is most effective when testing is woven into engineering rather than isolated at the end. Issues found earlier are cheaper to fix, easier to understand, and less disruptive to delivery.</p>
+<p>A well-rounded testing approach usually includes a mix of automated and manual techniques. Automated tests, such as unit and integration tests, provide quick feedback on code changes, ensuring that new features don't introduce regressions. Manual testing adds a layer of exploratory analysis, allowing testers to simulate real-world usage and uncover issues that scripts and checklists miss.</p>
+<p>End-to-end and acceptance testing confirm that real workflows behave as expected, validating that the system meets business and user requirements. Accessibility and compatibility testing deserve special attention, as they often reveal systemic issues that are invisible in ideal conditions, ensuring that the product is usable by all intended audiences.</p>
+<p>No single testing method is sufficient on its own. Coverage comes from layering approaches, not relying on one. This diversified strategy ensures that all aspects of the system are scrutinized, providing a comprehensive understanding of its strengths and weaknesses.</p>
+<h2 id="prioritizing-bugs-by-risk-not-emotion" tabindex="-1">Prioritizing bugs by risk, not emotion <a class="direct-link" href="#prioritizing-bugs-by-risk-not-emotion" aria-hidden="true">#</a></h2>
+<p>Not all bugs deserve the same response. Treating every issue as equally urgent creates noise and slows progress.</p>
+<p>Effective QA teams assess bugs using two primary dimensions: impact and frequency. Impact evaluates the severity of the bug's effect on users and business operations, focusing on issues that disrupt critical functionality or compromise security. Frequency considers how often the bug occurs, highlighting problems that affect a significant portion of users or arise under common conditions.</p>
+<p>Issues that block critical user tasks or violate accessibility expectations carry more weight than cosmetic problems. Likewise, problems encountered by many users demand more attention than rare edge cases. This risk-based framing helps teams focus their energy where it matters most and communicate clearly about tradeoffs, ensuring that resources are allocated effectively to maximize value.</p>
+<h3 id="issue-severity" tabindex="-1">Issue Severity <a class="direct-link" href="#issue-severity" aria-hidden="true">#</a></h3>
+<table>
+<thead>
+<tr>
+<th><strong>Severity</strong></th>
+<th><strong>Definition</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Critical (sev-1)</td>
+<td>Issues with both HIGH impact and HIGH frequency</td>
+</tr>
+<tr>
+<td>High (sev-2)</td>
+<td>Issues with either HIGH impact and LOW frequency, or LOW impact and HIGH frequency</td>
+</tr>
+<tr>
+<td>Low (sev-3)</td>
+<td>Issues with both LOW impact and LOW frequency</td>
+</tr>
+</tbody>
+</table>
+<h4 id="impact-definitions" tabindex="-1">Impact definitions <a class="direct-link" href="#impact-definitions" aria-hidden="true">#</a></h4>
+<table>
+<thead>
+<tr>
+<th><strong>Impact</strong></th>
+<th><strong>Definition</strong></th>
+<th><strong>Examples</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>High impact</td>
+<td>Prevents user from completing a task and/or direct violation of WCAG guideline</td>
+<td>Crashes, system hangs, file/data corruption, errors with no discoverable workaround, component doesn't function (i.e. broken link, button can't receive screen reader focus), etc.</td>
+</tr>
+<tr>
+<td>Low impact</td>
+<td>Does not prevent user from completing a task; or area we can improve, even if following WCAG guidelines</td>
+<td>Typos, unclear messaging, repetitive information, errors with an easily discoverable workaround, button improperly labeled as a link, etc.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="frequency-definitions" tabindex="-1">Frequency definitions <a class="direct-link" href="#frequency-definitions" aria-hidden="true">#</a></h4>
+<table>
+<thead>
+<tr>
+<th><strong>Frequency</strong></th>
+<th><strong>Definition</strong></th>
+<th><strong>Examples</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>High frequency</td>
+<td>Affects a component, screen, or action used by [an agreed upon percentage] or more of monthly users</td>
+<td>Authentication/login or a high traffic area of an application</td>
+</tr>
+<tr>
+<td>Low frequency</td>
+<td>Affects a component, screen, or action used by [an agreed upon percentage] or fewer of monthly users</td>
+<td>Lower traffic areas of a site or application</td>
+</tr>
+</tbody>
+</table>
+<p>Investing in test data is an investment in delivery confidence. Robust test datasets improve the accuracy and reliability of testing outcomes, enabling teams to make informed decisions with greater certainty.</p>
+<h2 id="qa-only-adds-value-if-it-communicates-well" tabindex="-1">QA only adds value if it communicates well <a class="direct-link" href="#qa-only-adds-value-if-it-communicates-well" aria-hidden="true">#</a></h2>
+<p>Testing that isn’t communicated might as well not exist.</p>
+<p>QA findings should be shared in ways that are timely, clear, and actionable. This involves creating concise reports that highlight key risks, limitations, and areas of confidence, ensuring that stakeholders can quickly grasp the current state of quality.</p>
+<p>The goal is not to overwhelm stakeholders with details, but to highlight what matters: risks, limitations, and areas of confidence. By focusing on the most critical insights, QA can support fast, informed decisions, enabling teams to adapt and respond effectively to emerging challenges.</p>
+<p>Whether through ticket comments, written summaries, or release notes, good QA communication supports fast, informed decisions. Clear communication strengthens collaboration, builds trust, and fosters a culture of transparency and accountability.</p>
+<h2 id="and-those-are-my-thoughts-on-the-importance-of-qa" tabindex="-1">And those are my thoughts on the importance of QA <a class="direct-link" href="#and-those-are-my-thoughts-on-the-importance-of-qa" aria-hidden="true">#</a></h2>
+<p>Strong QA practices are less about rigid process and more about judgment, collaboration, and trust. Teams that treat QA as a strategic partner rather than a final hurdle tend to ship with greater confidence and fewer surprises.</p>
+<p>At its best, QA helps teams answer a simple but powerful question: <strong>Do we know enough to move forward?</strong></p>
+<p>By focusing on information, integration, and collaboration, QA empowers teams to navigate complexity and uncertainty, delivering high-quality software that meets user needs and goals of the project.</p>
+
+
+</div></div>
+
+    </main>
+
+    <!-- Current page: /posts/2026-01-26-role-of-qa/ -->
+  </body>
+</html>
