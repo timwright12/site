@@ -49,4 +49,4 @@ That comes from smaller stories, honest conversations about risk, visible capaci
 
 When we treat them as a shared planning mechanism, they protect us from overcommitment, give product the visibility they need, and make tradeoffs clear before we’re underwater.
 
-It isn't micromanagement; it's a team working li
+It isn't micromanagement; it's a team working like a team.
