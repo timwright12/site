@@ -40,7 +40,7 @@ h2,
 h3,
 h4 {
 	font-family: Judson, Serif;
-    margin: 0 0 1rem;
+  margin: 0 0 1rem;
 }
 
 *,
@@ -79,7 +79,7 @@ h3 {
 h1 {
     font-size: 4.5rem;
       /* 72px */
-    line-height: 1.13;
+    line-height: 1;
     margin-top: 1.125rem;
     margin-bottom: 2.25rem;
 }
