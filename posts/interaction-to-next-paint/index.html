@@ -57,14 +57,14 @@
 
     <main class="tmpl-post" id="main">
       
-<div class="contain-wide">
+<div class="contain">
   <div class="gutter">
 
-<time datetime="2023-05-30">30 May 2023</time>
+    <time datetime="2023-05-30">30 May 2023</time>
 
-<h1>Measuring Performance with Interaction to Next Paint</h1>
+    <h1>Measuring Performance with Interaction to Next Paint</h1>
 
-<p><a href="https://web.dev/inp/">Interaction to Next Paint</a> (INP) is an experimental metric that gauges the responsiveness of individual interactions throughout the lifecycle of a page (from load to close). It measures from when an event (click, tap, and keyboard interaction) fires to when visual feedback is represented on a page (aka, next paint). The main example given here is when you click an accordian, how long does it take to open? If slow, it can be indicative of a lot of main-thread JavaScript clogging up UI interactions.</p>
+    <p><a href="https://web.dev/inp/">Interaction to Next Paint</a> (INP) is an experimental metric that gauges the responsiveness of individual interactions throughout the lifecycle of a page (from load to close). It measures from when an event (click, tap, and keyboard interaction) fires to when visual feedback is represented on a page (aka, next paint). The main example given here is when you click an accordian, how long does it take to open? If slow, it can be indicative of a lot of main-thread JavaScript clogging up UI interactions.</p>
 <p>To quickly summarize how an INP value is calculated:</p>
 <blockquote>
 <p>INP is calculated by observing all the interactions made with a page. The chosen value is then a percentile of those interactions.</p>
@@ -74,7 +74,8 @@
 <p>If this is of interest to you, I highly recommend reading more about <a href="https://web.dev/inp/">Interaction to Next Paint</a> on the official site.</p>
 
 
-</div></div>
+  </div>
+</div>
 
     </main>
 

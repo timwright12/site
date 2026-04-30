@@ -57,14 +57,14 @@
 
     <main class="tmpl-post" id="main">
       
-<div class="contain-wide">
+<div class="contain">
   <div class="gutter">
 
-<time datetime="2017-02-18">18 Feb 2017</time>
+    <time datetime="2017-02-18">18 Feb 2017</time>
 
-<h1>Accessibility in Web Applications with ARIA Live Regions</h1>
+    <h1>Accessibility in Web Applications with ARIA Live Regions</h1>
 
-<p>Accessibility in Web applications can be pretty confusing. ARIA live regions are a method of communicating asynchronous document changes to <a href="https://en.wikipedia.org/wiki/Assistive_technology#Accessibility_software">assistive technology</a> (AT). A screen reader will read an HTML document in a bunch of different ways (links, headings, regions, form controls, etc.), the problem with all these methods is that none of them are really equip to detect changes in the document that happen after initial load. Especially if the user has already passed that point in the document. This is where live regions are helpful.</p>
+    <p>Accessibility in Web applications can be pretty confusing. ARIA live regions are a method of communicating asynchronous document changes to <a href="https://en.wikipedia.org/wiki/Assistive_technology#Accessibility_software">assistive technology</a> (AT). A screen reader will read an HTML document in a bunch of different ways (links, headings, regions, form controls, etc.), the problem with all these methods is that none of them are really equip to detect changes in the document that happen after initial load. Especially if the user has already passed that point in the document. This is where live regions are helpful.</p>
 <p>Live regions allow you to flag a section of the document as <em>active</em>, meaning that it has the potential to update without a full page refresh (Ajax). There are four main attributes you can use to alert an AT user to changes in the document: <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-atomic">atomic</a>, <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-live">live</a>, <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-busy">busy</a>, and <a href="https://www.w3.org/TR/wai-aria-1.1/#aria-relevant">relevant</a>. Let's step through them.</p>
 <h2 id="atomic" tabindex="-1">Atomic <a class="direct-link" href="#atomic" aria-hidden="true">#</a></h2>
 <p>The aria-atomic attribute will tell a screen reader whether, when changes happen within the current region, to present the entire region as a single unit or to only announce the nodes that have been changed (added and removed). It has 2 options: <em>true</em> and <em>false.</em></p>
@@ -117,7 +117,8 @@
 </ul>
 
 
-</div></div>
+  </div>
+</div>
 
     </main>
 

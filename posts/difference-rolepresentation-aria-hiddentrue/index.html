@@ -57,14 +57,14 @@
 
     <main class="tmpl-post" id="main">
       
-<div class="contain-wide">
+<div class="contain">
   <div class="gutter">
 
-<time datetime="2016-11-19">19 Nov 2016</time>
+    <time datetime="2016-11-19">19 Nov 2016</time>
 
-<h1>The Difference Between role=&quot;presentation&quot; and aria-hidden=&quot;true&quot;</h1>
+    <h1>The Difference Between role=&quot;presentation&quot; and aria-hidden=&quot;true&quot;</h1>
 
-<p>In dealing with <code>role=&quot;presentation&quot;</code> and <code>aria-hidden=&quot;true&quot;</code> you may find that they both have deceptively similar functions when it relates to how they interact with assistive technology (screen readers). Before we dig into the difference between these two attributes we first need to learn a little bit about how accessibility in a Web browser works and this thing called: <a href="https://www.w3.org/TR/core-aam-1.1/#intro_treetypes">The Accessibility Tree</a></p>
+    <p>In dealing with <code>role=&quot;presentation&quot;</code> and <code>aria-hidden=&quot;true&quot;</code> you may find that they both have deceptively similar functions when it relates to how they interact with assistive technology (screen readers). Before we dig into the difference between these two attributes we first need to learn a little bit about how accessibility in a Web browser works and this thing called: <a href="https://www.w3.org/TR/core-aam-1.1/#intro_treetypes">The Accessibility Tree</a></p>
 <h2 id="the-accessibility-tree" tabindex="-1">The Accessibility Tree <a class="direct-link" href="#the-accessibility-tree" aria-hidden="true">#</a></h2>
 <p>The accessibility tree is a mapping of objects within an HTML document that need to be exposed to assistive technology (if you're familiar with the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model">DOM</a>, it's a subset of the DOM). Anything that communicates aspects of the UI or has a property or relationship that needs to be exposed, gets added to the tree. This happens automatically for most elements when you use a strong semantic HTML structure, but you can also add or remove objects programmatically with accessibility hooks like:  <code>role=&quot;presentation&quot;</code> and <code>aria-hidden=&quot;true&quot;</code> (and some CSS properties). In a nutshell, this means… if I have a text input on a page, a screenreader will be able to interact with it, because it has been added into the accessibility tree.</p>
 <p>If <code>role=&quot;presentation&quot;</code> and <code>aria-hidden=&quot;true&quot;</code> do the same thing and interact with the accessibility tree the same way, then what's the difference? Why do we even need both of them?</p>
@@ -138,7 +138,8 @@ trigger.addEventListener(&quot;click&quot;, function(e) {
 </ul>
 
 
-</div></div>
+  </div>
+</div>
 
     </main>
 

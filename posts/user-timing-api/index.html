@@ -57,14 +57,14 @@
 
     <main class="tmpl-post" id="main">
       
-<div class="contain-wide">
+<div class="contain">
   <div class="gutter">
 
-<time datetime="2017-03-04">04 Mar 2017</time>
+    <time datetime="2017-03-04">04 Mar 2017</time>
 
-<h1>Performance Testing with the User Timing API</h1>
+    <h1>Performance Testing with the User Timing API</h1>
 
-<p>Performance is the first thing a user experiences on a site. In many ways it doesn't matter how amazing a user flow or IA appear to be, if a site won't load, users leave. This is why keeping a strong <a href="/blog/performance-budget/">performance budget</a> and testing metrics are so critically important to creating a great end-to-end experience for users (and generating revenue).</p>
+    <p>Performance is the first thing a user experiences on a site. In many ways it doesn't matter how amazing a user flow or IA appear to be, if a site won't load, users leave. This is why keeping a strong <a href="/blog/performance-budget/">performance budget</a> and testing metrics are so critically important to creating a great end-to-end experience for users (and generating revenue).</p>
 <p>When looking into ways of testing front-end performance for an application I stumbled upon the <a href="https://developer.mozilla.org/en-US/docs/Web/API/User_Timing_API/Using_the_User_Timing_API">User Timing API</a>, which is part of the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Performance">Performance Interface</a>. At that point, I had never really dug into either of them, so I decided to share my research here.</p>
 <h2 id="user-timing-api" tabindex="-1">User Timing API <a class="direct-link" href="#user-timing-api" aria-hidden="true">#</a></h2>
 <p>The User Timing API allows us to create named, application-specific, timestamps in the <a href="https://www.w3.org/TR/performance-timeline/">performance timeline</a>. The API gives us two kinds of entry types: <strong>marks</strong> and <strong>measures</strong>. Marks are timeline points in the application and measures are midway points between marks. As each mark and measure is executed, they are stored so you can access them at any time while the application is running (this prevents the application from getting sluggish as you add more timestamps).</p>
@@ -121,7 +121,8 @@ function measurePerformance() {
 </ul>
 
 
-</div></div>
+  </div>
+</div>
 
     </main>
 

@@ -57,14 +57,14 @@
 
     <main class="tmpl-post" id="main">
       
-<div class="contain-wide">
+<div class="contain">
   <div class="gutter">
 
-<time datetime="2010-01-08">08 Jan 2010</time>
+    <time datetime="2010-01-08">08 Jan 2010</time>
 
-<h1>Conditional Animation Speed in jQuery</h1>
+    <h1>Conditional Animation Speed in jQuery</h1>
 
-<p>For years (and by &quot;years&quot;, I most likely mean &quot;the years since I started using jQuery... maybe 2&quot;), there's been one aspect of jQuery that's bugged the crap out of me, the animation speed.</p>
+    <p>For years (and by &quot;years&quot;, I most likely mean &quot;the years since I started using jQuery... maybe 2&quot;), there's been one aspect of jQuery that's bugged the crap out of me, the animation speed.</p>
 <p>We've all probably seen the problem that happens in many drop down menus of varying height. We set <code>slideDown(300)</code> (or whatever you set it to) on all the submenus and leave like that. Inevitably, menus grow and shrink based on the content and we get this weird and mildly annoying behavior of really fast moving tall menus vs. shorter menus that move painfully slow just because there's not much content in there.</p>
 <p>This problem stems from where we set the speed of the animation; the value isn't actually a speed, it's how long it takes (in milliseconds, I think) for the animation to finish. So you can see why you get varying behaviors based on the element height.</p>
 <p>It's true, that you can use the built-in speed values like &quot;fast&quot; and &quot;slow&quot;, but if you want more fine-grained control over your animation, you'll have to use a value.</p>
@@ -162,7 +162,8 @@ $('h2').toggle(function(){
 <p><a href="/lab/animation_speed/">View demo</a></p>
 
 
-</div></div>
+  </div>
+</div>
 
     </main>
 

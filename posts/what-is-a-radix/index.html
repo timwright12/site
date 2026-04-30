@@ -57,14 +57,14 @@
 
     <main class="tmpl-post" id="main">
       
-<div class="contain-wide">
+<div class="contain">
   <div class="gutter">
 
-<time datetime="2014-02-10">10 Feb 2014</time>
+    <time datetime="2014-02-10">10 Feb 2014</time>
 
-<h1>What is a Radix?</h1>
+    <h1>What is a Radix?</h1>
 
-<p>The JavaScript method <code>[parseInt()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt)</code> takes 2 arguments. The first being a string (or decimal) you want to turn into a rounded integer (like changing 1.2 into 1). The second value is something called a <em>radix</em>, and no one seems to be able to define it in plain english. Looking through the MDN documentation about <code>parseIn()</code>, and a plethora of good write-ups on the same topic it's generally known that when using the <code>parseInt()</code> method it's best (or typical) to use a radix of 10.</p>
+    <p>The JavaScript method <code>[parseInt()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt)</code> takes 2 arguments. The first being a string (or decimal) you want to turn into a rounded integer (like changing 1.2 into 1). The second value is something called a <em>radix</em>, and no one seems to be able to define it in plain english. Looking through the MDN documentation about <code>parseIn()</code>, and a plethora of good write-ups on the same topic it's generally known that when using the <code>parseInt()</code> method it's best (or typical) to use a radix of 10.</p>
 <p>Using a radix argument of 10 will help output a predictable result. Without it, things can get a little funky. Check out the example below.</p>
 <pre><code>parseInt(&quot;0x4&quot;);  // returns 0, prefix 0x sets the default radix to 16
 parseInt(&quot;0x4&quot;, 10); // returns 4
@@ -84,7 +84,8 @@ parseInt(&quot;0x4&quot;, 10); // returns 4
 <p>That's what a radix value is and why it should (generally) be set to 10 when using <code>parseInt()</code>. Happy coding.</p>
 
 
-</div></div>
+  </div>
+</div>
 
     </main>
 

@@ -57,14 +57,14 @@
 
     <main class="tmpl-post" id="main">
       
-<div class="contain-wide">
+<div class="contain">
   <div class="gutter">
 
-<time datetime="2017-10-15">15 Oct 2017</time>
+    <time datetime="2017-10-15">15 Oct 2017</time>
 
-<h1>Upgrading DOM Hierarchy for Accessibility with Aria-owns</h1>
+    <h1>Upgrading DOM Hierarchy for Accessibility with Aria-owns</h1>
 
-<p>For the past couple weeks I've been working on accessibility audits and upgrades to a client website. Most of the updates were pretty straightforward, but I wanted to call out a specific item that allowed me to dive deeper into an aria attribute I really hadn't used before: <a href="http://oaa-accessibility.org/example/42/"><strong>aria-owns</strong></a>.</p>
+    <p>For the past couple weeks I've been working on accessibility audits and upgrades to a client website. Most of the updates were pretty straightforward, but I wanted to call out a specific item that allowed me to dive deeper into an aria attribute I really hadn't used before: <a href="http://oaa-accessibility.org/example/42/"><strong>aria-owns</strong></a>.</p>
 <p>The aria-owns attribute is a way to programmatically assign hierarchy to a document when that hierarchy can't be communicated with the HTML structure alone. My initial reaction when I realized I needed something like this was that the HTML should have been connected in the first place, but for whatever reason (design, business, admin UX goals) the navigation menu was set up in two separate areas like this:</p>
 <pre><code>&lt;nav role=&quot;navigation&quot;&gt;
   &lt;ul&gt;
@@ -120,7 +120,8 @@
 </ul>
 
 
-</div></div>
+  </div>
+</div>
 
     </main>
 

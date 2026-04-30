@@ -57,14 +57,14 @@
 
     <main class="tmpl-post" id="main">
       
-<div class="contain-wide">
+<div class="contain">
   <div class="gutter">
 
-<time datetime="2017-01-21">21 Jan 2017</time>
+    <time datetime="2017-01-21">21 Jan 2017</time>
 
-<h1>Security and Accessiblity When Opening Links in a New Window</h1>
+    <h1>Security and Accessiblity When Opening Links in a New Window</h1>
 
-<p>A handful of years ago there was a quiet agreement in the Web community that we should stop opening links in new windows (using <code>target=&quot;_blank</code>&quot;) to give users more power over their experience. After all, who are we to say that something should open in a new window? It was a reaction to the UX problem we still encounter all the time today: assuming we know what's best for the user. So we started letting the user decide how and where they want to open links.  If you want a new window, right click and do it yourself, or hold shift and click -- either way the user will pick. As a user, I can't cancel out <code>target=&quot;_blank&quot;</code> but I can simulate the feature if I want it. There are few things worse on the Web than fighting with a UI that thinks it knows what's best for you.</p>
+    <p>A handful of years ago there was a quiet agreement in the Web community that we should stop opening links in new windows (using <code>target=&quot;_blank</code>&quot;) to give users more power over their experience. After all, who are we to say that something should open in a new window? It was a reaction to the UX problem we still encounter all the time today: assuming we know what's best for the user. So we started letting the user decide how and where they want to open links.  If you want a new window, right click and do it yourself, or hold shift and click -- either way the user will pick. As a user, I can't cancel out <code>target=&quot;_blank&quot;</code> but I can simulate the feature if I want it. There are few things worse on the Web than fighting with a UI that thinks it knows what's best for you.</p>
 <p>That debate aside, there are probably going to be instances where you will still open something in a new window (like social sharing buttons), so if you do have to do it there are a couple things you should keep in mind that I wanted to quickly run through: security and accessibility.</p>
 <h3 id="security" tabindex="-1">Security <a class="direct-link" href="#security" aria-hidden="true">#</a></h3>
 <p>A few weeks ago I stumbled across and article called <a href="https://www.jitbit.com/alexblog/256-targetblank---the-most-underestimated-vulnerability-ever/"><em>Target=&quot;_blank&quot; - the most underestimated vulnerability ever</em></a>, an overly dramatic title? Yeah. But it still made some good points that I wasn't aware of previously. In a nutshell, every time you use <code>target=&quot;_blank&quot;</code> you give partial access to the opener object, which allows JavaScript to potentially get executed (mostly used in phishing).</p>
@@ -85,7 +85,8 @@ newWnd.opener = null;
 </ul>
 
 
-</div></div>
+  </div>
+</div>
 
     </main>
 

@@ -57,14 +57,14 @@
 
     <main class="tmpl-post" id="main">
       
-<div class="contain-wide">
+<div class="contain">
   <div class="gutter">
 
-<time datetime="2014-02-13">13 Feb 2014</time>
+    <time datetime="2014-02-13">13 Feb 2014</time>
 
-<h1>Better Hiding &amp; Showing of Content</h1>
+    <h1>Better Hiding &amp; Showing of Content</h1>
 
-<p>With <a href="http://en.wikipedia.org/wiki/Progressive_enhancement">progressive enhancement</a> we always try and maintain a separation between structure, style, and behavior. This usually (in really world terms) means keeping CSS out of your JavaScript and both of them out of your HTML. It's a blurry line with behavior and presentation mapping directly to CSS and JavaScript, but I think we can all agree that using inline CSS or JavaScript isn't ideal.</p>
+    <p>With <a href="http://en.wikipedia.org/wiki/Progressive_enhancement">progressive enhancement</a> we always try and maintain a separation between structure, style, and behavior. This usually (in really world terms) means keeping CSS out of your JavaScript and both of them out of your HTML. It's a blurry line with behavior and presentation mapping directly to CSS and JavaScript, but I think we can all agree that using inline CSS or JavaScript isn't ideal.</p>
 <p>I'm bringing this up because it happens with <a href="http://jquery.com/">jQuery</a> all the time and no one seems to talk about it. If you use <code>hide()</code>, you'll see an inline style of <code>display:none;</code> on the HTML element. If you use <code>show()</code>, you'll see <code>display:block;</code> get added. The problem compounds when animations get added into the mix (tons of inline CSS). I'm not saying don't use them, but there are better ways and you can clean up after yourself in the DOM. Here's an example for a simple hide/show.</p>
 <h2 id="html" tabindex="-1">HTML <a class="direct-link" href="#html" aria-hidden="true">#</a></h2>
 <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#target1<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>trigger<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Toggle Content area 1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>target1<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>content<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>the content you want to hide/show<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
@@ -101,7 +101,8 @@
 <p>Of course, the <code>fadeIn()</code> method could also be moved into a CSS animation at this point to clean this up even further. You probably wouldn't even need jQuery at that point... for another day though!</p>
 
 
-</div></div>
+  </div>
+</div>
 
     </main>
 

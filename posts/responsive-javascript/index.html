@@ -57,14 +57,14 @@
 
     <main class="tmpl-post" id="main">
       
-<div class="contain-wide">
+<div class="contain">
   <div class="gutter">
 
-<time datetime="2014-02-17">17 Feb 2014</time>
+    <time datetime="2014-02-17">17 Feb 2014</time>
 
-<h1>How I Handle Responsive JavaScript</h1>
+    <h1>How I Handle Responsive JavaScript</h1>
 
-<p>I recently read a site (post?) about <a href="http://www.responsivejavascript.com/">learning responsive JavaScript</a> that involved using the <code>window.matchMedia</code> object to detect a screen width. It's an OK method, but there are a couple holes and optimizations I wanted to talk about and also show my preferred method for dealing with the responsive JavaScript problem we have. I'm not going to address the &quot;mobile&quot; context mentioned in the write up because I'll just sound bitchy ranting about how how small screen isn't mobile. Anywho...</p>
+    <p>I recently read a site (post?) about <a href="http://www.responsivejavascript.com/">learning responsive JavaScript</a> that involved using the <code>window.matchMedia</code> object to detect a screen width. It's an OK method, but there are a couple holes and optimizations I wanted to talk about and also show my preferred method for dealing with the responsive JavaScript problem we have. I'm not going to address the &quot;mobile&quot; context mentioned in the write up because I'll just sound bitchy ranting about how how small screen isn't mobile. Anywho...</p>
 <h2 id="using-matchmedia" tabindex="-1">Using matchMedia <a class="direct-link" href="#using-matchmedia" aria-hidden="true">#</a></h2>
 <p>Using the matchMedia object looks like this:</p>
 <pre><code>var breakpoint = window.matchMedia('(max-width:600px)');
@@ -104,7 +104,8 @@ if (size.indexOf(&quot;largescreen&quot;) !=-1) {
 <p>Accessing the document is one of the more resource intensive things to do with JavaScript so you want to make sure all your responsive JS is in the same area and cache the variables where you can, but I really like this method because you don't have to maintain your major breakpoints in more than one place.</p>
 
 
-</div></div>
+  </div>
+</div>
 
     </main>
 
