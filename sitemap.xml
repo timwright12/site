@@ -562,7 +562,7 @@
   </url>
   
   <url>
-    <loc>https://timwright12.github.io/tags/pm/</loc>
+    <loc>https://timwright12.github.io/tags/qa/</loc>
     <lastmod>2026-05-01</lastmod>
   </url>
   
@@ -572,22 +572,12 @@
   </url>
   
   <url>
-    <loc>https://timwright12.github.io/tags/qa/</loc>
-    <lastmod>2026-05-01</lastmod>
-  </url>
-  
-  <url>
     <loc>https://timwright12.github.io/tags/react/</loc>
     <lastmod>2026-05-01</lastmod>
   </url>
   
   <url>
-    <loc>https://timwright12.github.io/tags/ux/</loc>
-    <lastmod>2026-05-01</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://timwright12.github.io/tags/security/</loc>
+    <loc>https://timwright12.github.io/tags/pm/</loc>
     <lastmod>2026-05-01</lastmod>
   </url>
   
@@ -602,7 +592,7 @@
   </url>
   
   <url>
-    <loc>https://timwright12.github.io/tags/performance/</loc>
+    <loc>https://timwright12.github.io/tags/security/</loc>
     <lastmod>2026-05-01</lastmod>
   </url>
   
@@ -612,12 +602,22 @@
   </url>
   
   <url>
-    <loc>https://timwright12.github.io/tags/typography/</loc>
+    <loc>https://timwright12.github.io/tags/ux/</loc>
+    <lastmod>2026-05-01</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://timwright12.github.io/tags/performance/</loc>
     <lastmod>2026-05-01</lastmod>
   </url>
   
   <url>
     <loc>https://timwright12.github.io/tags/javascript/</loc>
+    <lastmod>2026-05-01</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://timwright12.github.io/tags/typography/</loc>
     <lastmod>2026-05-01</lastmod>
   </url>
   
