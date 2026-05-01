@@ -4,8 +4,8 @@ description:
 imagePath: screen__va--full.png
 thumbnail: screen_baseline--half.png
 imageCaption: TBD
-url: https://baseline.10up.com/
-passthrough: https://baseline.10up.com/
+url: https://github.com/10up/component-library
+passthrough: https://github.com/10up/component-library
 layout: layouts/project.njk
 tags: ["project"]
 date: "2019-02-01"
