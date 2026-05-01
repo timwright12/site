@@ -2,9 +2,6 @@
 layout: layouts/service.njk
 title: Services
 templateClass: tmpl-services
-eleventyNavigation:
-  key: Services
-  order: 4
 ---
 
 - [Accessibility review](#accessibility-review)
