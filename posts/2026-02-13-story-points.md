@@ -5,6 +5,7 @@ tags:
   - "pm"
 layout: layouts/post.njk
 wip: true
+draft: true
 ---
 
 As engineers, we sometimes feel like pointing is a way to monitor our productivity. I’ve seen this happen firsthand and had velocity conversations with various stakeholders over the years.
