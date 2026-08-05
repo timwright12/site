@@ -1,0 +1,58 @@
+<h1 id="plan:-&quot;the-line-you-draw&quot;-(essay-3-of-3)" tabindex="-1">Plan: &quot;The Line You Draw&quot; (essay 3 of 3) <a class="direct-link" href="#plan:-&quot;the-line-you-draw&quot;-(essay-3-of-3)" aria-hidden="true">#</a></h1>
+<h2 id="where-this-sits-in-the-series" tabindex="-1">Where this sits in the series <a class="direct-link" href="#where-this-sits-in-the-series" aria-hidden="true">#</a></h2>
+<ol>
+<li><strong>Layers</strong> — names the pattern: we keep adding layers, never removing one, and the distance between what we write and what runs keeps growing.</li>
+<li><strong>How It Works</strong> — names the risk: that distance is where fragility lives (left-pad, xz). Ends on: &quot;It's who still holds the map, and what happens on the day they're not the one who picks up the phone.&quot;</li>
+<li><strong>This essay</strong> — moves from diagnosis to stance. Given you <em>can't</em> hold the whole map anymore, and pretending otherwise is denial rather than diligence, what do you actually do? Answer: you draw a deliberate line around what you commit to understanding, instead of letting that line get drawn for you by neglect.</li>
+</ol>
+<p>Do <strong>not</strong> resolve into &quot;therefore slow down&quot; or &quot;therefore reject AI tools&quot; — that would contradict essay 1's own ending (&quot;not a reason to stop&quot;). The stance is about honesty and deliberateness, not retreat.</p>
+<h2 id="thesis" tabindex="-1">Thesis <a class="direct-link" href="#thesis" aria-hidden="true">#</a></h2>
+<p>Nobody has ever held the whole map, even before any of this. The map was always partial. What's changed is whether people are <em>choosing</em> where their part of the map ends, or just letting it happen to them by default — and AI-generated code moves that boundary again, in a way that needs a deliberate response, not a passive one.</p>
+<h2 id="target-length" tabindex="-1">Target length <a class="direct-link" href="#target-length" aria-hidden="true">#</a></h2>
+<p>~450–650 words as a guide, not a hard cap. Prioritize giving the point room over hitting a number — this is the closing essay, it's allowed to breathe slightly more than 1 and 2, but shouldn't feel padded.</p>
+<h2 id="concrete-anchor:-knight-capital-aug-1-2012" tabindex="-1">Concrete anchor: Knight Capital, Aug 1, 2012 <a class="direct-link" href="#concrete-anchor:-knight-capital-aug-1-2012" aria-hidden="true">#</a></h2>
+<ul>
+<li>Facts to use (verify exact figures before publishing, these are well-documented but worth a final check): Knight Capital deployed new trading software; old, dormant code from a defunct test feature (&quot;Power Peg,&quot; unused for years) was never fully removed and got triggered on one server that didn't get the update. Nobody still at the company fully understood what that dormant path would do if it fired.</li>
+<li>It took ~45 minutes of escalating, senior-level scrambling to even diagnose what was happening, by which point the firm had lost roughly $460 million and nearly collapsed.</li>
+<li>Why this example over left-pad/xz: those were about <em>external</em> dependency depth (a stranger's code, several layers down). This one is about <em>internal</em> depth — a company's own legacy code that its own current staff no longer held a model of. That's the sharper case for &quot;the line you draw,&quot; because it shows the failure isn't unique to open source or to strangers' code — it's what happens whenever <em>nobody currently present</em> still holds the map, including to your own systems.</li>
+<li>Use it as the cold open or as the anchor after a short intro — either works; draft will try cold open since essays 1 and 2 both start concrete/personal before generalizing.</li>
+</ul>
+<h2 id="structural-beats" tabindex="-1">Structural beats <a class="direct-link" href="#structural-beats" aria-hidden="true">#</a></h2>
+<ol>
+<li><strong>Open on Knight Capital.</strong> Short, factual, not sensationalized (match essay 2's restrained tone with left-pad/xz — state what happened, not &quot;can you imagine&quot;). Land on: the failure wasn't that the code was wrong when it was written. It was that nobody currently in the room could say what it did.</li>
+<li><strong>Reframe &quot;who holds the map&quot; from essay 2.</strong> The map was never total — not in 2005, not now. Every engineer has always depended on layers below them they didn't fully understand (the OS, the compiler, physics). So &quot;nobody can understand it all&quot; isn't a new problem. What's actually different is whether the boundary of what <em>you</em> understand is a decision or an accident.</li>
+<li><strong>Two failure modes, contrasted:</strong>
+<ul>
+<li>The engineer/team that tries to hold the <em>entire</em> stack — burns out, or worse, lies to themselves about how well they actually know layer six, which is its own kind of denial.</li>
+<li>The engineer/team that never draws a line at all — everything is &quot;someone else's problem,&quot; including the parts they personally shipped. This is closer to what happened at Knight: the dormant code was technically someone's responsibility once, but by 2012 it was no one's.</li>
+<li>The alternative to both: pick the boundary on purpose. Know the layer you actually write in, and the one directly below it that your code leans on, well enough to debug it yourself without looking anything up. Past that, you don't need deep fluency — you need to know the dependency exists, roughly what it's for, and where it would page you if it broke. (This is the distinction Tim asked about — debug-it-yourself vs. just-know-it's-there. Keep both named plainly, avoid the &quot;know cold&quot; shorthand that caused confusion in the earlier conversation.)</li>
+</ul>
+</li>
+<li><strong>The AI pivot.</strong> AI-generated code collapses exactly the layer that used to be your one guaranteed foothold — the layer directly below what you write, that you used to have to build by hand and therefore understood by construction. Now that layer can arrive fully formed, without you having built a model of it. General industry voice here, not first-person anecdote (per Tim's answer) — describe this as a shift happening across the field, same register as essay 1's &quot;we're adding agents and skills that generate code.&quot;
+<ul>
+<li>The response isn't to stop using it. It's that your line has to move to cover what you're now missing: you need to hold a model of what you <em>asked for</em> and verify the output actually matches it — otherwise you've given up your one guaranteed foothold and gained nothing to replace it.</li>
+</ul>
+</li>
+<li><strong>Close.</strong> Callback to essay 2's closing line about who holds the map. Land the series on: the map was never going to be complete. The only thing you ever really controlled was which part of it you committed to holding — and that choice is the one AI-generated code is quietly taking away from people who don't make it on purpose.</li>
+</ol>
+<h2 id="voice-notes-(match-essays-1-and-2)" tabindex="-1">Voice notes (match essays 1 &amp; 2) <a class="direct-link" href="#voice-notes-(match-essays-1-and-2)" aria-hidden="true">#</a></h2>
+<ul>
+<li>First person, declarative short sentences mixed with one or two longer build-up sentences per section.</li>
+<li>Occasional dry parenthetical aside (essay 2 has several: &quot;(pretty lucky)&quot;, &quot;(who you assume are better engineers than you)&quot;) — use sparingly, one or two max, don't overdo it.</li>
+<li>No hedging softeners (&quot;I think,&quot; &quot;maybe&quot; used only once, deliberately, like essay 1 does with &quot;Maybe this is just the next turn of a cycle&quot;).</li>
+<li>End on a single punchy standalone-line paragraph, like both prior essays do.</li>
+</ul>
+<h2 id="things-to-avoid" tabindex="-1">Things to avoid <a class="direct-link" href="#things-to-avoid" aria-hidden="true">#</a></h2>
+<ul>
+<li>Don't re-explain left-pad/xz — essay 2 already did that; this essay's anecdote should be new (Knight Capital) so the series doesn't repeat itself.</li>
+<li>Don't use &quot;know cold&quot; or similarly ambiguous shorthand for the debug-it-yourself standard — spell out the distinction plainly (per Tim's clarifying question earlier).</li>
+<li>Don't land on a call to slow down, reject AI tooling, or &quot;go back to simpler stacks&quot; — inconsistent with essay 1's own resolution.</li>
+<li>Don't turn the AI section into a personal anecdote — keep it in the general industry voice, per Tim's answer.</li>
+<li>Watch essay length creeping past ~650–700 words without a reason; the guide is loose but shouldn't become an excuse to sprawl.</li>
+</ul>
+<h2 id="open-questions-for-tim-to-weigh-in-on-at-draft-review" tabindex="-1">Open questions for Tim to weigh in on at draft review <a class="direct-link" href="#open-questions-for-tim-to-weigh-in-on-at-draft-review" aria-hidden="true">#</a></h2>
+<ul>
+<li>Does the Knight Capital anchor land, or would a different real incident fit better once drafted out?</li>
+<li>Is the two-failure-modes framing (over-holder vs. never-drew-a-line) doing enough work, or does it need a third case?</li>
+<li>Does the closing callback to essay 2's last line feel earned, or too neat/on-the-nose?</li>
+</ul>

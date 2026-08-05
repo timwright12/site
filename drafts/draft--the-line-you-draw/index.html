@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The line you draw</title>
+    <meta name="description" content="I am writing about my experiences as a naval navel-gazer.">
+    <link rel="stylesheet" href="/css/index.css">
+
+    <script>
+
+		WebFontConfig = {
+			google: {
+				families: ['Open Sans:400,700', 'Judson:400,700']
+			}
+		};
+
+		(function(d) {
+			var wf = d.createElement('script'), s = d.scripts[0];
+			wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
+			wf.async = true;
+			s.parentNode.insertBefore(wf, s);
+		})(document);
+
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-875557-1', 'auto');
+		ga('send', 'pageview');
+
+	</script>
+
+	<noscript>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&Judson:ital,wght@0,400;0,700;1,400&display=swap" />
+	</noscript>
+
+  </head>
+  <body>
+
+  <header role="banner" id="banner">
+
+    <h1 class="logo" itemscope="" itemtype="http://schema.org/Organization">
+      <a href="/" itemprop="url">Tim Wright</a>
+    </h1>
+
+    <nav role="navigation" id="nav">
+      <ul>
+          <li class="nav-item"><a href="/blog/">Blog</a></li>
+          <li class="nav-item"><a href="/work/">Work</a></li>
+        <li class="nav-item"><a href="mailto:timwright12@gmail.com?subject=An Interesting Message from timwright.org">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+    <main class="tmpl-post" id="main">
+      
+<div class="contain">
+  <div class="gutter">
+
+    <time datetime="2026-08-10">10 Aug 2026</time>
+
+    <h1>The line you draw</h1>
+
+    <p>On August 1, 2012, Knight Capital turned on new trading software and lost $460 million in 45 minutes. The proximate cause was a dormant chunk of code called Power Peg, left over from a feature that had been retired years earlier and never fully removed. A deployment error meant one server didn't get the update everyone else got, and that old code path, still technically present, still technically live, started firing live trades nobody intended. By the time anyone diagnosed what was happening, the firm had nearly ceased to exist.</p>
+<p>Nobody had written bad code that morning. The code that misfired had been sitting there, unchanged, for years. The failure was that when it woke up, nobody currently at the company could say with confidence what it would do. The people who'd written it, understood it, and could have caught the deployment gap were gone, promoted, or had simply moved on to other systems. The map to that part of the building still existed. Nobody was holding it anymore.</p>
+<p>That's worth sitting with, because it isn't really a story about legacy code. It's a story about what happens when nobody currently in the room still holds the model of something everyone depends on.</p>
+<p>The prior essay in this series ended on the question of who holds the map. But the map was never total — not in 2012, not in 2005, not now. Every engineer has always stood on layers they didn't fully understand: the compiler, the OS scheduler, whatever the silicon is actually doing. That was never going away, and it's not a new failure of this moment. What's actually different, moment to moment, is whether the edge of what you personally understand is something you chose, or something that just happened to you because nobody assigned it and nobody removed it.</p>
+<p>There are two easy ways to get this wrong. One is trying to hold the entire stack yourself — which either burns you out, or worse, convinces you that you understand layer six when you actually don't, which is its own quiet denial. The other is holding none of it on purpose — treating everything as someone else's problem, including the parts you personally shipped. That second failure is closer to what happened at Knight. Power Peg was somebody's responsibility once. By 2012 it was no one's, and nobody had noticed the handoff never happened.</p>
+<p>The alternative to both isn't heroism or surrender. It's choosing the boundary on purpose. Know the layer you actually write in, and the layer directly beneath it that your code leans on, well enough to debug it yourself without looking anything up. Past that line, you don't need fluency. You need to know the dependency exists, roughly what it does, and where it would page someone if it broke. One is a skill. The other is bookkeeping. Both are necessary, and they are not the same thing, and confusing them is how you end up with a team full of people who assume someone else is holding a map that nobody is actually holding.</p>
+<p>AI-generated code moves that line again, and not gently. The layer directly beneath what you write used to be the one thing you built by hand, and so the one thing you understood by construction, whether you meant to or not. Now that layer can arrive finished, without you ever having built it, which means without you ever having been forced to understand it. That's a new gap, and it opens exactly where your debugging fluency used to live automatically.</p>
+<p>The answer isn't to stop. It's that the line has to move to cover what just went missing: you need to hold a real model of what you asked for, and verify closely that what came back actually matches it. Skip that, and you haven't gained a layer. You've lost your one guaranteed foothold and put nothing in its place.</p>
+<p>The map was never going to be complete. It never was. The only thing anyone ever really controlled was which part of it they committed to holding — and that's the choice being taken from people who don't make it on purpose.</p>
+
+
+  </div>
+</div>
+
+    </main>
+
+    <!-- Current page: /drafts/draft--the-line-you-draw/ -->
+  </body>
+</html>
