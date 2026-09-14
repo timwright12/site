@@ -1,6 +1,6 @@
 ---
 title: Daily A11y
-description: Learn one WCAG 2.2 success criterion a day: a plain-language explanation, who it affects, a code example, and a quick comprehension check. Free, no account needed.
+description: Learn one WCAG 2.2 success criterion a day with a plain-language explanation, who it affects, a code example, and a quick comprehension check. Free, no account needed.
 imagePath: screen__daily-a11y--full.png
 thumbnail: screen_daily-a11y--full.png
 imageCaption: Dark mode screenshot of the Daily A11y browser interface
